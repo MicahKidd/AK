@@ -24576,7 +24576,7 @@ send("queue add eqbal oattackt")</script>
 		<ScriptGroup isActive="yes" isFolder="yes">
 			<name>AK Opponent Tracking</name>
 			<packageName></packageName>
-			<script>--ak config
+			<script>--ak config stuff
 
 ak = ak or {}
 ak.cure = ak.cure or {}
