@@ -30265,11 +30265,10 @@ AkcheckPrioList = {
 					<script>ak.git = ak.git or {}
 
 function ak.git.push(event,status)
-display(event)
 display(status)
   if status == "Initiate" then
     ak.KillTriggers()
-  elseif status == "Finalizing" then
+  elseif status == "Finalized" then
     ak.classenable()
   end
 end
