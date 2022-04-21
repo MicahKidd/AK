@@ -30264,7 +30264,8 @@ AkcheckPrioList = {
 					<packageName></packageName>
 					<script>ak.git = ak.git or {}
 
-function ak.git.push(event,status)
+function ak.git.push(event,status,module)
+  if module ~= "AK" then return end
   if status == "Initiate" then
     ak.KillTriggers()
   elseif status == "Finalized" then
