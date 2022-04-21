@@ -30259,6 +30259,22 @@ AkcheckPrioList = {
 					<script>ak.version = 7.8</script>
 					<eventHandlerList />
 				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Git</name>
+					<packageName></packageName>
+					<script>ak.git = ak.git or {}
+
+function ak.git.push(event,status)
+  if status == "Initiate" then
+    ak.KillTriggers()
+  elseif status == "Finalizing" then
+    ak.classenable()
+  end
+end
+
+registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
+					<eventHandlerList />
+				</Script>
 			</ScriptGroup>
 		</ScriptGroup>
 	</ScriptPackage>
