@@ -4816,6 +4816,31 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Bind</name>
+						<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
+   affstrack.score.bound = 100
+   ak.scoreup(matches[2])
+   --8secs
+end</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You command your many heads to bind (\w+)\. With a synchronous\, guttural rasp\, they obey\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
 				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Trumpet</name>
@@ -5456,7 +5481,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -5544,7 +5569,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13476,7 +13501,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Tarot Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -19324,8 +19349,10 @@ end</script>
 						<string>^(\w+) is flung violently from \w+ feet\.$</string>
 						<string>^([\w'\-]+) has already fallen to the ground\.$</string>
 						<string>^You deftly hook .* behind ([\w'\-]+)'s foot and send [\w'\-]+ tumbling off (.*) before driving the point of the weapon into [\w'\-]+ (right leg|left leg).$</string>
+						<string>^(\w+) is swept off \w+ feet by the blast\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -28005,6 +28032,14 @@ ak.limbs.tekura = ak.limbs.tekura or {}
 ak.limbs.shikudo = ak.limbs.shikudo or {}
 ak.limbs.twoh = ak.limbs.twoh or {}
 ak.limbs.twoh.stance = ak.limbs.twoh.stance or {}
+ak.limbs.oppositesLimbs = {
+	["rightleg"] = "leftleg",
+	["leftleg"] = "rightleg",
+	["rightarm"] = "leftarm",
+	["leftarm"] = "rightarm",
+	["torso"] = "head",
+	["head"] = "torso",
+}
 
 
 ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, augment, check)
