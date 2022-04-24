@@ -25149,140 +25149,137 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
 			<Script isActive="yes" isFolder="no">
 				<name>Hard Reset</name>
 				<packageName></packageName>
-				<script>--scoreup2
-function ak.oresetparse()
-target = target or "Austere"
-ak.dragonTarget = false
-ak.elementalTarget = false
-ak.stack = ak.stack or "none"
-affstrack.impale = false
-targetparry = "unknown"
-ak.bleeding = 0
-ak.flyer = false
-mycharacters = mycharacters or {}--This is for my Personal Gui
-if swiftcount == nil then swiftcount = 0 end
-disableTimer("Hypochondria Timer")
-opponenteat = 0
-promptset = {}
-applycure = {}
-ak.bals.salve = true
-ak.bals.focus = true
-opponenttree = 0
-
-ak.defs.mass = true
-ak.defs.shield = false
-ak.defs.rebounding = true
-ak.defs.reRebounding = false
-ak.defs.sileris = true
-ak.defs.curseward = true
-ak.defs.holdbreath = false
-ak.defs.speed = true
-
-timerherb = 0
-if ak.timers.apply then
-	killTimer(ak.timers.apply)
-	ak.timers.apply = false
-end
-if ak.timers.salvebackup then 
-	killTimer(ak.timers.salvebackup) 
-end
-opponenthalftree = 0
-timertree = 0
-currentvenoms = {}
-lastvenom = {}
-targetlyred = 0
-boilable = true
-vodun = vodun or {}
-lockcheck = false
-ak.tza = false
-knownrun = nil
-parsedclasscures = false
-ak.waterbonded = false
-ak.psion.unweaving.mind = 0
-ak.psion.unweaving.body = 0
-ak.psion.unweaving.spirit = 0
-ak.resetbacktrack()
-ak.twoh = ak.twoh or {}
-ak.twoh.skull = 0
-ak.twoh.ribs = 0
-ak.twoh.tendons = 0
-ak.twoh.wrist = 0
-ak.occie.aura.physical =  0
-ak.occie.aura.mental = 0
-ak.druid.sumac = true
-ak.alchemist.humour.sanguine = 0
-ak.alchemist.humour.choleric = 0
-ak.alchemist.humour.melancholic = 0
-ak.alchemist.humour.phlegmatic = 0
-ak.pervasion.initialbleed = false
-ak.pervasion.hitcount = 0
-ak.shaman.Relapseaff = "none"
-ak.shaman.coagulation = true
-ak.shaman.bloodlet = true
-ak.shaman.relapse = true
-ak.shaman.GetFashions = false
-ak.psion.transcend = 0
-if ak.scaldTimer then killTimer(ak.scaldTimer) end
-if ak.tendonTimer then killTimer(ak.tendonTimer) end
-if ak.skullTimer then killTimer(ak.skullTimer) end
-if ak.wristTimer then killTimer(ak.wristTimer) end
-if ak.ribTimer then killTimer(ak.ribTimer) end
-ak.track.flown = false
-ak.diagnosingoffbal = false
-ak.CustomCureSend = false
-ak.manapercent = 100
-ak.healthpercent = 100
-ak.currentmana = 5000
-ak.maxmana = 5000
-ak.currenthealth = 5000
-ak.maxhealth = 5000
-ak.engaged = false
-ak.TorsoWrench = false
-ak.HeadWrenchDisable = nil
-ak.InitialWrench = nil
-ak.propped = false
-ak.SerpentRotateBite = false
-ak.duress.pressure = 0
-ak.duress.scourrelapse = false
-ak.duress.stranglerelapse = false
-ak.duress.zephyrrelapse = false
-ak.duress.asphyxiate = false
-ak.tumbling = false
-for k,v in pairs(affstrack.score) do
-   affstrack.score[k] = 0
-end
-affstrack.enlightenscore = 0
-affstrack.ginsengscore = 0
-affstrack.goldenscore = 0
-affstrack.pyradiusscore = 0
-affstrack.kelpscore = 0
-affstrack.tramplescore = 0
-affstrack.mentalscore = 0
-affstrack.totalaffs = 0
-ak.randomaffs = 0
-ak.knownmaxhealth = ak.knownmaxhealth or {}
-ak.limbs.limb_table_check(target)
-if gmcp and ak.stack == "none" then
-   ak.classenable()
-end
-ak.scoreup(target)
-if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.maxhp then
-   ak.knownmaxhealth["Me"] = tonumber(gmcp.Char.Vitals.maxhp) or 5150
-   ak.classlockadd()
-   if not ak.displaydecide then 
-      ak.classenable()
-      if ak.nodisplay == false and not table.contains(mycharacters,gmcp.Char.Name.name) then 
-         init() 
-      end 
-      ak.displaydecide = true 
-   end
-end
-if ak.radiancestack then
-   ak.stack = ak.radiancestack
-   ak.radiancestack = nil
-end
-cecho("&lt;cyan&gt; Reset Success!\n\n")
-end</script>
+				<script>function ak.oresetparse()
+  target = target or "Austere"
+  ak.dragonTarget = false
+  ak.elementalTarget = false
+  ak.stack = ak.stack or "none"
+  affstrack.impale = false
+  targetparry = "unknown"
+  ak.bleeding = 0
+  ak.flyer = false
+  mycharacters = mycharacters or {}--This is for my Personal Gui
+  if swiftcount == nil then swiftcount = 0 end
+  disableTimer("Hypochondria Timer")
+  opponenteat = 0
+  promptset = {}
+  applycure = {}
+  ak.bals.salve = true
+  ak.bals.focus = true
+  opponenttree = 0
+  ak.defs.mass = true
+  ak.defs.shield = false
+  ak.defs.rebounding = true
+  ak.defs.reRebounding = false
+  ak.defs.sileris = true
+  ak.defs.curseward = true
+  ak.defs.holdbreath = false
+  ak.defs.speed = true
+  timerherb = 0
+  if ak.timers.apply then
+  	killTimer(ak.timers.apply)
+  	ak.timers.apply = false
+  end
+  if ak.timers.salvebackup then 
+  	killTimer(ak.timers.salvebackup) 
+  end
+  opponenthalftree = 0
+  timertree = 0
+  currentvenoms = {}
+  lastvenom = {}
+  targetlyred = 0
+  boilable = true
+  vodun = vodun or {}
+  lockcheck = false
+  ak.tza = false
+  knownrun = nil
+  parsedclasscures = false
+  ak.waterbonded = false
+  ak.psion.unweaving.mind = 0
+  ak.psion.unweaving.body = 0
+  ak.psion.unweaving.spirit = 0
+  ak.resetbacktrack()
+  ak.twoh = ak.twoh or {}
+  ak.twoh.skull = 0
+  ak.twoh.ribs = 0
+  ak.twoh.tendons = 0
+  ak.twoh.wrist = 0
+  ak.occie.aura.physical =  0
+  ak.occie.aura.mental = 0
+  ak.druid.sumac = true
+  ak.alchemist.humour.sanguine = 0
+  ak.alchemist.humour.choleric = 0
+  ak.alchemist.humour.melancholic = 0
+  ak.alchemist.humour.phlegmatic = 0
+  ak.pervasion.initialbleed = false
+  ak.pervasion.hitcount = 0
+  ak.shaman.Relapseaff = "none"
+  ak.shaman.coagulation = true
+  ak.shaman.bloodlet = true
+  ak.shaman.relapse = true
+  ak.shaman.GetFashions = false
+  ak.psion.transcend = 0
+  if ak.scaldTimer then killTimer(ak.scaldTimer) end
+  if ak.tendonTimer then killTimer(ak.tendonTimer) end
+  if ak.skullTimer then killTimer(ak.skullTimer) end
+  if ak.wristTimer then killTimer(ak.wristTimer) end
+  if ak.ribTimer then killTimer(ak.ribTimer) end
+  ak.track.flown = false
+  ak.diagnosingoffbal = false
+  ak.CustomCureSend = false
+  ak.manapercent = 100
+  ak.healthpercent = 100
+  ak.currentmana = 5000
+  ak.maxmana = 5000
+  ak.currenthealth = 5000
+  ak.maxhealth = 5000
+  ak.engaged = false
+  ak.TorsoWrench = false
+  ak.HeadWrenchDisable = nil
+  ak.InitialWrench = nil
+  ak.propped = false
+  ak.SerpentRotateBite = false
+  ak.duress.pressure = 0
+  ak.duress.scourrelapse = false
+  ak.duress.stranglerelapse = false
+  ak.duress.zephyrrelapse = false
+  ak.duress.asphyxiate = false
+  ak.tumbling = false
+  for k,v in pairs(affstrack.score) do
+     affstrack.score[k] = 0
+  end
+  affstrack.enlightenscore = 0
+  affstrack.ginsengscore = 0
+  affstrack.goldenscore = 0
+  affstrack.pyradiusscore = 0
+  affstrack.kelpscore = 0
+  affstrack.tramplescore = 0
+  affstrack.mentalscore = 0
+  affstrack.totalaffs = 0
+  ak.randomaffs = 0
+  ak.knownmaxhealth = ak.knownmaxhealth or {}
+  ak.limbs.limb_table_check(target)
+  if gmcp and ak.stack == "none" then
+     ak.classenable()
+  end
+  ak.scoreup(target)
+  if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.maxhp then
+     ak.knownmaxhealth["Me"] = tonumber(gmcp.Char.Vitals.maxhp) or 5150
+     ak.classlockadd()
+     if not ak.displaydecide then 
+        ak.classenable()
+        if ak.nodisplay == false and not table.contains(mycharacters,gmcp.Char.Name.name) then 
+           init() 
+        end 
+        ak.displaydecide = true 
+     end
+  end
+  if ak.radiancestack then
+     ak.stack = ak.radiancestack
+     ak.radiancestack = nil
+  end
+  cecho("&lt;cyan&gt; Reset Success!\n\n")
+end </script>
 				<eventHandlerList />
 			</Script>
 			<Script isActive="yes" isFolder="no">
@@ -25537,11 +25534,7 @@ end
 					<script>NoMiddle = NoMiddle or {}
 
 function ak.MonkType()
-  if
-    gmcp.Char.Vitals and
-    gmcp.Char.Vitals.charstats[4] and
-    string.find(gmcp.Char.Vitals.charstats[4], "Form")
-  then
+  if gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[4] and string.find(gmcp.Char.Vitals.charstats[4], "Form") then
     return "Shikudo"
   else
     return "Tekura"
@@ -25597,49 +25590,49 @@ function ak.classenable()
     if not table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
       enableKey("Dragon Keys")
     end
-    cecho("&lt;yellow&gt;\n\nDRAGON ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nDRAGON ENABLED\n")
   elseif gmcp.Char.Status.class == "Monk" then
     ak.KillTriggers()
     enableTrigger("Monk Group")
-    cecho("&lt;yellow&gt;\n\nMONK ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nMONK ENABLED\n")
   elseif gmcp.Char.Status.class == "Pariah" then
     ak.KillTriggers()
     enableTrigger("Pariah Group")
-    cecho("&lt;yellow&gt;\n\nPARIAH ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nPARIAH ENABLED\n")
   elseif gmcp.Char.Status.class == "Druid" then
     ak.KillTriggers()
     enableTrigger("Druid Group")
-    cecho("&lt;yellow&gt;\n\nDRUID ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nDRUID ENABLED\n")
   elseif gmcp.Char.Status.class == "Priest" then
     ak.KillTriggers()
     enableTrigger("Priest Group")
-    cecho("&lt;yellow&gt;\n\nPRIEST ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nPRIEST ENABLED\n")
   elseif gmcp.Char.Status.class == "Magi" then
     ak.KillTriggers()
     enableTrigger("Magi Group")
-    cecho("&lt;yellow&gt;\n\nMAGI ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nMAGI ENABLED\n")
   elseif gmcp.Char.Status.class == "Sylvan" then
     ak.KillTriggers()
     enableTrigger("Sylvan Group")
-    cecho("&lt;yellow&gt;\n\nSYLVAN ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nSYLVAN ENABLED\n")
   elseif gmcp.Char.Status.class == "Shaman" then
     ak.KillTriggers()
     enableKey("Shaman Keys")
     enableTrigger("Shaman Group")
-    cecho("&lt;yellow&gt;\n\nSHAMAN ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nSHAMAN ENABLED\n")
   elseif gmcp.Char.Status.class == "Serpent" then
     ak.KillTriggers()
     enableTrigger("Serpent Group")
-    cecho("&lt;yellow&gt;\n\nSERPENT ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nSERPENT ENABLED\n")
   elseif gmcp.Char.Status.class == "Jester" then
     ak.KillTriggers()
     enableTrigger("Tarot Group")
     enableTrigger("Jester Group")
-    cecho("&lt;yellow&gt;\n\nJESTER\n\n")
+    cecho("&lt;yellow&gt;\nJESTER\n")
   elseif gmcp.Char.Status.class == "Alchemist" then
     ak.KillTriggers()
     enableTrigger("Alchemist Group")
-    cecho("&lt;yellow&gt;\n\nALCHEMIST\n\n")
+    cecho("&lt;yellow&gt;\nALCHEMIST\n")
   elseif
     gmcp.Char.Status.class == "Infernal" or
     gmcp.Char.Status.class == "Paladin" or
@@ -25654,49 +25647,49 @@ function ak.classenable()
     enableTrigger("Totem Group")
     enableTrigger("2h Group")
     enableTrigger("Sword &amp; Board Group")
-    cecho("&lt;yellow&gt;\n\nKNIGHT ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nKNIGHT ENABLED\n\n")
   elseif gmcp.Char.Status.class == "Sentinel" then
     ak.KillTriggers()
     enableTrigger("Sentinel Group")
-    cecho("&lt;yellow&gt;\n\nSENTINEL ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nSENTINEL ENABLED\n")
   elseif gmcp.Char.Status.class == "Occultist" then
     ak.KillTriggers()
     enableTrigger("Tarot Group")
     enableTrigger("Occultist Group")
-    cecho("&lt;yellow&gt;\n\nOCCULTIST ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nOCCULTIST ENABLED\n")
   elseif gmcp.Char.Status.class == "Bard" then
     ak.KillTriggers()
     enableTrigger("Bard Group")
-    cecho("&lt;yellow&gt;\n\nBARD ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nBARD ENABLED\n")
   elseif gmcp.Char.Status.class == "Depthswalker" then
     ak.KillTriggers()
     enableTrigger("Depthswalker Group")
-    cecho("&lt;yellow&gt;\n\nDEPTHSWALKER ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nDEPTHSWALKER ENABLED\n")
   elseif gmcp.Char.Status.class == "Apostate" then
     ak.KillTriggers()
     enableTrigger("Apostate Group")
-    cecho("&lt;yellow&gt;\n\nABOSTATE ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nABOSTATE ENABLED\n")
   elseif gmcp.Char.Status.class == "water Elemental Lord" then
     ak.KillTriggers()
     enableTrigger("Water Lord Group")
-    cecho("&lt;yellow&gt;\n\nWATER ELEMENTAL ENABLED\n\n")
+    cecho("&lt;yellow&gt;\n\nWATER ELEMENTAL ENABLED\n")
   elseif gmcp.Char.Status.class == "air Elemental Lord" then
     ak.KillTriggers()
     enableTrigger("Air Lord Group")
-    cecho("&lt;yellow&gt;\n\nAIR ELEMENTAL ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nAIR ELEMENTAL ENABLED\n")
   elseif gmcp.Char.Status.class == "fire Elemental Lord" then
     ak.KillTriggers()
     enableTrigger("Fire Lord Group")
-    cecho("&lt;yellow&gt;\n\nFire ELEMENTAL ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nFire ELEMENTAL ENABLED\n\n")
   elseif gmcp.Char.Status.class == "Blademaster" then
     ak.KillTriggers()
     enableTrigger("Blademaster Group")
-    cecho("&lt;yellow&gt;\n\nBLADEMASTER ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nBLADEMASTER ENABLED\n")
   elseif gmcp.Char.Status.class == "Psion" then
     ak.KillTriggers()
     enableTrigger("Psion Group")
     enableKey("Psion Keys")
-    cecho("&lt;yellow&gt;\n\nPsion ENABLED\n\n")
+    cecho("&lt;yellow&gt;\nPsion ENABLED\n")
   end
   ak.scoreup(target)
 end</script>
@@ -30287,7 +30280,7 @@ AkcheckPrioList = {
 				<Script isActive="yes" isFolder="no">
 					<name>Version ID</name>
 					<packageName></packageName>
-					<script>ak.version = 7.8</script>
+					<script>ak.version = 7.9</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
@@ -30300,6 +30293,7 @@ function ak.git.push(event,status,module)
   if status == "Initiate" then
     ak.KillTriggers()
     cecho("&lt;cyan&gt;\n\nDumping Trigger Groups\n\n")
+    --saveProfile()
   elseif status == "Finalized" or status == "Invalid Path" then
     ak.classenable()
   end
