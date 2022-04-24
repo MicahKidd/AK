@@ -25705,11 +25705,7 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>oaff check</name>
 					<packageName></packageName>
-					<script>-------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
+					<script>
 function ak.check(what, number)
    if not number then local number = 100 end
    if table.contains(affstrack.score, what) then
