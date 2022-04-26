@@ -21089,11 +21089,11 @@ end</script>
 					<name>Sip</name>
 					<script>if IsTargetted(matches[2]) then
 
-	ak.currentmana = ak.currentmana + (ak.maxmana*.08)
+	ak.currentmana = ak.currentmana + (ak.maxmana*.2)
 	if ak.currentmana &gt; tonumber(ak.maxmana) then
 		ak.currentmana = ak.maxmana
 	end
-	ak.currenthealth = ak.currenthealth + (ak.maxhealth*.08)
+	ak.currenthealth = ak.currenthealth + (ak.maxhealth*.2)
 	if ak.currenthealth &gt; tonumber(ak.maxhealth) then
 		ak.currenthealth = ak.maxhealth
 	end
