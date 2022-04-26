@@ -5481,7 +5481,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -5569,7 +5569,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13501,7 +13501,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Tarot Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -21060,6 +21060,10 @@ end
 	if ak.currentmana &gt; tonumber(ak.maxmana) then
 		ak.currentmana = ak.maxmana
 	end
+	ak.currenthealth = ak.currenthealth + (ak.maxhealth*.08)
+	if ak.currenthealth &gt; tonumber(ak.maxhealth) then
+		ak.currenthealth = ak.maxhealth
+	end
 	ak.scoreup(target)
 end</script>
 					<triggerType>0</triggerType>
@@ -21084,6 +21088,16 @@ end</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Sip</name>
 					<script>if IsTargetted(matches[2]) then
+
+	ak.currentmana = ak.currentmana + (ak.maxmana*.08)
+	if ak.currentmana &gt; tonumber(ak.maxmana) then
+		ak.currentmana = ak.maxmana
+	end
+	ak.currenthealth = ak.currenthealth + (ak.maxhealth*.08)
+	if ak.currenthealth &gt; tonumber(ak.maxhealth) then
+		ak.currenthealth = ak.maxhealth
+	end
+
 	if affstrack.score.anorexia&gt;0 then 
 		if ak.thoughtIhad then 
 			ak.thoughtIhad("anorexia") 
