@@ -30307,11 +30307,11 @@ AkcheckPrioList = {
 function ak.git.push(event,status,module)
   if module ~= "AK" then return end
   if status == "Initiate" then
-    ak.KillTriggers()
-    cecho("&lt;cyan&gt;\n\nDumping Trigger Groups\n\n")
+    --ak.KillTriggers()
+    --cecho("&lt;cyan&gt;\n\nDumping Trigger Groups\n\n")
     --saveProfile()
   elseif status == "Finalized" or status == "Invalid Path" then
-    ak.classenable()
+    --ak.classenable()
   end
 end
 
