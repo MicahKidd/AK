@@ -2896,7 +2896,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Blademaster Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -8712,7 +8712,7 @@ end</script>
 							<string>^Foul slime drips from the pores of (w+)\, and \w+ blood drips with it\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>0</integer>
+							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -8797,7 +8797,8 @@ ak.scoreup(target)</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Pyramides Burrow</name>
-						<script>ak.pariah.burrowed.pyramidesb = matches[2]</script>
+						<script>ak.pariah.burrowed.pyramidesb = matches[2]
+ak.scoreup(matches[2])</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -8817,7 +8818,8 @@ ak.scoreup(target)</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Burrow End</name>
-						<script>ak.pariah.burrowed.pyramidesb = false</script>
+						<script>ak.pariah.burrowed.pyramidesb = false
+ak.scoreup(matches[2])</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -11470,7 +11472,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -21646,7 +21648,7 @@ ak.scoreup(matches[2])</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You observe great rivers of blood running from the open wounds of ([\w'\-]+)\.$ </string>
+							<string>^You observe great rivers of blood running from the open wounds of (\w+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -25208,6 +25210,7 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
   vodun = vodun or {}
   lockcheck = false
   ak.tza = false
+  ak.deathstrike = false
   knownrun = nil
   parsedclasscures = false
   ak.waterbonded = false
@@ -25303,6 +25306,7 @@ end </script>
 				<packageName></packageName>
 				<script>function ak.softreset()
   ak.tza = false
+  ak.deathstrike = false
 	ak.shaman.Relapseaff = "none"
   ak.shaman.coagulation = true
   ak.shaman.bloodlet = true
@@ -25987,6 +25991,7 @@ function OppGainedAff(aff,source)
             table.insert(affStr,word:title())
          elseif word == "hamstring" then
             affstrack.score.hamstring = 100
+            if ak.hamstringtimer then killTimer(ak.hamstringtimer) end
             ak.hamstringtimer = tempTimer(9.5,[[affstrack.score.hamstring = 0;ak.scoreup(target)]])
             table.insert(affStr,word:title())         
          elseif word == "worm" then
@@ -26104,9 +26109,10 @@ function OppGainedAff(aff,source)
         affstrack.score.ensorcell = 100
         table.insert(affStr,aff:title())        
      elseif aff == "hamstring" then
-         affstrack.score.hamstring = 100
-         ak.TorsoWrenchDisable = tempTimer(9.5,[[affstrack.score.hamstring = 0;ak.scoreup(target)]])
-         table.insert(affStr,aff:title())
+        affstrack.score.hamstring = 100
+        if ak.hamstringtimer then killTimer(ak.hamstringtimer) end
+        ak.hamstringtimer = tempTimer(9.5,[[affstrack.score.hamstring = 0;ak.scoreup(target)]])
+        table.insert(affStr,aff:title())
      elseif aff == "worm" then
           affstrack.score.worm = 100
           ak.wormtimer = tempTimer(20,[[affstrack.score.worm = 0;ak.scoreup(target)]])
@@ -26540,7 +26546,7 @@ function ak.serveraliases()
     if ak.knight.setattacks then
       ak.knight.setattacks()
     end
-  elseif gmcp.Char.Status.class == "Blademaster" and not inlyre() then
+  elseif gmcp.Char.Status.class == "Blademaster" and not inlyre() and not ak.deathstrike then
     if ak.bm.setattacks then
       ak.bm.setattacks()
     end
@@ -26584,7 +26590,7 @@ function ak.serveraliases()
   if not inlyre() then
     ak.mycustomoffense()
   end
-  if ak.reboundPop and ak.stack ~= "NoOne" and not inlyre() and not ak.tza then
+  if ak.reboundPop and ak.stack ~= "NoOne" and not inlyre() and not ak.tza and not ak.deathstrike then
     ak.reboundPop()
   end
 end</script>
