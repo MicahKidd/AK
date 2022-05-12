@@ -3687,13 +3687,13 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>You unleash a vicious reaping blow at</string>
-						<string>You lay into</string>
+						<string>^You unleash a vicious reaping blow at ([\w'\-]+) with (.+)\.$</string>
+						<string>^You lay into ([\w'\-]+) with a vicious blow from (.+)\.$</string>
 						<string>Your blow with Agith'maal's ire barely clips</string>
 					</regexCodeList>
 					<regexCodePropertyList>
-						<integer>2</integer>
-						<integer>2</integer>
+						<integer>1</integer>
+						<integer>1</integer>
 						<integer>2</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -3723,7 +3723,11 @@ OppGainedAff("timeloop")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Looped Instill</name>
-						<script></script>
+						<script>if affstrack.score.timeloop &lt; 100 and affstrack.score.timeloop &gt; 0 and ak.ProTrackingConfirmed then
+  ak.ProTrackingConfirmed("timeloop")
+end
+OppGainedAff("timeloop")
+</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
