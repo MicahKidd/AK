@@ -21917,50 +21917,6 @@ end  </script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Eat Prompt</name>
-						<script>--BREAK IS HERE
-if not ak.currenteat then
-  return
-end
-deleteLine()
-if opponenteat == 1 then
-  if timerherb == 1 then
-    cecho("&lt;cyan&gt;-Ignored Cures")
-  end
-  if timerherb == 0 then
-    cecho("&lt;cyan&gt;Something is Fucked")
-    opponenteat = 0
-  end
-end
-if opponenteat == 0 then
-  opponenteat = 1
-  timerherb = 1
-  herbtimer = tempTimer(.7, [[opponenteat = 0;timerherb = 0]])
-  opponentrecenteat = true
-  herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])
-  ak.cure.ate(ak.currenteat, false)
-end
-ak.currenteat = false
-ak.showPrompt()
-setTriggerStayOpen("Opponent Ate", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string></string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>7</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Umind</name>
 						<script>OppLostAff("unweavingmind")
 ak.psion.unweaving.mind = 0
@@ -22000,27 +21956,6 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^([\w'\-]+) suddenly seems much more vital\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Whisperingmadness</name>
-						<script>OppLostAff("whisperingmadness")
-setTriggerStayOpen("Opponent Ate", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^(\w+) ceases \w+ violent trembling\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22110,9 +22045,9 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Mycalium</name>
-						<script>OppLostAff("mycalium")
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Cured Whisperingmadness</name>
+						<script>OppLostAff("whisperingmadness")
 setTriggerStayOpen("Opponent Ate", 0)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -22129,6 +22064,71 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Cured Mycalium</name>
+						<script>OppLostAff("mycalium")
+setTriggerStayOpen("Opponent Ate", 0)</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^(\w+) ceases \w+ nervous trembling\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Eat Prompt</name>
+						<script>--BREAK IS HERE
+if not ak.currenteat then
+  return
+end
+deleteLine()
+if opponenteat == 1 then
+  if timerherb == 1 then
+    cecho("&lt;cyan&gt;-Ignored Cures")
+  end
+  if timerherb == 0 then
+    cecho("&lt;cyan&gt;Something is Fucked")
+    opponenteat = 0
+  end
+end
+if opponenteat == 0 then
+  opponenteat = 1
+  timerherb = 1
+  herbtimer = tempTimer(.7, [[opponenteat = 0;timerherb = 0]])
+  opponentrecenteat = true
+  herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])
+  ak.cure.ate(ak.currenteat, false)
+end
+ak.currenteat = false
+ak.showPrompt()
+setTriggerStayOpen("Opponent Ate", 0)</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string></string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>7</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</Trigger>
@@ -22437,7 +22437,7 @@ setTriggerStayOpen("Opponent Tree", 0)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(\w+) ceases \w+ violent trembling\.$</string>
+							<string>^(\w+) ceases \w+ nervous trembling\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
