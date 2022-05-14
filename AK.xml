@@ -15990,7 +15990,7 @@ end</script>
 							<string>^Your blow scythes through the air in front of ([\w'\-]+)\, missing entirely\.$</string>
 							<string>^Your blow cleaves through the magical shield surrounding ([\w'\-]+), continuing on to drive him from(his|her) feet\.$</string>
 							<string>^You find no magical shield surrounding ([\w'\-]+), and your power is unable to take hold\.$</string>
-							<string>^A savage slash of your knife trails crimson fire as you carve the logograph of the fissure into theair before (\w+)\.$</string>
+							<string>^A savage slash of your knife trails crimson fire as you carve the logograph of the fissure into the air before (\w+)\.$</string>
 							<string>^You cast a spell of erosion at (\w+)\.$</string>
 							<string>^In your mind\'s eye\, you see your meteor shatter (\w+)\'s shield\.$</string>
 							<string>^A violent cracking sound from the air in front of (\w+) heralds \w+ magical shield exploding into a shower of translucent shards\.$</string>
