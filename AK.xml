@@ -5488,7 +5488,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -7853,7 +7853,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13511,7 +13511,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Tarot Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -15939,8 +15939,13 @@ end</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Shield Down</name>
-						<script>if IsTargetted(matches[2]) then
-	 if ak.ai() then return end
+						<script>if ak.ai() then return end
+if matches[2] then
+  if IsTargetted(matches[2]) then
+   ak.defs.shield = false
+   ak.scoreup(matches[2])
+  end
+else
    ak.defs.shield = false
    ak.scoreup(matches[2])
 end</script>
@@ -15994,6 +15999,8 @@ end</script>
 							<string>^You cast a spell of erosion at (\w+)\.$</string>
 							<string>^In your mind\'s eye\, you see your meteor shatter (\w+)\'s shield\.$</string>
 							<string>^A violent cracking sound from the air in front of (\w+) heralds \w+ magical shield exploding into a shower of translucent shards\.$</string>
+							<string>You touch your tattoo and summon the hammer but find nothing to strike.</string>
+							<string>^You touch your tattoo and a massive, translucent hammer rises up and shatters the magical shield surrounding (\w+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -16034,6 +16041,8 @@ end</script>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
+							<integer>1</integer>
+							<integer>3</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
