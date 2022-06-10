@@ -27002,10 +27002,7 @@ end
 
 function ak.MountLookPrompt()
 	disableTrigger("Look Prompt")
-	ak.GHLookPrompt()
-	ak.submergedLookPrompt()
-	ak.FloodLookPrompt()
-  ak.distortionLookPrompt()
+	ak.parseRoomInventoryOffense()
 	if WhoHereTable and not table.contains(WhoHereTable,target) then return end
 	if ak.mounted == ak.lookmountedupdate then return end
 	ak.mounted = ak.lookmountedupdate
@@ -27031,13 +27028,17 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>Room Defs</name>
 					<packageName></packageName>
-					<script>-------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
+					<script>function ak.parseRoomInventoryOffense()
+	ak.GHLookPrompt()
+  ak.PentagramLookPrompt()
+	ak.submergedLookPrompt()
+	ak.FloodLookPrompt()
+  ak.distortionLookPrompt()
+end
 -------------------------------------------------
 function ak.RoomDefs()
 	ak.lookghupdate = false
+  ak.lookpentagramupdate = false
 	ak.lookFloodupdate = false
 	ak.looksubmergedupdate = false
   ak.lookdistortionupdate = false
@@ -27045,6 +27046,7 @@ function ak.RoomDefs()
 	if ak.lookGH then killTrigger(ak.lookGH) end
 	if ak.lookFlood then killTrigger(ak.lookFlood) end
   if ak.lookdistortion then killTrigger(ak.lookdistortion) end
+  if ak.lookpentagram then killTrigger(ak.lookpentagram) end
 	ak.lookGH = tempTrigger("Hands of rotting flesh and white bone push up from the ground.",[[
 		ak.GhLookHanded()
 	]])
@@ -27061,6 +27063,10 @@ end
 function ak.GhLookHanded()
 	killTrigger(ak.lookGH)
 	ak.lookghupdate = true
+end
+function ak.PentagramLookHanded()
+  killTrigger(ak.lookPentagram)
+  ak.lookpentagramupdate = true
 end
 function ak.FloodLookHanded()
 	killTrigger(ak.lookFlood)
@@ -27081,6 +27087,14 @@ function ak.GHLookPrompt()
 	if ak.lookGH then killTrigger(ak.lookGH) end
 	ak.lookGH = nil
 	ak.scoreup(target)
+end
+
+function ak.PentagramLookPrompt()
+  if ak.pentagram == ak.lookpentagramupdate then return end
+  ak.pentagram = ak.lookpentagramupdate
+  if ak.lookPentagram then killTrigger(ak.lookPentagram) end
+  ak.lookPentagram = nil
+  ak.scoreup(target)
 end
 
 function ak.FloodLookPrompt()
