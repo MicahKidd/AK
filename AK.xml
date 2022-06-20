@@ -1741,7 +1741,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Apostate Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -1756,7 +1756,7 @@ end</script>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList />
 				<regexCodePropertyList />
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Stared</name>
 					<script>if ak.ai() then
   return
@@ -1831,7 +1831,7 @@ end</script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Sicken</name>
 					<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then
@@ -1863,6 +1863,82 @@ end
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) doubles over\, eyes bulging\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Deadeyes</name>
+					<script>if ak.ai() then
+  return
+end
+local aff = matches[2]
+if nextcurse then
+  if nextcurse == "breach" then
+  elseif nextcurse == "sicken" then
+    if affstrack.score.paralysis &lt; 100 then
+      nextcurse = "paralysis"
+    elseif affstrack.score.healthleech &lt; 100 then
+      nextcurse = "manaleech"
+    else
+      nextcurse = "slickness"
+    end
+  elseif nextcurse == "plague" then
+    nextcurse = "voyria"
+  elseif nextcurse == "clumsy" then
+    nextcurse = "clumsiness"
+  elseif nextcurse == "dizzy" then
+    nextcurse = "dizziness"
+  elseif nextcurse == "stupid" then
+    nextcurse = "stupidity"
+  elseif nextcurse == "vomiting" then
+    nextcurse = "nausea"
+  elseif nextcurse == "reckless" then
+    nextcurse = "recklessness"
+  end
+  OppGainedAff(nextcurse)
+  nextcurse = nil
+  return
+end
+if nextcurse2 then
+  if nextcurse2 == "breach" then
+  elseif nextcurse2 == "sicken" then
+    if affstrack.score.paralysis &lt; 100 then
+      nextcurse2 = "paralysis"
+    elseif affstrack.score.healthleech &lt; 100 then
+      nextcurse2 = "manaleech"
+    else
+      nextcurse2 = "slickness"
+    end
+  elseif nextcurse2 == "plague" then
+    nextcurse2 = "voyria"
+  elseif nextcurse2 == "clumsy" then
+    nextcurse2 = "clumsiness"
+  elseif nextcurse2 == "dizzy" then
+    nextcurse2 = "dizziness"
+  elseif nextcurse2 == "stupid" then
+    nextcurse2 = "stupidity"
+  elseif nextcurse2 == "vomiting" then
+    nextcurse2 = "nausea"
+  elseif nextcurse2 == "reckless" then
+    nextcurse2 = "recklessness"
+  end
+  OppGainedAff(nextcurse2)
+  nextcurse2 = nil
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^Summoning up the curse of (\w+), you stare at (\w+)\, giving (her|him) the evil eye\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5575,7 +5651,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
