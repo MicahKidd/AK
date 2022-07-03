@@ -1343,7 +1343,8 @@ end	</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Wrack</name>
 					<script>if alchemistwrack then
-   OppGainedAff(alchemistwrack)
+  cecho(alchemisttruewrack.." "..alchemisttruewracktwo)
+  OppGainedAff(alchemistwrack)
 end
 
 --matches[3] == humor wracked
@@ -1369,8 +1370,9 @@ end
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>TrueWrack</name>
 					<script>if alchemisttruewrack then
-   OppGainedAff(alchemisttruewrack)
-   OppGainedAff(alchemisttruewracktwo)
+  cecho(alchemisttruewrack.." "..alchemisttruewracktwo)
+  OppGainedAff(alchemisttruewrack)
+  OppGainedAff(alchemisttruewracktwo)
 end
 
 --matches[3] + matches[3] == humor wracked</script>
