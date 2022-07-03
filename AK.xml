@@ -185,7 +185,16 @@ end
 currentenvenom = matches[3]
 currentvenoms = currentvenoms or {}
 currentvenoms[currentenvenom] = currentvenoms[currentenvenom] or {}
-table.insert(currentvenoms[currentenvenom],1,matches[2])
+if #currentvenoms[currentenvenom] &gt; 0 then
+  local lockout = {"torture","tormentone","tormenttwo","exploit"}
+  if table.contains(lockout,currentvenoms[currentenvenom][1]) then
+    table.insert(currentvenoms[currentenvenom],2,matches[2])
+  else
+    table.insert(currentvenoms[currentenvenom],1,matches[2])
+  end
+else
+  table.insert(currentvenoms[currentenvenom],1,matches[2])
+end
 --display(currentvenoms[currentenvenom][1])
 if gmcp.Char.Status.class == "Magi" and (inretardation() or inaeon()) then
    ak.scoreup(target)
@@ -5476,7 +5485,7 @@ ak.scoreup(target)</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Investicated</name>
 					<script>if ak.ai() then return end
-currentenvenom = matches[2]
+local currentenvenom = matches[2]
 currentvenoms = currentvenoms or {}
 currentvenoms[currentenvenom] = currentvenoms[currentenvenom] or {}
 local blah = matches[3]
