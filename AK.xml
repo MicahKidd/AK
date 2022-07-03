@@ -183,8 +183,8 @@ end
 					<name>Weapon Envenomed</name>
 					<script>if ak.ai() then return end
 currentenvenom = matches[3]
-if not currentvenoms then currentvenoms = {} end
-if not currentvenoms[currentenvenom] then currentvenoms[currentenvenom] = {} end
+currentvenoms = currentvenoms or {}
+currentvenoms[currentenvenom] = currentvenoms[currentenvenom] or {}
 table.insert(currentvenoms[currentenvenom],1,matches[2])
 --display(currentvenoms[currentenvenom][1])
 if gmcp.Char.Status.class == "Magi" and (inretardation() or inaeon()) then
@@ -270,9 +270,14 @@ currentvenoms = currentvenoms or {}
 weaponattack = weaponattack or {}
 if #weaponattack &gt; 0 then
    for i = 1, #weaponattack do
-      currentvenoms[weaponattack[i]] = currentvenoms[weaponattack[i]] or {1}
-      table.insert(hitrelay, affstrack.venoms[currentvenoms[weaponattack[i]][1]])
-      table.remove(currentvenoms[weaponattack[i]], 1)    
+      currentvenoms[weaponattack[i]] = currentvenoms[weaponattack[i]] or {}
+      if #currentvenoms[weaponattack[i]] ~= 0 then
+        table.insert(hitrelay, affstrack.venoms[currentvenoms[weaponattack[i]][1]])
+        if currentvenoms[weaponattack[i]][1] == "exploit" then
+          table.insert(hitrelay,"paranoia")
+        end
+        table.remove(currentvenoms[weaponattack[i]], 1)    
+      end
    end
 end
 if #boardaffs &gt; 0 then
@@ -5452,6 +5457,63 @@ ak.scoreup(target)</script>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
+			</TriggerGroup>
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Infernal Group</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Investicated</name>
+					<script>if ak.ai() then return end
+currentenvenom = matches[2]
+currentvenoms = currentvenoms or {}
+currentvenoms[currentenvenom] = currentvenoms[currentenvenom] or {}
+local blah = matches[3]
+if blah == "corrupt the blood of the heathens" then
+  table.insert(currentvenoms[currentenvenom],1,"torture")
+elseif blah == "torment the heathens" then
+  if affstrack.score.healthleech == 100 then
+    table.insert(currentvenoms[currentenvenom],1,"tormenttwo")
+  else
+    table.insert(currentvenoms[currentenvenom],1,"tormentone")
+  end
+elseif blah == "exploit the weakness of the heathens" then
+  table.insert(currentvenoms[currentenvenom],1,"exploit")
+elseif blah == "exploit the heathen's suffering" then
+  --table.insert(currentvenoms[currentenvenom],1,"agony")
+elseif blah == "punish the heathens" then
+  --table.insert(currentvenoms[currentenvenom],1,"punishment")
+end
+
+</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You invest necromantic energies into (.+)\, preparing to (.+)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
@@ -24792,7 +24854,13 @@ affstrack = {
                 ["voyria"]     = "voyria",
                 ["pothealthleech"]= "healthleech",
                 ["potloneliness"] = "loneliness",
-                ["potepilepsy"]   = "epilepsy"
+                ["potepilepsy"]   = "epilepsy",
+                ["torture"]  = "haemophilia",
+                ["tormentone"] = "healthleech",
+                ["tormenttwo"] = "confusion",
+                ["exploit"] = "weariness",
+                
+                
         },
  
         applied = {
@@ -25571,6 +25639,7 @@ function ak.KillTriggers()
   disableTrigger("Sentinel Group")
   disableTrigger("Depthswalker Group")
   disableTrigger("Runewarden Group")
+  disableTrigger("Infernal Group")
   disableTrigger("2h Group")
   disableTrigger("Druid Group")
   disableTrigger("Totem Group")
@@ -25664,6 +25733,8 @@ function ak.classenable()
       enableTrigger("Paladin Group")
     elseif gmcp.Char.Status.class == "Runewarden" then
       enableTrigger("Runewarden Group")
+    elseif gmcp.Char.Status.class == "Infernal" then
+      enableTrigger("Infernal Group")
     end
     enableTrigger("Totem Group")
     enableTrigger("2h Group")
