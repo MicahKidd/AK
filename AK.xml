@@ -1343,7 +1343,6 @@ end	</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Wrack</name>
 					<script>if alchemistwrack then
-  cecho(alchemisttruewrack.." "..alchemisttruewracktwo)
   OppGainedAff(alchemistwrack)
 end
 
