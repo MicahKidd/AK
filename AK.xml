@@ -9875,9 +9875,9 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Transcendence</name>
 							<script>deleteLine()
+ak.psion.transcend = tonumber(matches[2])
 if sinister and sinister.gagging then return end
-cecho("&lt;LightGoldenrod&gt;\n " ..matches[2].. "\% Transcendance\n")
-ak.psion.transcend = tonumber(matches[2])</script>
+cecho("&lt;LightGoldenrod&gt;\n " ..matches[2].. "\% Transcendance\n")</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -9898,9 +9898,9 @@ ak.psion.transcend = tonumber(matches[2])</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Transcendance fading</name>
 							<script>deleteLine()
+ak.psion.transcend = tonumber(matches[2])
 if sinister and sinister.gagging then return end
-cecho("&lt;LightGoldenrod&gt;\n " ..matches[2].. "\% Transcendance\n")
-ak.psion.transcend = tonumber(matches[2])</script>
+cecho("&lt;LightGoldenrod&gt;\n " ..matches[2].. "\% Transcendance\n")</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -9941,8 +9941,9 @@ ak.psion.transcend = tonumber(matches[2])</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Transcendence Full</name>
 							<script>deleteLine()
-cecho("&lt;LightGoldenrod&gt;\nTranscended!\n")
-ak.psion.transcend = 100</script>
+ak.psion.transcend = 100
+if sinister and sinister.gagging then return end
+cecho("&lt;LightGoldenrod&gt;\nTranscended!\n")</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
