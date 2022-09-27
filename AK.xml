@@ -10492,7 +10492,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11542,7 +11542,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12518,7 +12518,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -14471,7 +14471,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -23938,10 +23938,12 @@ end
 						<string>[System]: Queued eb commands cleared.</string>
 						<string>Cleared your queues.</string>
 						<string>[System]: Queued eb!t commands cleared.</string>
+						<string>[System]: All queued commands cleared.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
 						<integer>2</integer>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
@@ -23997,8 +23999,10 @@ end</script>
 					<regexCodeList>
 						<string>[System]: Queued eb commands cleared.</string>
 						<string>[System]: Queued eb!t commands cleared.</string>
+						<string>[System]: All queued commands cleared.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>3</integer>
 						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
@@ -24664,56 +24668,49 @@ ak.oresetparse()
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^ora$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackra")</script>
+				<script>send("queue addclear eqbal oattackra")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^ora$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^ola$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackla")</script>
+				<script>send("queue addclear eqbal oattackla")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^ola$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^orl$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackrl")</script>
+				<script>send("queue addclear eqbal oattackrl")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^orl$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^oll$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackll")</script>
+				<script>send("queue addclear eqbal oattackll")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^oll$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^odst$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattack")</script>
+				<script>send("queue addclear eqbal oattack")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^odst$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^oah$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackh")</script>
+				<script>send("queue addclear eqbal oattackh")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^oah$</regex>
 			</Alias>
 			<Alias isActive="yes" isFolder="no">
 				<name>^oat$</name>
-				<script>send("clearqueue all")
-send("queue add eqbal oattackt")</script>
+				<script>send("queue addclear eqbal oattackt")</script>
 				<command></command>
 				<packageName></packageName>
 				<regex>^oat$</regex>
