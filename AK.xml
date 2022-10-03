@@ -25793,15 +25793,15 @@ function ak.classenable()
     ak.KillTriggers()
     enableTrigger("Apostate Group")
     cecho("&lt;yellow&gt;\nABOSTATE ENABLED\n")
-  elseif gmcp.Char.Status.class == "water Elemental Lord" then
+  elseif gmcp.Char.Status.class == "water Elemental Lord" or gmcp.Char.Status.class == "water Elemental Lady" then
     ak.KillTriggers()
     enableTrigger("Water Lord Group")
     cecho("&lt;yellow&gt;\n\nWATER ELEMENTAL ENABLED\n")
-  elseif gmcp.Char.Status.class == "air Elemental Lord" then
+  elseif gmcp.Char.Status.class == "air Elemental Lord" or gmcp.Char.Status.class == "air Elemental Lady" then
     ak.KillTriggers()
     enableTrigger("Air Lord Group")
     cecho("&lt;yellow&gt;\nAIR ELEMENTAL ENABLED\n")
-  elseif gmcp.Char.Status.class == "fire Elemental Lord" then
+  elseif gmcp.Char.Status.class == "fire Elemental Lord" or gmcp.Char.Status.class == "fire Elemental Lady" then
     ak.KillTriggers()
     enableTrigger("Fire Lord Group")
     cecho("&lt;yellow&gt;\nFire ELEMENTAL ENABLED\n\n")
@@ -26678,15 +26678,15 @@ function ak.serveraliases()
     if ak.bard.setattacks then
       ak.bard.setattacks()
     end
-  elseif gmcp.Char.Status.class == "fire Elemental Lord" and not inlyre() then
+  elseif (gmcp.Char.Status.class == "fire Elemental Lady" or gmcp.Char.Status.class == "fire Elemental Lord") and not inlyre() then
     if ak.ignition.setattacks then
       ak.ignition.setattacks()
     end
-  elseif gmcp.Char.Status.class == "air Elemental Lord" and not inlyre() then
+  elseif (gmcp.Char.Status.class == "air Elemental Lady" or gmcp.Char.Status.class == "air Elemental Lord") and not inlyre() then
     if ak.stack == "Duress" and ak.duress and ak.duress.compress then
       ak.duress.compression()
     end
-  elseif gmcp.Char.Status.class == "water Elemental Lord" and not inlyre() then
+  elseif (gmcp.Char.Status.class == "water Elemental Lady" or gmcp.Char.Status.class == "water Elemental Lord") and not inlyre() then
     if ak.pervasion.setattacks then
       ak.pervasion.setattacks()
     end
@@ -26815,11 +26815,11 @@ function ak.defaultstack()
       ak.stack = "PsiLock"
    elseif gmcp.Char.Status.class == "Pariah" then
       ak.stack = "Pariah"
-   elseif gmcp.Char.Status.class == "air Elemental Lord" then
+   elseif gmcp.Char.Status.class == "air Elemental Lord" or gmcp.Char.Status.class == "air Elemental Lady" then
       ak.stack = "Duress"
-   elseif gmcp.Char.Status.class == "water Elemental Lord" then
+   elseif gmcp.Char.Status.class == "water Elemental Lord" or gmcp.Char.Status.class == "water Elemental Lady" then
       ak.stack = "Perversion"
-   elseif gmcp.Char.Status.class == "fire ELemental Lord" then
+   elseif gmcp.Char.Status.class == "fire ELemental Lord" or gmcp.Char.Status.class == "fire Elemental Lady" then
       ak.stack = "Ignition"
    elseif gmcp.Char.Status.class == "Infernal" or gmcp.Char.Status.class == "Paladin" or gmcp.Char.Status.class == "Runewarden" then   
       if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] == "Spec: Dual Cutting" then
