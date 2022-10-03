@@ -80,7 +80,7 @@ ak.limbs.limbreset(matches[2])</script>
 					<string>^([\w'\-]+) has been slain by [\w'\-]+\.$</string>
 					<string>^([\w'\-]+)\'s body disintegrates and a ghostly spirit rises from the ashes\. The ghost cries out in pain as a body forms around [\w'\-]+ that has .*\.$</string>
 					<string>^The last vestiges of strength having ebbed from ([\w'\-]+)\'s body\, [\w'\-]+ sinks to the floor with a sigh\.Suddenly\, your surroundings are enveloped in a blinding white light\, forcing you to cower with your hands over your eyes\. When you tentatively open them once more\, you are astonished to find ([\w'\-]+) alive once more\.$</string>
-					<string>^The last vestiges of strength having ebbed from ([\w'\-]+)\'s body\, (?:he|she) sinks to the floor with a sigh\. Suddenly\, your surroundings are enveloped in a blinding white light\, forcing you to cower with your hands over your eyes\. When you tentatively open them once more\, you are astonished to find [\w'\-]+ alive once more\.$</string>
+					<string>^The last vestiges of strength having ebbed from ([\w'\-]+)\'s body\, \w+ sinks to the floor with a sigh\. Suddenly\, your surroundings are enveloped in a blinding white light\, forcing you to cower with your hands over your eyes\. When you tentatively open them once more\, you are astonished to find [\w'\-]+ alive once more\.$</string>
 				</regexCodeList>
 				<regexCodePropertyList>
 					<integer>1</integer>
@@ -247,7 +247,7 @@ end
 					<regexCodeList>
 						<string>^([\w'\-]+) dodges nimbly out of the way\.$</string>
 						<string>^([\w'\-]+) quickly jumps back, avoiding the attack\.$</string>
-						<string>^([\w'\-]+) twists (his|her) body out of harm's way\.$</string>
+						<string>^([\w'\-]+) twists \w+ body out of harm's way\.$</string>
 						<string>^A reflection of ([\w'\-]+) blinks out of existence.$</string>
 						<string>^([\w'\-]+) parries the attack with a deft manoeuvre.$</string>
 						<string>^([\w'\-]+) steps into the attack, grabs your arm, and throw</string>
@@ -397,7 +397,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^With a look of agony on [\w'\-]+ face\, ([\w'\-]+) manages to writhe (herself|himself) free of the weapon which impaled [\w'\-]+\.$</string>
+						<string>^With a look of agony on [\w'\-]+ face\, ([\w'\-]+) manages to writhe \w+ free of the weapon which impaled [\w'\-]+\.$</string>
 						<string>^With a vicious snarl you carve a merciless swathe through the steaming guts of ([\w'\-]+)\, who gurgles and chokes as you withdraw your dripping blade\, glistening with gore\.$</string>
 						<string>^With a vicious snarl [\w'\-]+ carves a merciless swathe through the steaming guts of ([\w'\-]+)\, who gurgles and chokes as [\w'\-]+ withdraws [\w'\-]+ dripping blade\, glistening with gore\.$</string>
 						<string>^With a snarl of contempt\, you allow ([\w'\-]+) to slide free of your weapon\.$</string>
@@ -629,7 +629,7 @@ ak.scoreup(target)
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You lash out at ([\w'\-]+) as (she|he) turns to flee\.$</string>
+						<string>^You lash out at ([\w'\-]+) as \w+ turns to flee\.$</string>
 						<string>You drop back and ease the engagement.</string>
 						<string>You attempt to strike at your target as they leave, but find yourself in no condition to swing a blade.</string>
 					</regexCodeList>
@@ -734,7 +734,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is at normal levels\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is at normal levels\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -758,7 +758,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is slightly elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is slightly elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -782,7 +782,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -806,7 +806,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is moderately elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is moderately elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -830,7 +830,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is severely elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is severely elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -854,7 +854,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is extremely elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is extremely elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -880,7 +880,7 @@ cecho("\n&lt;cyan&gt;Pressure lvl: &lt;yellow&gt;"..ak.duress.pressure)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding (?:him|her) is terminally elevated\.$</string>
+							<string>^Studying ([\w'\-]+), you determine that the pressure surrounding \w+ is terminally elevated\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -969,7 +969,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You rip the air from the lungs of ([\w'\-]+) in a single instant, blood and mucus dripping from (?:her|his) mouth as (?:he|she) doubles over with hacking coughs\.$</string>
+						<string>^You rip the air from the lungs of ([\w'\-]+) in a single instant, blood and mucus dripping from \w+ mouth as \w+ doubles over with hacking coughs\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1055,7 +1055,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) clutches at (?:her|his) throat, eyes bulging as (?:she|he) struggles to draw breath\.$</string>
+						<string>^([\w'\-]+) clutches at \w+ throat, eyes bulging as \w+ struggles to draw breath\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1117,7 +1117,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You bend your will upon ([\w'\-]+), summoning forth a howling wind to rip the flesh from (?:her|his) bones\.$</string>
+						<string>^You bend your will upon ([\w'\-]+), summoning forth a howling wind to rip the flesh from \w+ bones\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1142,7 +1142,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^A howling wind sweeps over ([\w'\-]+), ripping flesh from bone and leaving (?:her|his) face a bloody ruin\.$</string>
+						<string>^A howling wind sweeps over ([\w'\-]+), ripping flesh from bone and leaving \w+ face a bloody ruin\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1203,7 +1203,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You cast out your hand towards ([\w'\-]+)\, calling forth an icy zephyr to rip the strength from (?:him|her)\.$</string>
+						<string>^You cast out your hand towards ([\w'\-]+)\, calling forth an icy zephyr to rip the strength from \w+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1402,7 +1402,7 @@ end
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^You send ripples throughout ([\w'\-]+)'s body, wracking ([\w'\-]+) ([\w'\-]+) and ([\w'\-]+) humours\.$</string>
-						<string>^You send ripples throughout the body of ([\w'\-]+), as you wrack (his|her) ([\w'\-]+) humour twice.$</string>
+						<string>^You send ripples throughout the body of ([\w'\-]+), as you wrack \w+ ([\w'\-]+) humour twice.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -1458,14 +1458,14 @@ end</script>
 					</regexCodePropertyList>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Tempers</name>
-						<script>if matches[3] == "sanguine" then
-	ak.alchemist.humour.sanguine = tonumber(matches[4])
-elseif matches[3] == "phlegmatic" then
-	ak.alchemist.humour.phlegmatic = tonumber(matches[4])
-elseif matches[3] == "choleric" then
-	ak.alchemist.humour.choleric = tonumber(matches[4])
-elseif matches[3] == "melancholic" then
-	ak.alchemist.humour.melancholic = tonumber(matches[4])
+						<script>if matches[2] == "sanguine" then
+	ak.alchemist.humour.sanguine = tonumber(matches[3])
+elseif matches[2] == "phlegmatic" then
+	ak.alchemist.humour.phlegmatic = tonumber(matches[3])
+elseif matches[2] == "choleric" then
+	ak.alchemist.humour.choleric = tonumber(matches[3])
+elseif matches[2] == "melancholic" then
+	ak.alchemist.humour.melancholic = tonumber(matches[3])
 end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -1478,7 +1478,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(His|Her) ([\w'\-]+) humour has been tempered a total of (\d+) times.$</string>
+							<string>^\w+ ([\w'\-]+) humour has been tempered a total of (\d+) times.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1513,7 +1513,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^(His|Her) (health|mana) is at (\d+) out of (\d+).$</string>
+							<string>^\w+ (health|mana) is at (\d+) out of (\d+).$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1647,7 +1647,7 @@ ak.alchemist.humour.phlegmatic = 0</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You inundate ([\w'\-]+)\'s phlegmatic humour\, and (his|her) eyes grow vacant\.$</string>
+							<string>^You inundate ([\w'\-]+)\'s phlegmatic humour\, and \w+ eyes grow vacant\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -1841,7 +1841,7 @@ OppGainedAff(nextcurse)
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Summoning up the curse of (\w+), you stare at (\w+)\, giving (her|him) the evil eye\.$</string>
+						<string>^Summoning up the curse of (\w+), you stare at (\w+)\, giving \w+ the evil eye\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -2118,7 +2118,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^([\w'\-]+) cries out with a look of surprise as the Bagatelle restores (his|her) hearing\.$</string>
+								<string>^([\w'\-]+) cries out with a look of surprise as the Bagatelle restores \w+ hearing\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -2156,7 +2156,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^([\w'\-]+) drifts away into the soft music of the Berceuse\, abandoning (him|her)self to its soporific tones\.$</string>
+								<string>^([\w'\-]+) drifts away into the soft music of the Berceuse\, abandoning \w+ to its soporific tones\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -2183,7 +2183,7 @@ end</script>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>^([\w'\-]+)\'s eyes close suddenly as (s|)he falls asleep\.$</string>
-								<string>^([\w'\-]+) drifts away into the soft music of the Berceuse\, abandoning (him|her)self to its soporific tones\.$</string>
+								<string>^([\w'\-]+) drifts away into the soft music of the Berceuse\, abandoning \w+ to its soporific tones\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -2446,8 +2446,8 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You begin reciting an epic tale of the heroism of Nicator to ([\w'\-]+)\, holding (him|her) spellbound\.$</string>
-							<string>^The songbird upon your shoulder begins to perfectly mimic the recitation of an epic tale of the heroism of Nicator to ([\w'\-]+)\, holding (him|her) spellbound\.$</string>
+							<string>^You begin reciting an epic tale of the heroism of Nicator to ([\w'\-]+)\, holding \w+ spellbound\.$</string>
+							<string>^The songbird upon your shoulder begins to perfectly mimic the recitation of an epic tale of the heroism of Nicator to ([\w'\-]+)\, holding \w+ spellbound\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -3324,7 +3324,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Thrusting at ([\w'\-]+)'s chest with a blade hand outstretched, you release an unmitigated torrent of Shin energy upon h(?:im|er), and (he|she) crumples helplessly\.$</string>
+							<string>Thrusting at ([\w'\-]+)'s chest with a blade hand outstretched, you release an unmitigated torrent of Shin energy upon \w+, and \w+ crumples helplessly\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -4037,7 +4037,7 @@ end</script>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>As the weapon strikes</string>
-								<string>^As the weapon strikes ([\w'\-]+), s?he seems greatly diminished\.$</string>
+								<string>^As the weapon strikes ([\w'\-]+), \w+ seems greatly diminished\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -4123,7 +4123,7 @@ end</script>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>As the weapon strikes</string>
-								<string>^As the weapon strikes ([\w'\-]+), (?:his|her) face grows vacant and s?he begins to tremble\.$</string>
+								<string>^As the weapon strikes ([\w'\-]+), \w+ face grows vacant and \w+ begins to tremble\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>2</integer>
@@ -4847,7 +4847,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You raise your trunk into the air before (\w+) and trumpet mightily, knocking (?:him|her) to the ground\.$</string>
+						<string>^You raise your trunk into the air before (\w+) and trumpet mightily, knocking \w+ to the ground\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -4869,7 +4869,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You trumpet mightly at (\w+) but (?:he|she) is unaffected\.$</string>
+						<string>^You trumpet mightly at (\w+) but \w+ is unaffected\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5022,7 +5022,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Abruptly the keening ends, and a blossom of ethereal tendrils bursts from ([\w'\-]+)'s chest, ensnaring (him|her) in a web of undulating bonds\.$</string>
+						<string>^Abruptly the keening ends, and a blossom of ethereal tendrils bursts from ([\w'\-]+)'s chest, ensnaring \w+ in a web of undulating bonds\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5083,7 +5083,7 @@ ak.scoreup(matches[3])</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>You skilfully whirl (.*) toward ([\w'\-]+)\, slamming the balls of metal into (him|her)\.$</string>
+						<string>You skilfully whirl (.*) toward ([\w'\-]+)\, slamming the balls of metal into \w+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5216,7 +5216,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Bending the might of Kkractle upon the pitiful ([\w'\-]+), you command that (she|he) burn from within\.$</string>
+						<string>^Bending the might of Kkractle upon the pitiful ([\w'\-]+), you command that \w+ burn from within\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5239,7 +5239,7 @@ ak.scoreup(matches[2])</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You reach out and clasp the face of ([\w'\-]+) between your hands, (her|his) skin rapidly beginning to blacken beneath your grasp\.$</string>
+						<string>^You reach out and clasp the face of ([\w'\-]+) between your hands, \w+ skin rapidly beginning to blacken beneath your grasp\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5262,7 +5262,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You fashion a weave of flame and cast it about ([\w'\-]+), entangling (him|her) in its conflagrant tendrils\.$</string>
+						<string>^You fashion a weave of flame and cast it about ([\w'\-]+), entangling \w+ in its conflagrant tendrils\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5317,10 +5317,11 @@ end
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Vapourise</name>
 					<script>if IsTargetted(matches[2]) then
+   ak.defs.shield = false
    OppGainedAff("aflame")
 	 ak.defs.shield = false
 end
-ak.scoreup(matches[2])</script>
+</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -5332,7 +5333,7 @@ ak.scoreup(matches[2])</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You superheat the air surrounding ([\w'\-]+)\, (his|her) magical shield shattering under the onslaught and (his|her)skin catching aflame\.$</string>
+						<string>^You superheat the air surrounding ([\w'\-]+)\, \w+ magical shield shattering under the onslaught and \w+ skin catching aflame\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -5971,7 +5972,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Stepping inside the guard of ([\w'\-]+)\, you lock your hands behind (her|him) before savagely wrenching (her|him) forward\, driving your knee up beneath (her|his) ribs\.$</string>
+						<string>^Stepping inside the guard of ([\w'\-]+)\, you lock your hands behind \w+ before savagely wrenching \w+ forward\, driving your knee up beneath \w+ ribs\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -6467,7 +6468,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) trembles and [\w'\-]+ eyes widen in terror\. (She|He) looks around (herself|himself) as if searching for something that isn\'t there\.$</string>
+							<string>^([\w'\-]+) trembles and [\w'\-]+ eyes widen in terror\. \w+ looks around \w+ as if searching for something that isn\'t there\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -7291,8 +7292,8 @@ ak.deleteFull()</script>
 									<string>She has been granted the boon of travelling to mutual allies.</string>
 									<string>The vitality of the boar is energising him.</string>
 									<string>The vitality of the boar is energising her.</string>
-									<string>^(He|She) is benefitting from a \d+\% bonus to critical hits\.$</string>
-									<string>^(He|She) is blocking the exit [\w'\-]+\.$</string>
+									<string>^(Fae|He|She) is benefitting from a \d+\% bonus to critical hits\.$</string>
+									<string>^(Fae|He|She) is blocking the exit [\w'\-]+\.$</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
@@ -7854,7 +7855,7 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^You stare intently at ([\w'\-]+), opening [\w'\-]+ mind to the unspeakable visions that spew from the bowels of hell\.$</string>
-						<string>^(w+) claws at {his|her} eyes, fingers scrabbling frantically.$</string>
+						<string>^(w+) claws at \w+ eyes, fingers scrabbling frantically.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -9556,7 +9557,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You draw ([\w'\-]+) into your gaze, lowering your brow and glaring at (him|her) with righteous fury</string>
+						<string>^You draw ([\w'\-]+) into your gaze, lowering your brow and glaring at \w+ with righteous fury</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -9675,7 +9676,7 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^You stare intently at ([\w'\-]+), opening [\w'\-]+ mind to the unspeakable visions that spew from the bowels of hell\.$</string>
-						<string>^(w+) claws at {his|her} eyes, fingers scrabbling frantically.$</string>
+						<string>^(w+) claws at \w+ eyes, fingers scrabbling frantically.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -9757,7 +9758,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Your blow cleaves through the magical shield surrounding ([\w'\-]+)\, continuing on to drive (?:him|her) from (?:his|her) feet\.$</string>
+							<string>^Your blow cleaves through the magical shield surrounding ([\w'\-]+)\, continuing on to drive \w+ from \w+ feet\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -9829,7 +9830,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You lash out with a translucent lash, entangling it about the feet of ([\w'\-]+) and sending (?:him|her) tumbling to the ground with a sharp tug\.$</string>
+							<string>^You lash out with a translucent lash, entangling it about the feet of ([\w'\-]+) and sending \w+ tumbling to the ground with a sharp tug\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -10272,7 +10273,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^You lash at ([\w'\-]+) with a translucent lash, directing the fundamental weave of (?:his|her) (mind|body|spirit) to begin unwinding\.$</string>
+								<string>^You lash at ([\w'\-]+) with a translucent lash, directing the fundamental weave of \w+ (mind|body|spirit) to begin unwinding\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -10307,7 +10308,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^You detect fluctuations in the essence of ([\w'\-]+) as (?:his|her) (mind|body|spirit) becomes critically close to unweaving utterly\.$</string>
+								<string>^You detect fluctuations in the essence of ([\w'\-]+) as \w+ (mind|body|spirit) becomes critically close to unweaving utterly\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -10345,8 +10346,8 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^Lightning explodes from your weapon as it smashes into ([\w'\-]+), (?:his|her) body locking up in agony as it rips through (?:him|her)\.$</string>
-								<string>^Lightning explodes from your blade as you hack into ([\w'\-]+), (?:his|her) body locking up as the current rips through (?:him|her)\.$</string>
+								<string>^Lightning explodes from your weapon as it smashes into ([\w'\-]+), \w+ body locking up in agony as it rips through \w+\.$</string>
+								<string>^Lightning explodes from your blade as you hack into ([\w'\-]+), \w+ body locking up as the current rips through \w+\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -10437,7 +10438,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^As your weapon strikes ([\w'\-]+) a wave of cloying vapours rolls over (?:him|her)\.$</string>
+								<string>^As your weapon strikes ([\w'\-]+) a wave of cloying vapours rolls over \w+\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -10795,7 +10796,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You expertly flourish a .* in front of the eyes of ([\w'\-]+)\, mesmerising (?:him|her) with your skill\.$</string>
+						<string>^You expertly flourish a .* in front of the eyes of ([\w'\-]+)\, mesmerising \w+ with your skill\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -10864,7 +10865,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You flourish a .* before the eyes of ([\w'\-]+)\, restoring (his|her) blindness\.$</string>
+						<string>^You flourish a .* before the eyes of ([\w'\-]+)\, restoring \w+ blindness\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -11023,7 +11024,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You trumpet mightly at (\w+) but (?:he|she) is unaffected\.$</string>
+							<string>^You trumpet mightly at (\w+) but \w+ is unaffected\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -11049,7 +11050,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^You raise your trunk into the air before (\w+) and trumpet mightily, knocking (?:him|her) to the ground\.$</string>
+							<string>^You raise your trunk into the air before (\w+) and trumpet mightily, knocking \w+ to the ground\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -11533,7 +11534,7 @@ end</script>
 							<colorTriggerFgColor>#000000</colorTriggerFgColor>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
-								<string>^A grumpy badger lunges at (\w+), claws raking across (?:his|her) throat\.$</string>
+								<string>^A grumpy badger lunges at (\w+), claws raking across \w+ throat\.$</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
@@ -11606,7 +11607,7 @@ end</script>
 					<regexCodeList>
 						<string>^([\w'\-]+) dodges nimbly out of the way\.$</string>
 						<string>^([\w'\-]+) quickly jumps back, avoiding the attack\.$</string>
-						<string>^([\w'\-]+) twists (his|her) body out of harm's way\.$</string>
+						<string>^([\w'\-]+) twists \w+ body out of harm's way\.$</string>
 						<string>^A reflection of ([\w'\-]+) blinks out of existence.$</string>
 						<string>^([\w'\-]+) parries the attack with a deft manoeuvre.$</string>
 						<string>^([\w'\-]+) steps into the attack, grabs your arm, and throw</string>
@@ -12563,7 +12564,7 @@ enableTrigger("Confirmed Hit")                        --DO NOT CHANGE!</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You duck low and smash your shield into the knees of ([\w'\-]+), causing them to buckle underneath (him|her)\.$</string>
+						<string>^You duck low and smash your shield into the knees of ([\w'\-]+), causing them to buckle underneath \w+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -12617,7 +12618,7 @@ enableTrigger("Confirmed Hit")                        --DO NOT CHANGE!</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You smash the edge of .* into the kneecaps of ([\w'\-]+), causing (him|her) to stumble\.$</string>
+						<string>^You smash the edge of .* into the kneecaps of ([\w'\-]+), causing \w+ to stumble\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -13058,7 +13059,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up ([\w'\-]+) and whipping (her|him) about in a frenzy.</string>
+						<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up ([\w'\-]+) and whipping \w+ about in a frenzy.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -13085,7 +13086,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up the disorientated form of ([\w'\-]+) and whipping (her|him) about in a frenzy, dashing (her|him) against any available surfaces.$</string>
+						<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up the disorientated form of ([\w'\-]+) and whipping \w+ about in a frenzy, dashing \w+ against any available surfaces.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -13241,7 +13242,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Raising your hands above your head, you channel power through your earth and air channels. Focusing upon (.*), you direct your arcane might in a focused burst, bringing down lightning to smite (him|her)\.$</string>
+						<string>^Raising your hands above your head, you channel power through your earth and air channels. Focusing upon (.*), you direct your arcane might in a focused burst, bringing down lightning to smite \w+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -13319,8 +13320,8 @@ end
 							<string>^Summoning forth power through your air and earth channels, you conjure forth a brilliant flash of light at ([\w'\-]+), who blinks rapidly.$</string>
 							<string>^Summoning forth power through your air and earth channels, you conjure forth a brilliant flash of light at ([\w'\-]+), who freezes in place.$</string>
 							<string>^Tapping into your air channel, you summon forth a vicious wind to lacerate the body of ([\w'\-]+).$</string>
-							<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up ([\w'\-]+) and whipping (her|him) about in a frenzy.$</string>
-							<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up the disorientated form of ([\w'\-]+) and whipping (her|him) about in a frenzy, dashing (her|him) against any available surfaces.$</string>
+							<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up ([\w'\-]+) and whipping \w+ about in a frenzy.$</string>
+							<string>^Summoning forth energy that you have gathered, you conjure forth a terrible cyclone of wind, picking up the disorientated form of ([\w'\-]+) and whipping \w+ about in a frenzy, dashing \w+ against any available surfaces.$</string>
 							<string>^([\w'\-]+) stumbles clumsily as the blow lands.$</string>
 							<string>^([\w'\-]+) begins to shake uncontrollably.$</string>
 							<string>^A puzzled expression crosses the face of ([\w'\-]+).$</string>
@@ -13401,7 +13402,7 @@ tempTimer(25, [[ affstrack.vinewreathe = false ]])
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Uttering a quiet recitation, you gesture towards ([\w'\-]+). A mass of writhing vines burst forth from the ground, grabbing hold of (his|her) form\.$</string>
+						<string>^Uttering a quiet recitation, you gesture towards ([\w'\-]+). A mass of writhing vines burst forth from the ground, grabbing hold of \w+ form\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -13656,7 +13657,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^As you fling the Moon tarot at ([\w'\-]+)\, it turns an ominous\, sickly red\, before striking (her|him) in the head\.$</string>
+						<string>^As you fling the Moon tarot at ([\w'\-]+)\, it turns an ominous\, sickly red\, before striking \w+ in the head\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -14945,7 +14946,7 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^([\w'\-]+) staggers as the blade strikes [\w'\-]+ in the side of the head\.$</string>
-							<string>^([\w'\-]+) staggers back as the hammer catches (him|her) a glancing blow to the head.$</string>
+							<string>^([\w'\-]+) staggers back as the hammer catches \w+ a glancing blow to the head.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -14972,7 +14973,7 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^([\w'\-]+) doubles over as the blade slams into [\w'\-]+ side\.$</string>
-							<string>^([\w'\-]+) doubles over as the hammer savagely crunches into (his|her) ribcage.$</string>
+							<string>^([\w'\-]+) doubles over as the hammer savagely crunches into \w+ ribcage.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -15280,7 +15281,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) applies a sileris berry to (herself|himself)\.$</string>
+						<string>^([\w'\-]+) applies a sileris berry to \w+\.$</string>
 						<string>^([\w'\-]+) applies a quicksilver droplet to [\w'\-]+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -15821,7 +15822,7 @@ end
 							<string>^[\w'\-]+ calls upon Whiirh and strikes ([\w'\-]+) with [\w'\-]+ staff\, the power of air dispersing [\w'\-]+ aura of rebounding\.$</string>
 							<string>^The falcon dives at ([\w'\-]+)\, ripping apart [\w'\-]+ aura of rebounding with its talons\.$</string>
 							<string>^[\w'\-]+ lunges toward ([\w'\-]+)\, but stumbles off balance as if expecting some barrier\.$</string>
-							<string>^Planting your feet, you whirl .+ over your head before bringing it down with terrible force upon ([\w'\-]+), shattering (?:his|her) aura of rebounding\.$</string>
+							<string>^Planting your feet, you whirl .+ over your head before bringing it down with terrible force upon ([\w'\-]+), shattering \w+ aura of rebounding\.$</string>
 							<string>^[\w'\-]+ whips .+ through the air in front of ([\w'\-]+)\, to no effect\.$</string>
 							<string>^You lurch forward at ([\w'\-]+)\, swinging .* in a wildly innacurate blow\.$</string>
 							<string>^You deliver a single\, powerful blow against the aura of rebounding surrounding ([\w'\-]+)\, fracturing it\.$</string>
@@ -16056,7 +16057,7 @@ end</script>
 							<string>^[\w'\-]+ brings a translucent battleaxe down in a powerful overhanded blow upon([\w'\-]+)\.$</string>
 							<string>^Bracing your feet\, you drive .+ towards ([\w'\-]+)\.$</string>
 							<string>^Your blow scythes through the air in front of ([\w'\-]+)\, missing entirely\.$</string>
-							<string>^Your blow cleaves through the magical shield surrounding ([\w'\-]+), continuing on to drive him from(his|her) feet\.$</string>
+							<string>^Your blow cleaves through the magical shield surrounding ([\w'\-]+), continuing on to drive him from \w+ feet\.$</string>
 							<string>^You find no magical shield surrounding ([\w'\-]+), and your power is unable to take hold\.$</string>
 							<string>^A savage slash of your knife trails crimson fire as you carve the logograph of the fissure into the air before (\w+)\.$</string>
 							<string>^You cast a spell of erosion at (\w+)\.$</string>
@@ -16231,7 +16232,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) strums a few notes on .+\, and a prismatic barrier forms around (her|him)\.$</string>
+							<string>^([\w'\-]+) strums a few notes on .+\, and a prismatic barrier forms around \w+\.$</string>
 							<string>^Your attack is repelled by the prismatic barrier surrounding ([\w'\-]+)\.$</string>
 							<string>^(\w+) is surrounded by a sudden rush of feathers\, and a prismatic barrier forms around him\.$</string>
 						</regexCodeList>
@@ -16478,7 +16479,7 @@ end
 					<regexCodeList>
 						<string>^([\w'\-]+) dodges nimbly out of the way\.$</string>
 						<string>^([\w'\-]+) quickly jumps back, avoiding the attack\.$</string>
-						<string>^([\w'\-]+) twists (his|her) body out of harm's way\.$</string>
+						<string>^([\w'\-]+) twists \w+ body out of harm's way\.$</string>
 						<string>^A reflection of ([\w'\-]+) blinks out of existence.$</string>
 						<string>^([\w'\-]+) parries the attack with a deft manoeuvre.$</string>
 						<string>^([\w'\-]+) steps into the attack, grabs your arm, and throw</string>
@@ -16487,7 +16488,7 @@ end
 						<string>^The attack rebounds onto [\w'\-]+\!$</string>
 						<string>^The attack rebounds back onto [\w'\-]+\!$</string>
 						<string>You parry the attack with a deft manoeuvre.</string>
-						<string>^You move inside [\w'\-]+\'s guard\, deflecting (his|her) attack to one side with your forearm before countering with a swift blow to (his|her) temple\.$</string>
+						<string>^You move inside [\w'\-]+\'s guard\, deflecting \w+ attack to one side with your forearm before countering with a swift blow to \w+ temple\.$</string>
 						<string>The attack rebounds off your rebounding aura!</string>
 						<string>You twist your body out of harm's way.</string>
 						<string>^Cracks spider across the surface of the crimson shield surrounding ([\w'\-]+)\, before it abruptly winks out of existence\.$</string>
@@ -17407,7 +17408,7 @@ enableTrigger("Parry locate")
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^With expert precision\, you draw .* from its scabbard and unleash a vicious slash towards ([\w'\-]+)\.$</string>
-							<string>^Your blade bites deep into (his|her|His|Her) (.*)\.$</string>
+							<string>^Your blade bites deep into \w+ (.*)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -19092,14 +19093,14 @@ end</script>
 						<string>^([\w'\-]+) breaks down and sobs uncontrollably\.$</string>
 						<string>^([\w'\-]+) gets down on one knee and serenades the world\.$</string>
 						<string>^([\w'\-]+) falls to his knees in worship\.$</string>
-						<string>^([\w'\-]+) hugs himself compassionately\.$</string>
+						<string>^([\w'\-]+) hugs \w+ compassionately\.$</string>
 						<string>^([\w'\-]+) grunts a bit and then lets out a loud \"OINK\!\"$</string>
 						<string>^([\w'\-]+) waggles his eyebrows comically\.$</string>
 						<string>^([\w'\-]+) wails like an old woman\.$</string>
 						<string>^([\w'\-]+) moans, holding his head\.$</string>
 						<string>^You cast a net of stupidity over ([\w'\-]+)'s mind\.$</string>
 						<string>^([\w'\-]+) twitches spasmodically\.$</string>
-						<string>^([\w'\-]+) fondles (herself|himself) absently\.$</string>
+						<string>^([\w'\-]+) fondles \w+ absently\.$</string>
 						<string>^([\w'\-]+) blinks\.$</string>
 						<string>^([\w'\-]+) lets out a loud\, long \"MOOOOOOOOOOO\!\"$</string>
 						<string>^([\w'\-]+) attempts to do a standing backflip\, but merely stumbles over [\w'\-]+ own feet\.$</string>
@@ -19180,7 +19181,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) screams as (?:her|his) ([\w'\-]+) ([\w'\-]+) is crushed\.$</string>
+						<string>^([\w'\-]+) screams as \w+ ([\w'\-]+) ([\w'\-]+) is crushed\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -19205,7 +19206,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+)'s eyes close suddenly as (?:he|she) falls asleep\.$</string>
+						<string>^([\w'\-]+)'s eyes close suddenly as \w+ falls asleep\.$</string>
 						<string>^([\w'\-]+) tosses back and forth in restless slumber\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -19286,10 +19287,10 @@ if IsTargetted(matches[2]) then
    affstrack.score.leftleg = 0
    affstrack.score.rightleg = 0
    ak.scoreup(matches[2])
-   cecho("&lt;cyan&gt;\n\n"..target.. " IS NO LONGER PRONE.  HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  HE|SHE IS UP!!\n\n")
+   cecho("&lt;cyan&gt;\n\n"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
    if ak.limbs.limbcount[matches[2]] then
       _G[target.."rightlegdisablelimbdamage"] = nil
       _G[target.."leftlegdisablelimbdamage"] = nil
@@ -19342,7 +19343,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) stiffens suddenly, (his|her) features a masque frozen in agony\.$</string>
+						<string>^([\w'\-]+) stiffens suddenly, \w+ features a masque frozen in agony\.$</string>
 						<string>^([\w'\-]+) lets out a piercing scream, as if wounded by the very sunlight\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -19368,8 +19369,8 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) wakes up with a gasp of pain\.$</string>
-						<string>^([\w'\-]+) opens (?:his|her) eyes and stretches languidly, a smile on (?:his|her) face\.$</string>
-						<string>^([\w'\-]+) opens (?:his|her) eyes and yawns mightily\.$</string>
+						<string>^([\w'\-]+) opens \w+ eyes and stretches languidly, a smile on \w+ face\.$</string>
+						<string>^([\w'\-]+) opens \w+ eyes and yawns mightily\.$</string>
 						<string>^([\w'\-]+) awakens with a start\.$</string>
 						<string>^([\w'\-]+) opens [\w'\-]+ eyes and yawns mightily\.$</string>
 					</regexCodeList>
@@ -19404,20 +19405,20 @@ end</script>
 					<regexCodeList>
 						<string>^Sweeping out with a blade hand, [\w'\-]+l strikes at the back of ([\w'\-]+)'s knee\.$</string>
 						<string>^Drawing an enormous breath\, [\w'\-]+ exhales\, expelling a gale of wind with such force that ([\w'\-]+) is knocked over\.$</string>
-						<string>^([\w'\-]+) is knocked forcefully off (?:her|his) feet by the impact of [\w'\-]+\'s huge tail\.$</string>
-						<string>^([\w'\-]+)\'s eyes close suddenly as (?:she|he) falls asleep\.$</string>
-						<string>^([\w'\-]+) is knocked off h(?:is|er) feet by the heaving ground\.$</string>
-						<string>^[\w'\-]+ throws (?:his|her) palms forward, releasing a stream of deadly blue light to cripple ([\w'\-]+)\.$</string>
+						<string>^([\w'\-]+) is knocked forcefully off \w+ feet by the impact of [\w'\-]+\'s huge tail\.$</string>
+						<string>^([\w'\-]+)\'s eyes close suddenly as \w+ falls asleep\.$</string>
+						<string>^([\w'\-]+) is knocked off \w+ feet by the heaving ground\.$</string>
+						<string>^[\w'\-]+ throws \w+ palms forward, releasing a stream of deadly blue light to cripple ([\w'\-]+)\.$</string>
 						<string>^Drawing an enormous breath, you exhale, expelling a gale of wind with such force that ([\w'\-]+) is </string>
-						<string>([\w'\-]+) is knocked forcefully off (?:his|her) feet by the impact of your huge tail\.$</string>
+						<string>([\w'\-]+) is knocked forcefully off \w+ feet by the impact of your huge tail\.$</string>
 						<string>^You hear two loud snaps and see ([\w'\-]+) fall to the ground\.$</string>
-						<string>^You knock the legs out from under ([\w'\-]+) and send (him|her) sprawling\.$</string>
-						<string>^You duck low and smash your shield into the knees of ([\w'\-]+)\, causing them to buckle underneath (?:her|him)\.$</string>
-						<string>^Stepping forward, you grab the useless .* of ([\w'\-]+), wrench (him|her) violently forward, and throw (him|her) to the ground\.$</string>
+						<string>^You knock the legs out from under ([\w'\-]+) and send \w+ sprawling\.$</string>
+						<string>^You duck low and smash your shield into the knees of ([\w'\-]+)\, causing them to buckle underneath \w+\.$</string>
+						<string>^Stepping forward, you grab the useless .* of ([\w'\-]+), wrench \w+ violently forward, and throw \w+ to the ground\.$</string>
 						<string>^You lunge downward, slamming the edge of .+ into the shins of ([\w'\-]+)\.</string>
 						<string>^You swiftly sweep ([\w'\-]+) feet out from beneath</string>
-						<string>^An .* tangles itself in the legs of ([\w'\-]+)\, sending (her|him) sprawling to the ground\.$</string>
-						<string>^A .* tangles itself in the legs of ([\w'\-]+)\, sending (her|him) sprawling to the ground\.$</string>
+						<string>^An .* tangles itself in the legs of ([\w'\-]+)\, sending \w+ sprawling to the ground\.$</string>
+						<string>^A .* tangles itself in the legs of ([\w'\-]+)\, sending \w+ sprawling to the ground\.$</string>
 						<string>^Dropping into a low crouch\, you expertly tangle .* with the legs of ([\w'\-]+)\, sending [\w'\-]+ sprawling\.$</string>
 						<string>^The staff sweeps the legs out from under ([\w'\-]+)\, sending [\w'\-]+ sprawling\.$</string>
 						<string>^The instep of your foot smashes into the [\w'\-]+ underarm of ([\w'\-]+)\, throwing [\w'\-]+ from [\w'\-]+ feet and sending [\w'\-]+ spinning to the ground\.$</string>
@@ -19474,9 +19475,9 @@ end</script>
 					<name>Expert Diagnose True</name>
 					<script>if ak.ai() then return end
 if ak.ProTrackingConfirmed then 
-   ak.ProTrackingConfirmed(matches[4]) 
+   ak.ProTrackingConfirmed(matches[3]) 
 else 
-   affstrack.score[matches[4]] = 100
+   affstrack.score[matches[3]] = 100
    ak.scoreup(matches[2])
 end
 ak.diagnosingoffbal = true
@@ -19492,7 +19493,7 @@ ak.diagnosingoffbal = true
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Casting a discerning eye over ([\w'\-]+), you determine that (he|she) shows the symptoms of ([\w'\-]+)\.$</string>
+						<string>^Casting a discerning eye over ([\w'\-]+), you determine that \w+ shows the symptoms of ([\w'\-]+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -19738,7 +19739,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) pops a mickey into (his|her) mouth\.$</string>
+						<string>^([\w'\-]+) pops a mickey into \w+ mouth\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -19762,7 +19763,7 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>The raven dives at </string>
-						<string>^The raven dives at ([\w'\-]+) and pulls up short\, making (him|her) uneasy\.$</string>
+						<string>^The raven dives at ([\w'\-]+) and pulls up short\, making \w+ uneasy\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -20898,7 +20899,7 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^Horror overcomes ([\w'\-]+)'s face as ([\w'\-]+) body stiffens into paralysis\.$</string>
-						<string>^([\w'\-]+) stiffens suddenly\, (his|her) features a masque frozen in agony\.$</string>
+						<string>^([\w'\-]+) stiffens suddenly\, \w+ features a masque frozen in agony\.$</string>
 						<string>^([\w'\-]+)'s body stiffens rapidly with paralysis\.$</string>
 						<string>^The body of ([\w'\-]+) locks in paralysis as [\w'\-]+ directs a short burst of arcane power in [\w'\-]+ direction\.$</string>
 						<string>^Lunging to the side\, [\w'\-]+ brings [\w'\-]+ shield around to smash into the spine of ([\w'\-]+)\.$</string>
@@ -21293,7 +21294,7 @@ ak.scoreup(multimatches[2][2])
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>You glance over</string>
-						<string>^You glance over ([\w'\-]+) and see that (?:her|his) health is at (\d+)\/(\d+)\.$</string>
+						<string>^You glance over ([\w'\-]+) and see that \w+ health is at (\d+)\/(\d+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>2</integer>
@@ -21321,7 +21322,7 @@ ak.scoreup(matches[2])
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^Gazing upon ([\w'\-]+), you establish that (?:he|she) has (\d+) health remaining of (\d+)\.$</string>
+						<string>^Gazing upon ([\w'\-]+), you establish that \w+ has (\d+) health remaining of (\d+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -21892,7 +21893,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) takes some (?:balm|salve) from a vial and rubs it on (?:her|his) ([\w'\-]+).$</string>
+						<string>^([\w'\-]+) takes some (?:balm|salve) from a vial and rubs it on \w+ ([\w'\-]+).$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22228,7 +22229,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) takes a long drag off (?:her|his) (.*).$</string>
+						<string>^([\w'\-]+) takes a long drag off \w+ (.*).$</string>
 						<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\. </string>
 						<string>^([\w'\-]+) takes a long drag off an enamel bubble pipe\.$</string>
 						<string>^([\w'\-]+) takes a long\, smooth drag from [\w'\-]+ pipe\.$</string>
@@ -22312,7 +22313,7 @@ setTriggerStayOpen("Opponent Smoked", 0)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon (?:his|her) features\.$</string>
+							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon \w+ features\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22425,7 +22426,7 @@ setTriggerStayOpen("Opponent Tree", 0)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon (?:his|her) features\.$</string>
+							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon \w+ features\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22539,7 +22540,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) crackles with blue energy that wreathes itself about (?:her|his) limbs.</string>
+						<string>^([\w'\-]+) crackles with blue energy that wreathes itself about \w+ limbs.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22612,8 +22613,8 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) takes some balm from a vial and rubs it on (?:her|his) ([\w'\-]+).$</string>
-						<string>^([\w'\-]+) takes some salve from a vial and rubs it on (?:her|his) ([\w'\-]+).$</string>
+						<string>^([\w'\-]+) takes some balm from a vial and rubs it on \w+ ([\w'\-]+).$</string>
+						<string>^([\w'\-]+) takes some salve from a vial and rubs it on \w+ ([\w'\-]+).$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22734,7 +22735,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) presses a tarot to (?:her|his) forehead, producing a wan smile\.</string>
+							<string>^([\w'\-]+) presses a tarot to \w+ forehead, producing a wan smile\.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22926,7 +22927,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^As (?:he|she) massages key pressure points, a look of relief comes over ([\w'\-]+)'s face as (?:her|his) ailments ease.</string>
+							<string>^As \w+ massages key pressure points, a look of relief comes over ([\w'\-]+)'s face as \w+ ailments ease.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23044,7 +23045,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>([\w'\-]+) lets out a great keening, casting the impurities from (?:her|his) form.</string>
+							<string>([\w'\-]+) lets out a great keening, casting the impurities from \w+ form.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23071,7 +23072,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) hunches (?:her|his) shoulders and lets out a soft hiss.</string>
+							<string>^([\w'\-]+) hunches \w+ shoulders and lets out a soft hiss.</string>
 							<string>^The amorphous form of ([\w'\-]+) trembles\, some of the liquid composing it falling away from the greater whole\.$</string>
 							<string>^Magma erupts forth from beneath the plates that cover ([\w'\-]+)\.$</string>
 							<string>^Something pulses from within the chest of (\w+)\, and \w+ seems more vital\.$</string>
@@ -23143,7 +23144,7 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^With a grand gesture of righteous fury, ([\w'\-]+) bedevils you with (?:his|her) afflictions\.$</string>
+							<string>^With a grand gesture of righteous fury, ([\w'\-]+) bedevils you with \w+ afflictions\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23193,7 +23194,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^The guardian angel of ([\w'\-]+) shimmers and (he|she) gives a sigh of relief.$</string>
+							<string>^The guardian angel of ([\w'\-]+) shimmers and \w+ gives a sigh of relief.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23292,7 +23293,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) calls upon the powers of (.*) and projects (his|her) spiritual essence inwardly\.$</string>
+							<string>^([\w'\-]+) calls upon the powers of (.*) and projects \w+ spiritual essence inwardly\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23365,7 +23366,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^([\w'\-]+) sketches out a symbol in the air with (?:her|his) finger in the shape of a bisected circle.</string>
+							<string>^([\w'\-]+) sketches out a symbol in the air with \w+ finger in the shape of a bisected circle.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23575,7 +23576,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) saturates (himself|herself) with water\, putting out the fire that raged\.$</string>
+						<string>^([\w'\-]+) saturates \w+ with water\, putting out the fire that raged\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -23595,7 +23596,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) saturates (himself|herself) with water\, putting out the fire that raged\.$</string>
+						<string>^([\w'\-]+) saturates \w+ with water\, putting out the fire that raged\.$</string>
 						<string>^The fires consuming ([\w'\-]+) diminish somewhat\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -23722,7 +23723,7 @@ ak.scoreup(matches[2])</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) has writhed free of (his|her) conflagrant weave\.$</string>
+						<string>^([\w'\-]+) has writhed free of \w+ conflagrant weave\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -24095,7 +24096,7 @@ end
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) tumbles out to the ([\w'\-]+)\.$</string>
-						<string>^([\w'\-]+)'s somersault takes (?:her|him) out of the room to the [\w'\-]+\.$</string>
+						<string>^([\w'\-]+)'s somersault takes \w+ out of the room to the [\w'\-]+\.$</string>
 						<string>^The discordant sound of your song causes ([\w'\-]+) to lose concentration, ruining their movement attempt\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
@@ -24318,12 +24319,12 @@ end
 				<colorTriggerFgColor>#000000</colorTriggerFgColor>
 				<colorTriggerBgColor>#000000</colorTriggerBgColor>
 				<regexCodeList>
-					<string>^([\w'\-]+) lets out a great keening\, casting the impurities from (?:her|his) form\.$</string>
+					<string>^([\w'\-]+) lets out a great keening\, casting the impurities from \w+ form\.$</string>
 					<string>^([\w'\-]+)\'s eyes begin to blaze dangerously\.$</string>
 					<string>^([\w'\-]+) completes [\w'\-]+ transformation and\, with an ear\-splitting roar\, throws back [\w'\-]+ draconic head and screams out [\w'\-]+ triumph\.$</string>
 					<string>^([\w'\-]+) growls almost inaudibly\.$</string>
 					<string>^With a low rumbling from deep within [\w'\-]+ belly\, ([\w'\-]+) utters a guttural chant\. [\w'\-]+ skin ripples as a web of crackling magical energy dances like fire across its surface\, settling to solidify into a flexible\, translucent shell\.$</string>
-					<string>^([\w'\-]+) lunges at ([\w'\-]+) with long\, flashing ([\w'\-]+) extended\, tearing into (his|her) (right leg|left leg|right arm|left arm|head|torso) ruthlessly\.$</string>
+					<string>^([\w'\-]+) lunges at ([\w'\-]+) with long\, flashing ([\w'\-]+) extended\, tearing into \w+ (right leg|left leg|right arm|left arm|head|torso) ruthlessly\.$</string>
 					<string>^([\w'\-]+) lunges forward with long\, flashing ([\w'\-]+) extended\, tearing down to the bones of your (right leg|left leg|right arm|left arm|head|torso)\.$</string>
 					<string>^Gritting [\w'\-]+ glistening teeth into a rictus grin\, ([\w'\-]+) emits a low rumble as [\w'\-]+ flexes [\w'\-]+ rippling muscles\.$</string>
 					<string>^([\w'\-]+) turns to fix [\w'\-]+ gaze upon you\, and you feel your heart increase its palpitations as a low keening echoes from [\w'\-]+ throat\.$</string>
@@ -24335,11 +24336,11 @@ end
 					<string>^([\w'\-]+)'s powerful chest expands as [\w'\-]+ takes a mighty breath\, loosing a shrill volley of [\w'\-]+\-infused vapour into the air\.$</string>
 					<string>^An ominous feeling descends upon you as ([\w'\-]+) turns [\w'\-]+ gaze upon you\.$</string>
 					<string>^([\w'\-]+)\'s nostrils flare wildly with a great rush of air as [\w'\-]+ sinuous body contracts and [\w'\-]+ mouth opens wide to emit a rippling\, unbroken roar that reverberates through your body and blasts your eardrums into oblivion\.$</string>
-					<string>^([\w'\-]+) draws himself up to [\w'\-]+ full height\, staring imperiously down at [\w'\-]+\.$</string>
+					<string>^([\w'\-]+) draws \w+ up to [\w'\-]+ full height\, staring imperiously down at [\w'\-]+\.$</string>
 					<string>^([\w'\-]+)\'s nostrils flare wildly with a great rush of air as [\w'\-]+ sinuous body contracts and [\w'\-]+ mouth opens wide to emit a rippling\, unbroken roar at ([\w'\-]+)\.$</string>
 					<string>^([\w'\-]+) rips into [\w'\-]+ with [\w'\-]+ massive\, deadly claws\.$</string>
 					<string>^Lunging forward with long\, flashing claws extended\, ([\w'\-]+) tears into [\w'\-]+ ruthlessly\.$</string>
-					<string>^A deathly calm descends upon your surroundings as ([\w'\-]+) draws himself up regally\, eyes gleaming with murderous intent\.$</string>
+					<string>^A deathly calm descends upon your surroundings as ([\w'\-]+) draws \w+ up regally\, eyes gleaming with murderous intent\.$</string>
 					<string>^([\w'\-]+) rises back on [\w'\-]+ hind legs\, more than doubling in height as [\w'\-]+ towers above you\. The groundshakes violently as [\w'\-]+ slams [\w'\-]+ feet back down\, recklessly crushing everyone in [\w'\-]+ path\.$</string>
 					<string>^([\w'\-]+)\'s tail narrowly misses you as it whips in a circle\.$</string>
 					<string>^You are knocked forcefully off your feet by the impact of ([\w'\-]+)\'s huge tail\.$</string>
