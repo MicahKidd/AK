@@ -10619,10 +10619,8 @@ disableTrigger("Othala fade")</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Sleezy Nausea</name>
 					<script>if ak.ai() then return end
-aff = "mindravaged"
-if IsTargetted(matches[2]) then
-   OppGainedAff("nausea")
-end</script>
+OppGainedAff("nausea")
+</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
