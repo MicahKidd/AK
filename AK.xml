@@ -22090,7 +22090,7 @@ end
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\.$</string>
+							<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*</string>
 							<string>1</string>
 							<string>^(.+)$</string>
 						</regexCodeList>
@@ -30242,7 +30242,7 @@ AkcheckPrioList = {
 				<Script isActive="yes" isFolder="no">
 					<name>Version ID</name>
 					<packageName></packageName>
-					<script>ak.version = 8.1</script>
+					<script>ak.version = 8.2</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
