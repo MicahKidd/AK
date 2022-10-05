@@ -11666,7 +11666,6 @@ end
 weaponattack = nil
 disableTrigger("Missed Dstab Removal")                --DO NOT CHANGE!
 disableTrigger("Confirmed Dstab")  
---ak.deleteFull()
 deleteLine()
 ak.showPrompt()
 </script>
@@ -16570,10 +16569,6 @@ end
 elseif isPrompt() then
 	ak.limbs.parseBreaksPrompt()
 else
-	if not ak.limbs.deleteset then
-		--deleteLine() --THIS ISNT EVEN PROMPT WHY DELETE IT?
-		--ak.showPrompt()
-	end
 	ak.limbs.parseBreaks()
 end
 
@@ -22271,9 +22266,10 @@ else
     timerherb = 1
     herbtimer = tempTimer(.7, [[opponenteat = 0;timerherb = 0]])
     opponentrecenteat = true
-    herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])
+    herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])  
     ak.cure.ate(multimatches[1][3], false)
   end
+  --ak.showPrompt()
 end   </script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>1</conditonLineDelta>
@@ -25341,7 +25337,7 @@ end</script>
 				<script>
 ak = ak or {}
 
-if ak.mycustomoffense then return end           --DELETE THIS SHIT OUT OF YOUR PERSONAL VARS
+--if ak.mycustomoffense then return end           --DELETE THIS SHIT OUT OF YOUR PERSONAL VARS
 
 ak.MovementKeys = ak.MovementKeys or {"Tecton","Maya"}--add yourself here to allow num key movement
 ak.disableAllEchos = false --Set to Disable Relays and Prompt
@@ -25397,15 +25393,47 @@ end
 
 --OBVIOUSLY YOU DON"T WANT TO LOOK LIKE YOU ARE USING MY SYSTEM!  PEOPLE MIGHT LOOK DOWN ON YOU!!
 
-function EchoForAddedAff(incoming)
-   cecho("&lt;white&gt;\nProcessed Affliction(&lt;yellow&gt;" ..incoming.. "&lt;white&gt;)")  --Change this line for added afflictions
+function ak.echogain(string)
+  if not ak.disableAllEchos then
+    local format = "&lt;white&gt;\nProcessed Affliction(&lt;yellow&gt;" ..string.. "&lt;white&gt;)"  --Change this line for added afflictions
+    if isPrompt() then   
+      moveCursorUp()
+      moveCursor(#getCurrentLine(), getLineNumber())
+      cinsertText(format)
+      moveCursorEnd() 
+    else
+      cecho(format)
+    end
+  end
 end
-function EchoForLostAff(incoming)
-   cecho("&lt;white&gt;\nLost Affliction(&lt;yellow&gt;" ..incoming.. "&lt;white&gt;)")  --Change this line for removed afflictions
-end  
-function EchoForPossibleCures(incoming)
-   cecho("&lt;white&gt;\nProcessed Cures(&lt;yellow&gt;" ..incoming.. "&lt;white&gt;)")  --Change this line for removed afflictions
-end 
+
+function ak.echolost(string)
+  if not ak.disableAllEchos then 
+    local format = "&lt;white&gt;\nLost Affliction(&lt;yellow&gt;" ..string.. "&lt;white&gt;)" --Change this line for removed afflictions
+    if isPrompt() then   
+      moveCursorUp()
+      moveCursor(#getCurrentLine(), getLineNumber())
+      cinsertText(format)
+      moveCursorEnd() 
+    else
+      cecho(format)
+    end
+  end
+end
+
+function ak.echoForPossibleCures(string)
+  if not ak.disableAllEchos then
+    local format = "&lt;white&gt;\nProcessed Cures(&lt;yellow&gt;" ..string.. "&lt;white&gt;)"  --Change this line for removed afflictions
+    if isPrompt() then   
+      deleteLine()
+      cecho(format)
+      ak.showPrompt()
+    else
+      cecho(format)
+    end
+  end
+end
+
 function EchoForMajorAff(incoming,color,color2,color3)
 	local color = color or "red"
 	local color2 = color2 or "cyan"
@@ -27896,40 +27924,6 @@ end
 
 
 </script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>oecho</name>
-					<packageName></packageName>
-					<script>-------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
-
-function ak.echogain(string)
-   if gmcp.Char.Name.name == "Klendathu" and not ak.disableAllEchos then  
-      cecho("  &lt;cyan&gt;GAINED AFF:&lt;white&gt; "..string.."&lt;reset&gt;") 
-   elseif not ak.disableAllEchos then 
-      EchoForAddedAff(string)
-   end
-end
-
-function ak.echolost(string)
-   if gmcp.Char.Name.name == "Klendathu" and not ak.disableAllEchos then 
-      cecho("  &lt;cyan&gt;GAINED AFF:&lt;white&gt; "..string.."&lt;reset&gt;")
-   elseif not ak.disableAllEchos then
-      EchoForLostAff(string) 
-   end
-end
-
-function ak.echoForPossibleCures(string)
-   if gmcp.Char.Name.name == "Klendathu" and not ak.disableAllEchos then 
-      cecho("  &lt;cyan&gt;AFF PROCESSED:&lt;white&gt; "..string.."&lt;reset&gt;")
-   elseif not ak.disableAllEchos then
-      EchoForPossibleCures(string) 
-   end
-end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
