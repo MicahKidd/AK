@@ -21981,6 +21981,7 @@ end
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Standard Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
+if ak.ai() then return end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   if affstrack.score.asthma&gt;0 then 
   	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
@@ -22041,6 +22042,7 @@ end
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Fancy Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
+if ak.ai() then return end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   if affstrack.score.asthma&gt;0 then 
   	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
@@ -22101,6 +22103,7 @@ end
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Fancier Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
+if ak.ai() then return end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   if affstrack.score.asthma&gt;0 then 
   	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
