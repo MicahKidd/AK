@@ -22296,21 +22296,50 @@ end   </script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Opponent Tree</name>
-					<script>if ak.ai() then 
-	setTriggerStayOpen("Opponent Tree", 0)
-	return
-elseif not IsTargetted(matches[2]) then
-	setTriggerStayOpen("Opponent Tree", 0)
-	return
+					<script>if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+if string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
+  OppLostAff("unweavingspirit")
+  ak.psion.unweaving.spirit = 0
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
 else
-	ak.currenttree = matches[2]
+  if opponenttree == 0 then
+  	opponenttree = 1
+    opponenthalftree = 1
+    treetimerhalf = tempTimer(8.5, [[opponenthalftree = 0;ak.serveraliases()]])
+    treetimer = tempTimer(9.5, [[opponenttree = 0;timertree = 0]])
+    timertree = 1
+    --cecho("&lt;cyan&gt;Processed Cures")
+    ak.cure.tree()
+  end
+  if timertree == 0 then
+    if opponenttree == 1 then
+      opponenttree = 0
+      cecho("&lt;cyan&gt;Ignored Cures")
+    end
+  end
 end
 </script>
 					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>2</mStayOpen>
+					<conditonLineDelta>1</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
 					<mCommand></mCommand>
 					<packageName></packageName>
 					<mFgColor>#ff0000</mFgColor>
@@ -22320,177 +22349,14 @@ end
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) touches a tree of life tattoo\.$</string>
+						<string>1</string>
+						<string>^(.+)$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+						<integer>5</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Tree Prompt</name>
-						<script>if not ak.currenttree then return end
-if isPrompt() then deleteLine() end
-if opponenttree == 0 then
-	opponenttree = 1
-  opponenthalftree = 1
-  treetimerhalf = tempTimer(8.5, [[opponenthalftree = 0;ak.serveraliases()]])
-  treetimer = tempTimer(9.5, [[opponenttree = 0;timertree = 0]])
-  timertree = 1
-  --cecho("&lt;cyan&gt;Processed Cures")
-  ak.cure.tree()
-end
-if timertree == 0 then
-  if opponenttree == 1 then
-    opponenttree = 0
-    cecho("&lt;cyan&gt;Ignored Cures")
-  end
-end
-
-ak.currenttree = false
-if isPrompt() then ak.showPrompt() end
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string></string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>7</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Gult Cure</name>
-						<script>OppLostAff("guilt")
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^(\w+) straightens\, as if some great burden had been lifted from \w+ shoulders\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Uspirit</name>
-						<script>OppLostAff("unweavingspirit")
-ak.psion.unweaving.spirit = 0
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon \w+ features\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Retribution</name>
-						<script>OppLostAff("retribution")
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^(\w+) gives a sigh of relief\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Shadowmadness</name>
-						<script>OppLostAff("shadowmadness")
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Lucidity returns to the eyes of (\w+)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Rebbies</name>
-						<script>OppLostAff("rebbies")
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^The skin of (\w+) ceases secreting slime\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>0</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Mycalium</name>
-						<script>OppLostAff("mycalium")
-setTriggerStayOpen("Opponent Tree", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^(\w+) ceases \w+ nervous trembling\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Restored</name>
