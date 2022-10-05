@@ -21963,6 +21963,262 @@ end
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Opponent Smoked</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Standard Smoke</name>
+						<script>if not IsTargetted(multimatches[1][2]) then return end
+if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
+  if affstrack.score.asthma&gt;0 then 
+  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+  	ocured = ocured or {}
+  	ocured.smoked = {}
+  end
+  OppLostAff("unweavingspirit")
+  return
+end
+
+if not ak.defs.reRebounding then 
+	affssmoke() 
+	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end
+else
+ 	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end    
+	ak.defs.reRebounding = false
+	reboundingaccountak = true
+	if reboundingaktime then killTimer(reboundingaktime) end
+	reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
+	ak.scoreup(ak.currentsmoke)
+end
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>1</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([\w'\-]+) takes a long drag off \w+ (.*)\.$</string>
+							<string>1</string>
+							<string>^(.+)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>5</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Fancy Smoke</name>
+						<script>if not IsTargetted(multimatches[1][2]) then return end
+if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
+  if affstrack.score.asthma&gt;0 then 
+  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+  	ocured = ocured or {}
+  	ocured.smoked = {}
+  end
+  OppLostAff("unweavingspirit")
+  return
+end
+
+if not ak.defs.reRebounding then 
+	affssmoke() 
+	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end
+else
+ 	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end    
+	ak.defs.reRebounding = false
+	reboundingaccountak = true
+	if reboundingaktime then killTimer(reboundingaktime) end
+	reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
+	ak.scoreup(ak.currentsmoke)
+end
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>1</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\.$</string>
+							<string>1</string>
+							<string>^(.+)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>5</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Fancier Smoke</name>
+						<script>if not IsTargetted(multimatches[1][2]) then return end
+if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
+  if affstrack.score.asthma&gt;0 then 
+  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+  	ocured = ocured or {}
+  	ocured.smoked = {}
+  end
+  OppLostAff("unweavingspirit")
+  return
+end
+
+if not ak.defs.reRebounding then 
+	affssmoke() 
+	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end
+else
+ 	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end    
+	ak.defs.reRebounding = false
+	reboundingaccountak = true
+	if reboundingaktime then killTimer(reboundingaktime) end
+	reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
+	ak.scoreup(ak.currentsmoke)
+end
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>1</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([\w'\-]+) takes a long\, smooth drag from [\w'\-]+ pipe\.$</string>
+							<string>1</string>
+							<string>^(.+)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>5</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Fanciest Smoke</name>
+						<script>if not IsTargetted(multimatches[1][2]) then return end
+if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
+  if affstrack.score.asthma&gt;0 then 
+  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+  	ocured = ocured or {}
+  	ocured.smoked = {}
+  end
+  OppLostAff("unweavingspirit")
+  return
+end
+
+if not ak.defs.reRebounding then 
+	affssmoke() 
+	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end
+else
+ 	ocured = ocured or {}
+	ak.randomaffs = ak.randomaffs or 0
+	ocured.smoked = {}
+	if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
+		ocured = ocured or {}
+		ocured.smoked = {}
+	end    
+	ak.defs.reRebounding = false
+	reboundingaccountak = true
+	if reboundingaktime then killTimer(reboundingaktime) end
+	reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
+	ak.scoreup(ak.currentsmoke)
+end
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>1</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([\w'\-]+) takes a few short puffs from [\w'\-]+ pipe\.$</string>
+							<string>1</string>
+							<string>^(.+)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>5</integer>
+							<integer>0</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Opponent Ate</name>
 					<script>if ak.ai() then return end
@@ -22240,123 +22496,6 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
-						</regexCodePropertyList>
-					</Trigger>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Opponent Smoked</name>
-					<script>if ak.ai() then 
-	setTriggerStayOpen("Opponent Smoked", 0)
-	return
-elseif not IsTargetted(matches[2]) then
-
-
-	setTriggerStayOpen("Opponent Smoked", 0)
-	return
-else
-	ak.currentsmoke = matches[2]
-end
-
-</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>2</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^([\w'\-]+) takes a long drag off \w+ (.*)\.$</string>
-						<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\.$</string>
-						<string>^([\w'\-]+) takes a long drag off an enamel bubble pipe\.$</string>
-						<string>^([\w'\-]+) takes a long\, smooth drag from [\w'\-]+ pipe\.$</string>
-						<string>^([\w'\-]+) takes a few short puffs from [\w'\-]+ pipe\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-						<integer>1</integer>
-					</regexCodePropertyList>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Smoke Prompt</name>
-						<script>if not ak.currentsmoke then return end
-if isPrompt() then deleteLine() end
-if not ak.defs.reRebounding then 
-	affssmoke() 
-	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end
-else
- 	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end    
-	ak.defs.reRebounding = false
-	reboundingaccountak = true
-	if reboundingaktime then killTimer(reboundingaktime) end
-	reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
-	ak.scoreup(ak.currentsmoke)
-end
-ak.currentsmoke = false
-if isPrompt() then ak.showPrompt() end
-setTriggerStayOpen("Opponent Smoked", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string></string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>7</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Cured Uspirit</name>
-						<script>if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-	ocured = ocured or {}
-	ocured.smoked = {}
-end
-
-OppLostAff("unweavingspirit")
-ak.psion.unweaving.spirit = 0
-setTriggerStayOpen("Opponent Smoked", 0)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) seems suddenly unburdened, clarity reasserting itself upon \w+ features\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</Trigger>
