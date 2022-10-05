@@ -22223,37 +22223,54 @@ end
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Opponent Ate</name>
 					<script>if ak.ai() then return end
-local donotrun = {
-	"azurite mote",
-  "gypsum crystal",
-	"echinacea root", 
-	"bisemutum chip",
-	"kola nut",
-	"black cohosh root",
-	"skullcap flower",
-	"dolomite grain",
-	"irid moss",
-	"potash crystal",
-	"quartz grain",
-	"ball of myrrh gum",
-	"antimony flake",
-	"ginger root",
-}
-if table.contains(donotrun, matches[3]) then
-	setTriggerStayOpen("Opponent Ate", 0)
-	return
-elseif not IsTargetted(matches[2]) then
-	setTriggerStayOpen("Opponent Ate", 0)
-	return
+local donotrun = { "azurite mote", "gypsum crystal", "echinacea root",  "bisemutum chip", "kola nut", "black cohosh root", "skullcap flower", "dolomite grain", "irid moss", "potash crystal", "quartz grain", "ball of myrrh gum", "antimony flake", "ginger root",}
+if table.contains(donotrun, multimatches[1][3]) then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  ak.psion.unweaving.mind = 0
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  ak.psion.unweaving.body = 0
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  
 else
-	ak.currenteat = matches[3]
-end  </script>
+  if opponenteat == 1 then
+    if timerherb == 1 then
+      cecho("&lt;cyan&gt;-Ignored Cures")
+    end
+    if timerherb == 0 then
+      cecho("&lt;cyan&gt;Something is Fucked")
+      opponenteat = 0
+    end
+  end
+  if opponenteat == 0 then
+    opponenteat = 1
+    timerherb = 1
+    herbtimer = tempTimer(.7, [[opponenteat = 0;timerherb = 0]])
+    opponentrecenteat = true
+    herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])
+    ak.cure.ate(ak.currenteat, false)
+  end
+end   </script>
 					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>2</mStayOpen>
+					<conditonLineDelta>1</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
 					<mCommand></mCommand>
 					<packageName></packageName>
 					<mFgColor>#ffffff</mFgColor>
@@ -22263,11 +22280,15 @@ end  </script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) eats (?:a|an|some) (.*)\.$</string>
+						<string>1</string>
+						<string>^(.+)$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+						<integer>5</integer>
+						<integer>1</integer>
 					</regexCodePropertyList>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Umind</name>
 						<script>OppLostAff("unweavingmind")
 ak.psion.unweaving.mind = 0
@@ -22290,7 +22311,7 @@ setTriggerStayOpen("Opponent Ate", 0)
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Ubody</name>
 						<script>OppLostAff("unweavingbody")
 ak.psion.unweaving.body = 0
@@ -22312,7 +22333,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Gult Cure</name>
 						<script>OppLostAff("guilt")
 setTriggerStayOpen("Opponent Ate", 0)</script>
@@ -22333,7 +22354,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Retribution</name>
 						<script>OppLostAff("retribution")
 setTriggerStayOpen("Opponent Ate", 0)</script>
@@ -22354,7 +22375,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Shadowmadness</name>
 						<script>OppLostAff("shadowmadness")
 setTriggerStayOpen("Opponent Ate", 0)</script>
@@ -22375,7 +22396,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Rebbies</name>
 						<script>OppLostAff("rebbies")
 setTriggerStayOpen("Opponent Ate", 0)</script>
@@ -22396,7 +22417,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Cured Whisperingmadness</name>
 						<script>OppLostAff("whisperingmadness")
 setTriggerStayOpen("Opponent Ate", 0)</script>
@@ -23119,7 +23140,7 @@ end</script>
 						<name>Bard Hallelujah</name>
 						<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then 
-   ak.cure.passive()
+   ak.cure.passive("paralysis",true)
 end
 </script>
 						<triggerType>0</triggerType>
