@@ -22184,7 +22184,7 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 if not ak.currenteat then
   return
 end
-deleteLine()
+if isPrompt() then deleteLine() end
 if opponenteat == 1 then
   if timerherb == 1 then
     cecho("&lt;cyan&gt;-Ignored Cures")
@@ -22217,9 +22217,29 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string></string>
+							<string>--sip</string>
+							<string>--eat potash</string>
+							<string>--smoke</string>
+							<string>--tree</string>
+							<string>--you eat</string>
+							<string>--you sip</string>
+							<string>--you eat potash</string>
+							<string>--you smoke</string>
+							<string>--you tree</string>
+							<string>--someone else eats</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>7</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
+							<integer>0</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</Trigger>
@@ -22229,6 +22249,8 @@ setTriggerStayOpen("Opponent Ate", 0)</script>
 	setTriggerStayOpen("Opponent Smoked", 0)
 	return
 elseif not IsTargetted(matches[2]) then
+
+
 	setTriggerStayOpen("Opponent Smoked", 0)
 	return
 else
@@ -22247,8 +22269,8 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) takes a long drag off \w+ (.*).$</string>
-						<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\. </string>
+						<string>^([\w'\-]+) takes a long drag off \w+ (.*)\.$</string>
+						<string>^A great gurgling sound is heard as ([\w'\-]+) takes a long drag from .*\.$</string>
 						<string>^([\w'\-]+) takes a long drag off an enamel bubble pipe\.$</string>
 						<string>^([\w'\-]+) takes a long\, smooth drag from [\w'\-]+ pipe\.$</string>
 						<string>^([\w'\-]+) takes a few short puffs from [\w'\-]+ pipe\.$</string>
@@ -22263,7 +22285,7 @@ end
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Smoke Prompt</name>
 						<script>if not ak.currentsmoke then return end
-deleteLine()
+if isPrompt() then deleteLine() end
 if not ak.defs.reRebounding then 
 	affssmoke() 
 	ocured = ocured or {}
@@ -22361,7 +22383,7 @@ end
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^([\w'\-]+) touches a tree of life tattoo.</string>
+						<string>^([\w'\-]+) touches a tree of life tattoo\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22369,8 +22391,7 @@ end
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Tree Prompt</name>
 						<script>if not ak.currenttree then return end
-deleteLine()
-
+if isPrompt() then deleteLine() end
 if opponenttree == 0 then
 	opponenttree = 1
   opponenthalftree = 1
@@ -24923,7 +24944,7 @@ affstrack = {
                 ["magnesium chip"]   = {"pyramides","paralysis", "slickness"},
                 ["ginseng root"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
                 ["ferrum flake"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
-                ["rage"]             = {"timeloop","generosity", "pacifism","justice"},
+                ["rage"]             = {"generosity", "pacifism","justice"},
                 ["prickly pear"]     = {"pressure"},
                 ["calcite mote"]     = {"pressure"},
         },
