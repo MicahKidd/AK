@@ -22252,7 +22252,6 @@ elseif string.find(multimatches[3][1],"nervous trembling") then
   OppLostAff("mycalium")  
   return
 else
-display(multimatches[3][1])
   if opponenteat == 1 then
     if timerherb == 1 then
       cecho("&lt;cyan&gt;-Ignored Cures")
@@ -25397,10 +25396,9 @@ function ak.echogain(string)
   if not ak.disableAllEchos then
     local format = "&lt;white&gt;\nProcessed Affliction(&lt;yellow&gt;" ..string.. "&lt;white&gt;)"  --Change this line for added afflictions
     if isPrompt() then   
-      moveCursorUp()
-      moveCursor(#getCurrentLine(), getLineNumber())
-      cinsertText(format)
-      moveCursorEnd() 
+      deleteLine()
+      cecho(format)
+      ak.showPrompt()
     else
       cecho(format)
     end
@@ -25411,10 +25409,9 @@ function ak.echolost(string)
   if not ak.disableAllEchos then 
     local format = "&lt;white&gt;\nLost Affliction(&lt;yellow&gt;" ..string.. "&lt;white&gt;)" --Change this line for removed afflictions
     if isPrompt() then   
-      moveCursorUp()
-      moveCursor(#getCurrentLine(), getLineNumber())
-      cinsertText(format)
-      moveCursorEnd() 
+      deleteLine()
+      cecho(format)
+      ak.showPrompt()
     else
       cecho(format)
     end
@@ -26151,9 +26148,8 @@ function OppLostAff(aff)
      affStr = aff:title()
     end
   end
-   if affStr:len() &gt; 0 then ak.echolost(affStr) end
   ak.scoreup(target)
-
+  if affStr:len() &gt; 0 then ak.echolost(affStr) end
 end
 
 function OppGainedAdditive(affliction,incata,capata,minca)
@@ -28525,122 +28521,123 @@ end</script>
   ak.eatsbetweenaffs = ak.eatsbetweenaffs + 1
   local affconfirmedcount = 0
   if affstrack.score.anorexia&gt;0 and not prorun then 
-    if ak.thoughtIhad then ak.thoughtIhad("anorexia") else affstrack.score.anorexia = 0 end
-      ocured = ocured or {}
-      ocured[ocured.conversion[what]] = {}
+    if ak.thoughtIhad then 
+      ak.thoughtIhad("anorexia") 
+    else 
+      affstrack.score.anorexia = 0 
     end
-    if what == "hawthorn berry" or what == "calamine crystal" then
-      affstrack.score.deaf = 100
-      tempTimer(3,[[affstrack.score.deaf = 0;ak.scoreup(target)]])
-    elseif not affstrack.eaten[what] then 
-      return
-    else
-      for i = 1, #affstrack.eaten[what] do
-        if affstrack.score[affstrack.eaten[what][i]] &gt; 0 then
-          table.insert(affs, affstrack.eaten[what][i])
-          affconfirmedcount = affconfirmedcount + affstrack.score[affstrack.eaten[what][i]]
-        end
+    ocured = ocured or {}
+    ocured[ocured.conversion[what]] = {}
+  end
+  if what == "hawthorn berry" or what == "calamine crystal" then
+    affstrack.score.deaf = 100
+    tempTimer(3,[[affstrack.score.deaf = 0;ak.scoreup(target)]])
+  elseif not affstrack.eaten[what] then 
+    return
+  else
+    for i = 1, #affstrack.eaten[what] do
+      if affstrack.score[affstrack.eaten[what][i]] &gt; 0 then
+        table.insert(affs, affstrack.eaten[what][i])
+        affconfirmedcount = affconfirmedcount + affstrack.score[affstrack.eaten[what][i]]
       end
-      if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
-        if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-        affstrack.score[affs[1]] = 0
-        ak.AfflictionCured(affs[1])
-        ak.ResetConfirmAff(affs[1])
-      elseif #affs &gt; 1 and affconfirmedcount &lt;= 100 then
-        if table.contains(affs,"slickness") and affstrack.score.asthma == 100 then
-          ak.echoForPossibleCures(table.concat(affs, " ")) 
-        else
-          if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    end
+    if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
+      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+      affstrack.score[affs[1]] = 0
+      ak.AfflictionCured(affs[1])
+      ak.ResetConfirmAff(affs[1])
+    elseif #affs &gt; 1 and affconfirmedcount &lt;= 100 then
+      if ak.ProTrackingConfirmed then 
+        ak.ProTrackingConfirmed(affs[1])
+      end
+      for i = 1, #affs do
+        affstrack.score[affs[i]] = 0
+        ak.AfflictionCured(affs[i])
+      end
+    elseif #affs &gt; 1 and table.contains(affs,"impatience") and ak.goldensealCount() &gt; 100 then
+      for i = 1, #affs do            
+        ocured = ocured or {}
+        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
+        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        if affs[i] ~= "impatience" then
+          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
         end
-        for i = 1, #affs do
+        if affstrack.score[affs[i]] &lt; ak.errorallowance then
           affstrack.score[affs[i]] = 0
           ak.AfflictionCured(affs[i])
         end
-      elseif #affs &gt; 1 and table.contains(affs,"impatience") and ak.goldensealCount() &gt; 100 then
-        ak.echoForPossibleCures(table.concat(affs, " "))
-        for i = 1, #affs do            
-          ocured = ocured or {}
-          ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-          ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-          if affs[i] ~= "impatience" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-          end
-          if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-            ak.AfflictionCured(affs[i])
-          end
-        end
-      elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
-        ak.echoForPossibleCures(table.concat(affs, " "))
-        for i = 1, #affs do            
-          ocured = ocured or {}
-          ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-          ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-          if affs[i] ~= "asthma" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-          end
-          if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-        		ak.AfflictionCured(affs[i])
-          end
-        end
-			elseif #affs &gt; 1 and table.contains(affs,"slickness") and affstrack.score.prone == 100 and ak.canstand() then
-        ak.echoForPossibleCures(table.concat(affs, " "))
-        for i = 1, #affs do            
-          ocured = ocured or {}
-          ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-          ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-          if affs[i] ~= "paralysis" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-          end
-          if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-            ak.AfflictionCured(affs[i])
-          end
-        end			 
-      elseif #affs == 1 and table.contains(affs,"slickness") and affstrack.score.asthma &gt; 0 and affstrack.score.asthma &lt; 100 then
-        ak.echoForPossibleCures(table.concat(affs, " "))
-        for i = 1, #affs do            
-          ocured = ocured or {}
-          ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-          ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-          if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-				    ak.AfflictionCured(affs[i])
-          end
-				  ak.ProTrackingConfirmed("asthma")
-				  ak.ResetConfirmAff(affs[i])
-        end
-      elseif #affs == 1 then
-        ak.echoForPossibleCures(table.concat(affs, " "))
+      end
+    elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
+      for i = 1, #affs do            
         ocured = ocured or {}
         ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[1]] = affstrack.score[affs[1]]
-        affstrack.score[affs[1]] = affstrack.score[affs[1]] - affstrack.score[affs[1]] / #affs
-        if affstrack.score[affs[1]] &lt; ak.errorallowance then
-          affstrack.score[affs[1]] = 0
-					ak.AfflictionCured(affs[1])
+        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        if affs[i] ~= "asthma" then
+          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
         end
-        ak.ResetConfirmAff(affs[1])
-      elseif #affs &gt; 0 then
-        ak.echoForPossibleCures(table.concat(affs, " "))
-        for i = 1, #affs do
-          ocured = ocured or {}
-          ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-          ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-          if affstrack.score[affs[i]] &lt; ak.errorallowance then
-              affstrack.score[affs[i]] = 0
-          		ak.AfflictionCured(affs[i])
-          end
+        if affstrack.score[affs[i]] &lt; ak.errorallowance then
+          affstrack.score[affs[i]] = 0
+      		ak.AfflictionCured(affs[i])
         end
-      elseif ak.randomaffs &gt; 0 then
-         ak.randomaffs = ak.randomaffs - 1
-      else
-         if ak.WhyYouDoThat then ak.WhyYouDoThat(what) end
       end
-   end
-   ak.scoreup(target)
+		elseif #affs &gt; 1 and table.contains(affs,"slickness") and affstrack.score.prone == 100 and ak.canstand() then
+      for i = 1, #affs do            
+        ocured = ocured or {}
+        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
+        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        if affs[i] ~= "paralysis" then
+          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
+        end
+        if affstrack.score[affs[i]] &lt; ak.errorallowance then
+          affstrack.score[affs[i]] = 0
+          ak.AfflictionCured(affs[i])
+        end
+      end			 
+    elseif #affs == 1 and table.contains(affs,"slickness") and affstrack.score.asthma &gt; 0 and affstrack.score.asthma &lt; 100 then
+      for i = 1, #affs do            
+        ocured = ocured or {}
+        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
+        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        if affstrack.score[affs[i]] &lt; ak.errorallowance then
+          affstrack.score[affs[i]] = 0
+			    ak.AfflictionCured(affs[i])
+        end
+			  ak.ProTrackingConfirmed("asthma")
+			  ak.ResetConfirmAff(affs[i])
+      end
+    elseif #affs == 1 then
+      ocured = ocured or {}
+      ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
+      ocured[ocured.conversion[what]][affs[1]] = affstrack.score[affs[1]]
+      affstrack.score[affs[1]] = affstrack.score[affs[1]] - affstrack.score[affs[1]] / #affs
+      if affstrack.score[affs[1]] &lt; ak.errorallowance then
+        affstrack.score[affs[1]] = 0
+				ak.AfflictionCured(affs[1])
+      end
+      ak.ResetConfirmAff(affs[1])
+    elseif #affs &gt; 0 then
+      for i = 1, #affs do
+        ocured = ocured or {}
+        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
+        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
+        if affstrack.score[affs[i]] &lt; ak.errorallowance then
+          affstrack.score[affs[i]] = 0
+          ak.AfflictionCured(affs[i])
+        end
+      end
+    elseif ak.randomaffs &gt; 0 then
+       ak.randomaffs = ak.randomaffs - 1
+    else
+      if ak.WhyYouDoThat then 
+        ak.WhyYouDoThat(what) 
+      end
+    end
+  end
+  ak.scoreup(target)
+  if #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))  
+  end
 end
 
 function ak.goldensealCount()
@@ -28718,13 +28715,11 @@ end</script>
 			ak.AfflictionCured(affs[1])
 			ak.ResetConfirmAff(affs[1])
 	 elseif #affs == 1 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
       ocured.focused[affs[1]] = affstrack.score[affs[1]]
       affstrack.score[affs[1]] = 0
 			ak.AfflictionCured(affs[1])
 			ak.ResetConfirmAff(affs[1])
    elseif #affs &gt; 0 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
       for i = 1, #affs do
          ocured.focused[affs[i]] = affstrack.score[affs[i]]
          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
@@ -28739,6 +28734,9 @@ end</script>
       ak.WhyYouDoThat("focused")
    end
    ak.scoreup(target)
+  if #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+  end
 end
 
 
