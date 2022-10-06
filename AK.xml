@@ -28826,7 +28826,6 @@ end
 			ak.AfflictionCured(affs[1])
 			ak.ResetConfirmAff(affs[1])
    elseif #affs &gt; 1 and table.contains(affs,"impatience") and FocusCount() &gt;= 100 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
       for i = 1, #affs do
          if affs[i] ~= "impatience" then
             affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs -1)
@@ -28856,7 +28855,6 @@ end
       end  
       if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
    elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
       for i = 1, #affs do
          if affs[i] ~= "asthma" then
             affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs -1)
@@ -28886,7 +28884,6 @@ end
       end  
       if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
    elseif #affs &gt; 0 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
       for i = 1, #affs do
          --ocured.treed[affs[i]] = affstrack.score[affs[i]]                                       --move me
          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs 
@@ -28921,6 +28918,9 @@ end
       if ak.WhyYouDoThat then ak.WhyYouDoThat("treed") end
    end
    ak.scoreup(target)
+  if #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+  end
 end
 
 local LimbsToCheck = {"rightleg","leftleg","rightarm","leftarm"}
