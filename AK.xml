@@ -5524,7 +5524,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -5803,7 +5803,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -10640,7 +10640,12 @@ OppGainedAff("nausea")
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Inguz</name>
-					<script></script>
+					<script>if IsTargetted(matches[2]) then
+	ak.twoh.ribs = ak.twoh.ribs + 1
+	if ak.twoh.ribs &gt; 7 then ak.twoh.ribs = 7 end
+	cecho("&lt;yellow&gt;ribs:&lt;cyan&gt; "..ak.twoh.ribs)
+	ak.ribHit()
+end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -13591,7 +13596,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Tarot Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -24714,7 +24719,7 @@ affstrack = {
         },
  
         applied = {
-                ["body"]  = {"itching","anorexia","frozen","aflame","selarnia"},
+                ["body"]  = {"torso","itching","anorexia","frozen","aflame","selarnia"},
                 ["skin"]  = {"anorexia", "crippledarm", "crippledleg","frozen","selarnia"},
                 ["torso"] = {"anorexia", "torso", "aflame", "hypothermia","selarnia"},
                 ["head"]  = {"stuttering","head","crushedthroat"},
