@@ -10314,6 +10314,32 @@ end</script>
 								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Invert</name>
+							<script>if IsTargetted(matches[2]) then
+  local un = affstrack.score["unweaving"..matches[3]] + 0
+  local don = affstrack.score["unweaving"..matches[4]] + 0
+  affstrack.score["unweaving"..matches[3]] = don+0
+  affstrack.score["unweaving"..matches[4]] = un+0
+  ak.scoreup(target)
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^You pluck at the weave of (\w+), swapping the states of \w+ (\w+) and (\w+)\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
 					</TriggerGroup>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Prepare</name>
@@ -21982,35 +22008,19 @@ end
 						<name>Standard Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
 if ak.ai() then return end
+if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+	ocured = ocured or {}
+	ocured.smoked = {}
+end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
-  if affstrack.score.asthma&gt;0 then 
-  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-  	ocured = ocured or {}
-  	ocured.smoked = {}
-  end
   OppLostAff("unweavingspirit")
   return
-end
-
-if not ak.defs.reRebounding then 
+elseif not ak.defs.reRebounding then 
 	affssmoke() 
-	ocured = ocured or {}
 	ak.randomaffs = ak.randomaffs or 0
 	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end
 else
- 	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end    
 	ak.defs.reRebounding = false
 	reboundingaccountak = true
 	if reboundingaktime then killTimer(reboundingaktime) end
@@ -22043,35 +22053,19 @@ end
 						<name>Fancy Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
 if ak.ai() then return end
+if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+	ocured = ocured or {}
+	ocured.smoked = {}
+end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
-  if affstrack.score.asthma&gt;0 then 
-  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-  	ocured = ocured or {}
-  	ocured.smoked = {}
-  end
   OppLostAff("unweavingspirit")
   return
-end
-
-if not ak.defs.reRebounding then 
+elseif not ak.defs.reRebounding then 
 	affssmoke() 
-	ocured = ocured or {}
 	ak.randomaffs = ak.randomaffs or 0
 	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end
 else
- 	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end    
 	ak.defs.reRebounding = false
 	reboundingaccountak = true
 	if reboundingaktime then killTimer(reboundingaktime) end
@@ -22104,35 +22098,19 @@ end
 						<name>Fancier Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
 if ak.ai() then return end
+if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+	ocured = ocured or {}
+	ocured.smoked = {}
+end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
-  if affstrack.score.asthma&gt;0 then 
-  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-  	ocured = ocured or {}
-  	ocured.smoked = {}
-  end
   OppLostAff("unweavingspirit")
   return
-end
-
-if not ak.defs.reRebounding then 
+elseif not ak.defs.reRebounding then 
 	affssmoke() 
-	ocured = ocured or {}
 	ak.randomaffs = ak.randomaffs or 0
 	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end
 else
- 	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end    
 	ak.defs.reRebounding = false
 	reboundingaccountak = true
 	if reboundingaktime then killTimer(reboundingaktime) end
@@ -22165,35 +22143,19 @@ end
 						<name>Fanciest Smoke</name>
 						<script>if not IsTargetted(multimatches[1][2]) then return end
 if ak.ai() then return end
+if affstrack.score.asthma&gt;0 then 
+	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
+	ocured = ocured or {}
+	ocured.smoked = {}
+end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
-  if affstrack.score.asthma&gt;0 then 
-  	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-  	ocured = ocured or {}
-  	ocured.smoked = {}
-  end
   OppLostAff("unweavingspirit")
   return
-end
-
-if not ak.defs.reRebounding then 
+elseif not ak.defs.reRebounding then 
 	affssmoke() 
-	ocured = ocured or {}
 	ak.randomaffs = ak.randomaffs or 0
 	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-		if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end   
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end
 else
- 	ocured = ocured or {}
-	ak.randomaffs = ak.randomaffs or 0
-	ocured.smoked = {}
-	if affstrack.score.asthma&gt;0 then 
-	if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-		ocured = ocured or {}
-		ocured.smoked = {}
-	end    
 	ak.defs.reRebounding = false
 	reboundingaccountak = true
 	if reboundingaktime then killTimer(reboundingaktime) end
