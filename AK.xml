@@ -16283,8 +16283,10 @@ end
 							<string>^([\w'\-]+) strums a few notes on .+\, and a prismatic barrier forms around \w+\.$</string>
 							<string>^Your attack is repelled by the prismatic barrier surrounding ([\w'\-]+)\.$</string>
 							<string>^(\w+) is surrounded by a sudden rush of feathers\, and a prismatic barrier forms around him\.$</string>
+							<string>^With a steady, sweeping motion, (\w+) paints a broad stroke with \w+ quarterstaff, leaving a wall of transparent, prismatic light hanging in mid\-air\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
