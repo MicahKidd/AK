@@ -22232,11 +22232,9 @@ if not IsTargetted(multimatches[1][2]) then return end
 
 if string.find(multimatches[3][1],"The light behind the eyes of") then
   OppLostAff("unweavingmind")
-  ak.psion.unweaving.mind = 0
   return
 elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
   OppLostAff("unweavingbody")
-  ak.psion.unweaving.body = 0
   return
 elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
   OppLostAff("guilt")
@@ -24623,8 +24621,6 @@ ak.apostate = ak.apostate or {}
 ak.shikudo = ak.shikudo or {}
 ak.psion = ak.psion or {}
 ak.psion.unweaving = ak.psion.unweaving or {}
-ak.psion.unweaving.mind = ak.psion.unweaving.mind or 0
-ak.psion.unweaving.body = ak.psion.unweaving.body or 0
 ak.psion.unweaving.spirit = ak.psion.unweaving.spirit or 0
 ak.mounted = false
 ak.kata = ak.kata or 0
@@ -25138,8 +25134,6 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
   knownrun = nil
   parsedclasscures = false
   ak.waterbonded = false
-  ak.psion.unweaving.mind = 0
-  ak.psion.unweaving.body = 0
   ak.psion.unweaving.spirit = 0
   ak.resetbacktrack()
   ak.twoh = ak.twoh or {}
