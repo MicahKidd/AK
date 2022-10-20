@@ -5803,7 +5803,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11592,7 +11592,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12188,9 +12188,14 @@ ak.scoreup(target)</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Jinx</name>
 						<script>if ak.ai() then return end
+
+if string.find(multimatches[3][1], "is protected from your") then
+  return
+end
+
 local conversion = {
 	["paralyse"] = "paralysis",
 	["plague"] = "voyria",
@@ -12208,21 +12213,21 @@ ak.shaman.jinx = ak.shaman.jinx - 1
 if ak.shaman.jinx == 0 then
   ak.shaman.jinx = false
 end
-if matches[2] ~= "breach" and matches[2] ~= "tzantza" then
-	 if table.contains(conversion,matches[2]) then
-	 	setter = setter.." "..conversion[matches[2]]
+if multimatches[1][2] ~= "breach" and multimatches[1][2] ~= "tzantza" then
+	 if table.contains(conversion,multimatches[1][2]) then
+	 	setter = setter.." "..conversion[multimatches[1][2]]
 	 else
-	 	setter = setter.." "..matches[2]
+	 	setter = setter.." "..multimatches[1][2]
 	 end
 end
-if matches[3] ~= "breach" and matches[3] ~= "tzantza" then
-	 if table.contains(conversion,matches[3]) then
-	 	setter = setter.." "..conversion[matches[3]]
+if multimatches[1][3] ~= "breach" and multimatches[1][3] ~= "tzantza" then
+	 if table.contains(conversion,multimatches[1][3]) then
+	 	setter = setter.." "..conversion[multimatches[1][3]]
 	 else
-	 	setter = setter.." "..matches[3]
+	 	setter = setter.." "..multimatches[1][3]
 	 end
 end
-if matches[2] == "tzantza" or matches[3] == "tzantza" then
+if multimatches[1][2] == "tzantza" or multimatches[1][3] == "tzantza" then
 	ak.tzantzajinxed = true
 end
 OppGainedAff(setter)
@@ -12231,7 +12236,7 @@ OppGainedAff(setter)
 
 </script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
+						<conditonLineDelta>1</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -12242,8 +12247,12 @@ OppGainedAff(setter)
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Summoning your malign power, you direct a twin assault of the curses ([\w'\-]+) and ([\w'\-]+) at ([\w'\-]+)\.$</string>
+							<string>1</string>
+							<string>^(.*)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>5</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -23307,6 +23316,9 @@ end
   return
 end
 if IsTargetted(matches[2]) then
+  if affstrack.score.confusion&gt;0 then 
+    if ak.thoughtIhad then ak.thoughtIhad("confusion") else affstrack.score.confusion= 0 end  
+  end
   if affstrack.score.impatience == 100 then
     OppLostAff("impatience") 
   else
