@@ -11592,7 +11592,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11788,7 +11788,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13698,8 +13698,8 @@ end</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Moon</name>
 					<script>if ak.ai() then return end
-if IsTargetted(matches[2]) and nextmoon and nextmoon ~= "DOPPLEGANGER" then
-   OppGainedAff(nextmoon)
+if IsTargetted(matches[2]) and ak.nextmoon and ak.nextmoon ~= "DOPPLEGANGER" then
+   OppGainedAff(ak.nextmoon)
 else
 	ak.occie.aura.mental = ak.occie.aura.mental + 1
 end</script>
@@ -23631,7 +23631,7 @@ for k,v in pairs(cursedraw) do
    elseif string.findPattern(cursedraw[k],"instill") then
       nextinstill = cursedraw[k+3]
    elseif string.findPattern(cursedraw[k],"moon") then
-      nextmoon = cursedraw[k+3]
+      ak.nextmoon = cursedraw[k+3]
    elseif string.findPattern(cursedraw[k],"imbibe") then
       imbibedraw = cursedraw[k+1]
    elseif string.findPattern(cursedraw[k],"truewrack") then
@@ -23695,7 +23695,7 @@ for k,v in pairs(cursedraw) do
    elseif string.findPattern(cursedraw[k],"instill") then
       nextinstill = cursedraw[k+3]
    elseif string.findPattern(cursedraw[k],"moon") then
-      nextmoon = cursedraw[k+3]
+      ak.nextmoon = cursedraw[k+3]
    elseif string.findPattern(cursedraw[k],"imbibe") then
       imbibedraw = cursedraw[k+1]
    elseif string.findPattern(cursedraw[k],"truewrack") then
@@ -30239,7 +30239,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
