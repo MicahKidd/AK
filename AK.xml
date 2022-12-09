@@ -26225,7 +26225,10 @@ end
 ak.oscythe = "Agith'maal's ire"
 
 function ak.instill(instill)
-  local cv = currentvenoms[ak.oscythe][1] or "looped"
+  local cv = "looped"
+  if currentvenoms[ak.oscythe] then
+    cv = currentvenoms[ak.oscythe][1]
+  end
   if instill == "Degeneration" then
     if affstrack.score.clumsiness == 50 and affstrack.score.weariness == 50 and cv ~= "vernalius" and cv ~= "xentio" then
       OppGainedAff("clumsiness")
