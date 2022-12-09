@@ -3468,7 +3468,7 @@ end</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Depthswalker Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -3628,7 +3628,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Unattuned Target</name>
 						<script>if matches[2] == target:lower():title() then
 	disableTrigger("Unattuned Target")
@@ -11792,7 +11792,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -26222,31 +26222,42 @@ ak.addshadow = function(name)
 	cecho("&lt;cyan&gt;\nShadow Claimed!\n")
 end
 
-ak.instill = function(instill)
-	if instill == "Degeneration" then
-		if affstrack.score.clumsiness &lt; 100 then
+ak.oscythe = "Agith'maal's ire"
+
+function ak.instill(instill)
+  local cv = currentvenoms[ak.oscythe][1] or "looped"
+  if instill == "Degeneration" then
+    if affstrack.score.clumsiness == 50 and affstrack.score.weariness == 50 and cv ~= "vernalius" and cv ~= "xentio" then
+      OppGainedAff("clumsiness")
+      OppGainedAff("weariness")
+		elseif affstrack.score.clumsiness &lt; 100 and cv ~= "xentio" then
 			OppGainedAff("clumsiness")
-		elseif affstrack.score.weariness &lt; 100 then
+		elseif affstrack.score.weariness &lt; 100 and cv ~= "vernalius" then
 			OppGainedAff("weariness")
 		else
 			OppGainedAff("paralysis")
 		end
 	elseif instill == "Depression" then
-		if affstrack.score.depression &lt; 100 then
+    if affstrack.score.depression &gt;= 67 and affstrack.score.nausea &gt;= 67 and affstrack.score.hypochondria &lt; 100 and affstrack.score.hypochondria &gt; 0 then
+      OppGainedAff("hypochondria")
+		elseif affstrack.score.depression &lt; 85 then
 			OppGainedAff("depression")
-		elseif affstrack.score.nausea &lt; 100 then
+		elseif affstrack.score.nausea &lt; 85 and cv ~= "euphorbia" then
 			OppGainedAff("nausea")
 		else
 			OppGainedAff("hypochondria")
 		end
 	elseif instill == "Retribution" then
-		if affstrack.score.justice &lt; 100 then
+    if affstrack.score.justice + affstrack.score.retribution &gt;= 100 then
+      OppGainedAff("justice")
+      OppGainedAff("retribution")
+		elseif affstrack.score.justice &lt; 100 then
 			OppGainedAff("justice")
 		else
 			OppGainedAff("retribution")
 		end
 	elseif instill == "Madness" then
-		if affstrack.score.shadowmadness &lt; 100 then
+		if affstrack.score.shadowmadness &lt; 80 then
 			OppGainedAff("shadowmadness")
 		elseif affstrack.score.vertigo &lt; 100 then
 			OppGainedAff("vertigo")
@@ -26254,7 +26265,10 @@ ak.instill = function(instill)
 			OppGainedAff("hallucinations")
 		end
 	elseif instill == "Leach" then
-		if affstrack.score.parasite &lt; 100 then
+    if affstrack.score.parasite == 50 and affstrack.score.healthleech == 50 then
+      OppGainedAff("parasite")
+      OppGainedAff("healthleech")
+		elseif affstrack.score.parasite &lt; 100 then
 			OppGainedAff("parasite")
 		elseif affstrack.score.healthleech &lt; 100 then
 			OppGainedAff("healthleech")
@@ -26288,6 +26302,9 @@ ak.fullinstill = function(instill)
 		OppGainedAff("manaleech")
 		ak.addshadow()
 	end
+  if ak.loopinstilled == false then
+    ak.loopinstilled = "skip" 
+  end
 end</script>
 					<eventHandlerList />
 				</Script>
@@ -30243,7 +30260,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
