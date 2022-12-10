@@ -81,8 +81,10 @@ ak.limbs.limbreset(matches[2])</script>
 					<string>^([\w'\-]+)\'s body disintegrates and a ghostly spirit rises from the ashes\. The ghost cries out in pain as a body forms around [\w'\-]+ that has .*\.$</string>
 					<string>^The last vestiges of strength having ebbed from ([\w'\-]+)\'s body\, [\w'\-]+ sinks to the floor with a sigh\.Suddenly\, your surroundings are enveloped in a blinding white light\, forcing you to cower with your hands over your eyes\. When you tentatively open them once more\, you are astonished to find ([\w'\-]+) alive once more\.$</string>
 					<string>^The last vestiges of strength having ebbed from ([\w'\-]+)\'s body\, \w+ sinks to the floor with a sigh\. Suddenly\, your surroundings are enveloped in a blinding white light\, forcing you to cower with your hands over your eyes\. When you tentatively open them once more\, you are astonished to find [\w'\-]+ alive once more\.$</string>
+					<string>^The force of the meteorite is too much for (\w+)\'s weakened frame tobear, and \w+ is smashed into flaming pieces\.$</string>
 				</regexCodeList>
 				<regexCodePropertyList>
+					<integer>1</integer>
 					<integer>1</integer>
 					<integer>1</integer>
 					<integer>1</integer>
@@ -3468,7 +3470,7 @@ end</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Depthswalker Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -3628,7 +3630,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Unattuned Target</name>
 						<script>if matches[2] == target:lower():title() then
 	disableTrigger("Unattuned Target")
@@ -5803,7 +5805,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
