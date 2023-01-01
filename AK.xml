@@ -5805,7 +5805,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12962,7 +12962,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sylvan Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13316,13 +13316,7 @@ end</script>
 					<script>enableTrigger("Missed Single Removal")                --DO NOT CHANGE!
 enableTrigger("Confirmed Hit")                        --DO NOT CHANGE!
 weaponattack = weaponattack or {}
-if matches[2] == "claws" then
-   table.insert(weaponattack, "your wickedly sharp claws")
-elseif matches[2] == "vines" then
-   table.insert(weaponattack, "the thorny vines covering your arms")
-else
-   table.insert(weaponattack, matches[2])
-end
+table.insert(weaponattack, "the thorny vines covering your arms")
 if affstrack.crushedherb then
    currentvenoms = currentvenoms or {}
    currentvenoms["the thorny vines covering your arms"] = currentvenoms["the thorny vines covering your arms"] or {}
@@ -13342,8 +13336,10 @@ end
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^You command the razor-edged thorny ([\w'\-]+) around you to lash out and rend the (right leg|left leg|right arm|left arm|head|torso) of .*\.$</string>
+						<string>^You command the razor\-edged thorny (\w+) around you to lash out and rend the flesh of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -27605,7 +27601,7 @@ local convert = {
                 ["latency"]        = "LATE",
                 ["loneliness"]     = "lonl",
                 ["masochism"]      = "maso",
-                ["manaleech"]      = "mleach",
+                ["manaleech"]      = "mleech",
 								["mindravaged"]    = "mrvg",
                 ["mycalium"]       = "myc",
                 ["nausea"]         = "naus",
