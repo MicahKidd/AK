@@ -27826,7 +27826,7 @@ function ak.prompt.scoreup()
 	   table.insert(promptset,"&lt;cyan&gt;[&lt;red&gt;"..ak.bleeding.."&lt;cyan&gt;]")
 	end
 	if gmcp.Char.Status.class == "Shaman" then
-    local yeet = ak.shaman.ReturnTzantza()
+    local yeet = roundUp(ak.shaman.ReturnTzantza(),0)
     if yeet &gt; 0 then
        table.insert(promptset,"&lt;cyan&gt;[&lt;white&gt;"..yeet.."&lt;cyan&gt;]")
     end
