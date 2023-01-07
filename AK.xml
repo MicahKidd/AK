@@ -5614,7 +5614,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -7891,7 +7891,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -25764,10 +25764,10 @@ end
 
 function ak.showPrompt()
 	if wsys then
-		wsys.showPrompt()
+		wsys.showprompt()
 	elseif svo and svo.showprompt then
 		echo("\n")
-		svo.showPrompt()
+		svo.showprompt()
 	else
 		send("")
 	end
@@ -28444,7 +28444,8 @@ function ak.limbs.parseBreaksPrompt()
    cecho("&lt;cyan&gt;.")
    ak.limbs.ScoreRun = true
    disableTrigger("Missed Single Removal Limbs")                --DO NOT CHANGE!
-   disableTrigger("Confirmed Hit Limbs") 
+   disableTrigger("Confirmed Hit Limbs")
+   disableTrigger("Nairat Augment") 
    disableTrigger("Parry locate")
    disableTrigger("Monk Parry")
    local augment = "none"
