@@ -4507,7 +4507,7 @@ end</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Druid Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -7891,7 +7891,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -27997,28 +27997,28 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
    elseif ndba and ndba.isperson(attacker) then
       attackerclass = ndba.names[attacker]["class"]
    end 
-   if weapon == "tremolo" then 
+   if weapon == "tremolo" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then 
       damage = 50
    elseif who == "Me" and wsys and wsys.stats.h == wsys.stats.oh then 
       if wsys.absorbed == false then
          return 
       end
-   elseif weapon == "dragonrend" then 
+   elseif weapon == "dragonrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then 
       damage = 25
-	 elseif weapon == "psion" then
+	 elseif weapon == "psion" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
 	 	  damage = 25
-	 elseif weapon == "wreathed" then
+	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       damage = 12.5
-   elseif weapon == "viridianrend" then
+   elseif weapon == "viridianrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       damage = 25			
-   elseif weapon == "airstaff" then --15,9 for magi
+   elseif weapon == "airstaff" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then --15,9 for magi
       if whomaxhealth &gt; 5300 then
          damage = 10
       else
          damage = 11
       end  
       ak.staffaff(weapon)    
-   elseif table.contains(ak.limbs.weaponry.magi, weapon) then
+   elseif table.contains(ak.limbs.weaponry.magi, weapon) and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       if whomaxhealth &gt; 5400 then
          damage = 16
       else
