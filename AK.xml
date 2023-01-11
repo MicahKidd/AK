@@ -28008,7 +28008,11 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
 	 elseif weapon == "psion" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
 	 	  damage = 25
 	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      damage = 12.5
+      if whomaxhealth &gt;= 6500 then
+        damage = 12.7
+      else
+        damage = 12.5
+      end
    elseif weapon == "viridianrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       if whomaxhealth &gt; 7000 then
         damage = 24
