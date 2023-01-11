@@ -4507,7 +4507,7 @@ end</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Druid Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -4905,7 +4905,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -16555,7 +16555,7 @@ end
 						<string>^Cracks spider across the surface of the crimson shield surrounding ([\w'\-]+)\, before it abruptly winks out of existence\.$</string>
 						<string>^You step into the attack\, grab ([\w'\-]+) by the arm\, and throw [\w'\-]+ violently to the ground\.$</string>
 						<string>You miss.</string>
-						<string>One of your reflections has been destroyed! You have 0 left.</string>
+						<string>^One of your reflections has been destroyed\! You have \d+ left\.$</string>
 						<string>He misses.</string>
 						<string>She misses.</string>
 						<string>You quickly jump back, avoiding the attack.</string>
@@ -30408,7 +30408,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
