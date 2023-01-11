@@ -4905,7 +4905,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -10692,7 +10692,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sentinel Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -28010,7 +28010,11 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
 	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       damage = 12.5
    elseif weapon == "viridianrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      damage = 25			
+      if whomaxhealth &gt; 7000 then
+        damage = 24
+      else
+        damage = 25			
+      end
    elseif weapon == "airstaff" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then --15,9 for magi
       if whomaxhealth &gt; 5300 then
          damage = 10
@@ -30408,7 +30412,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
