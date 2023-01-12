@@ -10692,7 +10692,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sentinel Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12962,7 +12962,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sylvan Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -21334,7 +21334,7 @@ ak.currenthealth = multimatches[2][3]
 ak.maxhealth = multimatches[2][4]
 local currHealth = math.ceil((multimatches[2][3]/multimatches[2][4])*100)
 ak.healthpercent = currHealth
-cecho("\n&lt;white&gt;[&lt;blue&gt;Health&lt;white&gt;]: &lt;yellow&gt;"..currHealth.."%")
+cecho("\n&lt;white&gt;[&lt;blue&gt;yellow&lt;white&gt;]: &lt;yellow&gt;"..currHealth.."%")
 if not ak.pause then send("pt "..multimatches[2][2].."'s health at "..ak.currenthealth.."/"..ak.maxhealth) end
 ak.scoreup(multimatches[2][2])
 
@@ -28008,13 +28008,17 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
 	 elseif weapon == "psion" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
 	 	  damage = 25
 	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      if whomaxhealth &gt;= 6500 then
+      if whomaxhealth &gt;= 18724 then
+        damage = 10.3
+      elseif whomaxhealth &gt;= 6500 then
         damage = 12.7
       else
         damage = 12.5
       end
    elseif weapon == "viridianrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      if whomaxhealth &gt; 7000 then
+      if whomaxhealth &gt;= 18724 then
+        damage = 20.6
+      elseif whomaxhealth &gt; 7000 then
         damage = 24
       else
         damage = 25			
