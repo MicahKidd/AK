@@ -21334,7 +21334,7 @@ ak.currenthealth = multimatches[2][3]
 ak.maxhealth = multimatches[2][4]
 local currHealth = math.ceil((multimatches[2][3]/multimatches[2][4])*100)
 ak.healthpercent = currHealth
-cecho("\n&lt;white&gt;[&lt;blue&gt;yellow&lt;white&gt;]: &lt;yellow&gt;"..currHealth.."%")
+cecho("\n&lt;white&gt;[&lt;yellow&gt;Health&lt;white&gt;]: &lt;yellow&gt;"..currHealth.."%")
 if not ak.pause then send("pt "..multimatches[2][2].."'s health at "..ak.currenthealth.."/"..ak.maxhealth) end
 ak.scoreup(multimatches[2][2])
 
