@@ -25098,7 +25098,9 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
   opponenttree = 0
   ak.defs.mass = true
   ak.defs.shield = false
-  ak.defs.rebounding = true
+  if (wsys and not wsys.rager) or not wsys then
+    ak.defs.rebounding = true
+  end
   ak.defs.reRebounding = false
   ak.defs.sileris = true
   ak.defs.curseward = true
