@@ -28997,8 +28997,7 @@ function affssmoke()
   local spiritcount = affstrack.score.unweavingspirit/100
   for i = 1, spiritcount do
     table.insert(affs, "unweavingspirit")
-  end
-  
+  end  
    if #affs == 1 then
 	 		if affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
       	if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
@@ -29039,12 +29038,14 @@ function affssmoke()
 end
 
 function ak.smoke.RetainMass(aff, count)
+  if ak.smoke.mass[aff] then return end
 	ak.smoke.mass[aff] = roundDown(count-1,-2)
 end
 
 function ak.smoke.RestoreMass(aff)
 	local returner = ak.smoke.mass[aff] or 0
 	affstrack.score[aff] = affstrack.score[aff] + returner
+  ak.smoke.mass[aff] = 0
 end
 </script>
 					<eventHandlerList />
