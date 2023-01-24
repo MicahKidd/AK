@@ -9712,7 +9712,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Psion Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11794,7 +11794,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -28976,24 +28976,29 @@ end</script>
 function affssmoke()
 	ak.smoke.mass = {}
 	ak.occie.aura.parsereduct("smoke")
-   local affs = {}
-   ocured = ocured or {}
-   ak.randomaffs = ak.randomaffs or 0
-   ocured.smoked = {}
-   if affstrack.score.asthma&gt;0 then 
-      if ak.thoughtIhad then ak.thoughtIhad("asthma") else affstrack.score.asthma = 0 end
-      ocured = ocured or {}
-      ocured.smoked = {}
-   end
-   for i = 1, #affstrack.smoked do
-      if affstrack.score[affstrack.smoked[i]] &gt; 0 then
-         table.insert(affs, affstrack.smoked[i])
-      end
-   if affstrack.score.unweavingspirit &gt; 100 then
+  local affs = {}
+  ocured = ocured or {}
+  ak.randomaffs = ak.randomaffs or 0
+  ocured.smoked = {}
+  if affstrack.score.asthma&gt;0 then 
+    if ak.thoughtIhad then 
+      ak.thoughtIhad("asthma") 
+    else 
+      affstrack.score.asthma = 0
+    end
+    ocured = ocured or {}
+    ocured.smoked = {}
+  end
+  for i = 1, #affstrack.smoked do
+    if affstrack.score[affstrack.smoked[i]] &gt; 0 then
+      table.insert(affs, affstrack.smoked[i])
+    end
+  end
+  local spiritcount = affstrack.score.unweavingspirit/100
+  for i = 1, spiritcount do
     table.insert(affs, "unweavingspirit")
-   end
-   
-   end
+  end
+  
    if #affs == 1 then
 	 		if affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
       	if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
@@ -30290,7 +30295,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
