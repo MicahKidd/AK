@@ -9712,7 +9712,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Psion Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11598,7 +11598,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -24082,7 +24082,7 @@ enableTrigger("Class Changed Prompt Lock")
 					<string>On and on, your soul cascades upon the currents that now sustain your form. </string>
 					<string>With a cursory thought, you still your clamorous heart and arise whole, gazing out from within your</string>
 					<string>Your elemental might has already overtaken your form.</string>
-					<string>You pray to the spirits of the fallen for a fresh chance at life, and are reincarnatedinto </string>
+					<string>You pray to the spirits of the fallen for a fresh chance at life, and are reincarnated into </string>
 					<string>You switch your martial school to that of Shikudo.</string>
 					<string>With a victorious roar, you bellow your triumph into the firmament.</string>
 					<string>You have already adopted the mighty form of the Viridian.</string>
