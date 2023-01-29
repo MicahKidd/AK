@@ -26543,7 +26543,7 @@ function ak.serveraliases()
       ak.ignition.setattacks()
     end
   elseif (gmcp.Char.Status.class == "air Elemental Lady" or gmcp.Char.Status.class == "air Elemental Lord") and not inlyre() then
-    if ak.stack == "Duress" and ak.duress and ak.duress.compress then
+    if ak.stack == "Duress" and ak.duress and ak.duress.compression then
       ak.duress.compression()
     end
   elseif (gmcp.Char.Status.class == "water Elemental Lady" or gmcp.Char.Status.class == "water Elemental Lord") and not inlyre() then
