@@ -7891,7 +7891,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11598,7 +11598,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -22503,30 +22503,6 @@ end</script>
 					<regexCodeList />
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Runewarden Dagaz</name>
-						<script>if IsTargetted(matches[2]) then 
-	 if ak.ai() then return end
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A rune like a rising sun upon the ground flares, bathing ([\w'\-]+) with healing magic.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Fool Cure</name>
 						<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then 
@@ -22550,52 +22526,6 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^([\w'\-]+) presses a tarot to \w+ forehead, producing a wan smile\.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest</name>
-						<script>if ak.ai() then return end
-if ndba and ndba.names[target] and ndba.getclass(target) == "Priest" then
-   ak.cure.passive() 
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>The guardian angel begins to shimmer with a soft red light.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>3</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest 2</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A flickering nimbus outlines ([\w'\-]+) for an instant\, before fading from sight\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22676,31 +22606,6 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Shaman Daina</name>
-						<script>if ak.ai() then return end
-if IsTargetted(multimatches[2][2]) then 
-   ak.cure.passive()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>1</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>A pale mist begins to rise from the skin of</string>
-							<string>^A pale mist begins to rise from the skin of ([\w'\-]+)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>BM Phoenix</name>
 						<script>if ak.ai() then return end
@@ -22719,77 +22624,6 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Throwing back [\w'\-]+ head\, ([\w'\-]+) shouts out in defiance as blazing flames consume [\w'\-]+ for a single\, glorious instant before dying away\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>BM Alleviate</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.tree()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^As \w+ massages key pressure points, a look of relief comes over ([\w'\-]+)'s face as \w+ ailments ease.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Bard Hallelujah</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive("paralysis",true)
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A song can be heard on the edge of hearing as the air distorts about ([\w'\-]+)\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Apostate Syphon</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A demonic crimson glow emanates from ([\w'\-]+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -22941,276 +22775,6 @@ ak.scoreup(matches[2])
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest Bedevil</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then
-   ak.oresetparse()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^With a grand gesture of righteous fury, ([\w'\-]+) bedevils you with \w+ afflictions\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Magi Bloodboil</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   if affstrack.score.haemophilia&gt;0 then 
-     if ak.thoughtIhad then ak.thoughtIhad("haemophilia") else affstrack.score.haemophilia = 0 end
-   end
-   ak.cure.passive()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^Perspiration suddenly breaks out on ([\w'\-]+)\'s forehead\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest Angel Care</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^The guardian angel of ([\w'\-]+) shimmers and \w+ gives a sigh of relief.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest Rite of Healing</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A gentle glow surrounds ([\w'\-]+)\.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Sylvan Panacea</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive("paralysis",true)
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) is surrounded in a cool\, refreshing mist\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Tarot Sun</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^The globe of light illuminates ([\w'\-]+) with its brilliance\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Priest Healing</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
---if matches[3] == "Fire" imp or para
---elseif matches[3] == "Air" asthma
---elseif matches[3] == "Earth" slickness
---elseif matches[3] == "Air and Earth" -- anorexia</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) calls upon the powers of (.*) and projects \w+ spiritual essence inwardly\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Air Lord Tempest</name>
-						<script>if ak.ai() then return end
-if IsTargetted(multimatches[2][2]) then 
-   ak.cure.passive()
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>1</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>The winds that compose</string>
-							<string>^The winds that compose ([\w'\-]+) fall still\, [\w'\-]+ tempestuous form dispersing into nothing\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Air Lord Tempest</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^The tempestuous form of ([\w'\-]+) is cleansed by a purifying breeze\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Alchemist Salt</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) sketches out a symbol in the air with \w+ finger in the shape of a bisected circle.</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Magi Harmony</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^A soft chiming emanates from ([\w'\-]+).$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Priest Sacrifice</name>
 						<script>if ak.ai() then return end
@@ -23229,30 +22793,6 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^The room is consumed in an explosion of light, out of which ([\w'\-]+) emerges refreshed and renewed\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Sylvan Heal</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive()
-end
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^([\w'\-]+) stands suddenly upright\, rooted to the earth\.$ </string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -23288,31 +22828,6 @@ end
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Slough</name>
-						<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
-   ak.cure.passive("paralysis",true)
-end
-
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^The fiery outer layers of ([\w'\-]+) fall away\, turning to dust as they drift to the ground\. Though ([\w'\-]+) seems diminished for an instant\, [\w'\-]+ fires soon rage with fury once more\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Psion Expunge</name>
 						<script>if ak.ai() then
   return
@@ -23329,7 +22844,7 @@ if IsTargetted(matches[2]) then
 end
 --CAN CURE PARALYSIS</script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
+						<conditonLineDelta>1</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -23345,6 +22860,1071 @@ end
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Single Aff</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList />
+						<regexCodePropertyList />
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Slough</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive("paralysis",true)
+end
+
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^The fiery outer layers of ([\w'\-]+) fall away\, turning to dust as they drift to the ground\. Though ([\w'\-]+) seems diminished for an instant\, [\w'\-]+ fires soon rage with fury once more\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Sylvan Heal</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^([\w'\-]+) stands suddenly upright\, rooted to the earth\.$ </string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Magi Harmony</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A soft chiming emanates from ([\w'\-]+).$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Alchemist Salt</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^([\w'\-]+) sketches out a symbol in the air with \w+ finger in the shape of a bisected circle.</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Air Lord Tempest</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^The tempestuous form of ([\w'\-]+) is cleansed by a purifying breeze\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Air Lord Tempest</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^The winds that compose ([\w'\-]+) fall still\, [\w'\-]+ tempestuous form dispersing into nothing\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Priest Healing</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+--if matches[3] == "Fire" imp or para
+--elseif matches[3] == "Air" asthma
+--elseif matches[3] == "Earth" slickness
+--elseif matches[3] == "Air and Earth" -- anorexia</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^([\w'\-]+) calls upon the powers of (.*) and projects \w+ spiritual essence inwardly\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Tarot Sun</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^The globe of light illuminates ([\w'\-]+) with its brilliance\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Sylvan Panacea</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive("paralysis",true)
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^([\w'\-]+) is surrounded in a cool\, refreshing mist\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Priest Rite of Healing</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A gentle glow surrounds ([\w'\-]+)\.</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Priest Angel Care</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^The guardian angel of ([\w'\-]+) shimmers and \w+ gives a sigh of relief.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Magi Bloodboil</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   if affstrack.score.haemophilia&gt;0 then 
+     if ak.thoughtIhad then ak.thoughtIhad("haemophilia") else affstrack.score.haemophilia = 0 end
+   end
+   ak.cure.passive()
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^Perspiration suddenly breaks out on ([\w'\-]+)\'s forehead\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Bard Hallelujah</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive("paralysis",true)
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A song can be heard on the edge of hearing as the air distorts about ([\w'\-]+)\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Apostate Syphon</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A demonic crimson glow emanates from ([\w'\-]+)\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Priest 2</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A flickering nimbus outlines ([\w'\-]+) for an instant\, before fading from sight\.$</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Priest</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+  if ndba and ndba.names[target] and ndba.getclass(target) == "Priest" then
+     ak.cure.passive() 
+  end
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>The guardian angel begins to shimmer with a soft red light.</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Shaman Daina</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A pale mist begins to rise from the skin of ([\w'\-]+)\.$</string>
+								<string>0</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>BM Alleviate</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.tree()
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^As \w+ massages key pressure points, a look of relief comes over ([\w'\-]+)'s face as \w+ ailments ease.</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Runewarden Dagaz</name>
+							<script>
+if ak.ai() then return end
+if not IsTargetted(multimatches[1][2]) then return end
+
+if string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
+elseif string.find(multimatches[3][1],"straightens, as if some great burden had been lifted from") then
+  OppLostAff("guilt")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("retribution")
+  return
+elseif string.find(multimatches[3][1],"Lucidity returns to the eyes of") then
+  OppLostAff("shadowmadness")
+  return
+elseif string.find(multimatches[3][1],"ceases secreting slime.") then
+  OppLostAff("rebbies")
+  return
+elseif string.find(multimatches[3][1],"violent trembling") then
+  OppLostAff("whisperingmadness")
+  return
+elseif string.find(multimatches[3][1],"nervous trembling") then
+  OppLostAff("mycalium")  
+  return
+else
+   ak.cure.passive()
+end
+</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>1</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A rune like a rising sun upon the ground flares, bathing ([\w'\-]+) with healing magic.</string>
+								<string>1</string>
+								<string>^(.*)$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>5</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</TriggerGroup>
 				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Concentrate</name>
