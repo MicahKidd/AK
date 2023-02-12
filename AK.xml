@@ -1759,7 +1759,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Apostate Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -10521,7 +10521,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12582,7 +12582,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -14531,7 +14531,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -15865,7 +15865,7 @@ end
 							<string>You call upon Whiirh to empower your staff and strike ([\w'\-]+), the power of air dispersing [\w'\-]+ aura of rebounding.</string>
 							<string>You call upon Whiirh and unleash a forceful blow towards ([\w'\-]+) with your trusty staff.</string>
 							<string>You call upon Whiirh and unleash a forceful blow towards ([\w'\-]+)'s .* with your trusty staff.</string>
-							<string>^You raze ([\w'\-]+)\'s aura of rebounding with .*\.$</string>
+							<string>^You raze ([\w'\-]+)\'s aura of rebounding with .+\.$</string>
 							<string>^You raze ([\w'\-]+)\'s speed defence with .+\.$</string>
 							<string>^You whip .+ through the air in front of ([\w'\-]+)\, to no effect\.$</string>
 							<string>^You try to flay a non-existent aura of rebounding from ([\w'\-]+)\.$</string>
@@ -27963,6 +27963,8 @@ function ak.classlockwsys()
       table.insert( classlock, "weariness" )
    elseif ndba.getclass(target) == "Jester" then   --
       table.insert( classlock, "voyria" )
+   elseif ndba.getclass(target) == "Pariah" then   --
+      table.insert( classlock, "voyria" )
    elseif ndba.getclass(target) == "Magi" then
       table.insert( classlock, "haemophilia" )
    elseif ndba.getclass(target) == "Monk" then
@@ -28020,6 +28022,8 @@ function ak.classlocksvo()
 		  table.insert( classlock, "prone" )
    elseif ndb.getclass(target) == "Infernal" then
       table.insert( classlock, "weariness" )
+   elseif ndb.getclass(target) == "Jester" then   --
+      table.insert( classlock, "voyria" )
    elseif ndb.getclass(target) == "Jester" then   --
       table.insert( classlock, "voyria" )
    elseif ndb.getclass(target) == "Magi" then
