@@ -6094,7 +6094,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12083,7 +12083,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14998,49 +14998,6 @@ ak.scoreup(target)</script>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Applied</name>
-					<script>if IsTargetted(matches[2]) then
-	if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] and gmcp.Char.Vitals.charstats[3] == "Spec: Two Handed" then			
-		send("battlefury perceive "..target)
-	end
-	--if ak.twoh[ak.twoh.salveconversion[matches[3]]] &gt; 5 then
-		--ak.twoh[ak.twoh.salveconversion[matches[3]]] = ak.twoh[ak.twoh.salveconversion[matches[3]]] - 2
-		--cecho("&lt;yellow&gt;"..ak.twoh.salveconversion[matches[3]]..":&lt;cyan&gt; "..ak.twoh[ak.twoh.salveconversion[matches[3]]])
-	--else
-		ak.twoh[ak.twoh.salveconversion[matches[3]]] = ak.twoh[ak.twoh.salveconversion[matches[3]]] - 1
-		if ak.twoh[ak.twoh.salveconversion[matches[3]]] &lt; 0 then ak.twoh[ak.twoh.salveconversion[matches[3]]] = 0 end
-		cecho("&lt;yellow&gt;"..ak.twoh.salveconversion[matches[3]]..":&lt;cyan&gt; "..ak.twoh[ak.twoh.salveconversion[matches[3]]])
-	--end
-	if matches[3] == "legs" then
-		ak.tendonHit()
-	elseif matches[3] == "arms" then
-		ak.wristHit()
-	elseif matches[3] == "head" then
-		ak.skullHit()
-	elseif matches[3] == "torso" then
-		ak.ribHit()
-	end
-	ak.scoreup(matches[2])
-end
---legs,arms,head,torso</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^([\w'\-]+) takes some elixir from .* and rubs it into [\w'\-]+ ([\w'\-]+)\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Precision</name>
 					<script>ak.twoh.modifier = 2
@@ -22195,6 +22152,49 @@ ak.scoreup(matches[2])</script>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Applied</name>
+					<script>if IsTargetted(matches[2]) then
+	if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] and gmcp.Char.Vitals.charstats[3] == "Spec: Two Handed" then			
+		send("battlefury perceive "..target)
+	end
+	--if ak.twoh[ak.twoh.salveconversion[matches[3]]] &gt; 5 then
+		--ak.twoh[ak.twoh.salveconversion[matches[3]]] = ak.twoh[ak.twoh.salveconversion[matches[3]]] - 2
+		--cecho("&lt;yellow&gt;"..ak.twoh.salveconversion[matches[3]]..":&lt;cyan&gt; "..ak.twoh[ak.twoh.salveconversion[matches[3]]])
+	--else
+		ak.twoh[ak.twoh.salveconversion[matches[3]]] = ak.twoh[ak.twoh.salveconversion[matches[3]]] - 1
+		if ak.twoh[ak.twoh.salveconversion[matches[3]]] &lt; 0 then ak.twoh[ak.twoh.salveconversion[matches[3]]] = 0 end
+		cecho("&lt;yellow&gt;"..ak.twoh.salveconversion[matches[3]]..":&lt;cyan&gt; "..ak.twoh[ak.twoh.salveconversion[matches[3]]])
+	--end
+	if matches[3] == "legs" then
+		ak.tendonHit()
+	elseif matches[3] == "arms" then
+		ak.wristHit()
+	elseif matches[3] == "head" then
+		ak.skullHit()
+	elseif matches[3] == "torso" then
+		ak.ribHit()
+	end
+	ak.scoreup(matches[2])
+end
+--legs,arms,head,torso</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^([\w'\-]+) takes some elixir from .* and rubs it into [\w'\-]+ ([\w'\-]+)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Cures(i)</name>
@@ -31192,7 +31192,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
