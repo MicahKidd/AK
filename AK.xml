@@ -2877,7 +2877,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Blademaster Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11860,7 +11860,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -26812,7 +26812,7 @@ function OppGainedAff(aff,source)
             table.insert(affStr,word:title())
          elseif word == "armexpend" then
             affstrack.score.armexpend = 100
-            ak.armexpendtimer = tempTimer(8,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
+            ak.armexpendtimer = tempTimer(15,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
             table.insert(affStr,word:title())
          elseif word == "ensorcell" then
             affstrack.score.ensorcell = 100
@@ -26939,7 +26939,7 @@ function OppGainedAff(aff,source)
         table.insert(affStr,aff:title())         
      elseif aff == "armexpend" then
         affstrack.score.armexpend = 100
-        ak.TorsoWrenchDisable = tempTimer(8,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
+        ak.TorsoWrenchDisable = tempTimer(15,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
         table.insert(affStr,aff:title())
      elseif aff == "focusextend" then
         affstrack.score.focusextend = 100
