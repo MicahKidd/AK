@@ -27408,6 +27408,10 @@ function ak.serveraliases()
   if ak.stack == "NoOne" then
     --Deliverance!
     ak.aliasreset()
+  elseif gmcp.Char.Status.race == "Undead" then
+    if ak.undead.setattacks then
+      ak.undead.setattacks()
+    end
   elseif gmcp.Char.Status.race:match("Dragon") and not inlyre() then
     -- Dragon --
     if ak.dragon.setattacks then
