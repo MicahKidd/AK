@@ -27582,7 +27582,9 @@ registerAnonymousEventHandler("got equilibrium", "ak.queuereset")</script>
 if ak.defaultstack then return end --Delete Me From Personal Settings!
 
 function ak.defaultstack()
-   if gmcp.Char.Status.race:match("Dragon") then 
+   if gmcp.Char.Status.race == "Undead" then
+      ak.stack = "Undead"
+   elseif gmcp.Char.Status.race:match("Dragon") then 
       ak.stack = "dragon" 
       affstrack.crushedherb = nil
    elseif gmcp.Char.Status.class == "Monk" then
