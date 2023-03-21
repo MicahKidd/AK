@@ -1759,7 +1759,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Apostate Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14166,6 +14166,44 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Undead Group</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Unslaught</name>
+					<script>if IsTargetted(matches[2]) then 
+   OppGainedAff("weariness")
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You unleash a flurry of vicious strikes with your blades at the ?:(right leg|left leg) of (\w+)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Water Lord Group</name>
 				<script></script>
@@ -26464,6 +26502,7 @@ function ak.KillTriggers()
   disableTrigger("2h Group")
   disableTrigger("Druid Group")
   disableTrigger("Totem Group")
+  disableTrigger("Undead Group")
   disableTrigger("Serpent Group")
   disableTrigger("Jester Group")
   disableTrigger("Tarot Group")
@@ -26495,7 +26534,11 @@ function ak.classenable()
   if gmcp.Char.Status.race:match("Dragon") or gmcp.Char.Status.class ~= "Shaman" then
     swiftcount = 0
   end
-  if gmcp.Char.Status.race:match("Dragon") then
+  if gmcp.Char.Status.race == "Undead" then
+    ak.KillTriggers()
+    enableTrigger("Undead Group")
+    cecho("&lt;yellow&gt;\nUNDEAD ENABLED\n")
+  elseif gmcp.Char.Status.race:match("Dragon") then
     ak.KillTriggers()
     enableTrigger("Dragon Group")
     if not table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
