@@ -11913,7 +11913,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14166,7 +14166,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Undead Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14185,7 +14185,20 @@ end</script>
 					<name>Unslaught</name>
 					<script>if IsTargetted(matches[2]) then 
    OppGainedAff("weariness")
-end</script>
+end
+
+if ak.ai() then return end
+local augment = "claws"
+local weapon = "dragonrend"
+local limb = ak.limbs.standardizeLimb(matches[2])
+table.insert(ak.limbs.currentbreak.weapon,weapon)
+table.insert(ak.limbs.currentbreak.limb,limb)
+table.insert(ak.limbs.currentbreak.attacker,"Me")
+table.insert(ak.limbs.currentbreak.who,matches[3])
+table.insert(ak.limbs.currentbreak.augment,augment)
+enableTrigger("Missed Single Removal Limbs")          
+enableTrigger("Confirmed Hit Limbs")
+enableTrigger("Parry locate")</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -14197,7 +14210,7 @@ end</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You unleash a flurry of vicious strikes with your blades at the ?:(right leg|left leg) of (\w+)\.$</string>
+						<string>^You unleash a flurry of vicious strikes with your blades at the (?:right leg|left leg) of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
@@ -22608,7 +22621,9 @@ end
 					<name>Opponent Ate</name>
 					<script>if ak.ai() then return end
 local donotrun = { "azurite mote", "gypsum crystal", "echinacea root",  "bisemutum chip", "kola nut", "black cohosh root", "skullcap flower", "dolomite grain", "irid moss", "potash crystal", "quartz grain", "ball of myrrh gum", "antimony flake", "ginger root",}
-if table.contains(donotrun, multimatches[1][3]) then return end
+local ated = multimatches[1][3]
+ated = ated:gsub("withered ", "")
+if table.contains(donotrun, ated) then return end
 if not IsTargetted(multimatches[1][2]) then return end
 
 if string.find(multimatches[3][1],"The light behind the eyes of") then
@@ -22651,7 +22666,7 @@ else
     herbtimer = tempTimer(.7, [[opponenteat = 0;timerherb = 0]])
     opponentrecenteat = true
     herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])  
-    ak.cure.ate(multimatches[1][3], false)
+    ak.cure.ate(ated, false)
   end
 end   </script>
 					<triggerType>0</triggerType>
