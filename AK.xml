@@ -8206,7 +8206,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11007,7 +11007,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sentinel Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14187,14 +14187,75 @@ end</script>
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Unslaught</name>
-					<script>if IsTargetted(matches[2]) then 
-   OppGainedAff("weariness")
+					<script>if not IsTargetted(matches[2]) then 
+   return
 end
 
 if ak.ai() then return end
 local augment = "claws"
 local weapon = "dragonrend"
 local limb = ak.limbs.standardizeLimb(matches[2])
+if limb == "rightleg" or limb == "leftleg" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.weariness == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("clumsiness")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.weariness == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("clumsiness")
+  end
+elseif limb == "rightarm" or limb == "leftarm" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.nausea == 0 then
+    OppGainedAff("nausea")
+  else
+    OppGainedAff("darkshade")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.nausea == 0 then
+    OppGainedAff("nausea")
+  else
+    OppGainedAff("darkshade")
+  end
+elseif limb == "head" then
+  if affstrack.score.anorexia == 0 then
+    OppGainedAff("weariness")
+  elseif affstrack.score.anorexia == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("confusion")
+  end
+  if affstrack.score.anorexia == 0 then
+    OppGainedAff("weariness")
+  elseif affstrack.score.anorexia == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("confusion")
+  end
+elseif limb == "torso" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.asthma == 0 then
+    OppGainedAff("asthma")
+  else
+    OppGainedAff("healthleech")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.asthma == 0 then
+    OppGainedAff("asthma")
+  else
+    OppGainedAff("healthleech")
+  end
+end
 table.insert(ak.limbs.currentbreak.weapon,weapon)
 table.insert(ak.limbs.currentbreak.limb,limb)
 table.insert(ak.limbs.currentbreak.attacker,"Me")
@@ -14214,7 +14275,7 @@ enableTrigger("Parry locate")</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You unleash a flurry of vicious strikes with your blades at the (?:right leg|left leg) of (\w+)\.$</string>
+						<string>^You unleash a flurry of vicious strikes with your blades at the (?:right leg|left leg|torso|head|left arm|right arm) of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
