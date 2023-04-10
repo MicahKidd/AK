@@ -27759,15 +27759,17 @@ function ak.defaultstack()
    elseif gmcp.Char.Status.class == "fire ELemental Lord" or gmcp.Char.Status.class == "fire Elemental Lady" then
       ak.stack = "Ignition"
    elseif gmcp.Char.Status.class == "Infernal" or gmcp.Char.Status.class == "Paladin" or gmcp.Char.Status.class == "Runewarden" then   
-      if gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] == "Spec: Dual Cutting" then
+      local locate = {["Runewarden"] = 3,["Infernal"] = 4,["Paladin"] = 5} 
+      local knightSpec = gmcp.Char.Vitals.charstats[locate[gmcp.Char.Status.class]] or "Spec: Dual Cutting"
+      if knightSpec == "Spec: Dual Cutting" then
          if ak.dwcoffensetoggle then
             ak.dwcoffensetoggle()
          end
-      elseif gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] and (gmcp.Char.Vitals.charstats[3] == "Spec: Sword and Shield" or gmcp.Char.Vitals.charstats[5] == "Spec: Sword and Shield") then
-         ak.stack = "Aboard"     --sword and board
-      elseif gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] and gmcp.Char.Vitals.charstats[3] == "Spec: Two Handed" then
+      elseif knightSpec == "Spec: Sword and Shield" then
+         ak.stack = "Aboard"  
+      elseif knightSpec == "Spec: Two Handed" then
          ak.stack = "2hspeed" 
-      elseif gmcp and gmcp.Char and gmcp.Char.Vitals and gmcp.Char.Vitals.charstats[3] and gmcp.Char.Vitals.charstats[3] == "Spec: Dual Blunt" then
+      elseif knightSpec == "Spec: Dual Blunt" then
          ak.stack = "dwb"
       end
    end
