@@ -20365,14 +20365,14 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Infestation</name>
-					<script>if ak.ai() then return end
-if IsTargetted(multimatches[2][2]) then 
-   if ak.ProTrackingConfirmed then
-      ak.ProTrackingConfirmed(multimatches[2][3]) 
-   else
-      affstrack.score[multimatches[2][3]] = 100
-      ak.scoreup(multimatches[2][2])
-   end
+					<script>if ak.ai() then
+  return
+end
+if IsTargetted(multimatches[2][2]) then
+  if ak.thoughtIhad then
+    ak.thoughtIhad(multimatches[2][3])
+  end
+  OppGainedAff(multimatches[2][3])
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>1</conditonLineDelta>
