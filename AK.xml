@@ -26824,6 +26824,7 @@ function ak.classenable()
     end
     enableTrigger("Totem Group")
     enableTrigger("2h Group")
+    enableTrigger("Dwb Group")
     enableTrigger("Sword &amp; Board Group")
     cecho("&lt;yellow&gt;\nKNIGHT ENABLED\n\n")
   elseif gmcp.Char.Status.class == "Sentinel" then
