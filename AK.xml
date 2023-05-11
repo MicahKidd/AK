@@ -27679,7 +27679,6 @@ function ak.serveraliases()
       ak.undead.setattacks()
     end
   elseif gmcp.Char.Status.race:match("Dragon") and not inlyre() then
-    -- Dragon --
     if ak.dragon.setattacks then
       ak.dragon.setattacks()
     end
@@ -27720,7 +27719,6 @@ function ak.serveraliases()
       ak.priest.setattacks()
     end
   elseif gmcp.Char.Status.class == "Apostate" and not inlyre() then
-    -- APOSTATE --
     if ak.apostate.setattacks then
       ak.apostate.setattacks()
     end
