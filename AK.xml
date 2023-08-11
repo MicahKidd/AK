@@ -6009,7 +6009,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11006,7 +11006,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13071,7 +13071,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -15132,7 +15132,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -25955,7 +25955,7 @@ ak.bals = {}
 ak.bals.salve = true
 ak.bals.focus = true
 ak.defs = ak.defs or {}
-ak.defs.mass = false
+ak.defs.mass = true
 ak.defs.shield = false
 ak.defs.rebounding = false
 affstrack = {
@@ -26205,6 +26205,7 @@ affstrack = {
                 ["mindravaged"]    = 0,
                 ["mycalium"]       = 0,
                 ["nausea"]         = 0,
+                ["noTemper"]       = 0,
                 ["pacifism"]       = 0,
                 ["paralysis"]      = 0,
                 ["parasite"]       = 0,
@@ -27269,6 +27270,10 @@ function OppGainedAff(aff,source)
             if affstrack.score.frozen &gt; 300 then
                affstrack.score.frozen = 300
             end
+         elseif word == "insulationStrip" then
+            if affstrack.score.frozen == 0 then
+              affstrack.score.frozen = 100
+            end
          elseif word == "deepfreeze" then
             affstrack.score["frozen"] = affstrack.score["frozen"] + 200 
             table.insert(affStr,"Frozen") 
@@ -27387,6 +27392,10 @@ function OppGainedAff(aff,source)
         table.insert(affStr,"Frozen") 
         if affstrack.score.frozen &gt; 300 then
            affstrack.score.frozen = 300
+        end
+    elseif aff == "insulationStrip" then
+        if affstrack.score.frozen == 0 then
+          affstrack.score.frozen = 100
         end                                         
      elseif affstrack.score[aff] then
         if affstrack.score[aff] &lt; 100 then       
@@ -28019,7 +28028,12 @@ end</script>
 -- Note that you can also use external Scripts --
 -------------------------------------------------
 function ak.flameon(typer)
-   if typer == "additive" and affstrack.score.dehydrate == 100 and affstrack.score.aflame + 100 &lt; 500 then
+   if typer == "emanation" and affstrack.score.dehydrate == 100 then
+      affstrack.score.aflame = affstrack.score.aflame + 200
+      if affstrack.score.aflame &gt;= 500 then
+        affstrack.score.aflame = 500
+      end
+   elseif typer == "additive" and affstrack.score.dehydrate == 100 and affstrack.score.aflame + 100 &lt; 500 then
       affstrack.score.aflame = affstrack.score.aflame + 100      
    elseif typer == "additive" and affstrack.score.dehydrate == 100 then
       affstrack.score.aflame = 500
@@ -28927,6 +28941,7 @@ local convert = {
 								["mindravaged"]    = "mrvg",
                 ["mycalium"]       = "myc",
                 ["nausea"]         = "naus",
+                ["noTemper"]       = "noTemp",
                 ["pacifism"]       = "pac",
                 ["paralysis"]      = "para",
                 ["parasite"]       = "paras",
