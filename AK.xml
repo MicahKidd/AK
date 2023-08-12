@@ -27271,7 +27271,7 @@ function OppGainedAff(aff,source)
             if affstrack.score.frozen &gt; 300 then
                affstrack.score.frozen = 300
             end
-         elseif word == "insulationStrip" then
+         elseif word == "insulationstrip" then
             if affstrack.score.frozen == 0 then
               affstrack.score.frozen = 100
             end
@@ -27394,7 +27394,7 @@ function OppGainedAff(aff,source)
         if affstrack.score.frozen &gt; 300 then
            affstrack.score.frozen = 300
         end
-    elseif aff == "insulationStrip" then
+    elseif aff == "insulationstrip" then
         if affstrack.score.frozen == 0 then
           affstrack.score.frozen = 100
         end                                         
@@ -28885,7 +28885,7 @@ local convert = {
                 ["agoraphobia"]    = "agor",
                 ["anorexia"]       = "anor",
                 ["aeon"]           = "aeon",
-								["amnesia"]        = "amn",
+							  ["amnesia"]        = "amn",
                 ["aflame"]         = "aflame",
                 ["airfist"]        = "afist",
                 ["asthma"]         = "ast",
@@ -28917,6 +28917,7 @@ local convert = {
                 ["frozen"]         = "frzn",
                 ["focusextend"]    = "fsex",
                 ["flushings"]      = "flsh",
+                ["fulminated"]     = "fulm",
                 ["generosity"]     = "genor",
                 ["guilt"]          = "gul",
                 ["haemophilia"]    = "haem",
