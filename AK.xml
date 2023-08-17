@@ -1759,7 +1759,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Apostate Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -1809,7 +1809,7 @@ end
 					<script>if ak.ai() then
   return
 end
-ak.apostate.cursePull = false
+ak.apostate.cursePull = ak.apostate.cursePull or {}
 local nextcurse = matches[2]
 if nextcurse == "breach" then
 elseif nextcurse == "sicken" then
@@ -1831,8 +1831,8 @@ elseif nextcurse == "vomiting" then
 elseif nextcurse == "reckless" then
   nextcurse = "recklessness"
 end
-ak.apostate.cursePull = nextcurse
-OppGainedAff(nextcurse)
+table.insert(ak.apostate.cursePull, nextcurse)
+enableTrigger("Curse Pull Dump")
 </script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -1928,10 +1928,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Clumsy Brick</name>
-					<script>if ak.apostate.cursePull then
-  affstrack.score[ak.apostate.cursePull] = 0
-  ak.scoreup()
-  ak.apostate.cursePull = false
+					<script>if ak.apostate.cursePull and #ak.apostate.cursePull &gt; 0 then
+  table.remove(ak.apostate.cursePull,#ak.apostate.cursePull)
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -1948,6 +1946,30 @@ end</script>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Curse Pull Dump</name>
+					<script>if #ak.apostate.cursePull &gt; 0 then
+  OppGainedAff(table.concat(ak.apostate.cursePull," "))
+end
+ak.apostate.cursePull = {}
+disableTrigger("Curse Pull Dump")</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string></string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>7</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -12055,7 +12077,7 @@ end</script>
 					</TriggerGroup>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
