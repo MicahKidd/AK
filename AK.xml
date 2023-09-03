@@ -21447,8 +21447,10 @@ end</script>
 					<regexCodeList>
 						<string>^([\w'\-]+) misses you with [\w'\-]+ dirk by a hair\.$</string>
 						<string>^([\w'\-]+) points [\w'\-]+ finger at you\, but nothing seems to happen\.$</string>
+						<string>^A frustrated frown crosses the face of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
