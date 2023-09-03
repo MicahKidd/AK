@@ -1926,7 +1926,7 @@ enableTrigger("Curse Pull Dump")
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Clumsy Brick</name>
 					<script>if ak.apostate.cursePull and #ak.apostate.cursePull &gt; 0 then
   table.remove(ak.apostate.cursePull,#ak.apostate.cursePull)
@@ -1937,12 +1937,12 @@ end</script>
 					<mCommand></mCommand>
 					<packageName></packageName>
 					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
+					<mBgColor>transparent</mBgColor>
 					<mSoundFile></mSoundFile>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>Your attempt to invoke the evileye was so clumsy that the malignant power unravels long beforeit can take form.</string>
+						<string>Your attempt to invoke the evileye was so clumsy that the malignant power unravels long before it can take form.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>3</integer>
