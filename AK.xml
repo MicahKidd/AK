@@ -5029,7 +5029,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11668,6 +11668,30 @@ end</script>
 					<regexCodeList />
 					<regexCodePropertyList />
 				</TriggerGroup>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Not Prone</name>
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
+  affstrack.score.prone = 0
+  ak.scoreup(target)
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\w+) must be prone for you to do that\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
@@ -11865,7 +11889,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -21188,6 +21212,7 @@ if IsTargetted(matches[2]) then
 			ak.thoughtIhad("crushedthroat") 
 		else 
 			affstrack.score.crushedthroat = 0 
+      ak.scoreup(target)
 		end  
 	end
 end</script>
@@ -31517,7 +31542,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
@@ -31661,7 +31686,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
