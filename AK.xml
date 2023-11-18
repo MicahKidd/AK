@@ -26074,6 +26074,7 @@ affstrack = {
                 ["enlighten"]      = 0,
                 ["epilepsy"]       = 0,
                 ["frozen"]         = 0,
+                ["frostbite"]      = 0,
                 ["flushings"]      = 0,
                 ["focusextend"]    = 0,
                 ["fulminated"]     = 0,
@@ -27187,10 +27188,10 @@ function OppGainedAff(aff,source)
             if affstrack.score.frozen &gt; 300 then
                affstrack.score.frozen = 300
             end
-         elseif word == "insulationstrip" then
-            if affstrack.score.frozen == 0 then
-              affstrack.score.frozen = 100
-            end
+         --elseif word == "insulationstrip" then
+         --   if affstrack.score.frozen == 0 then
+         --     affstrack.score.frozen = 100
+         --   end
          elseif word == "deepfreeze" then
             affstrack.score["frozen"] = affstrack.score["frozen"] + 200 
             table.insert(affStr,"Frozen") 
@@ -28831,6 +28832,7 @@ local convert = {
                 ["epilepsy"]       = "epi",
                 ["enlighten"]      = "LIT",
                 ["frozen"]         = "frzn",
+                ["frostbite"]      = "fbite",
                 ["focusextend"]    = "fsex",
                 ["flushings"]      = "flsh",
                 ["fulminated"]     = "fulm",
