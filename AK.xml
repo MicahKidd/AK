@@ -5029,7 +5029,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -6064,7 +6064,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -26170,6 +26170,7 @@ affstrack = {
                 ["unweavingbody"] = 0,
                 ["unweavingmind"] = 0,
                 ["unweavingspirit"] = 0,
+                ["waterbonds"]    = 0,
         },
  
         cureall = {
@@ -27803,24 +27804,27 @@ end</script>
 					<script>function ak.setalias(aliasname, changes)
   ak.aliases.lastsend[aliasname] = ak.aliases.lastsend[aliasname] or "unknown"
   ak.aliases[aliasname] = ak.aliases[aliasname] or "random"
-  if ak.aliases[aliasname] == changes then
+  local changesM = ak.parrycut(changes)
+  if ak.parrycut(ak.aliases[aliasname]) == changesM then
     return
   end
-  if ak.aliases.lastsend[aliasname] == changes then
+  if ak.parrycut(ak.aliases.lastsend[aliasname]) == changesM then
     return
   end
-  --local check = string.split(changes, "parry")
   ak.aliases.lastsend[aliasname] = changes
   send("setalias " .. aliasname .. " " .. changes, false)
 end
 
-local parrychecks = {["right leg"] = true}
-
 function ak.parrycut(var)
-  if not string.find(var, "parry") then
-    return var
-  end
-  for k, v in pairs(parrychecks) do
+  local aug = false
+  if string.find(var, "/parry %w+ %w+") then
+    aug = string.gsub(var,"/parry %w+ %w+","")
+    return aug
+  elseif string.find(var, "/parry %w+") then
+    aug = string.gsub(var,"/parry %w+","")
+    return aug
+  else
+    return var  
   end
 end
 
@@ -28478,28 +28482,15 @@ end</script>
 -- Note that you can also use external Scripts --
 -------------------------------------------------
 function ak.dragon.default.dragoncurser() 
-      if math.random(100)&lt;50 then
-         if affstrack.score.paralysis&lt;100 and vcombo[1] ~= "curare" then
-            dragoncurse = "paralysis"
-         elseif affstrack.score.asthma&lt;100 and vcombo[1] ~= "kalmia" then
-            dragoncurse = "asthma"
-         elseif affstrack.score.sensitivity&lt;100 then
-            dragoncurse = "sensitivity"
-         elseif affstrack.score.impatience&lt;100 then
-            dragoncurse = "impatience"
-         end
-      else
-         if affstrack.score.asthma&lt;100 and vcombo[1] ~= "kalmia"  then
-            dragoncurse = "asthma"
-         elseif affstrack.score.impatience&lt;100 then
-            dragoncurse = "impatience"
-         elseif affstrack.score.sensitivity&lt;100 then
-            dragoncurse = "stupidity"
-         elseif affstrack.score.paralysis&lt;100 and vcombo[1] ~= "curare"  then
-            dragoncurse = "paralysis"
-         end
-    
-      end
+    if affstrack.score.paralysis&lt;100 and vcombo[1] ~= "curare" then
+       dragoncurse = "paralysis"
+    elseif affstrack.score.asthma&lt;100 and vcombo[1] ~= "kalmia" then
+       dragoncurse = "asthma"
+    elseif affstrack.score.sensitivity&lt;100 then
+       dragoncurse = "sensitivity"
+    elseif affstrack.score.impatience&lt;100 then
+       dragoncurse = "impatience"
+    end
    if affstrack.score.sensitivity&lt;100 and vcombo[1] == "prefarar" and affstrack.score.blind ~= 100 then dragoncurse = "sensitivity" end
 end
 </script>
@@ -28923,6 +28914,7 @@ local convert = {
 								["unweavingbody"] = "ubody",
 								["unweavingspirit"] = "uspirit",
 								["bloodfire"]     = "bfire",
+                ["waterbonds"]    = "wbond",
 }
 ak.prompt = ak.prompt or {}
 --if ak.prompt.unique then return end
@@ -31681,7 +31673,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
