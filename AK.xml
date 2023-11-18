@@ -5029,7 +5029,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -6080,29 +6080,6 @@ ak.scoreup(matches[2])
 				<regexCodeList />
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Impurity</name>
-					<script>if nextcurse and nextcurse ~= "paralysis" then
-	 if ak.ai() then return end
-   OppGainedAff(nextcurse)
-end</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^You direct a crystalline golem to introduce impurities into the blood of ([\w'\-]+)\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Frozen</name>
 					<script>if ak.ai() then return end
 OppGainedAff("frozen")</script>
@@ -6181,7 +6158,7 @@ ak.scoreup(target)</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>Turning to a crystalline golem you direct him to project a disruptive tone at a retardation vibration.</string>
+							<string>Turning your attention to a retardation vibration, you observe the crystal resonance for a moment before producing a single, piercing note to destabilise its frequency.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>3</integer>
@@ -11889,7 +11866,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -20455,7 +20432,7 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList />
 					<regexCodePropertyList />
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Smash</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20482,7 +20459,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Timeflux Wear Off</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20510,7 +20487,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Failed Hypothermia</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20536,7 +20513,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Scalded</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20565,7 +20542,7 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Hypothermia</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20594,7 +20571,7 @@ end
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Dehydrate</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -20648,15 +20625,13 @@ end</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^As a crystalline golem turns toward ([\w'\-]+), the flames crackling across</string>
 							<string>^The conflagration about ([\w'\-]+) continues to rage, searing flesh from bone\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
-							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>TimeFlux</name>
 						<script>if ak.ai() then return end
 ak.limbs.ParseonLine()
@@ -25798,6 +25773,12 @@ ak.occie = ak.occie or {}
 ak.alchemist = ak.alchemist or {}
 ak.bard = ak.bard or {}
 ak.magi = ak.magi or {}
+ak.magi.resonance = ak.magi.resonance or {
+  ["fire"] = 0,
+  ["air"] = 0,
+  ["earth"] = 0,
+  ["water"] = 0,
+}
 ak.sentinel = ak.sentinel or {}
 ak.depthswalker = ak.depthswalker or {}
 ak.SnB = ak.SnB or {}
@@ -31542,7 +31523,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
@@ -31686,7 +31667,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
