@@ -25896,7 +25896,7 @@ affstrack = {
  
         applied = {
                 ["body"]  = {"torso","itching","anorexia","frozen","aflame","selarnia"},
-                ["skin"]  = {"anorexia", "crippledarm", "crippledleg","frozen","selarnia"},
+                ["skin"]  = {"frostbite","anorexia", "crippledarm", "crippledleg","frozen","selarnia"},
                 ["torso"] = {"anorexia", "torso", "aflame", "hypothermia","selarnia"},
                 ["head"]  = {"stuttering","head","crushedthroat"},
                 ["arms"]  = {"crippledarm", "rightarm", "leftarm"},
