@@ -27956,9 +27956,9 @@ function ak.flameon(typer)
       if affstrack.score.aflame &gt;= 500 then
         affstrack.score.aflame = 500
       end
-   elseif typer == "additive" and affstrack.score.dehydrate == 100 and affstrack.score.aflame + 100 &lt; 500 then
+   elseif typer == "additive" and affstrack.score.aflame + 100 &lt; 500 then
       affstrack.score.aflame = affstrack.score.aflame + 100      
-   elseif typer == "additive" and affstrack.score.dehydrate == 100 then
+   elseif typer == "additive" then
       affstrack.score.aflame = 500
    elseif affstrack.score.aflame &lt; 100 then
       affstrack.score.aflame = 100
