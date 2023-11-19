@@ -30319,13 +30319,13 @@ end
          table.insert(affs, curelist[i])
          ocured.cureall[curelist[i]] = affstrack.score[curelist[i]]
          if affstrack.score[curelist[i]] &gt; 100 and curelist[i] == "aflame" then
-            table.insert(affoverone, affstrack.cureall[i]) 
+            table.insert(affoverone, curelist[i]) 
             affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
             if affstrack.score[curelist[i]] &gt; 100 then
-               table.insert(affovertwo, affstrack.cureall[i]) 
+               table.insert(affovertwo, curelist[i]) 
                affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
                if affstrack.score[curelist[i]] &gt; 100 then
-                  table.insert(affoverthree, affstrack.cureall[i]) 
+                  table.insert(affoverthree, curelist[i]) 
                   affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
                   if affstrack.score[curelist[i]] &gt; 100 then
                      table.insert(affoverfour, curelist[i]) 
