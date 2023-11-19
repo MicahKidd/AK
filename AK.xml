@@ -25774,10 +25774,10 @@ ak.alchemist = ak.alchemist or {}
 ak.bard = ak.bard or {}
 ak.magi = ak.magi or {}
 ak.magi.resonance = ak.magi.resonance or {
-  ["fire"] = 0,
-  ["air"] = 0,
-  ["earth"] = 0,
-  ["water"] = 0,
+  ["Fire"] = 0,
+  ["Air"] = 0,
+  ["Earth"] = 0,
+  ["Water"] = 0,
 }
 ak.sentinel = ak.sentinel or {}
 ak.depthswalker = ak.depthswalker or {}
@@ -26053,6 +26053,7 @@ affstrack = {
                 ["blisters"]       = 0,
                 ["bound"]          = 0,
                 ["brand"]          = 0,
+                ["calcifiedhead"]  = 0,
                 ["claustrophobia"] = 0,
                 ["clumsiness"]     = 0,
                 ["conflagrate"]    = 0,
@@ -26107,7 +26108,7 @@ affstrack = {
                 ["mindravaged"]    = 0,
                 ["mycalium"]       = 0,
                 ["nausea"]         = 0,
-                ["noTemper"]       = 0,
+                ["notemper"]       = 0,
                 ["pacifism"]       = 0,
                 ["paralysis"]      = 0,
                 ["parasite"]       = 0,
@@ -26274,10 +26275,10 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
 				<script>function ak.oresetparse()
   target = target or "Austere"
   ak.magi.resonance = {
-  ["fire"] = 0,
-  ["air"] = 0,
-  ["earth"] = 0,
-  ["water"] = 0,
+  ["Fire"] = 0,
+  ["Air"] = 0,
+  ["Earth"] = 0,
+  ["Water"] = 0,
 }
   ak.dragonTarget = false
   ak.elementalTarget = false
@@ -26419,10 +26420,10 @@ end </script>
 				<packageName></packageName>
 				<script>function ak.softreset()
   ak.magi.resonance = {
-  ["fire"] = 0,
-  ["air"] = 0,
-  ["earth"] = 0,
-  ["water"] = 0,
+  ["Fire"] = 0,
+  ["Air"] = 0,
+  ["Earth"] = 0,
+  ["Water"] = 0,
   }
   ak.tza = false
   ak.deathstrike = false
@@ -27950,7 +27951,7 @@ end</script>
 -- Note that you can also use external Scripts --
 -------------------------------------------------
 function ak.flameon(typer)
-   if typer == "emanation" and affstrack.score.dehydrate == 100 then
+   if typer == "emanation" then
       affstrack.score.aflame = affstrack.score.aflame + 200
       if affstrack.score.aflame &gt;= 500 then
         affstrack.score.aflame = 500
@@ -28802,6 +28803,7 @@ local convert = {
                 ["blackout"]       = "blko",
                 ["bound"]          = "bound",
 								["brand"]          = "brnd",
+                ["calcifiedhead"]  = "chead",
                 ["claustrophobia"] = "claus",
                 ["clumsiness"]     = "clum",
                 ["conflagrate"]    = "cnflg",
@@ -28852,7 +28854,7 @@ local convert = {
 								["mindravaged"]    = "mrvg",
                 ["mycalium"]       = "myc",
                 ["nausea"]         = "naus",
-                ["noTemper"]       = "noTemp",
+                ["notemper"]       = "noTemp",
                 ["pacifism"]       = "pac",
                 ["paralysis"]      = "para",
                 ["parasite"]       = "paras",
