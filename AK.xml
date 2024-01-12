@@ -7082,7 +7082,7 @@ OppGainedAff(table.concat(hitrelay, " "))</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13884,7 +13884,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sylvan Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -17658,11 +17658,9 @@ end
 						<string>^He connects to the .*\!$</string>
 						<string>^She connects to the .*\!$</string>
 						<string>^You connect to the .*\!$</string>
-						<string>^You direct a crystalline golem to (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>7</integer>
-						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -19314,7 +19312,22 @@ enableTrigger("Parry locate")
 						</regexCodePropertyList>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>SpinKick Advance</name>
-							<script>affstrack.score.head = 200
+							<script>if ak.ai() then
+	ak.limbs.currentbreak.weapon = {}
+	ak.limbs.currentbreak.limb = {}
+	ak.limbs.currentbreak.attacker = {}
+	ak.limbs.currentbreak.who = {}
+	ak.limbs.currentbreak.augment = {}
+	ak.limbs.absorbed = false
+	disableTrigger("Missed Single Removal Limbs")                --DO NOT CHANGE!
+  disableTrigger("Parry locate")
+  disableTrigger("Monk Parry")
+elseif isPrompt() then
+	ak.limbs.parseBreaksPrompt()
+else
+	ak.limbs.parseBreaks()
+end
+affstrack.score.head = 200
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -30401,7 +30414,13 @@ function ak.limbs.damageEcho_Target(who,limb)       -----Reset Timer --ak.limbs.
 		 ak.limbs.limbcount[who].maxbreaks[limb] = ak.limbs.limbcount[who][limb]
      ak.limbs.limbcount[who][limb] = 0
      affstrack.score[limb] = affstrack.score[limb] + 100
-     if limb == "head" then affstrack.score.stupidity = 100 end
+     if limb == "head" then 
+        affstrack.score.stupidity = 100 
+        if affstrack.score.head &gt; 100 then
+          affstrack.score.stuttering = 100
+          affstrack.score.clumsiness = 100
+        end
+     end
 		 ak.limbs.lastbroke = limb
      cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."(B)!!")
 		 ak.limbs.breakOrder(limb)
@@ -30418,7 +30437,9 @@ function ak.limbs.damageEcho_Target(who,limb)       -----Reset Timer --ak.limbs.
      cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."(AXK)!!")
 		 ak.limbs.breakOrder(limb)
   end
-  if affstrack.score.head &gt; 200 then affstrack.score.head = 200 end
+  if affstrack.score.head &gt; 200 then 
+    affstrack.score.head = 200 
+  end
   cecho("&lt;yellow&gt;\n"..who.."'s "..limb.." is at&lt;cyan&gt; "..roundUp(ak.limbs.limbcount[who][limb],0).."("..hitsneeded..")!!")
   if ak.limbs.ScoreRun then 
 		ak.scoreup(target)
