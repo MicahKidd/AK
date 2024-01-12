@@ -9258,7 +9258,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13884,7 +13884,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sylvan Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -32380,7 +32380,7 @@ AkcheckPrioList = {
 				<Script isActive="yes" isFolder="no">
 					<name>Version ID</name>
 					<packageName></packageName>
-					<script>ak.version = 8.3</script>
+					<script>ak.version = 8.4</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
@@ -32642,9 +32642,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."sw"..postsend)
   else
@@ -32661,9 +32658,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."s"..postsend)
   else
@@ -32680,9 +32674,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."se"..postsend)
   else
@@ -32699,9 +32690,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."w"..postsend)
   else
@@ -32736,9 +32724,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."e"..postsend)
   else
@@ -32755,9 +32740,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."nw"..postsend)
   else
@@ -32774,9 +32756,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."n"..postsend)
   else
@@ -32793,9 +32772,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."ne"..postsend)
   else
@@ -32832,9 +32808,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
      send(presend.."down"..postsend)
   else
@@ -32879,14 +32852,11 @@ end</script>
 					<keyModifier>536870912</keyModifier>
 				</Key>
 				<Key isActive="yes" isFolder="no">
-					<name>* WardReset </name>
+					<name>* WardReset</name>
 					<packageName></packageName>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."out"..postsend)
   else
@@ -32937,9 +32907,6 @@ end</script>
 					<script>if table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
   local presend = ""
   local postsend = ""
-  if wsys.def.phased then
-    postsend = "|look at shrine|look at guard"
-  end
 	if TumbleEngaged then
     send(presend.."in"..postsend)
   else
