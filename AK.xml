@@ -30141,6 +30141,9 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
    elseif ndba and ndba.isperson(attacker) then
       attackerclass = ndba.names[attacker]["class"]
    end 
+   if weapon == "axk" then
+      affstrack.score.head = 100
+   end
    if weapon == "tremolo" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then 
       damage = 50
    elseif who == "Me" and wsys and wsys.stats.h == wsys.stats.oh then 
@@ -30410,31 +30413,19 @@ function ak.limbs.damageEcho_Target(who,limb)       -----Reset Timer --ak.limbs.
      cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."(A)!!")
 		 ak.limbs.breakOrder(limb)
 --Head
-  elseif (ak.limbs.limbcount[who][limb] &gt;= 100) and not ak.limbs.tekura.dontbreaksethead then
+  elseif (ak.limbs.limbcount[who][limb] &gt;= 100) then
 		 ak.limbs.limbcount[who].maxbreaks[limb] = ak.limbs.limbcount[who][limb]
      ak.limbs.limbcount[who][limb] = 0
      affstrack.score[limb] = affstrack.score[limb] + 100
      if limb == "head" then 
         affstrack.score.stupidity = 100 
-        if affstrack.score.head &gt; 100 then
+        if affstrack.score.head &gt; 100 and not ak.limbs.tekura.dontbreaksethead then
           affstrack.score.stuttering = 100
           affstrack.score.clumsiness = 100
         end
      end
 		 ak.limbs.lastbroke = limb
      cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."(B)!!")
-		 ak.limbs.breakOrder(limb)
-  elseif ak.limbs.tekura.dontbreaksethead then
-     if ak.limbs.limbcount[who]["head"] &gt; 100 then
-        affstrack.score["head"] = 200
-        affstrack.score.stupidity = 100
-     else
-        ak.limbs.limbcount[who]["head"] = ak.limbs.limbcount[who]["lastpercenthead"]
-        affstrack.score["head"] = affstrack.score["head"] + 100
-        affstrack.score.stupidity = 100
-     end
-		 ak.limbs.lastbroke = limb
-     cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."(AXK)!!")
 		 ak.limbs.breakOrder(limb)
   end
   if affstrack.score.head &gt; 200 then 
