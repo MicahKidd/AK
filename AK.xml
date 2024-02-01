@@ -5029,7 +5029,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12520,7 +12520,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -16911,8 +16911,10 @@ end
 							<string>^Your mace ignites in holy flame\, burning away (\w)\'s protective aura\.$</string>
 							<string>^You deliver a single, powerful blow against the aura of rebounding surrounding (\w+)\, fracturing it\.$</string>
 							<string>^The aura of rebounding surrounding (\w+) is swept aside in an instant\.$</string>
+							<string>^A soulforged scimitar burns with an unholy glow in the hand of \w+ as it carves throughthe aura of rebounding surrounding (\w+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -26816,7 +26818,7 @@ affstrack = {
                 ["head"]  = {"calcifiedhead","stuttering","head","crushedthroat"},
                 ["arms"]  = {"crippledarm", "rightarm", "leftarm"},
                 ["legs"]  = {"crippledleg","rightleg","leftleg"},
-                ["ears"]  = {"scalded","head"}
+                ["ears"]  = {"head"}
         }, 
         eaten = {
                 ["piece of kelp"]    = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech", "parasite"},
@@ -27188,7 +27190,7 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
 				<name>Hard Reset</name>
 				<packageName></packageName>
 				<script>function ak.oresetparse()
-  target = target or "Austere"
+  target = target or "Dude"
   ak.magi.resonance = {
   ["Fire"] = 0,
   ["Air"] = 0,
@@ -28326,7 +28328,7 @@ end</script>
 -------------------------------------------------
 function IsTargetted(person)
    if not person then return end
-   target = target or "Austere"
+   target = target or "Dude"
    if person == target then 
      return true
    elseif string.starts(person, target) then
@@ -31943,7 +31945,7 @@ end
 -------------------------------------------------
 ak.enemyprio = ak.enemyprio or {}
 ak.enemyprio.healed = ak.enemyprio.healed or {}
-target = target or "Austere"
+target = target or "Dude"
 
 ak.tieredaffs = {"rightleg 100","rightleg 200","rightleg 300","leftleg 100","leftleg 200","leftleg 300","rightarm 100","rightarm 200","rightarm 300","leftarm 100","leftarm 200","leftarm 300",
                  "head 100","head 200","head 300","torso 100","torso 200","torso 300"}
@@ -32606,7 +32608,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
