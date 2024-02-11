@@ -21532,8 +21532,10 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^The conflagration about ([\w'\-]+) continues to rage, searing flesh from bone\.$</string>
+							<string>You bend your will upon (\w+)\, and command that \w+ burn\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
