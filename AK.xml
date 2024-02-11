@@ -6272,7 +6272,7 @@ ak.scoreup(target)</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Earth 1</name>
 							<script>if ak.ai() then return end
-aff = matches[2]..""..matches[3]
+local aff = matches[2]..""..matches[3]
 if IsTargetted(matches[4]) then
   if affstrack.score[aff] == 0 then
     affstrack.score[aff] = 100
@@ -6299,7 +6299,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Earth 2</name>
 							<script>if ak.ai() then return end
-aff = "paralysis"
+local aff = "paralysis"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -6347,7 +6347,7 @@ ak.scoreup()</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Water 1</name>
 							<script>if ak.ai() then return end
-aff = "frostbite"
+local aff = "frostbite"
 if IsTargetted(matches[2]) then
   OppGainedAff(aff)
 end</script>
@@ -6371,7 +6371,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Water 2</name>
 							<script>if ak.ai() then return end
-aff = "stuttering"
+local aff = "stuttering"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -6395,7 +6395,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Water 3</name>
 							<script>if ak.ai() then return end
-aff = "nausea anorexia"
+local aff = "nausea anorexia"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -6419,7 +6419,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Fire 1</name>
 							<script>if ak.ai() then return end
-aff = "notemper"
+local aff = "notemper"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end
@@ -6443,12 +6443,18 @@ end
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Fire 2</name>
-							<script>local aff = "notemper"
-if affstrack.score.notemper == 100 then
-  aff = "aflame"
-end
+							<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then
-   OppGainedAff(aff)
+  if affstrack.score.scalded == 0 then
+    OppGainedAff("scalded")
+    if ak.scaldTimer then killTimer(ak.scaldTimer) end
+    ak.scaldTimer = tempTimer(17,[[
+     	affstrack.score.scalded = 0
+     	ak.scoreup(]]..matches[2]..[[)
+    ]])
+  else
+    OppGainedAff(aff)
+  end
 end</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -6470,10 +6476,14 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Fire 3</name>
 							<script>if ak.ai() then return end
-aff = "blisters"
 if IsTargetted(matches[2]) then
-   OppGainedAff(aff)
-end</script>
+  if affstrack.score.blisters &gt; 0 then
+    ak.flameon("additive")
+  else
+    OppGainedAff("blisters")
+  end
+end
+</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -6494,7 +6504,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Air 1</name>
 							<script>if ak.ai() then return end
-aff = "asthma"
+local aff = "asthma"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -6518,7 +6528,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Air 2</name>
 							<script>if ak.ai() then return end
-aff = "sensitivity"
+local aff = "sensitivity"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -6542,7 +6552,7 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Air 3</name>
 							<script>if ak.ai() then return end
-aff = "healthleech"
+local aff = "healthleech"
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
 end</script>
@@ -9258,7 +9268,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12520,7 +12530,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
