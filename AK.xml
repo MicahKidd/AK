@@ -32490,7 +32490,7 @@ AkcheckPrioList = {
 				<Script isActive="yes" isFolder="no">
 					<name>Version ID</name>
 					<packageName></packageName>
-					<script>ak.version = 8.5</script>
+					<script>ak.version = 8.6</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
