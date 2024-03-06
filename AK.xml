@@ -12601,7 +12601,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12797,7 +12797,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13983,6 +13983,7 @@ ak.scoreup(target)</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Static (paralysis)</name>
 					<script>local aff = "paralysis"
+if ak.ai() then return end
 if IsTargetted(matches[2]) then
   OppGainedAff(aff)
   if affstrack.overcharge == true then
@@ -14009,6 +14010,7 @@ end</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Thunderclap (sensitivity)</name>
 					<script>local aff = "sensitivity"
+if ak.ai() then return end
 if IsTargetted(matches[2]) then
   OppGainedAff(aff)
   if affstrack.overcharge == true then
@@ -14034,7 +14036,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Flash (unblind)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    OppGainedAff("blind")
 end</script>
 					<triggerType>0</triggerType>
@@ -14056,7 +14059,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Flash (transfix)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    OppGainedAff("transfixed")
 end</script>
 					<triggerType>0</triggerType>
@@ -14078,7 +14082,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Razorwind (healthleech)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	OppGainedAff("healthleech")
 	if affstrack.overcharge == true then
 		OppGainedAff("asthma")
@@ -14105,7 +14110,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Cyclone (dizziness)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	OppGainedAff("dizziness")
 	if affstrack.overcharge == true then
 		OppGainedAff("asthma")
@@ -14133,7 +14139,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Cyclone (impatience)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	affstrack.score.dizziness = 100
 	OppGainedAff("impatience")
 	if affstrack.overcharge == true then
@@ -14160,7 +14167,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Hailstone (clumsiness)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	OppGainedAff("clumsiness")
 	if affstrack.overcharge == true then
 		OppGainedAff("weariness")
@@ -14187,7 +14195,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Hailstone (epilepsy)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	if affstrack.score.clumsiness &lt; 100 and affstrack.score.clumsiness &gt; 0 then
       if ak.ProTrackingConfirmed then 
          ak.ProTrackingConfirmed("clumsiness") 
@@ -14223,7 +14232,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Hailstone (imaptience)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
 	if affstrack.score.clumsiness &lt; 100 and affstrack.score.clumsiness &gt; 0 then
       if ak.ProTrackingConfirmed then 
          ak.ProTrackingConfirmed("clumsiness")
@@ -14265,7 +14275,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Shear (break shield)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    ak.defs.shield = false
 end
 ak.scoreup(matches[2])</script>
@@ -14290,7 +14301,8 @@ ak.scoreup(matches[2])</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Bolt (blackout)</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    OppGainedAff("blackout")
    tempTimer(4,[[affstrack.score.blackout = 0;ak.scoreup(]]..matches[2]..[[)]])
 	if affstrack.overcharge == true then
@@ -14316,7 +14328,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Sylvan Rend Venoms</name>
-					<script>enableTrigger("Missed Single Removal")                --DO NOT CHANGE!
+					<script>if ak.ai() then return end
+enableTrigger("Missed Single Removal")                --DO NOT CHANGE!
 enableTrigger("Confirmed Hit")                        --DO NOT CHANGE!
 weaponattack = weaponattack or {}
 table.insert(weaponattack, "the thorny vines covering your arms")
@@ -14404,7 +14417,8 @@ end
 					</Trigger>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Overcharged</name>
-						<script>OppGainedAff("clumsiness")</script>
+						<script>if ak.ai() then return end
+OppGainedAff("clumsiness")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -14425,7 +14439,8 @@ end
 				</TriggerGroup>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Crushed Pots</name>
-					<script>affstrack.crushedherb = affstrack.crushedpots[matches[2]] or false</script>
+					<script>if ak.ai() then return end
+affstrack.crushedherb = affstrack.crushedpots[matches[2]] or false</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -14445,7 +14460,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Vine Wreathe Enabled</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    affstrack.vinewreathe = true
    ak.scoreup()
 end
@@ -14472,7 +14488,8 @@ tempTimer(25, [[ affstrack.vinewreathe = false ]])
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Vine Wreathe Disabled</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    affstrack.vinewreathe = false
    ak.scoreup()
 end
@@ -14496,7 +14513,8 @@ end
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Disturbed</name>
-					<script>ak.disturbed = true
+					<script>if ak.ai() then return end
+ak.disturbed = true
 ak.scoreup(target)</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -14519,7 +14537,8 @@ ak.scoreup(target)</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Arcane Energy</name>
-					<script>ak.ae = matches[2]+0
+					<script>if ak.ai() then return end
+ak.ae = matches[2]+0
 ak.scoreup(target)
 </script>
 					<triggerType>0</triggerType>
@@ -14543,7 +14562,8 @@ ak.scoreup(target)
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Disturb Gone</name>
-					<script>ak.disturbed = false
+					<script>if ak.ai() then return end
+ak.disturbed = false
 ak.ae = 0
 ak.feedback = false
 ak.scoreup(target)</script>
@@ -14568,7 +14588,8 @@ ak.scoreup(target)</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Feedback</name>
-					<script>ak.feedback = matches[2]
+					<script>if ak.ai() then return end
+ak.feedback = matches[2]
 ak.ae = 0
 ak.scoreup(matches[2])</script>
 					<triggerType>0</triggerType>
@@ -14590,7 +14611,8 @@ ak.scoreup(matches[2])</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Heartseed</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
   OppGainedAff("heartseed")
 end</script>
 					<triggerType>0</triggerType>
@@ -14612,7 +14634,8 @@ end</script>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Eclipse</name>
-					<script>if IsTargetted(matches[2]) then
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
    OppGainedAff("blackout")
    tempTimer(6,[[affstrack.score.blackout = 0;ak.scoreup(]]..matches[2]..[[)]])
 end</script>
@@ -14632,6 +14655,32 @@ end</script>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Waterspout</name>
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
+	OppGainedAff("confusion")
+	if affstrack.overcharge == true then
+		OppGainedAff("weariness")
+	end
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\w+) begins to thrash at the water enveloping \w+\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -32547,7 +32596,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
