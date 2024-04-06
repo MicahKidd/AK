@@ -12601,7 +12601,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14903,7 +14903,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Undead Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14925,7 +14925,7 @@ end</script>
 end
 
 if ak.ai() then return end
-local augment = "claws"
+local augment = "percent"
 local weapon = "dragonrend"
 local limb = ak.limbs.standardizeLimb(matches[2])
 if limb == "rightleg" or limb == "leftleg" then
@@ -15017,8 +15017,8 @@ enableTrigger("Parry locate")</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Onslaught 2</name>
 					<script>if ak.ai() then return end
-local augment = "claws"
-local weapon = "percent"
+local augment = "percent"
+local weapon = "dragonrend"
 local limb = ak.limbs.standardizeLimb(matches[3])
 table.insert(ak.limbs.currentbreak.weapon,weapon)
 table.insert(ak.limbs.currentbreak.limb,limb)
