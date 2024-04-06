@@ -15039,7 +15039,7 @@ enableTrigger("Parry locate")</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^(\w+) unleashes an onslaught of vicious blows with \w+ unholy blades at the (?:right leg|left leg|torso|head|left arm|right arm) of (\w+)\.$</string>
+						<string>^(\w+) unleashes an onslaught of vicious blows with \w+ unholy blades at the (right leg|left leg|torso|head|left arm|right arm) of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
