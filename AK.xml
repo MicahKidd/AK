@@ -15018,7 +15018,7 @@ enableTrigger("Parry locate")</script>
 					<name>Onslaught 2</name>
 					<script>if ak.ai() then return end
 local augment = "claws"
-local weapon = "dragonrend"
+local weapon = "percent"
 local limb = ak.limbs.standardizeLimb(matches[3])
 table.insert(ak.limbs.currentbreak.weapon,weapon)
 table.insert(ak.limbs.currentbreak.limb,limb)
