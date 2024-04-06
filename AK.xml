@@ -6064,7 +6064,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12601,7 +12601,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14959,17 +14959,17 @@ elseif limb == "rightarm" or limb == "leftarm" then
     OppGainedAff("darkshade")
   end
 elseif limb == "head" then
-  if affstrack.score.anorexia == 0 then
-    OppGainedAff("weariness")
+  if affstrack.score.slickness == 0 then
+    OppGainedAff("slickness")
   elseif affstrack.score.anorexia == 0 then
-    OppGainedAff("weariness")
+    OppGainedAff("anorexia")
   else
     OppGainedAff("confusion")
   end
-  if affstrack.score.anorexia == 0 then
-    OppGainedAff("weariness")
+  if affstrack.score.slickness == 0 then
+    OppGainedAff("slickness")
   elseif affstrack.score.anorexia == 0 then
-    OppGainedAff("weariness")
+    OppGainedAff("anorexia")
   else
     OppGainedAff("confusion")
   end
@@ -15008,7 +15008,7 @@ enableTrigger("Parry locate")</script>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
-						<string>^You unleash a flurry of vicious strikes with your blades at the (?:right leg|left leg|torso|head|left arm|right arm) of (\w+)\.$</string>
+						<string>^You unleash a flurry of vicious strikes with your blades at the (right leg|left leg|torso|head|left arm|right arm) of (\w+)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
