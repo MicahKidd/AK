@@ -1488,17 +1488,17 @@ end</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Stat Evals</name>
-						<script>if matches[3] == "health" then
-	ak.currenthealth = tonumber(matches[4])
-	ak.maxhealth = tonumber(matches[5])
-	ak.healthpercent = ak.currenthealth / ak.maxhealth * 100
-	cecho("&lt;green&gt;"..ak.healthpercent.."%")
-	ak.knownmaxhealth[target] = tonumber(matches[5])
-elseif matches[3] == "mana" then
-	ak.currentmana = tonumber(matches[4])
-	ak.maxmana = tonumber(matches[5])
-	ak.manapercent = ak.currentmana / ak.maxmana * 100
-	cecho("&lt;blue&gt;"..ak.manapercent.."%")
+						<script>if matches[2] == "health" then
+    ak.currenthealth = tonumber(matches[3])
+    ak.maxhealth = tonumber(matches[4])
+    ak.healthpercent = ak.currenthealth / ak.maxhealth * 100
+    cecho("&lt;green&gt;"..ak.healthpercent.."%")
+    ak.knownmaxhealth[target] = tonumber(matches[4])
+elseif matches[2] == "mana" then
+    ak.currentmana = tonumber(matches[3])
+    ak.maxmana = tonumber(matches[4])
+    ak.manapercent = ak.currentmana / ak.maxmana * 100
+    cecho("&lt;blue&gt;"..ak.manapercent.."%")
 end
 
 if ak.healthpercent &lt;= 60 and ak.manapercent &lt;= 60 then
@@ -1756,6 +1756,26 @@ end</script>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>0</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Clumsy Fix</name>
+					<script> alchemistwrack = alchemisttruewracktwo</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You fumble your attempt to manipulate the \w+ humour of \w+, failing to afflict \w+ with (\w+)\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -9339,7 +9359,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12071,7 +12091,7 @@ enableTrigger("Othala fade")</script>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Othala fade</name>
 					<script>ak.othala = false
 disableTrigger("Othala fade")</script>
@@ -14903,7 +14923,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Undead Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -14920,7 +14940,7 @@ end</script>
 				<regexCodePropertyList />
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Unslaught</name>
-					<script>if not IsTargetted(matches[2]) then 
+					<script>if not IsTargetted(matches[3]) then 
    return
 end
 
@@ -15027,7 +15047,71 @@ table.insert(ak.limbs.currentbreak.who,matches[4])
 table.insert(ak.limbs.currentbreak.augment,augment)
 enableTrigger("Missed Single Removal Limbs")          
 enableTrigger("Confirmed Hit Limbs")
-enableTrigger("Parry locate")</script>
+enableTrigger("Parry locate")
+if not IsTargetted(matches[4]) then 
+   return
+end
+if limb == "rightleg" or limb == "leftleg" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.weariness == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("clumsiness")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.weariness == 0 then
+    OppGainedAff("weariness")
+  else
+    OppGainedAff("clumsiness")
+  end
+elseif limb == "rightarm" or limb == "leftarm" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.nausea == 0 then
+    OppGainedAff("nausea")
+  else
+    OppGainedAff("darkshade")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.nausea == 0 then
+    OppGainedAff("nausea")
+  else
+    OppGainedAff("darkshade")
+  end
+elseif limb == "head" then
+  if affstrack.score.slickness == 0 then
+    OppGainedAff("slickness")
+  elseif affstrack.score.anorexia == 0 then
+    OppGainedAff("anorexia")
+  else
+    OppGainedAff("confusion")
+  end
+  if affstrack.score.slickness == 0 then
+    OppGainedAff("slickness")
+  elseif affstrack.score.anorexia == 0 then
+    OppGainedAff("anorexia")
+  else
+    OppGainedAff("confusion")
+  end
+elseif limb == "torso" then
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.asthma == 0 then
+    OppGainedAff("asthma")
+  else
+    OppGainedAff("healthleech")
+  end
+  if affstrack.score.paralysis == 0 then
+    OppGainedAff("paralysis")
+  elseif affstrack.score.asthma == 0 then
+    OppGainedAff("asthma")
+  else
+    OppGainedAff("healthleech")
+  end
+end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -17282,6 +17366,8 @@ end</script>
 							<string>^A violent cracking sound from the air in front of (\w+) heralds \w+ magical shield exploding into a shower of translucent shards\.$</string>
 							<string>You touch your tattoo and summon the hammer but find nothing to strike.</string>
 							<string>^You touch your tattoo and a massive, translucent hammer rises up and shatters the magical shield surrounding (\w+)\.$</string>
+							<string>^You command your many heads to lash out at (\w+)\'s protective shield, which shatters beneaththe assault\.$</string>
+							<string>^You command your heads to lash out at (\w+)\'s protective shield, but there isn't one to befound\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -17324,6 +17410,8 @@ end</script>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>3</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
