@@ -257,8 +257,10 @@ end
 						<string>^([\w'\-]+) moves into your attack, knocking your blow aside before viciously countering with a strike to your head\.$</string>
 						<string>^Cracks spider across the surface of the crimson shield surrounding ([\w'\-]+)\, before it abruptly winks out of existence\.$</string>
 						<string>^Grey fog begins to rise from the suddenly panicked\-looking ([\w'\-]+)\.$</string>
+						<string>^You lash out at (\w+) with .*\, but miss\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
