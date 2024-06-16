@@ -2603,6 +2603,200 @@ end</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Highsun</name>
+						<script>local aff = "clumsiness"
+if matches[3] == "head" then
+  if ak.bard.position == "front" then
+    if affstrack.score.clumsiness == 0 then
+      aff = "clumsiness"
+    elseif affstrack.score.weariness == 0 then
+      aff = "weariness"
+    else
+      aff = "recklessness"
+    end
+  elseif ak.bard.position == "side" then
+    if affstrack.score.addiction == 0 then
+      aff = "addiction"
+    elseif affstrack.score.generosity == 0 then
+      aff = "generosity"
+    else
+      aff = "confusion"
+    end
+  else
+    if affstrack.score.paralysis == 0 then
+      aff = "paralysis"
+    elseif affstrack.score.generosity == 0 then
+      aff = "generosity"
+    else
+      aff = "diminished"
+    end
+  end
+else
+  if ak.bard.position == "front" then
+    if affstrack.score.clumsiness == 0 then
+      aff = "clumsiness"
+    elseif affstrack.score.weariness == 0 then
+      aff = "weariness"
+    else
+      aff = "haemophilia"
+    end
+  elseif ak.bard.position == "side" then
+    if affstrack.score.weariness == 0 then
+      aff = "weariness"
+    elseif affstrack.score.clumsiness == 0 then
+      aff = "clumsiness"
+    else
+      aff = "healthleech"
+    end
+  else
+    if affstrack.score.paralysis == 0 then
+      aff = "paralysis"
+    elseif affstrack.score.healthleech == 0 then
+      aff = "healthleech"
+    else
+      aff = "sensitivity"
+    end
+  end
+end</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^With a flourish of .+ you step smoothly into (\w+)\, your blade slicing at \w+ (head|left arm|right arm)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Positioning</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Allegra</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your feet move in allegro perfected, speeding each step within a new blade's song.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Adagio</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your feet move in adagio perfected, speeding each step within a new blade's song.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Lost Your Shot</name>
+						<script>ak.bard.position = "front"
+ak.scoreup(target)</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your foe has escaped your deadly footwork.</string>
+							<string>^Your deadly dance carries you back around to face (\w+)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Side</name>
+						<script>ak.bard.position = "side"
+ak.scoreup(matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You continue to circle (\w+)\, your deadly dance carrying you around to (\w+) flank\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>KidneyShot</name>
+						<script>ak.bard.position = "back"
+ak.scoreup(matches[2])</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Your deadly dance carries you with lethal promise to the blindspot of (\w+)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -23301,6 +23495,9 @@ end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   OppLostAff("unweavingspirit")
   return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("earworm")
+  return
 elseif not ak.defs.reRebounding then 
 	affssmoke() 
 	ak.randomaffs = ak.randomaffs or 0
@@ -23345,6 +23542,9 @@ if affstrack.score.asthma&gt;0 then
 end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   OppLostAff("unweavingspirit")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("earworm")
   return
 elseif not ak.defs.reRebounding then 
 	affssmoke() 
@@ -23391,6 +23591,9 @@ end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   OppLostAff("unweavingspirit")
   return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("earworm")
+  return
 elseif not ak.defs.reRebounding then 
 	affssmoke() 
 	ak.randomaffs = ak.randomaffs or 0
@@ -23435,6 +23638,9 @@ if affstrack.score.asthma&gt;0 then
 end
 if string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasserting itself upon") then
   OppLostAff("unweavingspirit")
+  return
+elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
+  OppLostAff("earworm")
   return
 elseif not ak.defs.reRebounding then 
 	affssmoke() 
@@ -26638,8 +26844,8 @@ affstrack = {
                 ["argentum flake"]   = {"tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
                 ["prickly ash bark"] = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["stannum flake"]    = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
-                ["bellwort flower"]  = {"timeloop","generosity", "pacifism","justice","lovers"},
-                ["cuprum flake"]     = {"timeloop","generosity", "pacifism","justice","lovers"},
+                ["bellwort flower"]  = {"diminished", "timeloop","generosity", "pacifism","justice","lovers"},
+                ["cuprum flake"]     = {"diminished", "timeloop","generosity", "pacifism","justice","lovers"},
                 ["bayberry bark"]    = {"blind"},
                 ["arsenic pellet"]   = {"blind"},
                 ["hawthorn berry"]   = {"deaf"},
@@ -26744,6 +26950,7 @@ affstrack = {
                 "spiritburn", 
                 "pyramides",
                 "sandfever",
+                "diminished",
         },
  
         restored = {
@@ -26799,6 +27006,7 @@ affstrack = {
                 ["depression"]     = 0,
                 ["dehydrate"]      = 0,
                 ["disloyalty"]     = 0,
+                ["diminished"]     = 0,
                 ["disrupt"]        = 0,
                 ["dizziness"]      = 0,
                 ["ensorcell"]      = 0,
@@ -29584,6 +29792,7 @@ local convert = {
                 ["disloyalty"]     = "dloyal",
                 ["disrupt"]        = "dis",
                 ["dizziness"]      = "diz",
+                ["diminished"]     = "dim",
                 ["earworm"] =        "earw",
                 ["ensorcell"]      = "EN",
                 ["epilepsy"]       = "epi",
