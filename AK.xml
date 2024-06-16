@@ -23504,7 +23504,7 @@ elseif string.find(multimatches[3][1],"nervous trembling") then
   OppLostAff("mycalium")  
   return
 elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
-  OppLostAff("earwig")
+  OppLostAff("earworm")
   return
 else
   if opponenteat == 1 then
@@ -23570,7 +23570,7 @@ elseif string.find(multimatches[3][1],"nervous trembling") then
   OppLostAff("mycalium")  
   return
 elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
-  OppLostAff("earwig")
+  OppLostAff("earworm")
   return
 else
   if opponenttree == 0 then
@@ -26763,7 +26763,6 @@ affstrack = {
                 "aeon",
                 "hellsight",
                 "tension",
-                "earworm",
         },
 
         score = {
