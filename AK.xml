@@ -8434,8 +8434,6 @@ ak.deleteFull()</script>
 								<colorTriggerBgColor>#000000</colorTriggerBgColor>
 								<regexCodeList>
 									<string>^[\w'\-]+ is bouncing around acrobatically\.$</string>
-									<string>A songbird is perched upon his shoulder.</string>
-									<string>A songbird is perched upon her shoulder.</string>
 									<string>He has sworn vengeance upon those who would slay him.</string>
 									<string>She has sworn vengeance upon those who would slay her.</string>
 									<string>He is bathed in the glorious protection of decaying flesh.</string>
@@ -8459,8 +8457,6 @@ ak.deleteFull()</script>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>1</integer>
-									<integer>3</integer>
-									<integer>3</integer>
 									<integer>3</integer>
 									<integer>3</integer>
 									<integer>3</integer>
