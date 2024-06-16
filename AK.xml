@@ -16891,7 +16891,6 @@ end
 							<string>^You lunge toward ([\w'\-]+) with .*\, but finding no resistance\, you stumble hopelessly off balance\.$</string>
 							<string>^Continuing your assault\, you whip .* in a vicious rising slash at ([\w'\-]+)\.$</string>
 							<string>^You lurch forward at ([\w'\-]+)\, swinging .* in a wildly innacurate blow\.$</string>
-							<string>^[\w'\-]+\'s cantata shatters the defences surrounding ([\w'\-]+)\.$</string>
 							<string>^[\w'\-]+ calls upon Whiirh and strikes ([\w'\-]+) with [\w'\-]+ staff\, the power of air dispersing [\w'\-]+ aura of rebounding\.$</string>
 							<string>^The falcon dives at ([\w'\-]+)\, ripping apart [\w'\-]+ aura of rebounding with its talons\.$</string>
 							<string>^[\w'\-]+ lunges toward ([\w'\-]+)\, but stumbles off balance as if expecting some barrier\.$</string>
@@ -16906,7 +16905,6 @@ end
 							<string>^A soulforged scimitar burns with an unholy glow in the hand of \w+ as it carves throughthe aura of rebounding surrounding (\w+)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -17106,18 +17104,15 @@ end</script>
 							<string>^You try to flay a non-existent shield from ([\w'\-]+)\.$</string>
 							<string>^You flay away ([\w'\-]+)'s shield defence\.$</string>
 							<string>^Calling upon Garash, you unleash a crushing blow at the magical shield surrounding ([\w'\-]+)\, shattering it\.$</string>
-							<string>^Your cantata shatters the defences surrounding ([\w'\-]+)\.$</string>
 							<string>([\w'\-]+)'s aura of weapons rebounding disappears.</string>
 							<string>^You whip .* through the air in front of ([\w'\-]+)\, to no effect\.$</string>
 							<string>^You command your gremlin to shatter the defences surrounding ([\w'\-]+)\.$</string>
 							<string>^([\w'\-]+) has no shield for your gremlin to shatter\, occultist\.$</string>
 							<string>^As the kick strikes the magical shield surrounding ([\w'\-]+)\, it shatters into glimmering fragments\.$</string>
-							<string>^[\w'\-]+\'s cantata shatters the defences surrounding ([\w'\-]+)\.$</string>
 							<string>^The othala rune on the ground suddenly erupts in a great gout of boiling magma\, the concussive blast smashing into the magical shield surrounding ([\w'\-]+) and rendering it asunder\.$</string>
 							<string>^Lunging forward\, you bring .* in a savage diagonal blow\, carving through ([\w'\-]+)\'s shield\.$</string>
 							<string>^Continuing your assault\, you whip .* in a vicious rising slash at ([\w'\-]+)\.$</string>
 							<string>^You lunge toward ([\w'\-]+) with .*\, but finding no resistance\, you stumble hopelessly off balance\.$</string>
-							<string>^[\w'\-]+\'s cantata shatters the defences surrounding ([\w'\-]+)\.$</string>
 							<string>^The end of your staff smashes the magical shield surrounding ([\w'\-]+) in an explosion of translucent shards\.$</string>
 							<string>^Your shadow leaps for ([\w'\-]+), hammering [\w'\-]+ shield in a silent frenzy that causes it to explode in a shower of prismatic shards\.$</string>
 							<string>^([\w'\-]+) is not surrounded by a magical shield\.$</string>
@@ -17148,9 +17143,6 @@ end</script>
 							<string>^You command your heads to lash out at (\w+)\'s protective shield, but there isn't one to befound\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -25530,31 +25522,6 @@ ak.scoreup(matches[2])</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>^([\w'\-]+) sucks in a great gasp of air\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
-				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Dwinnu</name>
-					<script>if ak.ai() then return end
---send("outr rope")
-if IsTargetted(matches[2]) then
-   affstrack.score.bound = 0
-   ak.scoreup(matches[2])
-end</script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>\'DWINNU\! DWINNU\' chants ([\w'\-]+) urgently as [\w'\-]+ bonds turn to dust and fall off\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
