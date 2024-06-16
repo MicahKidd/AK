@@ -26851,6 +26851,7 @@ affstrack = {
                 ["pyramides"]      = 0,
                 ["rebbies"]        = 0,
                 ["recklessness"]   = 0,
+                ["reeling"]        = 0,
                 ["retribution"]    = 0,
                 ["rixil"]          = 0,
                 ["sandfever"]      = 0,
@@ -27875,6 +27876,10 @@ function OppGainedAff(aff,source)
             affstrack.score.waterdisrupt = 100
             ak.armexpendtimer = tempTimer(12,[[affstrack.score.waterdisrupt = 0;ak.scoreup(target)]])
             table.insert(affStr,word:title())
+         elseif word == "reeling" then
+            affstrack.score.reeling = 100
+            ak.armexpendtimer = tempTimer(20,[[affstrack.score.reeling = 0;ak.scoreup(target)]])
+            table.insert(affStr,word:title())
          elseif word == "armexpend" then
             affstrack.score.armexpend = 100
             ak.armexpendtimer = tempTimer(15,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
@@ -28017,6 +28022,10 @@ function OppGainedAff(aff,source)
         affstrack.score.waterdisrupt = 100
         ak.armexpendtimer = tempTimer(12,[[affstrack.score.waterdisrupt = 0;ak.scoreup(target)]])
         table.insert(affStr,aff:title())
+      elseif aff == "reeling" then
+        affstrack.score.reeling = 100
+        ak.armexpendtimer = tempTimer(20,[[affstrack.score.reeling = 0;ak.scoreup(target)]])
+        table.insert(affStr,word:title())
      elseif aff == "focusextend" then
         affstrack.score.focusextend = 100
         ak.focusextenddisable = tempTimer(8,[[affstrack.score.focusextend = 0;ak.scoreup(target)]])
@@ -28642,7 +28651,7 @@ function ak.defaultstack()
    elseif gmcp.Char.Status.class == "Sylvan" then
       ak.stack = "Damage"
    elseif gmcp.Char.Status.class == "Bard" then
-      ak.stack = "Kelp"
+      ak.stack = "Ear"
    elseif gmcp.Char.Status.class == "Blademaster" then
       ak.stack = "BM Prep"
    elseif gmcp.Char.Status.class == "Priest" then
@@ -29621,6 +29630,7 @@ local convert = {
                 ["pyramides"]      = "pyra",
                 ["recklessness"]   = "reck",
                 ["retribution"]    = "ret",
+                ["reeling"]        = "reel",
                 ["rebbies"]        = "reb",
                 ["rixil"]          = "rixil",
                 ["sandfever"]      = "sfev",
