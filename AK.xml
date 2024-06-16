@@ -2658,6 +2658,10 @@ else
       aff = "sensitivity"
     end
   end
+end
+if ak.ai() then return end
+if IsTargetted(matches[2]) then
+	OppGainedAff(aff)
 end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
