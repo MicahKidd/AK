@@ -1998,15 +1998,7 @@ disableTrigger("Curse Pull Dump")</script>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Bard Group</name>
-				<script>--
---Everything that follows was originally written by Klendathu
-
---I have mildly modified portions of be more up to date with my current offense tracking system,
---while attempting to leave the majority of it in place so he has to do very little to maintain
---continued functionality.  If you are a using this section, I strongly encourage you to make sure
---to spend a few extra seconds and drop him a thank you.
-
---Thank you.</script>
+				<script></script>
 				<triggerType>0</triggerType>
 				<conditonLineDelta>0</conditonLineDelta>
 				<mStayOpen>0</mStayOpen>
@@ -9095,10 +9087,24 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Pyre(help)</name>
+					<name>Pyre</name>
 					<script>--Burning plus one, pyre plus one, max level of 3. Cannot push burning higher than 3. 
 --If pyre is less than burning but burning is 1 or 2 it will boost burning to 2 or 3. 
---Burning level cannot go below pyre level</script>
+--Burning level cannot go below pyre level
+
+if ak.ai() then return end
+if IsTargetted(matches[2]) and affstrack.score.aflame &lt; 300 and affstrack.score.pyre &lt; 300 then
+  ak.flameon("additive")
+  ak.pyreon("additive")
+elseif IsTargetted(matches[2]) and affstrack.score.pyre &lt; 300 then
+  ak.pyreon("additive")
+elseif IsTargetted(matches[2]) and affstrack.score.aflame == 0 and affstrack.score.pyre == 0 then
+  ak.flameon("additive")
+  ak.pyreon("additive")
+elseif IsTargetted(matches[2]) and affstrack.score.aflame == 300 and affstrack.score.pyre == 300 then
+end
+cecho("&lt;yellow&gt;"..affstrack.score.aflame)
+cecho("\n&lt;yellow&gt;"..affstrack.score.aflame)</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -12399,7 +12405,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Serpent Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12595,7 +12601,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -28902,7 +28908,17 @@ function ak.flameon(typer)
    end
    ak.scoreup(target)
 end
-</script>
+
+function ak.pyreon(typer)
+   if typer == "additive" and affstrack.score.pyre + 100 &lt; 300 then
+      affstrack.score.pyre = affstrack.score.pyre + 100      
+   elseif typer == "additive" and affstrack.score.pyre == 300 then
+      affstrack.score.pyre = 300
+   elseif affstrack.score.pyre &lt; 100 then
+      affstrack.score.pyre = 100
+   end
+   ak.scoreup(target)
+end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
@@ -32478,7 +32494,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
