@@ -7194,7 +7194,7 @@ ak.deleteFull()</script>
 					<name>Slam</name>
 					<script>if ak.ai() then return end
 aff = "scrambledbrains"
-ak.brainDuration = 10
+ak.brainDuration = 30
 if IsTargetted(multimatches[1][2]) then
    OppGainedAff(aff)
 end</script>
