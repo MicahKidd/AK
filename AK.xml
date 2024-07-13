@@ -7194,6 +7194,7 @@ ak.deleteFull()</script>
 					<name>Slam</name>
 					<script>if ak.ai() then return end
 aff = "scrambledbrains"
+ak.brainDuration = 10
 if IsTargetted(multimatches[1][2]) then
    OppGainedAff(aff)
 end</script>
@@ -28079,6 +28080,10 @@ function OppGainedAff(aff,source)
             ak.HeadWrenchDisable = tempTimer(24,[[affstrack.score.wrenchhead = 0;ak.scoreup(target)]])
             ak.InitialWrench = tempTimer(3.5,[[OppGainedAff("dizziness")]])
             table.insert(affStr,word:title())
+         elseif word == "scrambledbrains" then
+            affstrack.score.scrambledbrains = 100
+            ak.brainTimer = tempTimer(ak.brainDuration,[[affstrack.score.scrambledbrains = 0;ak.scoreup(target)]])
+            table.insert(affStr,word:title())
          elseif word == "waterdisrupt" then
             affstrack.score.waterdisrupt = 100
             ak.armexpendtimer = tempTimer(12,[[affstrack.score.waterdisrupt = 0;ak.scoreup(target)]])
@@ -28208,6 +28213,10 @@ function OppGainedAff(aff,source)
         enableTimer("Wrench Head Timer")
         ak.HeadWrenchDisable = tempTimer(24,[[affstrack.score.wrenchhead = 0;ak.scoreup(target)]])
         ak.InitialWrench = tempTimer(3.5,[[OppGainedAff("dizziness")]])
+        table.insert(affStr,aff:title())
+    elseif aff == "scrambledbrains" then
+        affstrack.score.scrambledbrains = 100
+        ak.brainTimer = tempTimer(ak.brainDuration,[[affstrack.score.scrambledbrains = 0;ak.scoreup(target)]])
         table.insert(affStr,aff:title())
      elseif aff == "blisters" then
         affstrack.score.blisters = 100
