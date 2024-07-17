@@ -6957,7 +6957,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11971,7 +11971,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sentinel Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -17887,7 +17887,7 @@ disableTrigger("Monk Parry")</script>
 						<name>AXK</name>
 						<script>if ak.ai() then return end
 if axkpunch1 then killTrigger(axkpunch1) end
-if ak.monk.axkpunch then axkpunch1 = tempTrigger("You have recovered balance on your", [[ak.monk.axkpunch();killTrigger(axkpunch1)]]) end
+--if ak.monk.axkpunch then axkpunch1 = tempTrigger("You have recovered balance on your", [[ak.monk.axkpunch();killTrigger(axkpunch1)]]) end
 table.insert(ak.limbs.currentbreak.weapon,"axk")
 table.insert(ak.limbs.currentbreak.limb, "head")
 table.insert(ak.limbs.currentbreak.attacker,"Me")
@@ -18520,7 +18520,7 @@ ak.scoreup(target)</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Drawslash</name>
 						<script>if ak.ai() then return end
-local limb = ak.limbs.standardizeLimb(multimatches[2][3])
+local limb = ak.limbs.standardizeLimb(multimatches[3][2])
 table.insert(ak.limbs.currentbreak.weapon,"drawslash")
 table.insert(ak.limbs.currentbreak.limb,limb)
 table.insert(ak.limbs.currentbreak.attacker,"Me")
@@ -18531,7 +18531,7 @@ enableTrigger("Confirmed Hit Limbs")
 enableTrigger("Parry locate")
 </script>
 						<triggerType>0</triggerType>
-						<conditonLineDelta>4</conditonLineDelta>
+						<conditonLineDelta>1</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
@@ -18542,9 +18542,11 @@ enableTrigger("Parry locate")
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^With expert precision\, you draw .* from its scabbard and unleash a vicious slash towards ([\w'\-]+)\.$</string>
-							<string>^Your blade bites deep into \w+ (.*)\.$</string>
+							<string>^As you carve into (\w+)\, you perceive that you have dealt (\d+)\% damage to (\w+) (right leg|left leg|right arm|left arm|head|torso)\.$</string>
+							<string>^Your blade bites deep into \w+ (right leg|left leg|right arm|left arm|head|torso)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
@@ -18573,7 +18575,7 @@ enableTrigger("Parry locate")</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^Whispering a prayer to the [\w'\-]+ winds\, you draw .* and unleash a slash towards [\w'\-]+\'s (.*)\.$</string>
+							<string>^Whispering a prayer to the [\w'\-]+ winds\, you draw .* and unleash a slash towards [\w'\-]+\'s (right leg|left leg|right arm|left arm|head|torso)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -18603,7 +18605,7 @@ enableTrigger("Parry locate")</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>^In a single motion, you draw .* from its scabbard and loose a vicious (rising|falling) slash at [\w'\-]+\'s ([\w'\-]+)\.$</string>
+							<string>^In a single motion, you draw .* from its scabbard and loose a vicious (rising|falling) slash at [\w'\-]+\'s (right leg|left leg|right arm|left arm|head|torso)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -20014,64 +20016,6 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>The (right leg|left leg|right arm|left arm|head|torso) of ([\w'\-]+) is suddenly horribly mangled by an unseen force\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-				</TriggerGroup>
-				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-					<name>Magi</name>
-					<script></script>
-					<triggerType>0</triggerType>
-					<conditonLineDelta>0</conditonLineDelta>
-					<mStayOpen>0</mStayOpen>
-					<mCommand></mCommand>
-					<packageName></packageName>
-					<mFgColor>#ff0000</mFgColor>
-					<mBgColor>#ffff00</mBgColor>
-					<mSoundFile></mSoundFile>
-					<colorTriggerFgColor>#000000</colorTriggerFgColor>
-					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList />
-					<regexCodePropertyList />
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Staff Strike</name>
-						<script>if ak.ai() then return end
-ak.defs.shield = false
-if matches[2] == "Sllshya" then
-   table.insert(ak.limbs.currentbreak.weapon, "waterstaff")
-elseif matches[2] == "Garash" then
-   table.insert(ak.limbs.currentbreak.weapon, "earthstaff")
-elseif matches[2] == "Kkractle" then
-   table.insert(ak.limbs.currentbreak.weapon, "firestaff")
-elseif matches[2] == "Whiirh" then
-   table.insert(ak.limbs.currentbreak.weapon, "airstaff")
-end
-local limb = ak.limbs.standardizeLimb(matches[4])
-table.insert(ak.limbs.currentbreak.limb, limb)
-table.insert(ak.limbs.currentbreak.attacker,"Me")
-table.insert(ak.limbs.currentbreak.who,matches[3])
-enableTrigger("Missed Single Removal Limbs")
-enableTrigger("Parry locate")          
-enableTrigger("Confirmed Hit Limbs")
-
-
-
-
-</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^You call upon ([\w'\-]+) and unleash a forceful blow towards ([\w'\-]+)'s (right leg|left leg|right arm|left arm|head|torso) with your trusty staff\.*</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -28624,29 +28568,6 @@ registerAnonymousEventHandler("gmcp.Room.Info", "ak.roomupdate")
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
-					<name>Staff Affliction Tracking</name>
-					<packageName></packageName>
-					<script>-------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
-function ak.staffaff(staffhit)
-  if staffhit == "airstaff" then
-	   OppGainedAff("prone")
-  elseif staffhit == "firestaff" then
-	   ak.flameon("notadditive")
-  --elseif staffhit == "earthstaff" then
-	   --OppGainedAff("prone")
-  elseif staffhit == "waterstaff" then
-	   OppGainedAff("frozen")
-  end
-end
-
---DO NOT MESS WITH THIS--</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
 					<name>Attack Sets</name>
 					<packageName></packageName>
 					<script>--setattack
@@ -30203,7 +30124,6 @@ ak.limbs = ak.limbs or {}
 ak.limbs.test = ak.limbs.test or {}
 ak.limbs.weaponry = ak.limbs.weaponry or {}
 ak.limbs.parriedlimbs = ak.limbs.parriedlimbs or {}
-ak.limbs.weaponry.magi = {"earthstaff","airstaff","firestaff","waterstaff"}
 ak.limbs.currentbreak = ak.limbs.currentbreak or {}
 ak.limbs.currentbreak.weapon = {}
 ak.limbs.currentbreak.limb = {}
@@ -30266,21 +30186,7 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
         damage = 24
       else
         damage = 25			
-      end
-   elseif weapon == "airstaff" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then --15,9 for magi
-      if whomaxhealth &gt; 5300 then
-         damage = 10
-      else
-         damage = 11
-      end  
-      ak.staffaff(weapon)    
-   elseif table.contains(ak.limbs.weaponry.magi, weapon) and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      if whomaxhealth &gt; 5400 then
-         damage = 16
-      else
-         damage = 17
-      end   
-      ak.staffaff(weapon)      
+      end    
    elseif ak.limbs.myweapons and ak.limbs.myweapons[weapon] then --ak.limbs.myweapons
       damage = ak.limbs.findMyStab(weapon,whomaxhealth)
 	 elseif ak.limbs.myformulas and ak.limbs.myformulas[weapon] then
@@ -30367,9 +30273,11 @@ function ak.limbs.FindTargetHealth(who)
    end
    ak.knownmaxhealth = ak.knownmaxhealth or {}
    if table.contains(ak.knownmaxhealth, who) then
-      return tonumber(ak.knownmaxhealth[who]) 
+      --return tonumber(ak.knownmaxhealth[who])
+      return 9500 
    else
-      return 6000   
+      --return 6000
+      return 9500   
    end
 end
 
