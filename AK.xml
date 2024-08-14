@@ -27926,7 +27926,7 @@ if ak.expertdiagnose and not gmcp.Char.Status.race:match("Dragon") and not ak.pa
    ak.expertRun()
 end
 --"Haemophilia, clumsiness, sensitivity, healthleech, darkshade, lethargy."
-affstrack.mentalscore = affstrack.accentatoscore + affstrack.score.agoraphobia + affstrack.score.recklessness
+affstrack.mentalscore = affstrack.score.impatience + affstrack.score.paranoia + affstrack.score.claustrophobia + affstrack.score.vertigo + affstrack.score.confusion + affstrack.score.dizziness + affstrack.score.stupidity + affstrack.score.addiction + affstrack.score.epilepsy + affstrack.score.anorexia + affstrack.score.generosity + affstrack.score.amnesia + affstrack.score.agoraphobia + affstrack.score.recklessness
 affstrack.mentalscore = affstrack.mentalscore / 100
 
 affstrack.kelpscore = affstrack.score.healthleech + affstrack.score.asthma + affstrack.score.clumsiness + affstrack.score.hypochondria + affstrack.score.sensitivity + affstrack.score.weariness 
