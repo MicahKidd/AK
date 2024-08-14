@@ -4823,7 +4823,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12628,7 +12628,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -27146,7 +27146,6 @@ affstrack.whisperlist = {"addiction","dementia","stupidity","confusion","hyperso
 affstrack.enlightenlist = {"whisperingmadness","vertigo","dementia","stupidity","confusion","hypersomnia","paranoia","hallucinations","impatience","recklessness","masochism","agoraphobia","loneliness","lovers","dizziness","anorexia","hypochondria","claustrophobia"}
 affstrack.smokelist = {"manaleech","deadening","disloyalty"}
 affstrack.enlightenscore = 0
-affstrack.accentatoscore = 0
 affstrack.ginsengscore = 0
 affstrack.pyradiusscore = 0
 affstrack.goldenscore = 0
@@ -27927,10 +27926,8 @@ if ak.expertdiagnose and not gmcp.Char.Status.race:match("Dragon") and not ak.pa
    ak.expertRun()
 end
 --"Haemophilia, clumsiness, sensitivity, healthleech, darkshade, lethargy."
-affstrack.accentatoscore = affstrack.score.impatience + affstrack.score.paranoia + affstrack.score.claustrophobia + affstrack.score.vertigo + affstrack.score.confusion + affstrack.score.dizziness + affstrack.score.stupidity + affstrack.score.addiction + affstrack.score.epilepsy + affstrack.score.anorexia + affstrack.score.generosity + affstrack.score.amnesia
 affstrack.mentalscore = affstrack.accentatoscore + affstrack.score.agoraphobia + affstrack.score.recklessness
 affstrack.mentalscore = affstrack.mentalscore / 100
-affstrack.accentatoscore = affstrack.accentatoscore / 100
 
 affstrack.kelpscore = affstrack.score.healthleech + affstrack.score.asthma + affstrack.score.clumsiness + affstrack.score.hypochondria + affstrack.score.sensitivity + affstrack.score.weariness 
 affstrack.kelpscore = affstrack.kelpscore / 100
@@ -32441,7 +32438,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
@@ -32585,7 +32582,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
