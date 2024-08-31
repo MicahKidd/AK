@@ -3388,7 +3388,7 @@ end</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Depthswalker Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -4424,6 +4424,56 @@ end</script>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Degenerate</name>
+					<script>if ak.ai() then return end
+if IsTargetted(multimatches[1][2]) then
+   affstrack.score.degenerate = 100
+   ak.scoreup(multimatches[1][2])
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>1</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^With a flick of your fingers, you drastically accelerate the effects of the afflictions plaguing (\w+)\.$</string>
+						<string>^(\w+) withers before your eyes, becoming a husk of \w+ former self\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Degenerate Faded</name>
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then
+   affstrack.score.degenerate = 0
+   ak.scoreup(matches[2])
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^(\w+) suddenly straightens, \w+ face flushed with vitality\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Druid Group</name>
@@ -12628,7 +12678,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -26948,6 +26998,7 @@ affstrack = {
                 ["darkshade"]      = 0,
                 ["deadening"]      = 0,
                 ["deaf"]           = 0,
+                ["degenerate"]     = 0,
                 ["dementia"]       = 0,
                 ["depression"]     = 0,
                 ["dehydrate"]      = 0,
@@ -29728,6 +29779,7 @@ local convert = {
                 ["deaf"]           = "deaf",
                 ["dehydrate"]      = "dehy",
                 ["dementia"]       = "dem",
+                ["degenerate"]     = "dgn",
                 ["disloyalty"]     = "dloyal",
                 ["disrupt"]        = "dis",
                 ["dizziness"]      = "diz",
@@ -29877,7 +29929,7 @@ ak.prompt.colours.afflictions = {
    Ginseng = {"addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "unweavingbody"},
    Salve = {"aflame", "rightleg", "leftleg", "rightarm", "leftarm", "head", "torso"}, 
    Ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"} ,
-   Deathly = {"enlighten","voyria","latency"},
+   Deathly = {"enlighten","voyria","latency","degenerate"},
    Pariah = {"mycalium","flushings","pyramides","rebbies","sandfever"},
 	 Smoke = {"tension","manaleech","deadening","disloyalty", "unweavingspirit"}, 
 }
@@ -32438,7 +32490,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
