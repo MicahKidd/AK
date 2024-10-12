@@ -4873,7 +4873,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -9220,7 +9220,7 @@ cecho("\n&lt;yellow&gt;"..affstrack.score.aflame)</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -10275,6 +10275,52 @@ end</script>
 					</regexCodeList>
 					<regexCodePropertyList>
 						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Eclipse</name>
+					<script>ak.pariah.Eclipse = true
+OppGainedAff(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>You croon softly to your myriad minions, unleashing them upon the open skies.</string>
+						<string>The sky has already been eclipsed by the writhing bodies of the myriad.</string>
+						<string>You are not under the open sky; this would serve little to no purpose.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
+						<integer>3</integer>
+						<integer>3</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Eclipse</name>
+					<script>ak.pariah.Eclipse = false
+OppGainedAff(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>The black clouds overhead abruptly disperse.</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
@@ -28605,6 +28651,10 @@ end
          ak.feedback = false
          ak.scoreup(target)
       end
+      if ak.pariah.Eclipse then
+        ak.pariah.Eclipse = false
+        ak.scoreup(target)
+      end
       if ak.infernohere then 
          ak.infernohere = false
          ak.scoreup(target)
@@ -32634,7 +32684,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
