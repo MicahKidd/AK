@@ -2795,7 +2795,7 @@ ak.scoreup(matches[2])</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Blademaster Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -4873,7 +4873,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -20644,9 +20644,11 @@ end</script>
 						<string>^([\w'\-]+) has already fallen to the ground\.$</string>
 						<string>^You deftly hook .* behind ([\w'\-]+)'s foot and send [\w'\-]+ tumbling off (.*) before driving the point of the weapon into [\w'\-]+ (right leg|left leg).$</string>
 						<string>^(\w+) is swept off \w+ feet by the blast\.$</string>
-						<string>^A mighty, bestial roarfrom \w+ leaves (\w+) looking dazed\.$</string>
+						<string>^A mighty, bestial roar from \w+ leaves (\w+) looking dazed\.$</string>
+						<string>^(\w+) goes down in a tangle of limbs as \w+ legs are swept out from under \w+\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -28916,7 +28918,7 @@ function ak.defaultstack()
          ak.stack = "mindfuck"
       end
    elseif gmcp.Char.Status.class == "Magi" then
-      ak.stack = "Dgmagi"
+      ak.stack = "Lock"
    elseif gmcp.Char.Status.class == "Serpent" then
       ak.stack = "Kelp"
    elseif gmcp.Char.Status.class == "Occultist" then
@@ -32724,7 +32726,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
