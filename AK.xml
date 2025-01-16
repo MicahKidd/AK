@@ -12756,7 +12756,7 @@ ak.odirk = "Thoth's fang" </script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13924,7 +13924,7 @@ ak.scoreup(target)</script>
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sylvan Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -23884,6 +23884,12 @@ elseif string.find(multimatches[3][1],"seems suddenly unburdened, clarity reasse
   OppLostAff("unweavingspirit")
   ak.psion.unweaving.spirit = 0
   return
+elseif string.find(multimatches[3][1],"The light behind the eyes of") then
+  OppLostAff("unweavingmind")
+  return
+elseif string.find(multimatches[3][1],"suddenly seems much more vital") then
+  OppLostAff("unweavingbody")
+  return
 elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
   OppLostAff("retribution")
   return
@@ -32614,7 +32620,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
