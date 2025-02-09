@@ -27467,7 +27467,7 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
      if not ak.displaydecide then 
         ak.classenable()
         if ak.nodisplay == false and not table.contains(mycharacters,gmcp.Char.Name.name) then 
-           ak.badGUI.init() 
+           ak.BadGUIinit() 
         end 
         ak.displaydecide = true 
      end
@@ -29859,7 +29859,7 @@ function ak.noDisplay()
 end
 
 
-function ak.badGUI.init()
+function ak.BadGUIinit()
         winX, winY = getMainWindowSize()
         createMiniConsole("aff_display", winX-145,0,130,400)
         setBackgroundColor("aff_display", 150, 150, 150, 255)
