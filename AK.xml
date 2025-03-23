@@ -23833,12 +23833,8 @@ elseif string.find(multimatches[3][1],"nervous trembling") then
 elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
   OppLostAff("earworm")
   return
-elseif (ated == "ginseng root" or ated == "ferrum flake") and affstrack.score.flushings &gt; 0 and (not string.find(multimatches[3][1],"Blood begins to run from the pores of")) then
-  if ak.thoughtIhad then 
-    ak.thoughtIhad("flushings")
-  else
-    OppLostAff("flushings")
-  end
+elseif affstrack.score.flushings == 100 and (ated == "ginseng root" or ated == "ferrum flake") and (not string.find(multimatches[3][1],"Blood begins to run from the pores of")) then
+  OppLostAff("flushings")
   return
 else
   if opponenteat == 1 then
@@ -23857,6 +23853,9 @@ else
     opponentrecenteat = true
     herbtimerrecenteat = tempTimer(.5, [[opponentrecenteat = false;ak.serveraliases()]])  
     ak.cure.ate(ated, false)
+    if affstrack.score.flushings &gt; 0 and (ated == "ginseng root" or ated == "ferrum flake") and (not string.find(multimatches[3][1],"Blood begins to run from the pores of")) then
+      OppLostAff("flushings")
+    end
   end
 end   </script>
 					<triggerType>0</triggerType>
