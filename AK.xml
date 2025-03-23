@@ -10314,7 +10314,7 @@ end</script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
-				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Latency Fail</name>
 					<script></script>
 					<triggerType>0</triggerType>
@@ -10327,12 +10327,8 @@ end</script>
 					<mSoundFile></mSoundFile>
 					<colorTriggerFgColor>#000000</colorTriggerFgColor>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
-					<regexCodeList>
-						<string>^(\w) looks nauseous for a moment\, but quickly recovers\.$</string>
-					</regexCodeList>
-					<regexCodePropertyList>
-						<integer>1</integer>
-					</regexCodePropertyList>
+					<regexCodeList />
+					<regexCodePropertyList />
 				</Trigger>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Transpose</name>
@@ -30731,7 +30727,7 @@ function ak.limbs.damageEcho_Non_Target(who,limb)
      end
      if wsys and (who == "Me" or who == "You") and limb == "torso" and not ak.limbs.ignoretorso then
         wsys.affadd("serioustrauma")
-				send("curing predict mildtrauma|curing predict serioustrauma")
+				send("curing predict mildtrauma")
      end
      ak.limbs.damagedisable(who,limb)
   end
