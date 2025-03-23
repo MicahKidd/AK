@@ -5931,7 +5931,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -9252,7 +9252,7 @@ cecho("\n&lt;yellow&gt;"..affstrack.score.aflame)</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -23833,6 +23833,13 @@ elseif string.find(multimatches[3][1],"nervous trembling") then
 elseif string.find(multimatches[3][1],"gives a sigh of relief.") then
   OppLostAff("earworm")
   return
+elseif (ated == "ginseng root" or ated == "ferrum flake") and affstrack.score.flushings &gt; 0 and (not string.find(multimatches[3][1],"Blood begins to run from the pores of")) then
+  if ak.thoughtIhad then 
+    ak.thoughtIhad("flushings")
+  else
+    OppLostAff("flushings")
+  end
+  return
 else
   if opponenteat == 1 then
     if timerherb == 1 then
@@ -25665,7 +25672,8 @@ ak.scoreup(matches[2])</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Maintained Flushings</name>
 					<script>if ak.ai() then return end
-if IsTargetted(matches[2]) then 
+if IsTargetted(matches[2]) then
+   ak.bleeding = ak.bleeding + 30 
    if ak.ProTrackingConfirmed then 
       ak.ProTrackingConfirmed("flushings") 
    else
@@ -27073,6 +27081,7 @@ affstrack = {
                 "pyramides",
                 "sandfever",
                 "diminished",
+                "flushings",
         },
  
         restored = {
