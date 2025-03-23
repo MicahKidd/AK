@@ -30726,7 +30726,7 @@ function ak.limbs.damageEcho_Non_Target(who,limb)
         cecho("&lt;green&gt;\n\nBroke "..who.."'s "..limb.."!!")
      end
      if wsys and (who == "Me" or who == "You") and limb == "torso" and not ak.limbs.ignoretorso then
-        wsys.affadd("serioustrauma")
+        wsys.affadd("mildtrauma")
 				send("curing predict mildtrauma")
      end
      ak.limbs.damagedisable(who,limb)
