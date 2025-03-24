@@ -4896,7 +4896,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -9252,7 +9252,7 @@ cecho("\n&lt;yellow&gt;"..affstrack.score.aflame)</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -31369,10 +31369,10 @@ function affssmoke()
       table.insert(affs, affstrack.smoked[i])
     end
   end
-  local spiritcount = affstrack.score.unweavingspirit/100
-  for i = 1, spiritcount do
-    table.insert(affs, "unweavingspirit")
-  end  
+  --local spiritcount = affstrack.score.unweavingspirit/100
+  --for i = 1, spiritcount do
+  --  table.insert(affs, "unweavingspirit")
+  --end  
    if #affs == 1 then
 	 		if affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
       	if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
@@ -31380,6 +31380,9 @@ function affssmoke()
 			ak.smoke.RetainMass(affs[1], affstrack.score[affs[1]])
       if affs[1] == "unweavingspirit" then
        affstrack.score[affs[1]] = affstrack.score[affs[1]] - 100
+       if affstrack.score[affs[1]] &lt; 0 then   
+          affstrack.score[affs[1]] = 0
+       end
       else
 			 affstrack.score[affs[1]] = 0	
 			end
@@ -32815,7 +32818,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
