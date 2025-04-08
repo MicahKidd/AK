@@ -4896,7 +4896,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -7039,7 +7039,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -28993,7 +28993,7 @@ registerAnonymousEventHandler("got equilibrium", "ak.queuereset")</script>
 					<packageName></packageName>
 					<script>
 if ak.defaultstack then return end --Delete Me From Personal Settings!
-
+ 
 function ak.defaultstack()
    if gmcp.Char.Status.race == "Undead" then
       ak.stack = "Undead"
@@ -29587,30 +29587,16 @@ end</script>
 						<packageName></packageName>
 						<script>function ak.dragon.default.venoms()
   vcombo = {}
-  if math.random(100)&lt;50 then
-    if affstrack.score.paralysis&lt;100 then
-        table.insert(vcombo,"curare")
-    elseif affstrack.score.crippledarm&lt;100 then
-        table.insert(vcombo,"epteth")
-    elseif affstrack.score.crippledleg&lt;100 then
-        table.insert(vcombo,"epseth")
-    elseif affstrack.score.stupidity&lt;100 then
-        table.insert(vcombo,"aconite")
-    elseif affstrack.score.sensitivity&lt;100 then
-        table.insert(vcombo,"prefarar")
-    end
-  else
-    if affstrack.score.stupidity&lt;100 then
-        table.insert(vcombo,"aconite")
-    elseif affstrack.score.dizziness&lt;100 then
-        table.insert(vcombo,"larkspur")
-    elseif affstrack.score.clumsiness&lt;100 then
-        table.insert(vcombo,"xentio")
-    elseif affstrack.score.sensitivity&lt;100 then
-        table.insert(vcombo,"prefarar")
-    elseif affstrack.score.paralysis&lt;100 then
-        table.insert(vcombo,"curare")
-    end
+  if affstrack.score.paralysis&lt;100 then
+      table.insert(vcombo,"curare")
+  elseif affstrack.score.crippledarm&lt;100 then
+      table.insert(vcombo,"epteth")
+  elseif affstrack.score.crippledleg&lt;100 then
+      table.insert(vcombo,"epseth")
+  elseif affstrack.score.stupidity&lt;100 then
+      table.insert(vcombo,"aconite")
+  elseif affstrack.score.sensitivity&lt;100 then
+      table.insert(vcombo,"prefarar")
   end
 end</script>
 						<eventHandlerList />
@@ -30400,7 +30386,7 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
          return 
       end
    elseif weapon == "dragonrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then 
-      damage = 25
+      damage = 30
 	 elseif weapon == "psion" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
 	 	  damage = 25
 	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
@@ -32818,7 +32804,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
