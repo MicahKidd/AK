@@ -12842,6 +12842,82 @@ ak.scoreup(matches[3])</script>
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Ekanelia</name>
+					<script>local mappings = {
+  ["kalmia"] = "slickness",
+  ["curare"] = "hypochondria",
+}
+
+if ak.ai() then return end
+if not mappings[matches[3]] then return end
+OppGainedAff(mappings[matches[3]])
+ak.scoreup(matches[2])</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You sense the weakness in (\w+) as your (\w+) takes hold\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Impulse Relapsed</name>
+					<script>if matches[3] == target then
+  if affstrack.score.fratricide &lt; 100 and affstrack.score.fratricide &gt; 0 then
+    ak.ProTrackingConfirmed("fratricide")
+  end
+  OppGainedAff(matches[2])
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^You sense the remnants of your (\w+) impulse clawing at the psyche of (\w+).$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Snake Sileris</name>
+					<script>if ak.ai() then return end
+if IsTargetted(matches[2]) then 
+   ak.defs.sileris = false
+end</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>^An .*  lunges for the throat of (\w+), fangs sinking through \w+ fang barrier defence\.$</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
 			</TriggerGroup>
 			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
@@ -21132,8 +21208,8 @@ end</script>
 					<name>Snake Bite</name>
 					<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then 
-   --ak.defs.sileris = false
-   OppGainedAff("scytherus")
+   ak.defs.sileris = false
+   OppGainedAff("fratricide")
    ak.scoreup(matches[2])
 end
 </script>
@@ -27070,7 +27146,7 @@ affstrack = {
                 ["plumbum flake"]    = {"fulminated","sandfever","dizziness", "epilepsy", "impatience", "shyness", "stupidity", "depression"},
                 ["bloodroot leaf"]   = {"pyramides","paralysis", "slickness"},
                 ["magnesium chip"]   = {"pyramides","paralysis", "slickness"},
-                ["ginseng root"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
+                ["ginseng root"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "fratricide"},
                 ["ferrum flake"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
                 ["rage"]             = {"generosity", "pacifism","justice"},
                 ["prickly pear"]     = {"pressure"},
@@ -27231,6 +27307,7 @@ affstrack = {
                 ["enlighten"]      = 0,
                 ["epilepsy"]       = 0,
                 ["earworm"]        = 0,
+                ["fratricide"]     = 0,
                 ["frozen"]         = 0,
                 ["frostbite"]      = 0,
                 ["flushings"]      = 0,
@@ -29999,6 +30076,7 @@ local convert = {
                 ["ensorcell"]      = "EN",
                 ["epilepsy"]       = "epi",
                 ["enlighten"]      = "LIT",
+                ["fratricide"]     = "FRAT",
                 ["frozen"]         = "frzn",
                 ["frostbite"]      = "fbite",
                 ["focusextend"]    = "fsex",
@@ -30137,7 +30215,7 @@ ak.prompt.colours.specific = {
 ak.prompt.colours.afflictions = {
    Kelp = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech"},      
    Goldenseal = {"dizziness", "epilepsy", "impatience", "shyness", "stupidity", "unweavingmind"},
-   Ginseng = {"addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "unweavingbody"},
+   Ginseng = {"addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "unweavingbody", "fratricide"},
    Salve = {"aflame", "rightleg", "leftleg", "rightarm", "leftarm", "head", "torso"}, 
    Ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"} ,
    Deathly = {"enlighten","voyria","latency","degenerate"},
