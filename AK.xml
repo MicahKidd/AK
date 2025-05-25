@@ -12732,7 +12732,7 @@ ak.showPrompt()
 					<name>Bite</name>
 					<script>if ak.ai() then return end
 OppGainedAff(matches[3])
-ak.scoreup(matches[2])</script>
+</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -12802,7 +12802,7 @@ ak.odirk = "Thoth's fang" </script>
 					<name>Impulse</name>
 					<script>if ak.ai() then return end
 OppGainedAff(matches[2])
-ak.scoreup(matches[3])</script>
+</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -12823,8 +12823,7 @@ ak.scoreup(matches[3])</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Hypnosis</name>
 					<script>if ak.ai() then return end
-OppGainedAff(matches[2])
-ak.scoreup(matches[3])</script>
+OppGainedAff(matches[2])</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -12851,8 +12850,7 @@ ak.scoreup(matches[3])</script>
 
 if ak.ai() then return end
 if not mappings[matches[3]] then return end
-OppGainedAff(mappings[matches[3]])
-ak.scoreup(matches[2])</script>
+OppGainedAff(mappings[matches[3]])</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -12904,6 +12902,7 @@ end</script>
 					<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then 
    ak.defs.sileris = false
+   ak.scoreup(target)
 end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
