@@ -4896,7 +4896,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -5931,7 +5931,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -27135,8 +27135,8 @@ affstrack = {
         eaten = {
                 ["piece of kelp"]    = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech", "parasite"},
                 ["aurum flake"]      = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech", "parasite"},
-                ["lobelia seed"]     = {"tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
-                ["argentum flake"]   = {"tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
+                ["lobelia seed"]     = {"fratricide", "tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
+                ["argentum flake"]   = {"fratricide", "tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
                 ["prickly ash bark"] = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["stannum flake"]    = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["bellwort flower"]  = {"diminished", "timeloop","generosity", "pacifism","justice","lovers"},
@@ -27149,7 +27149,7 @@ affstrack = {
                 ["plumbum flake"]    = {"fulminated","sandfever","dizziness", "epilepsy", "impatience", "shyness", "stupidity", "depression"},
                 ["bloodroot leaf"]   = {"pyramides","paralysis", "slickness"},
                 ["magnesium chip"]   = {"pyramides","paralysis", "slickness"},
-                ["ginseng root"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "fratricide"},
+                ["ginseng root"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
                 ["ferrum flake"]     = {"flushings","addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus"},
                 ["rage"]             = {"generosity", "pacifism","justice"},
                 ["prickly pear"]     = {"pressure"},
@@ -32934,7 +32934,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
