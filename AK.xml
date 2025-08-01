@@ -4896,7 +4896,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Dragon Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -12922,7 +12922,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Shaman Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -32790,7 +32790,7 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<command></command>
 			<keyCode>-1</keyCode>
 			<keyModifier>0</keyModifier>
-			<KeyGroup isActive="no" isFolder="yes">
+			<KeyGroup isActive="yes" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
@@ -32934,7 +32934,7 @@ end</script>
 				<keyCode>-1</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
-			<KeyGroup isActive="yes" isFolder="yes">
+			<KeyGroup isActive="no" isFolder="yes">
 				<name>Dragon Keys</name>
 				<packageName></packageName>
 				<script></script>
