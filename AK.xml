@@ -4475,7 +4475,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Druid Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -7039,7 +7039,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Monk Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -27139,8 +27139,8 @@ affstrack = {
                 ["argentum flake"]   = {"fratricide", "tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
                 ["prickly ash bark"] = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["stannum flake"]    = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
-                ["bellwort flower"]  = {"diminished", "timeloop","generosity", "pacifism","justice","lovers"},
-                ["cuprum flake"]     = {"diminished", "timeloop","generosity", "pacifism","justice","lovers"},
+                ["bellwort flower"]  = {"pyre", "diminished", "timeloop","generosity", "pacifism","justice","lovers"},
+                ["cuprum flake"]     = {"pyre", "diminished", "timeloop","generosity", "pacifism","justice","lovers"},
                 ["bayberry bark"]    = {"blind"},
                 ["arsenic pellet"]   = {"blind"},
                 ["hawthorn berry"]   = {"deaf"},
