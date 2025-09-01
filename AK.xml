@@ -31126,7 +31126,15 @@ end</script>
       ocured = ocured or {}
       ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
       ocured[ocured.conversion[what]][affs[1]] = affstrack.score[affs[1]]
-      affstrack.score[affs[1]] = affstrack.score[affs[1]] - affstrack.score[affs[1]] / #affs
+      local pyreRest = 0
+      if affs[1] == "pyre" then
+        pyreRest = affstrack.score[affs[1]] - 100
+        affstrack.score[affs[1]] = 100
+      end
+      affstrack.score[affs[1]] = affstrack.score[affs[1]] - affstrack.score[affs[1]]
+      if pyreRest &gt; 0 then
+        affstrack.score[affs[1]] = affstrack.score[affs[1]] + pyreRest
+      end
       if affstrack.score[affs[1]] &lt; ak.errorallowance then
         affstrack.score[affs[1]] = 0
 				ak.AfflictionCured(affs[1])
@@ -31137,7 +31145,15 @@ end</script>
         ocured = ocured or {}
         ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
         ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
+        local pyreRest = 0
+        if affs[i] == "pyre" then
+          pyreRest = affstrack.score[affs[i]] - 100
+          affstrack.score[affs[i]] = 100
+        end
         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
+        if pyreRest &gt; 0 then
+          affstrack.score[affs[1]] = affstrack.score[affs[1]] + pyreRest
+        end
         if affstrack.score[affs[i]] &lt; ak.errorallowance then
           affstrack.score[affs[i]] = 0
           ak.AfflictionCured(affs[i])
