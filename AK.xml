@@ -6503,7 +6503,7 @@ OppGainedAff("frozen disrupt")</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Earth</name>
 						<script>if ak.ai() then return end
-aff = "calcifiedhead"
+aff = "calcifiedtorso"
 ak.magi.resonance.Earth = 0
 if IsTargetted(matches[2]) then
    OppGainedAff(aff)
@@ -27126,7 +27126,7 @@ affstrack = {
         applied = {
                 ["body"]  = {"torso","itching","anorexia","frozen","aflame","selarnia"},
                 ["skin"]  = {"frostbite","anorexia", "crippledarm", "crippledleg","frozen","selarnia"},
-                ["torso"] = {"anorexia", "torso", "aflame", "hypothermia","selarnia"},
+                ["torso"] = {"calcifiedtorso","anorexia", "torso", "aflame", "hypothermia","selarnia"},
                 ["head"]  = {"calcifiedhead","stuttering","head","crushedthroat"},
                 ["arms"]  = {"crippledarm", "rightarm", "leftarm"},
                 ["legs"]  = {"crippledleg","rightleg","leftleg"},
@@ -27286,6 +27286,7 @@ affstrack = {
                 ["bound"]          = 0,
                 ["brand"]          = 0,
                 ["calcifiedhead"]  = 0,
+                ["calcifiedtorso"] = 0,
                 ["claustrophobia"] = 0,
                 ["clumsiness"]     = 0,
                 ["conflagrate"]    = 0,
@@ -28367,6 +28368,9 @@ function OppGainedAff(aff,source)
          elseif word == "calcifiedhead" then
             affstrack.score[word] = 100
             table.insert(affStr,word:title())
+         elseif word == "calcifiedtorso" then
+            affstrack.score[word] = 100
+            table.insert(affStr,word:title())
          elseif word == "wrenchhead" then
             affstrack.score.wrenchhead = 100
             OppGainedAff("dizziness")
@@ -28498,6 +28502,9 @@ function OppGainedAff(aff,source)
         affstrack.score[aff] = affstrack.score[aff] + 100
         table.insert(affStr,aff:title())
      elseif aff == "calcifiedhead" then
+        affstrack.score[aff] = 100
+        table.insert(affStr,aff:title())
+     elseif aff == "calcifiedtorso" then
         affstrack.score[aff] = 100
         table.insert(affStr,aff:title())
      elseif aff == "wrenchhead" then
@@ -31775,11 +31782,11 @@ end</script>
       for i = 1, #affstrack.applied[what] do
          --display( affstrack.applied[what][i])--probable cures  
          --display(affstrack.score[affstrack.applied[what][i]])     
-         if affstrack.score[affstrack.applied[what][i]] &gt; 0 and affstrack.applied[what][i] ~= "frozen" and affstrack.applied[what][i] ~= "aflame" and (affstrack.score[affstrack.applied[what][i]] &gt; 100 or affstrack.applied[what][i] == "calcifiedhead" or affstrack.applied[what][i] == "head" or affstrack.applied[what][i] == "torso" or affstrack.applied[what][i] == "hypothermia") then
+         if affstrack.score[affstrack.applied[what][i]] &gt; 0 and affstrack.applied[what][i] ~= "frozen" and affstrack.applied[what][i] ~= "aflame" and (affstrack.score[affstrack.applied[what][i]] &gt; 100 or affstrack.applied[what][i] == "calcifiedhead" or affstrack.applied[what][i] == "calcifiedtorso" or affstrack.applied[what][i] == "head" or affstrack.applied[what][i] == "torso" or affstrack.applied[what][i] == "hypothermia") then
             table.insert(applycure.possiblerestorations, affstrack.applied[what][i])
             table.insert(applycure.both, affstrack.applied[what][i])
             table.insert(applycure.donotrecount, affstrack.applied[what][i]) 
-						if affstrack.score[affstrack.applied[what][i]] &lt; 200 and affstrack.applied[what][i] ~= "torso" and affstrack.applied[what][i] ~= "head" and affstrack.applied[what][i] ~= "calcifiedhead" then
+						if affstrack.score[affstrack.applied[what][i]] &lt; 200 and affstrack.applied[what][i] ~= "torso" and affstrack.applied[what][i] ~= "head" and affstrack.applied[what][i] ~= "calcifiedtorso" and affstrack.applied[what][i] ~= "calcifiedhead" then
 							table.insert(applycure.possiblemendings, affstrack.applied[what][i]) 
 							applycure.mendingscore = affstrack.score[affstrack.applied[what][i]] + applycure.mendingscore 
 						end
@@ -31924,7 +31931,7 @@ function AKcalculateSalve()
    local ToBeCleared = {}
       for i = 1, #affstrack.applied[applycure.lastapplied] do
          --display( affstrack.applied[applycure.lastapplied][i])--probable cures         
-         if affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 0 and affstrack.applied[applycure.lastapplied][i] ~= "frozen" and affstrack.applied[applycure.lastapplied][i] ~= "aflame" and (affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 100 or affstrack.applied[applycure.lastapplied][i] == "calcifiedhead" or affstrack.applied[applycure.lastapplied][i] == "head" or affstrack.applied[applycure.lastapplied][i] == "torso" or affstrack.applied[applycure.lastapplied][i] == "hypothermia") then
+         if affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 0 and affstrack.applied[applycure.lastapplied][i] ~= "frozen" and affstrack.applied[applycure.lastapplied][i] ~= "aflame" and (affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 100 or affstrack.applied[applycure.lastapplied][i] == "calcifiedhead" or affstrack.applied[applycure.lastapplied][i] == "calcifiedtorso" or affstrack.applied[applycure.lastapplied][i] == "head" or affstrack.applied[applycure.lastapplied][i] == "torso" or affstrack.applied[applycure.lastapplied][i] == "hypothermia") then
             table.insert(ToBeCleared, affstrack.applied[applycure.lastapplied][i])
             table.insert(applycure.possiblerestorations, affstrack.applied[applycure.lastapplied][i])
             table.insert(applycure.both, affstrack.applied[applycure.lastapplied][i])
