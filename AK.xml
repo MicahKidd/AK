@@ -27133,10 +27133,10 @@ affstrack = {
                 ["ears"]  = {"head"}
         }, 
         eaten = {
-                ["piece of kelp"]    = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech", "parasite"},
-                ["aurum flake"]      = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech", "parasite"},
-                ["lobelia seed"]     = {"fratricide", "tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
-                ["argentum flake"]   = {"fratricide", "tenderskin", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
+                ["piece of kelp"]    = {"asthma", "clumsiness", "sensitivity", "weariness", "healthleech", "parasite"},
+                ["aurum flake"]      = {"asthma", "clumsiness", "sensitivity", "weariness", "healthleech", "parasite"},
+                ["lobelia seed"]     = {"fratricide", "tenderskin", "hypochondria", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
+                ["argentum flake"]   = {"fratricide", "tenderskin", "hypochondria", "spiritburn", "agoraphobia", "claustrophobia", "loneliness", "masochism", "recklessness", "vertigo", "spiritdisrupt", "airdisrupt", "earthdisrupt", "firedisrupt", "waterdisrupt"},
                 ["prickly ash bark"] = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["stannum flake"]    = {"crescendo", "confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
                 ["bellwort flower"]  = {"pyre", "diminished", "timeloop","generosity", "pacifism","justice","lovers"},
@@ -30246,7 +30246,7 @@ ak.prompt.colours.specific = {
    Pariah = "&lt;pink&gt;",
    }
 ak.prompt.colours.afflictions = {
-   Kelp = {"asthma", "clumsiness", "hypochondria", "sensitivity", "weariness", "healthleech"},      
+   Kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "healthleech"},      
    Goldenseal = {"dizziness", "epilepsy", "impatience", "shyness", "stupidity", "unweavingmind"},
    Ginseng = {"addiction", "darkshade", "haemophilia", "lethargy", "nausea", "scytherus", "unweavingbody", "fratricide"},
    Salve = {"aflame", "rightleg", "leftleg", "rightarm", "leftarm", "head", "torso"}, 
