@@ -156,8 +156,10 @@ end
 						<string>^Bracing your feet\, you lunge upward at [\w'\-]+ with (.+)\.$</string>
 						<string>^You viciously lacerate ([\w'\-]+) with .+\.$</string>
 						<string>^You viciously lacerate the .+ of ([\w'\-]+) with .+\.$</string>
+						<string>^You rip at the flesh of (\w+) with your lethal claws\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
@@ -216,8 +218,10 @@ end
 					<regexCodeList>
 						<string>^You rub some ([\w'\-]+) on (.*)\.$</string>
 						<string>^You secrete ([\w'\-]+) and deftly bring (.*) to your mouth, letting the venom drip upon it.$</string>
+						<string>^You rub some ([\w'\-]+) upon (.*)\.$</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>1</integer>
 						<integer>1</integer>
 						<integer>1</integer>
 					</regexCodePropertyList>
@@ -4610,143 +4614,6 @@ OppGainedAff("frozen")</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Frenzy</name>
-						<script>local augment = "percent"
-local weapon = "furor"
-local limb = ak.limbs.standardizeLimb(multimatches[3][2])
-if ak.ai() then return end
-table.insert(ak.limbs.currentbreak.weapon,weapon)
-table.insert(ak.limbs.currentbreak.limb,limb)
-table.insert(ak.limbs.currentbreak.attacker,"Me")
-table.insert(ak.limbs.currentbreak.who,multimatches[1][2])
-table.insert(ak.limbs.currentbreak.augment,augment)
-enableTrigger("Missed Single Removal Limbs")          
-enableTrigger("Confirmed Hit Limbs")
-enableTrigger("Parry locate")
-local v1 = multimatches[1][3]
-local v2 = multimatches[2][2]
-OppGainedAff(v1,v2)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>2</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^You plunge your deadly stinger into the soft prey that is (\w+)\, pumping (\w+) into \w+\.$</string>
-							<string>^You rub some (\w+) upon your lethal claws\.$</string>
-							<string>^You rip at the (right leg|left leg|right arm|left arm|head|torso) of (\w+) with your lethal claws\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Frenzy Aff</name>
-						<script>if ak.ai() then return end
-local v1 = multimatches[1][3]
-local v2 = multimatches[2][2]
-OppGainedAff(v1,v2)</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>2</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^You plunge your deadly stinger into the soft prey that is (\w+)\, pumping (\w+) into (\w+)\.$</string>
-							<string>^You rub some (\w+) upon your lethal claws\.$</string>
-							<string>^You rip at the flesh of (\w+) with your lethal claws\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Frenzy Sumac</name>
-						<script>--Morthif gasps as a terrible aching wracks his body.
-ak.druid.sumac = false
-local augment = "percent"
-local weapon = "furor"
-local limb = ak.limbs.standardizeLimb(multimatches[4][2])
-if ak.ai() then return end
-table.insert(ak.limbs.currentbreak.weapon,weapon)
-table.insert(ak.limbs.currentbreak.limb,limb)
-table.insert(ak.limbs.currentbreak.attacker,"Me")
-table.insert(ak.limbs.currentbreak.who,multimatches[1][2])
-table.insert(ak.limbs.currentbreak.augment,augment)
-enableTrigger("Missed Single Removal Limbs")          
-enableTrigger("Confirmed Hit Limbs")
-enableTrigger("Parry locate")
-OppGainedAff(multimatches[3][2])</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>3</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^You plunge your deadly stinger into the soft prey that is (\w+)\, pumping (\w+) into \w+\.$</string>
-							<string>^(\w+) gasps as a terrible aching wracks \w+ body\.$</string>
-							<string>^You rub some (\w+) upon your lethal claws\.$</string>
-							<string>^You rip at the (right leg|left leg|right arm|left arm|head|torso) of (\w+) with your lethal claws\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Frenzy Sumac Aff</name>
-						<script>if ak.ai() then
-  return
-end
-ak.druid.sumac = false
-if IsTargetted(multimatches[1][2]) then
-  OppGainedAff(multimatches[3][2])
-end</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>3</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>^You plunge your deadly stinger into the soft prey that is (\w+)\, pumping (\w+) into \w+\.$</string>
-							<string>^(\w+) gasps as a terrible aching wracks \w+ body\.$</string>
-							<string>^You rub some (\w+) upon your lethal claws\.$</string>
-							<string>^You rip at the flesh of (\w+) with your lethal claws\.$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Inferno</name>
 						<script>if IsTargetted(matches[2]) then
@@ -4814,6 +4681,69 @@ end
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^The fire on your hands jumps to (\w+)\, setting \w+ ablaze\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Frenzy Limb</name>
+						<script>if ak.ai() then return end
+enableTrigger("Missed Single Removal")                --DO NOT CHANGE!
+enableTrigger("Confirmed Hit")                        --DO NOT CHANGE!
+weaponattack = weaponattack or {}
+
+table.insert(weaponattack, "your lethal claws")
+
+local augment = "percent"
+local weapon = "furor"
+local limb = ak.limbs.standardizeLimb(matches[2])
+table.insert(ak.limbs.currentbreak.weapon,weapon)
+table.insert(ak.limbs.currentbreak.limb,limb)
+table.insert(ak.limbs.currentbreak.attacker,"Me")
+table.insert(ak.limbs.currentbreak.who,matches[3])
+table.insert(ak.limbs.currentbreak.augment,augment)
+enableTrigger("Missed Single Removal Limbs")          
+enableTrigger("Confirmed Hit Limbs")
+enableTrigger("Parry locate")
+</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You rip at the (right leg|left leg|right arm|left arm|head|torso) of (\w+) with your lethal claws\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Venom</name>
+						<script>if ak.ai() then return end
+local v1 = matches[3]
+if v1 == "sumac" then
+  ak.druid.sumac = false
+end
+OppGainedAff(v1)</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You plunge your deadly stinger into the soft prey that is (\w+)\, pumping (\w+) into \w+\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -4935,7 +4865,7 @@ expandAlias("dofree wipe claws")</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Dragon Curse Set</name>
 					<script>if ak.ai() then return end
-dragoncursesent = matches[2]
+ak.dragoncursesent = matches[2]
 ak.scoreup(matches[3])</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
@@ -4957,8 +4887,8 @@ ak.scoreup(matches[3])</script>
 				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Dcursed</name>
 					<script>if ak.ai() then return end
-if dragoncursesent then OppGainedAff(dragoncursesent) end
-dragoncursesent = false</script>
+if ak.dragoncursesent then OppGainedAff(ak.dragoncursesent) end
+ak.dragoncursesent = false</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -9252,7 +9182,7 @@ cecho("\n&lt;yellow&gt;"..affstrack.score.aflame)</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Pariah Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11971,7 +11901,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13710,7 +13640,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -14590,7 +14520,7 @@ if IsTargetted(matches[2]) then
    affstrack.vinewreathe = true
    ak.scoreup()
 end
-tempTimer(25, [[ affstrack.vinewreathe = false ]])
+tempTimer(15, [[ affstrack.vinewreathe = false ]])
 
 
 </script>
@@ -15915,7 +15845,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -17467,7 +17397,8 @@ end</script>
 							<string>You touch your tattoo and summon the hammer but find nothing to strike.</string>
 							<string>^You touch your tattoo and a massive, translucent hammer rises up and shatters the magical shield surrounding (\w+)\.$</string>
 							<string>^You command your many heads to lash out at (\w+)\'s protective shield, which shatters beneaththe assault\.$</string>
-							<string>^You command your heads to lash out at (\w+)\'s protective shield, but there isn't one to befound\.$</string>
+							<string>^You command your heads to lash out at (\w+)\'s protective shield\, but there isn't one to be found\.$</string>
+							<string>^You command your many heads to lash out at (\w+)\'s protective shield, which shatters beneath the assault\.$ </string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -17507,6 +17438,7 @@ end</script>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>3</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -17810,11 +17742,7 @@ elseif weapon == "maul" then
    weapon = "maul"
 elseif weapon == "vines" then
   augment = "percent"
-	if affstrack.vinewreathe then
-   weapon = "wreathed"
-	else
-   weapon = "viridianrend"
-	end
+  weapon = "viridianrend"
 end
 local limb = ak.limbs.standardizeLimb(matches[3])
 table.insert(ak.limbs.currentbreak.weapon,weapon)
@@ -20625,85 +20553,60 @@ end</script>
 					<name>Target Standing</name>
 					<script>if ak.ai() then return end
 if IsTargetted(matches[2]) then
-	 ak.limbs.limb_table_check(matches[2])
-   affstrack.score.prone = 0
-	 if applycure.lastapplied and applycure.lastapplied == "legs" then
-      AKcalculateSalve()
-	 end
-	 if ocured and ocured.bloodroot and ocured.bloodroot.paralysis and ocured.bloodroot.slickness and ak.ProTrackingConfirmed then
-	 	ak.ProTrackingConfirmed("slickness")	
-	 end
-	 affstrack.score.paralysis = 0
-   --if affstrack.score.rightleg&gt;0 and affstrack.score.rightleg&lt;100 then
-   --   if ak.thoughtIhad then ak.thoughtIhad("rightleg") else affstrack.score.rightleg = 0 end 
-   --   --ak.limbs.limbcount[target].rightleg = (ak.limbs.limbcount[target].lastpercentrightleg)
-   --   _G[target.."rightlegdisablelimbdamage"] = nil
-   --   --ak.limbs.limbcount[target].leftleg = (ak.limbs.limbcount[target].lastpercentleftleg)
-   --   _G[target.."leftlegdisablelimbdamage"] = nil
-   --   affstrack.score.leftleg = 0
-   --elseif affstrack.score.leftleg&gt;0 and affstrack.score.leftleg&lt;100 then
-   --   if ak.thoughtIhad then ak.thoughtIhad("leftleg") else affstrack.score.leftleg = 0 end
-   --   --ak.limbs.limbcount[target].leftleg = (ak.limbs.limbcount[target].lastpercentleftleg)
-   --   _G[target.."leftlegdisablelimbdamage"] = nil
-   --   --ak.limbs.limbcount[target].rightleg = (ak.limbs.limbcount[target].lastpercentrightleg)
-   --   _G[target.."rightlegdisablelimbdamage"] = nil
-   --   affstrack.score.rightleg = 0
-   --else
-      if applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == "leftleg" then
-         AKcalculateSalve()
-         if affstrack.score.rightleg &gt;= 100 then
-            ak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg
-            cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Right Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-            _G[target.."rightlegdisablelimbdamage"] = nil
-            if ak.thoughtIhad then ak.thoughtIhad("rightleg") else affstrack.score.rightleg = 0 end
-         end
-      elseif applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == "rightleg" then
-         AKcalculateSalve()
-         if affstrack.score.leftleg &gt;= 100 then
-            ak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg
-            cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Left Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-            _G[target.."leftlegdisablelimbdamage"] = nil
-            if ak.thoughtIhad then ak.thoughtIhad("leftleg") else affstrack.score.leftleg = 0 end
-         end
-      else
-				if ak.limbs.limbcount[target].maxbreaks.rightleg &lt; ak.limbs.limbcount[target].maxbreaks.leftleg and affstrack.score.leftleg &gt;= 100 and affstrack.score.rightleg &gt;= 100 then
-					ak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg
-					cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Left Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-					_G[target.."leftlegdisablelimbdamage"] = nil
-					if ak.thoughtIhad then ak.thoughtIhad("leftleg") else affstrack.score.leftleg = 0 end				
-				elseif ak.limbs.limbcount[target].maxbreaks.rightleg &gt; ak.limbs.limbcount[target].maxbreaks.leftleg and affstrack.score.rightleg &gt;= 100 and affstrack.score.leftleg &gt;= 100 then
-					ak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg
-					cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Right Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-					_G[target.."rightlegdisablelimbdamage"] = nil
-					if ak.thoughtIhad then ak.thoughtIhad("rightleg") else affstrack.score.rightleg = 0 end
-				else
-					if ak.limbs.FindLastBrokenLeg() == "leftleg" and affstrack.score.leftleg &gt; 100 then
-         	   ak.limbs.limbcount[target].leftleg = ak.limbs.limbcount[target].lastpercentleftleg
-         	   cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Left Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-         	   _G[target.."leftlegdisablelimbdamage"] = nil
-         	   if ak.thoughtIhad then ak.thoughtIhad("leftleg") else affstrack.score.leftleg = 0 end
-					elseif affstrack.score.rightleg &gt; 100 then
-         	   ak.limbs.limbcount[target].rightleg = ak.limbs.limbcount[target].lastpercentrightleg
-         	   cecho("\n\n&lt;cyan&gt;"..target.."'s &lt;yellow&gt;Right Leg &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
-         	   _G[target.."rightlegdisablelimbdamage"] = nil
-         	   if ak.thoughtIhad then ak.thoughtIhad("rightleg") else affstrack.score.rightleg = 0 end
-					end
-				end
+  ak.limbs.limb_table_check(matches[2])
+  affstrack.score.prone = 0
+
+  if applycure.lastapplied and applycure.lastapplied == "legs" then
+    AKcalculateSalve()
+  end
+
+  if ocured and ocured.bloodroot and ocured.bloodroot.paralysis and ocured.bloodroot.slickness and ak.ProTrackingConfirmed then
+    ak.ProTrackingConfirmed("slickness")
+  end
+
+  affstrack.score.paralysis = 0
+
+  if applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == "leftleg" then
+    AKcalculateSalve()
+    if affstrack.score.rightleg &gt;= 100 then
+      ak.limbs.CorrectLegCount(target, "rightleg")
+    end
+
+  elseif applycure and applycure.possiblemendings and #applycure.possiblemendings == 1 and applycure.possiblemendings[1] == "rightleg" then
+    AKcalculateSalve()
+    if affstrack.score.leftleg &gt;= 100 then
+      ak.limbs.CorrectLegCount(target, "leftleg")
+    end
+  else
+    local counts = ak.limbs.limbcount[target]
+    cecho("&lt;orange&gt;\nDEBUG: maxbreaks R="..counts.maxbreaks.rightleg.." L="..counts.maxbreaks.leftleg)
+    if counts.maxbreaks.rightleg &lt; counts.maxbreaks.leftleg and affstrack.score.leftleg &gt;= 100 and affstrack.score.rightleg &gt;= 100 then
+      ak.limbs.CorrectLegCount(target, "rightleg")   -- CHANGED: was "leftleg"
+
+    elseif counts.maxbreaks.rightleg &gt; counts.maxbreaks.leftleg and affstrack.score.rightleg &gt;= 100 and affstrack.score.leftleg &gt;= 100 then
+      ak.limbs.CorrectLegCount(target, "leftleg")    -- CHANGED: was "rightleg"
+
+    else
+      -- unchanged fallback
+      if ak.limbs.FindLastBrokenLeg() == "leftleg" and affstrack.score.leftleg &gt; 100 then
+        ak.limbs.CorrectLegCount(target, "leftleg")
+      elseif affstrack.score.rightleg &gt; 100 then
+        ak.limbs.CorrectLegCount(target, "rightleg")
       end
-   --end
-   affstrack.score.leftleg = 0
-   affstrack.score.rightleg = 0
-   ak.scoreup(matches[2])
-   cecho("&lt;cyan&gt;\n\n"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
-   cecho("&lt;cyan&gt;"..target.. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
-   if ak.limbs.limbcount[matches[2]] then
-      _G[target.."rightlegdisablelimbdamage"] = nil
-      _G[target.."leftlegdisablelimbdamage"] = nil
-   end
-end
-</script>
+    end
+  end
+  affstrack.score.leftleg = 0
+  affstrack.score.rightleg = 0
+  ak.scoreup(matches[2])
+  cecho("&lt;cyan&gt;\n\n" .. target .. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+  cecho("&lt;cyan&gt;\n\n" .. target .. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+  cecho("&lt;cyan&gt;\n\n" .. target .. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+  cecho("&lt;cyan&gt;\n\n" .. target .. " IS NO LONGER PRONE.  FAE|HE|SHE IS UP!!\n\n")
+  if ak.limbs.limbcount[matches[2]] then
+    _G[target .. "rightlegdisablelimbdamage"] = nil
+    _G[target .. "leftlegdisablelimbdamage"] = nil
+  end
+end</script>
 					<triggerType>0</triggerType>
 					<conditonLineDelta>0</conditonLineDelta>
 					<mStayOpen>0</mStayOpen>
@@ -27956,166 +27859,91 @@ function ak.MonkType()
     return "Tekura"
   end
 end
+local killKeys = {"Shaman Keys", "Dragon Keys"}
+local killTriggerGroups = {
+  "Air Lord Group", "Water Lord Group", "Monk Group", "Sentinel Group",
+  "Depthswalker Group", "Runewarden Group", "Infernal Group", "2h Group",
+  "Druid Group", "Totem Group", "Undead Group", "Serpent Group",
+  "Jester Group", "Tarot Group", "Magi Group", "Psion Group",
+  "Apostate Group", "Shaman Group", "Dragon Group", "Sword &amp; Board Group",
+  "Bard Group", "Blademaster Group", "Fire Lord Group", "Occultist Group",
+  "Sylvan Group", "Alchemist Group", "Priest Group", "Paladin Group",
+  "Pariah Group",
+}
 
 function ak.KillTriggers()
-  disableKey("Shaman Keys")
-  disableKey("Dragon Keys")
-  disableTrigger("Air Lord Group")
-  disableTrigger("Water Lord Group")
-  disableTrigger("Monk Group")
-  disableTrigger("Sentinel Group")
-  disableTrigger("Depthswalker Group")
-  disableTrigger("Runewarden Group")
-  disableTrigger("Infernal Group")
-  disableTrigger("2h Group")
-  disableTrigger("Druid Group")
-  disableTrigger("Totem Group")
-  disableTrigger("Undead Group")
-  disableTrigger("Serpent Group")
-  disableTrigger("Jester Group")
-  disableTrigger("Tarot Group")
-  disableTrigger("Magi Group")
-  disableTrigger("Psion Group")
-  disableTrigger("Apostate Group")
-  disableTrigger("Shaman Group")
-  disableTrigger("Dragon Group")
-  disableTrigger("Sword &amp; Board Group")
-  disableTrigger("Bard Group")
-  disableTrigger("Blademaster Group")
-  disableTrigger("Fire Lord Group")
-  disableTrigger("Occultist Group")
-  disableTrigger("Sylvan Group")
-  disableTrigger("Alchemist Group")
-  disableTrigger("Priest Group")
-  disableTrigger("Paladin Group")
-  disableTrigger("Pariah Group")
+  for i = 1, #killKeys do disableKey(killKeys[i]) end
+  for i = 1, #killTriggerGroups do disableTrigger(killTriggerGroups[i]) end
 end
+ak.classHandlers = {
+  Monk         = {triggers = {"Monk Group"}, message = "&lt;yellow&gt;\nMONK ENABLED\n"},
+  Pariah       = {triggers = {"Pariah Group"}, message = "&lt;yellow&gt;\nPARIAH ENABLED\n"},
+  Druid        = {triggers = {"Druid Group"}, message = "&lt;yellow&gt;\nDRUID ENABLED\n"},
+  Priest       = {triggers = {"Priest Group"}, message = "&lt;yellow&gt;\nPRIEST ENABLED\n"},
+  Magi         = {triggers = {"Magi Group"}, message = "&lt;yellow&gt;\nMAGI ENABLED\n"},
+  Sylvan       = {triggers = {"Sylvan Group"}, message = "&lt;yellow&gt;\nSYLVAN ENABLED\n"},
+  Shaman       = {triggers = {"Shaman Group"}, keys = {"Shaman Keys"}, message = "&lt;yellow&gt;\nSHAMAN ENABLED\n"},
+  Serpent      = {triggers = {"Serpent Group"}, message = "&lt;yellow&gt;\nSERPENT ENABLED\n"},
+  Jester       = {triggers = {"Tarot Group", "Jester Group"}, message = "&lt;yellow&gt;\nJESTER\n"},
+  Alchemist    = {triggers = {"Alchemist Group"}, message = "&lt;yellow&gt;\nALCHEMIST\n"},
+  Sentinel     = {triggers = {"Sentinel Group"}, message = "&lt;yellow&gt;\nSENTINEL ENABLED\n"},
+  Occultist    = {triggers = {"Tarot Group", "Occultist Group"}, message = "&lt;yellow&gt;\nOCCULTIST ENABLED\n"},
+  Bard         = {triggers = {"Bard Group"}, message = "&lt;yellow&gt;\nBARD ENABLED\n"},
+  Depthswalker = {triggers = {"Depthswalker Group"}, message = "&lt;yellow&gt;\nDEPTHSWALKER ENABLED\n"},
+  Apostate     = {triggers = {"Apostate Group"}, message = "&lt;yellow&gt;\nABOSTATE ENABLED\n"},
+  Blademaster  = {triggers = {"Blademaster Group"}, message = "&lt;yellow&gt;\nBLADEMASTER ENABLED\n"},
+  Psion        = {triggers = {"Psion Group"}, keys = {"Psion Keys"}, message = "&lt;yellow&gt;\nPsion ENABLED\n"},
+
+  Paladin      = {triggers = {"Paladin Group", "Totem Group", "2h Group", "Dwb Group", "Sword &amp; Board Group"}, message = "&lt;yellow&gt;\nKNIGHT ENABLED\n\n"},
+  Runewarden   = {triggers = {"Runewarden Group", "Totem Group", "2h Group", "Dwb Group", "Sword &amp; Board Group"}, message = "&lt;yellow&gt;\nKNIGHT ENABLED\n\n"},
+  Infernal     = {triggers = {"Infernal Group", "Totem Group", "2h Group", "Dwb Group", "Sword &amp; Board Group"}, message = "&lt;yellow&gt;\nKNIGHT ENABLED\n\n"},
+}
+
+ak.elementalHandlers = {
+  water = {triggers = {"Water Lord Group"}, message = "&lt;yellow&gt;\n\nWATER ELEMENTAL ENABLED\n"},
+  air   = {triggers = {"Air Lord Group"}, message = "&lt;yellow&gt;\nAIR ELEMENTAL ENABLED\n"},
+  fire  = {triggers = {"Fire Lord Group"}, message = "&lt;yellow&gt;\nFire ELEMENTAL ENABLED\n\n"},
+}
 
 function ak.classenable()
-  if ak.CustomGuiEnable then
-    ak.CustomGuiEnable()
-  end
-  if ak.morphingCheck then
-    ak.morphingCheck()
-  end
+  if ak.CustomGuiEnable then ak.CustomGuiEnable() end
+  if ak.morphingCheck then ak.morphingCheck() end
   ak.defaultstack()
-  if gmcp.Char.Status.race:match("Dragon") or gmcp.Char.Status.class ~= "Shaman" then
+
+  local race, class = gmcp.Char.Status.race, gmcp.Char.Status.class
+
+  if race:match("Dragon") or class ~= "Shaman" then
     swiftcount = 0
   end
-  if gmcp.Char.Status.race == "Undead" then
+
+  local handler
+  local extraKeyCheck
+
+  if race == "Undead" then
+    handler = {triggers = {"Undead Group"}, message = "&lt;yellow&gt;\nUNDEAD ENABLED\n"}
+  elseif race:match("Dragon") then
+    handler = {triggers = {"Dragon Group"}, message = "&lt;yellow&gt;\nDRAGON ENABLED\n"}
+    extraKeyCheck = true
+  else
+    handler = ak.classHandlers[class]
+    if not handler then
+      local element = class:match("^(%a+) Elemental")
+      handler = element and ak.elementalHandlers[element]
+    end
+  end
+
+  if handler then
     ak.KillTriggers()
-    enableTrigger("Undead Group")
-    cecho("&lt;yellow&gt;\nUNDEAD ENABLED\n")
-  elseif gmcp.Char.Status.race:match("Dragon") then
-    ak.KillTriggers()
-    enableTrigger("Dragon Group")
-    if not table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
+    for i = 1, #handler.triggers do enableTrigger(handler.triggers[i]) end
+    if handler.keys then
+      for i = 1, #handler.keys do enableKey(handler.keys[i]) end
+    end
+    if extraKeyCheck and not table.contains(ak.MovementKeys, gmcp.Char.Name.name) then
       enableKey("Dragon Keys")
     end
-    cecho("&lt;yellow&gt;\nDRAGON ENABLED\n")
-  elseif gmcp.Char.Status.class == "Monk" then
-    ak.KillTriggers()
-    enableTrigger("Monk Group")
-    cecho("&lt;yellow&gt;\nMONK ENABLED\n")
-  elseif gmcp.Char.Status.class == "Pariah" then
-    ak.KillTriggers()
-    enableTrigger("Pariah Group")
-    cecho("&lt;yellow&gt;\nPARIAH ENABLED\n")
-  elseif gmcp.Char.Status.class == "Druid" then
-    ak.KillTriggers()
-    enableTrigger("Druid Group")
-    cecho("&lt;yellow&gt;\nDRUID ENABLED\n")
-  elseif gmcp.Char.Status.class == "Priest" then
-    ak.KillTriggers()
-    enableTrigger("Priest Group")
-    cecho("&lt;yellow&gt;\nPRIEST ENABLED\n")
-  elseif gmcp.Char.Status.class == "Magi" then
-    ak.KillTriggers()
-    enableTrigger("Magi Group")
-    cecho("&lt;yellow&gt;\nMAGI ENABLED\n")
-  elseif gmcp.Char.Status.class == "Sylvan" then
-    ak.KillTriggers()
-    enableTrigger("Sylvan Group")
-    cecho("&lt;yellow&gt;\nSYLVAN ENABLED\n")
-  elseif gmcp.Char.Status.class == "Shaman" then
-    ak.KillTriggers()
-    enableKey("Shaman Keys")
-    enableTrigger("Shaman Group")
-    cecho("&lt;yellow&gt;\nSHAMAN ENABLED\n")
-  elseif gmcp.Char.Status.class == "Serpent" then
-    ak.KillTriggers()
-    enableTrigger("Serpent Group")
-    cecho("&lt;yellow&gt;\nSERPENT ENABLED\n")
-  elseif gmcp.Char.Status.class == "Jester" then
-    ak.KillTriggers()
-    enableTrigger("Tarot Group")
-    enableTrigger("Jester Group")
-    cecho("&lt;yellow&gt;\nJESTER\n")
-  elseif gmcp.Char.Status.class == "Alchemist" then
-    ak.KillTriggers()
-    enableTrigger("Alchemist Group")
-    cecho("&lt;yellow&gt;\nALCHEMIST\n")
-  elseif
-    gmcp.Char.Status.class == "Infernal" or
-    gmcp.Char.Status.class == "Paladin" or
-    gmcp.Char.Status.class == "Runewarden"
-  then
-    ak.KillTriggers()
-    if gmcp.Char.Status.class == "Paladin" then
-      enableTrigger("Paladin Group")
-    elseif gmcp.Char.Status.class == "Runewarden" then
-      enableTrigger("Runewarden Group")
-    elseif gmcp.Char.Status.class == "Infernal" then
-      enableTrigger("Infernal Group")
-    end
-    enableTrigger("Totem Group")
-    enableTrigger("2h Group")
-    enableTrigger("Dwb Group")
-    enableTrigger("Sword &amp; Board Group")
-    cecho("&lt;yellow&gt;\nKNIGHT ENABLED\n\n")
-  elseif gmcp.Char.Status.class == "Sentinel" then
-    ak.KillTriggers()
-    enableTrigger("Sentinel Group")
-    cecho("&lt;yellow&gt;\nSENTINEL ENABLED\n")
-  elseif gmcp.Char.Status.class == "Occultist" then
-    ak.KillTriggers()
-    enableTrigger("Tarot Group")
-    enableTrigger("Occultist Group")
-    cecho("&lt;yellow&gt;\nOCCULTIST ENABLED\n")
-  elseif gmcp.Char.Status.class == "Bard" then
-    ak.KillTriggers()
-    enableTrigger("Bard Group")
-    cecho("&lt;yellow&gt;\nBARD ENABLED\n")
-  elseif gmcp.Char.Status.class == "Depthswalker" then
-    ak.KillTriggers()
-    enableTrigger("Depthswalker Group")
-    cecho("&lt;yellow&gt;\nDEPTHSWALKER ENABLED\n")
-  elseif gmcp.Char.Status.class == "Apostate" then
-    ak.KillTriggers()
-    enableTrigger("Apostate Group")
-    cecho("&lt;yellow&gt;\nABOSTATE ENABLED\n")
-  elseif gmcp.Char.Status.class == "water Elemental Lord" or gmcp.Char.Status.class == "water Elemental Lady" then
-    ak.KillTriggers()
-    enableTrigger("Water Lord Group")
-    cecho("&lt;yellow&gt;\n\nWATER ELEMENTAL ENABLED\n")
-  elseif gmcp.Char.Status.class == "air Elemental Lord" or gmcp.Char.Status.class == "air Elemental Lady" then
-    ak.KillTriggers()
-    enableTrigger("Air Lord Group")
-    cecho("&lt;yellow&gt;\nAIR ELEMENTAL ENABLED\n")
-  elseif gmcp.Char.Status.class == "fire Elemental Lord" or gmcp.Char.Status.class == "fire Elemental Lady" then
-    ak.KillTriggers()
-    enableTrigger("Fire Lord Group")
-    cecho("&lt;yellow&gt;\nFire ELEMENTAL ENABLED\n\n")
-  elseif gmcp.Char.Status.class == "Blademaster" then
-    ak.KillTriggers()
-    enableTrigger("Blademaster Group")
-    cecho("&lt;yellow&gt;\nBLADEMASTER ENABLED\n")
-  elseif gmcp.Char.Status.class == "Psion" then
-    ak.KillTriggers()
-    enableTrigger("Psion Group")
-    enableKey("Psion Keys")
-    cecho("&lt;yellow&gt;\nPsion ENABLED\n")
+    cecho(handler.message)
   end
+
   ak.scoreup(target)
 end</script>
 					<eventHandlerList />
@@ -28270,402 +28098,284 @@ end</script>
 					<name>oscore</name>
 					<packageName></packageName>
 					<script>--scoreup
--------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
+
+affstrack.enlightenlist = affstrack.enlightenlist or {}
+affstrack.whisperlist = affstrack.whisperlist or {}
+affstrack.enlightenSet = affstrack.enlightenSet or {}
+affstrack.whisperSet = affstrack.whisperSet or {}
+do
+  local eset, wset = {}, {}
+  for _, k in ipairs(affstrack.enlightenlist) do eset[k] = true end
+  for _, k in ipairs(affstrack.whisperlist) do wset[k] = true end
+  affstrack.enlightenSet = eset
+  affstrack.whisperSet = wset
+end
+
 function ak.scoreup(whom)
-if ak.expertdiagnose and not gmcp.Char.Status.race:match("Dragon") and not ak.pause and not ak.syspause() then
-   ak.expertRun()
-end
---"Haemophilia, clumsiness, sensitivity, healthleech, darkshade, lethargy."
-affstrack.mentalscore = affstrack.score.impatience + affstrack.score.paranoia + affstrack.score.claustrophobia + affstrack.score.vertigo + affstrack.score.confusion + affstrack.score.dizziness + affstrack.score.stupidity + affstrack.score.addiction + affstrack.score.epilepsy + affstrack.score.anorexia + affstrack.score.generosity + affstrack.score.amnesia + affstrack.score.agoraphobia + affstrack.score.recklessness
-affstrack.mentalscore = affstrack.mentalscore / 100
+  if ak.expertdiagnose and not gmcp.Char.Status.race:match("Dragon") and not ak.pause and not ak.syspause() then
+    ak.expertRun()
+  end
 
-affstrack.kelpscore = affstrack.score.healthleech + affstrack.score.asthma + affstrack.score.clumsiness + affstrack.score.hypochondria + affstrack.score.sensitivity + affstrack.score.weariness 
-affstrack.kelpscore = affstrack.kelpscore / 100
-affstrack.ginsengscore = affstrack.score.addiction + affstrack.score.darkshade + affstrack.score.haemophilia + affstrack.score.lethargy + affstrack.score.nausea + affstrack.score.scytherus
-affstrack.ginsengscore = affstrack.ginsengscore / 100
+  local score = affstrack.score
 
-affstrack.goldenscore =  affstrack.score.dizziness + affstrack.score.epilepsy + affstrack.score.impatience + affstrack.score.shyness + affstrack.score.stupidity
-affstrack.goldenscore = affstrack.goldenscore / 100
+  --"Haemophilia, clumsiness, sensitivity, healthleech, darkshade, lethargy."
+  affstrack.mentalscore = (score.impatience + score.paranoia + score.claustrophobia + score.vertigo
+    + score.confusion + score.dizziness + score.stupidity + score.addiction + score.epilepsy
+    + score.anorexia + score.generosity + score.amnesia + score.agoraphobia + score.recklessness) / 100
 
-affstrack.pyradiusscore = affstrack.score.clumsiness + affstrack.score.lethargy + affstrack.score.haemophilia + affstrack.score.healthleech + affstrack.score.sensitivity + affstrack.score.darkshade 
-affstrack.pyradiusscore = affstrack.pyradiusscore / 100
-softscore = affstrack.score.anorexia + affstrack.score.slickness + affstrack.score.asthma
-softscore = softscore / 100
-truescore = affstrack.score.paralysis + affstrack.score.impatience + affstrack.score.anorexia + affstrack.score.slickness + affstrack.score.asthma
-truescore = truescore / 100
-affstrack.tramplescore = 0
-ak.trample()
-affstrack.totalaffs = 0
-affstrack.enlightenscore = 0
-affstrack.whisperscore = 0
-for k,v in pairs(affstrack.score) do
-   if v &gt; 1 then
-      affstrack.totalaffs = affstrack.totalaffs + v
-      if table.contains(affstrack.enlightenlist, k) then
-         affstrack.enlightenscore = affstrack.enlightenscore + v
+  affstrack.kelpscore = (score.healthleech + score.asthma + score.clumsiness + score.hypochondria
+    + score.sensitivity + score.weariness) / 100
+
+  affstrack.ginsengscore = (score.addiction + score.darkshade + score.haemophilia + score.lethargy
+    + score.nausea + score.scytherus) / 100
+
+  affstrack.goldenscore = (score.dizziness + score.epilepsy + score.impatience + score.shyness
+    + score.stupidity) / 100
+
+  affstrack.pyradiusscore = (score.clumsiness + score.lethargy + score.haemophilia + score.healthleech
+    + score.sensitivity + score.darkshade) / 100
+
+  softscore = (score.anorexia + score.slickness + score.asthma) / 100
+
+  truescore = (score.paralysis + score.impatience + score.anorexia + score.slickness + score.asthma) / 100
+
+  ak.trample()
+
+  local totalaffs, enlightenscore, whisperscore = 0, 0, 0
+  local eset, wset = affstrack.enlightenSet, affstrack.whisperSet
+  for k, v in pairs(score) do
+    if v &gt; 1 then
+      totalaffs = totalaffs + v
+      if eset[k] then
+        enlightenscore = enlightenscore + v
       end
-      if table.contains(affstrack.whisperlist, k) then
-         affstrack.whisperscore = affstrack.whisperscore + v
+      if wset[k] then
+        whisperscore = whisperscore + v
       end
-   end
+    end
+  end
+  affstrack.totalaffs = totalaffs / 100
+  affstrack.enlightenscore = enlightenscore / 100
+  affstrack.whisperscore = whisperscore / 100
+
+  if ak.tzantzajinxed then
+    ak.tzantzajinxed = false
+  elseif target and not ak.pause and not ak.syspause() then
+    ak.serveraliases()
+  end
+
+  ak.prompt.scoreup()
+  raiseEvent("AK scoreup", whom)
+  if ak.nodisplay then
+    ak.noDisplay()
+  else
+    ak.refreshAffs()
+  end
 end
-affstrack.totalaffs = affstrack.totalaffs / 100
-affstrack.enlightenscore = affstrack.enlightenscore / 100
-affstrack.whisperscore = affstrack.whisperscore / 100
-if ak.tzantzajinxed then
-	ak.tzantzajinxed = false
-elseif target and not ak.pause and not ak.syspause() then 
-   ak.serveraliases() 
-end
-ak.prompt.scoreup()
-raiseEvent("AK scoreup", whom)
-if ak.nodisplay then ak.noDisplay() else ak.refreshAffs() end
-end
-  --&lt;3
-function ak.trample() 
-   affstrack.tramplescore = 0
-   affstrack.tramplescore = affstrack.score["leftarm"] + affstrack.score["leftleg"] + affstrack.score["rightleg"] + affstrack.score["rightarm"]
-   affstrack.tramplescore = affstrack.tramplescore / 100
-end
-</script>
+
+--&lt;3
+function ak.trample()
+  local score = affstrack.score
+  affstrack.tramplescore = (score.leftarm + score.leftleg + score.rightleg + score.rightarm) / 100
+end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
 					<name>oscore edit functions</name>
 					<packageName></packageName>
-					<script>--OppGainedAff
+					<script>--OppGainedAff (refactored)
+--
 
-function OppGainedAff(aff,source)
-  if not aff then return end
-  local affStr = {}
-  aff = aff:lower()
-  if string.find(aff," ") then                          --Multi Venoms
-    ak.eatsbetweenaffs = 0
-    for word in string.gmatch(aff, "%a+") do
-         if (word == "sensitivity" or word == "prefarar") and affstrack.score.deaf == 0 then 
-            word = "deaf" 
-         end
-         if word == "slickness" then ak.defs.sileris = false end
-         if table.contains(affstrack.mentallist, word) then
-            ak.occie.aura.mental = ak.occie.aura.mental + 1 
-         end
-         if table.contains(affstrack.physicallist, word) then
-            ak.occie.aura.physical = ak.occie.aura.physical + 1 
-         end
-         if word == "amnesia" then
-            affstrack.score.amnesia = 100
-            if amnesiatimer then 
-              killTimer(amnesiatimer)
-              amnesiatimer = nil 
-            end
-            amnesiatimer = tempTimer(1, [[OppLostAff("amnesia")]])
-         elseif string.find(word,"unweave") then
-            affstrack.score[word] = affstrack.score[word] + 100
-            table.insert(affStr,word:title())
-         elseif word == "calcifiedhead" then
-            affstrack.score[word] = 100
-            table.insert(affStr,word:title())
-         elseif word == "calcifiedtorso" then
-            affstrack.score[word] = 100
-            table.insert(affStr,word:title())
-         elseif word == "wrenchhead" then
-            affstrack.score.wrenchhead = 100
-            OppGainedAff("dizziness")
-            disableTimer("Wrench Head Timer")
-            enableTimer("Wrench Head Timer")
-            ak.HeadWrenchDisable = tempTimer(24,[[affstrack.score.wrenchhead = 0;ak.scoreup(target)]])
-            ak.InitialWrench = tempTimer(3.5,[[OppGainedAff("dizziness")]])
-            table.insert(affStr,word:title())
-         elseif word == "scrambledbrains" then
-            affstrack.score.scrambledbrains = 100
-            ak.brainTimer = tempTimer(ak.brainDuration,[[affstrack.score.scrambledbrains = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "waterdisrupt" then
-            affstrack.score.waterdisrupt = 100
-            ak.armexpendtimer = tempTimer(12,[[affstrack.score.waterdisrupt = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "reeling" then
-            affstrack.score.reeling = 100
-            ak.armexpendtimer = tempTimer(20,[[affstrack.score.reeling = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "armexpend" then
-            affstrack.score.armexpend = 100
-            ak.armexpendtimer = tempTimer(15,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "ensorcell" then
-            affstrack.score.ensorcell = 100
-            table.insert(affStr,word:title())
-        elseif word == "focusextend" then
-            affstrack.score.focusextend = 100
-            ak.focusextenddisable = tempTimer(8,[[affstrack.score.focusextend = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())        
-         elseif word == "vitiate" then
-            affstrack.score.vitiate = 100
-            ak.vitiatetimer = tempTimer(150,[[affstrack.score.vitiate = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "blisters" then
-            affstrack.score.blisters = 100
-            ak.blisterkiller = tempTimer(20,[[affstrack.score.blisters = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "hamstring" then
-            affstrack.score.hamstring = 100
-            if ak.hamstringtimer then killTimer(ak.hamstringtimer) end
-            ak.hamstringtimer = tempTimer(9.5,[[affstrack.score.hamstring = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())         
-         elseif word == "worm" then
-            affstrack.score.worm = 100
-            ak.wormtimer = tempTimer(20,[[affstrack.score.worm = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())             
-         elseif word == "wrenchtorso" then
-            affstrack.score.wrenchtorso = 100
-            ak.TorsoWrenchDisable = tempTimer(24,[[affstrack.score.wrenchtorso = 0;ak.scoreup(target)]])
-            table.insert(affStr,word:title())
-         elseif word == "epseth" or word == "crippledleg" then
-            if affstrack.score["leftleg"] &lt; 100 then       
-              affstrack.score["leftleg"] = 100
-              ak.AddedAffReset("leftleg") 
-              table.insert(affStr,word:title())
-            elseif affstrack.score["rightleg"] &lt; 100 then       
-              affstrack.score["rightleg"] = 100
-              ak.AddedAffReset("rightleg") 
-              table.insert(affStr,word:title())
-            end
-         elseif word == "epteth" or word == "crippledarm" then
-            if affstrack.score["leftarm"] &lt; 100 then       
-              affstrack.score["leftarm"] = 100
-              ak.AddedAffReset("leftarm") 
-              table.insert(affStr,word:title())
-            elseif affstrack.score["rightarm"] &lt; 100 then       
-              affstrack.score["rightarm"] = 100
-              ak.AddedAffReset("rightarm") 
-              table.insert(affStr,word:title())
-            end
-         elseif word == "frozen" then
-            affstrack.score[word] = affstrack.score[word] + 100 
-            table.insert(affStr,aff:title()) 
-            if affstrack.score.frozen &gt; 300 then
-               affstrack.score.frozen = 300
-            end
-         --elseif word == "insulationstrip" then
-         --   if affstrack.score.frozen == 0 then
-         --     affstrack.score.frozen = 100
-         --   end
-         elseif word == "deepfreeze" then
-            affstrack.score["frozen"] = affstrack.score["frozen"] + 200 
-            table.insert(affStr,"Frozen") 
-            if affstrack.score.frozen &gt; 300 then
-               affstrack.score.frozen = 300
-            end
-         elseif affstrack.score[word] then
-            if affstrack.score[word] &lt; 100 then       
-               affstrack.score[word] = 100
-               ak.AddedAffReset(word)
-               if (word == "deaf" or word == "sensitivity") then 
-                  word = "prefarar" 
-               end   
-               table.insert(affStr,word:title())
-            end
-         elseif affstrack.venoms[word] then 
-            if affstrack.score[affstrack.venoms[word]] &lt; 100 then    
-               affstrack.score[affstrack.venoms[word]] = 100
-               ak.AddedAffReset(affstrack.venoms[word])
-               if (word == "deaf" or word == "sensitivity") then 
-                  word = "prefarar" 
-               end
-               table.insert(affStr,affstrack.venoms[word]:title())  
-            end
-         end
-      end
-  else          --Single venom
-     ak.eatsbetweenaffs = 1
-     if aff == "slickness" then ak.defs.sileris = false end
-     if (aff == "sensitivity" or aff == "prefarar") and affstrack.score.deaf == 0 then 
-        aff = "deaf" 
-     end  
-     if table.contains(affstrack.mentallist, aff) then
-        ak.occie.aura.mental = ak.occie.aura.mental + 1 
-     end
-     if table.contains(affstrack.physicallist, aff) then
-        ak.occie.aura.physical = ak.occie.aura.physical + 1 
-     end
-     if aff == "amnesia" then
-        affstrack.score.amnesia = 100
-        if amnesiatimer then 
-           killTimer(amnesiatimer)
-           amnesiatimer = nil 
-        end
-        amnesiatimer = tempTimer(1, [[OppLostAff("amnesia")]])
-     elseif string.find(aff,"unweave") then
-        affstrack.score[aff] = affstrack.score[aff] + 100
-        table.insert(affStr,aff:title())
-     elseif aff == "calcifiedhead" then
-        affstrack.score[aff] = 100
-        table.insert(affStr,aff:title())
-     elseif aff == "calcifiedtorso" then
-        affstrack.score[aff] = 100
-        table.insert(affStr,aff:title())
-     elseif aff == "wrenchhead" then
-        affstrack.score.wrenchhead = 100
-        affstrack.score.torso = 100
-        OppGainedAff("dizziness")
-        disableTimer("Wrench Head Timer")
-        enableTimer("Wrench Head Timer")
-        ak.HeadWrenchDisable = tempTimer(24,[[affstrack.score.wrenchhead = 0;ak.scoreup(target)]])
-        ak.InitialWrench = tempTimer(3.5,[[OppGainedAff("dizziness")]])
-        table.insert(affStr,aff:title())
-    elseif aff == "scrambledbrains" then
-        affstrack.score.scrambledbrains = 100
-        ak.brainTimer = tempTimer(ak.brainDuration,[[affstrack.score.scrambledbrains = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())
-     elseif aff == "blisters" then
-        affstrack.score.blisters = 100
-        ak.blisterkiller = tempTimer(20,[[affstrack.score.blisters = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())
-     elseif aff == "wrenchtorso" then
-        affstrack.score.wrenchtorso = 100
-        ak.TorsoWrenchDisable = tempTimer(24,[[affstrack.score.wrenchtorso = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())      
-     elseif aff == "vitiate" then
-        affstrack.score.vitiate = 100
-        ak.vitiatetimer = tempTimer(150,[[affstrack.score.vitiate = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())         
-     elseif aff == "armexpend" then
-        affstrack.score.armexpend = 100
-        ak.TorsoWrenchDisable = tempTimer(15,[[affstrack.score.armexpend = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())
-     elseif aff == "waterdisrupt" then
-        affstrack.score.waterdisrupt = 100
-        ak.armexpendtimer = tempTimer(12,[[affstrack.score.waterdisrupt = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())
-      elseif aff == "reeling" then
-        affstrack.score.reeling = 100
-        ak.armexpendtimer = tempTimer(20,[[affstrack.score.reeling = 0;ak.scoreup(target)]])
-        table.insert(affStr,word:title())
-     elseif aff == "focusextend" then
-        affstrack.score.focusextend = 100
-        ak.focusextenddisable = tempTimer(8,[[affstrack.score.focusextend = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())         
-     elseif aff == "ensorcell" then
-        affstrack.score.ensorcell = 100
-        table.insert(affStr,aff:title())        
-     elseif aff == "hamstring" then
-        affstrack.score.hamstring = 100
-        if ak.hamstringtimer then killTimer(ak.hamstringtimer) end
-        ak.hamstringtimer = tempTimer(9.5,[[affstrack.score.hamstring = 0;ak.scoreup(target)]])
-        table.insert(affStr,aff:title())
-     elseif aff == "worm" then
-          affstrack.score.worm = 100
-          ak.wormtimer = tempTimer(20,[[affstrack.score.worm = 0;ak.scoreup(target)]])
-          table.insert(affStr,aff:title())               
-     elseif aff == "epseth" or aff == "crippledleg" then
-        if affstrack.score["leftleg"] &lt; 100 then       
-           affstrack.score["leftleg"] = 100
-           ak.AddedAffReset("leftleg") 
-        elseif affstrack.score["rightleg"] &lt; 100 then       
-           affstrack.score["rightleg"] = 100
-           ak.AddedAffReset("rightleg") 
-        end
-        table.insert(affStr,"Epseth")
-     elseif aff == "epteth" or aff == "crippledarm" then
-        if affstrack.score["leftarm"] &lt; 100 then       
-           affstrack.score["leftarm"] = 100
-           ak.AddedAffReset("leftarm") 
-        elseif affstrack.score["rightarm"] &lt; 100 then       
-           affstrack.score["rightarm"] = 100
-           ak.AddedAffReset("rightarm") 
-        end
-        table.insert(affStr,"Epteth")    
-    elseif aff == "frozen" then 
-        affstrack.score[aff] = affstrack.score[aff] + 100
-        table.insert(affStr,aff:title())
-        if affstrack.score.frozen &gt; 300 then
-           affstrack.score.frozen = 300
-        end 
-    elseif aff == "deepfreeze" then
-        affstrack.score["frozen"] = affstrack.score["frozen"] + 200 
-        table.insert(affStr,"Frozen") 
-        if affstrack.score.frozen &gt; 300 then
-           affstrack.score.frozen = 300
-        end
-    elseif aff == "insulationstrip" then
-        if affstrack.score.frozen == 0 then
-          affstrack.score.frozen = 100
-        end                                         
-     elseif affstrack.score[aff] then
-        if affstrack.score[aff] &lt; 100 then       
-           affstrack.score[aff] = 100
-           ak.AddedAffReset(aff)
-           if aff == "deaf" or aff == "sensitivity" then 
-              aff = "prefarar" 
-           end
-         if aff == "hypochondria" then
-           enableTimer("Hypochondria Timer")
-         end
-         if aff == "hellsight" then
-           affstrack.score.slickness = 100
-         end
-           table.insert(affStr,aff:title())   
-        end
-     elseif affstrack.venoms[aff] then 
-        if affstrack.score[affstrack.venoms[aff]] &lt; 100 then    
-           affstrack.score[affstrack.venoms[aff]] = 100
-           ak.AddedAffReset(affstrack.venoms[aff])
-           if aff == "deaf" or aff == "sensitivity" then 
-              aff = "prefarar" 
-           end
-           table.insert(affStr,affstrack.venoms[aff]:title())       
-        end 
-     end
+local function capScore(word, cap)
+  if affstrack.score[word] &gt; cap then
+    affstrack.score[word] = cap
   end
-  if #affStr &gt; 0 and not source then 
-      ak.echogain(table.concat(affStr, " ")) 
-      if rtpkrnl then ApK(table.concat(affStr, " rtpkrnl ")) end--AKG Display
+end
+
+local TIMED_AFFS = {
+  wrenchhead = {
+    duration = 24, timerVar = "HeadWrenchDisable",
+    onApply = function(word)
+      affstrack.score.torso = 100
+      OppGainedAff("dizziness")
+      disableTimer("Wrench Head Timer")
+      enableTimer("Wrench Head Timer")
+      ak.InitialWrench = tempTimer(3.5, function() OppGainedAff("dizziness") end)
+    end,
+  },
+  wrenchtorso     = {duration = 24,  timerVar = "TorsoWrenchDisable"},
+  scrambledbrains = {duration = function() return ak.brainDuration end, timerVar = "brainTimer"},
+  waterdisrupt    = {duration = 12,  timerVar = "armexpendtimer"},
+  reeling         = {duration = 20,  timerVar = "armexpendtimer"},
+  armexpend       = {duration = 15,  timerVar = "armexpendtimer"},
+  focusextend     = {duration = 8,   timerVar = "focusextenddisable"},
+  vitiate         = {duration = 150, timerVar = "vitiatetimer"},
+  blisters        = {duration = 20,  timerVar = "blisterkiller"},
+  worm            = {duration = 20,  timerVar = "wormtimer"},
+  hamstring       = {duration = 9.5, timerVar = "hamstringtimer", killExisting = true},
+  -- No timer -- these just latch on until cleared elsewhere.
+  ensorcell      = {duration = nil},
+  calcifiedhead  = {duration = nil},
+  calcifiedtorso = {duration = nil},
+}
+
+local function applyTimedAff(word, cfg, affStr)
+  affstrack.score[word] = 100
+  table.insert(affStr, word:title())
+
+  local dur = cfg.duration
+  if type(dur) == "function" then dur = dur() end
+
+  if dur then
+    if cfg.killExisting and ak[cfg.timerVar] then
+      killTimer(ak[cfg.timerVar])
+    end
+    ak[cfg.timerVar] = tempTimer(dur, function()
+      affstrack.score[word] = 0
+      ak.scoreup(target)
+    end)
+  end
+
+  if cfg.onApply then cfg.onApply(word) end
+end
+
+-- Crippled limb afflictions (epseth/crippledleg, epteth/crippledarm) hit
+-- whichever of the pair isn't already crippled, left first.
+local LIMB_AFFS = {
+  epseth      = {"leftleg", "rightleg"},
+  crippledleg = {"leftleg", "rightleg"},
+  epteth      = {"leftarm", "rightarm"},
+  crippledarm = {"leftarm", "rightarm"},
+}
+
+local function applyLimbAff(word, affStr, label)
+  local limbs = LIMB_AFFS[word]
+  for _, limb in ipairs(limbs) do
+    if affstrack.score[limb] &lt; 100 then
+      affstrack.score[limb] = 100
+      ak.AddedAffReset(limb)
+      table.insert(affStr, label)
+      return
+    end
+  end
+end
+
+-- Handles a single affliction word. Mirrors the dispatch order of the
+-- original if/elseif chain.
+local function processAff(word, affStr)
+  if (word == "sensitivity" or word == "prefarar") and affstrack.score.deaf == 0 then
+    word = "deaf"
+  end
+  if word == "slickness" then ak.defs.sileris = false end
+
+  if table.contains(affstrack.mentallist, word) then
+    ak.occie.aura.mental = ak.occie.aura.mental + 1
+  end
+  if table.contains(affstrack.physicallist, word) then
+    ak.occie.aura.physical = ak.occie.aura.physical + 1
+  end
+
+  if word == "amnesia" then
+    affstrack.score.amnesia = 100
+    if amnesiatimer then
+      killTimer(amnesiatimer)
+      amnesiatimer = nil
+    end
+    amnesiatimer = tempTimer(1, [[OppLostAff("amnesia")]])
+
+  elseif string.find(word, "unweave") then
+    affstrack.score[word] = affstrack.score[word] + 100
+    table.insert(affStr, word:title())
+
+  elseif word == "frozen" then
+    affstrack.score.frozen = affstrack.score.frozen + 100
+    table.insert(affStr, word:title())
+    capScore("frozen", 300)
+
+  elseif word == "deepfreeze" then
+    affstrack.score.frozen = affstrack.score.frozen + 200
+    table.insert(affStr, "Frozen")
+    capScore("frozen", 300)
+
+  elseif word == "insulationstrip" then
+    if affstrack.score.frozen == 0 then
+      affstrack.score.frozen = 100
+    end
+
+  elseif LIMB_AFFS[word] then
+    local label = (word == "epseth" or word == "crippledleg") and "Epseth" or "Epteth"
+    applyLimbAff(word, affStr, label)
+
+  elseif TIMED_AFFS[word] then
+    applyTimedAff(word, TIMED_AFFS[word], affStr)
+
+  elseif affstrack.score[word] then
+    if affstrack.score[word] &lt; 100 then
+      affstrack.score[word] = 100
+      ak.AddedAffReset(word)
+      if word == "hypochondria" then enableTimer("Hypochondria Timer") end
+      if word == "hellsight" then affstrack.score.slickness = 100 end
+      if word == "deaf" or word == "sensitivity" then word = "prefarar" end
+      table.insert(affStr, word:title())
+    end
+
+  elseif affstrack.venoms[word] then
+    local mapped = affstrack.venoms[word]
+    if affstrack.score[mapped] &lt; 100 then
+      affstrack.score[mapped] = 100
+      ak.AddedAffReset(mapped)
+      table.insert(affStr, mapped:title())
+    end
+  end
+end
+
+function OppGainedAff(aff, source)
+  if not aff then return end
+  aff = aff:lower()
+
+  ak.eatsbetweenaffs = string.find(aff, " ") and 0 or 1
+
+  local affStr = {}
+  for word in string.gmatch(aff, "%a+") do
+    processAff(word, affStr)
+  end
+
+  if #affStr &gt; 0 and not source then
+    ak.echogain(table.concat(affStr, " "))
+    if rtpkrnl then ApK(table.concat(affStr, " rtpkrnl ")) end --AKG Display
   end
   raiseEvent("AK got aff", affStr)
   ak.scoreup(target)
 end
 
 function OppLostAff(aff)
-  local affStr = ""
   aff = aff:lower()
-  if string.find(aff," ") then
-    for word in string.gmatch(aff, "%a+") do
-      if affstrack.score[word] &gt; 0 then
-       affstrack.score[word] = 0
-       affStr = word:title()
-      end
-    end
-  else
-    if affstrack.score[aff] &gt; 0 then
-     affstrack.score[aff] = 0
-     affStr = aff:title()
+  local lost = {}
+  for word in string.gmatch(aff, "%a+") do
+    if affstrack.score[word] and affstrack.score[word] &gt; 0 then
+      affstrack.score[word] = 0
+      table.insert(lost, word:title())
     end
   end
+
   ak.scoreup(target)
-  if affStr:len() &gt; 0 then 
-    ak.echolost(affStr) 
+  if #lost &gt; 0 then
+    local affStr = table.concat(lost, " ")
+    ak.echolost(affStr)
     raiseEvent("AK lost aff", affStr)
   end
 end
 
-function OppGainedAdditive(affliction,incata,capata,minca)
+function OppGainedAdditive(affliction, incata, capata, minca)
   local cap = capata or 9000
   local inc = incata or 100
   local min = minca or 0
   if affstrack.score[affliction] then
-    affstrack.score[affliction] = affstrack.score[affliction] + incata
-    if affstrack.score[affliction] &gt; cap then
-      affstrack.score[affliction] = cap 
-    end
-    if affstrack.score[affliction] &lt; min then
-      affstrack.score[affliction] = min 
-    end
+    affstrack.score[affliction] = affstrack.score[affliction] + inc
+    if affstrack.score[affliction] &gt; cap then affstrack.score[affliction] = cap end
+    if affstrack.score[affliction] &lt; min then affstrack.score[affliction] = min end
   end
-  ak.echogain(affliction) 
+  ak.echogain(affliction)
   ApK(affliction)
   ak.scoreup(target)
 end</script>
@@ -28938,118 +28648,73 @@ registerAnonymousEventHandler("gmcp.Room.Info", "ak.roomupdate")
 				<Script isActive="yes" isFolder="no">
 					<name>Attack Sets</name>
 					<packageName></packageName>
-					<script>--setattack
--------------------------------------------------
---         Put your Lua functions here.        --
---                                             --
--- Note that you can also use external Scripts --
--------------------------------------------------
+					<script>--setattacks
+
+ak.setattackDispatch = ak.setattackDispatch or {
+  ["Pariah"]        = "pariah",
+  ["Occultist"]     = "occie",
+  ["Druid"]         = "druid",
+  ["Monk"]          = "monk",
+  ["Magi"]          = "magi",
+  ["Serpent"]       = "serpent",
+  ["Sentinel"]      = "sentinel",
+  ["Priest"]        = "priest",
+  ["Apostate"]      = "apostate",
+  ["Infernal"]      = "knight",
+  ["Paladin"]       = "knight",
+  ["Runewarden"]    = "knight",
+  ["Alchemist"]     = "alchemist",
+  ["Jester"]        = "jester",
+  ["Depthswalker"]  = "depthswalker",
+  ["Sylvan"]        = "sylvan",
+  ["Psion"]         = "psion",
+  ["Bard"]          = "bard",
+  ["fire Elemental Lady"] = "ignition",
+  ["fire Elemental Lord"] = "ignition",
+  ["water Elemental Lady"] = "pervasion",
+  ["water Elemental Lord"] = "pervasion",
+}
 
 function ak.serveraliases()
   if ak.debug then
     cecho("\nScoring Up")
   end
   ak.stack = ak.stack or "none"
+
   if ak.stack == "NoOne" then
     --Deliverance!
     ak.aliasreset()
-  elseif gmcp.Char.Status.race == "Undead" then
-    if ak.undead.setattacks then
-      ak.undead.setattacks()
-    end
-  elseif gmcp.Char.Status.race:match("Dragon") and not inlyre() then
-    if ak.dragon.setattacks then
-      ak.dragon.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Pariah" and not inlyre() then
-    if ak.pariah.setattacks then
-      ak.pariah.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Occultist" and not inlyre() then
-    if ak.occie.setattacks then
-      ak.occie.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Druid" and not inlyre() then
-    if ak.druid.setattacks then
-      ak.druid.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Monk" and not inlyre() then
-    if ak.monk.setattacks then
-      ak.monk.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Magi" and not inlyre() then
-    if ak.magi.setattacks then
-      ak.magi.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Serpent" and not inlyre() then
-    if ak.serpent.setattacks then
-      ak.serpent.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Sentinel" and not inlyre() then
-    if ak.sentinel.setattacks then
-      ak.sentinel.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Shaman" and not inlyre() and not ak.tza then
-    if ak.shaman.setattacks then
-      ak.shaman.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Priest" and not inlyre() then
-    if ak.priest.setattacks then
-      ak.priest.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Apostate" and not inlyre() then
-    if ak.apostate.setattacks then
-      ak.apostate.setattacks()
-    end
-  elseif (gmcp.Char.Status.class == "Infernal" or gmcp.Char.Status.class == "Paladin" or gmcp.Char.Status.class == "Runewarden" ) and not inlyre() then
-    if ak.knight.setattacks then
-      ak.knight.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Blademaster" and not inlyre() and not ak.deathstrike then
-    if ak.bm.setattacks then
-      ak.bm.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Alchemist" and not inlyre() then
-    if ak.alchemist.setattacks then
-      ak.alchemist.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Jester" and not inlyre() then
-    if ak.jester.setattacks then
-      ak.jester.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Depthswalker" and not inlyre() then
-    if ak.depthswalker.setattacks then
-      ak.depthswalker.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Sylvan" and not inlyre() then
-    if ak.sylvan.setattacks then
-      ak.sylvan.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Psion" and not inlyre() then
-    if ak.psion.setattacks then
-      ak.psion.setattacks()
-    end
-  elseif gmcp.Char.Status.class == "Bard" and not inlyre() then
-    if ak.bard.setattacks then
-      ak.bard.setattacks()
-    end
-  elseif (gmcp.Char.Status.class == "fire Elemental Lady" or gmcp.Char.Status.class == "fire Elemental Lord") and not inlyre() then
-    if ak.ignition.setattacks then
-      ak.ignition.setattacks()
-    end
-  elseif (gmcp.Char.Status.class == "air Elemental Lady" or gmcp.Char.Status.class == "air Elemental Lord") and not inlyre() then
-    if ak.stack == "Duress" and ak.duress and ak.duress.compression then
-      ak.duress.compression()
-    end
-  elseif (gmcp.Char.Status.class == "water Elemental Lady" or gmcp.Char.Status.class == "water Elemental Lord") and not inlyre() then
-    if ak.pervasion.setattacks then
-      ak.pervasion.setattacks()
+  else
+    local race = gmcp.Char.Status.race
+    local class = gmcp.Char.Status.class
+    local lyre = inlyre()
+
+    if race == "Undead" then
+      if ak.undead.setattacks then ak.undead.setattacks() end
+    elseif race:match("Dragon") and not lyre then
+      if ak.dragon.setattacks then ak.dragon.setattacks() end
+    elseif class == "Shaman" and not lyre and not ak.tza then
+      if ak.shaman.setattacks then ak.shaman.setattacks() end
+    elseif class == "Blademaster" and not lyre and not ak.deathstrike then
+      if ak.bm.setattacks then ak.bm.setattacks() end
+    elseif class == "air Elemental Lady" or class == "air Elemental Lord" then
+      if not lyre and ak.stack == "Duress" and ak.duress and ak.duress.compression then
+        ak.duress.compression()
+      end
+    elseif not lyre then
+      local modName = ak.setattackDispatch[class]
+      local mod = modName and ak[modName]
+      if mod and mod.setattacks then
+        mod.setattacks()
+      end
     end
   end
-  if not inlyre() then
+
+  local lyre2 = inlyre() -- re-check: prior branch(es) may have changed state
+  if not lyre2 then
     ak.mycustomoffense()
   end
-  if ak.reboundPop and ak.stack ~= "NoOne" and not inlyre() and not ak.tza and not ak.deathstrike then
+  if ak.reboundPop and ak.stack ~= "NoOne" and not lyre2 and not ak.tza and not ak.deathstrike then
     ak.reboundPop()
   end
 end</script>
@@ -29766,15 +29431,15 @@ end</script>
 -------------------------------------------------
 function ak.dragon.default.dragoncurser() 
     if affstrack.score.paralysis&lt;100 and vcombo[1] ~= "curare" then
-       dragoncurse = "paralysis"
+       ak.dragoncurse = "paralysis"
     elseif affstrack.score.asthma&lt;100 and vcombo[1] ~= "kalmia" then
-       dragoncurse = "asthma"
+       ak.dragoncurse = "asthma"
     elseif affstrack.score.sensitivity&lt;100 then
-       dragoncurse = "sensitivity"
+       ak.dragoncurse = "sensitivity"
     elseif affstrack.score.impatience&lt;100 then
-       dragoncurse = "impatience"
+       ak.dragoncurse = "impatience"
     end
-   if affstrack.score.sensitivity&lt;100 and vcombo[1] == "prefarar" and affstrack.score.blind ~= 100 then dragoncurse = "sensitivity" end
+   if affstrack.score.sensitivity&lt;100 and vcombo[1] == "prefarar" and affstrack.score.blind ~= 100 then ak.dragoncurse = "sensitivity" end
 end
 </script>
 						<eventHandlerList />
@@ -29788,12 +29453,12 @@ end
 -- Note that you can also use external Scripts --
 -------------------------------------------------
 function ak.dragon.default.setalias() 
-	ak.setalias("oattackrl", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." right leg "..vcombo[1].."/breathgust "..target)
-	ak.setalias("oattackll", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." left leg "..vcombo[1].."/breathgust "..target)
-	ak.setalias("oattackra", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." right arm "..vcombo[1].."/breathgust "..target)
-	ak.setalias("oattackla", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." left arm "..vcombo[1].."/breathgust "..target)
-	ak.setalias("oattackt", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." torso "..vcombo[1].."/breathgust "..target)
-	ak.setalias("oattackh", PreAliasGeneral().."/wield shield dirk/dragoncurse "..target.." "..dragoncurse.." 1/rend "..target.." head "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackrl", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." right leg "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackll", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." left leg "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackra", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." right arm "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackla", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." left arm "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackt", PreAliasGeneral().."/wield shield/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." torso "..vcombo[1].."/breathgust "..target)
+	ak.setalias("oattackh", PreAliasGeneral().."/wield shield dirk/dragoncurse "..target.." "..ak.dragoncurse.." 1/rend "..target.." head "..vcombo[1].."/breathgust "..target)
 end</script>
 						<eventHandlerList />
 					</Script>
@@ -30545,22 +30210,14 @@ ak.limbs.LimbHit = ak.limbs.LimbHit or function(who, attacker, weapon, limb, aug
       damage = 30
 	 elseif weapon == "psion" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
 	 	  damage = 25
-	 elseif weapon == "wreathed" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
-      if whomaxhealth &gt;= 18724 then
-        damage = 10.3
-      elseif whomaxhealth &gt;= 6500 then
-        damage = 12.7
-      else
-        damage = 12.5
-      end
-   elseif weapon == "viridianrend" and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
+	 elseif (weapon == "wreathed" or weapon == "viridianrend") and not ak.limbs.myweapons[weapon] and not ak.limbs.myformulas[weapon] then
       if whomaxhealth &gt;= 18724 then
         damage = 20.6
       elseif whomaxhealth &gt; 7000 then
         damage = 24
       else
         damage = 25			
-      end    
+      end
    elseif ak.limbs.myweapons and ak.limbs.myweapons[weapon] then --ak.limbs.myweapons
       damage = ak.limbs.findMyStab(weapon,whomaxhealth)
 	 elseif ak.limbs.myformulas and ak.limbs.myformulas[weapon] then
@@ -30641,6 +30298,21 @@ end
 					<name>Misc Limb Functions</name>
 					<packageName></packageName>
 					<script>--limbs misc
+
+ak.limbs = ak.limbs or {}
+
+function ak.limbs.CorrectLegCount(who, leg)
+  local label = (leg == "leftleg") and "Left Leg" or "Right Leg"
+  ak.limbs.limbcount[who][leg] = ak.limbs.limbcount[who]["lastpercent" .. leg]
+  cecho("\n\n&lt;cyan&gt;" .. who .. "'s &lt;yellow&gt;" .. label .. " &lt;cyan&gt;Count Is Off! Attempting To Correct!\n\n")
+  _G[who .. leg .. "disablelimbdamage"] = nil
+  if ak.thoughtIhad then
+    ak.thoughtIhad(leg)
+  else
+    affstrack.score[leg] = 0
+  end
+end
+
 function ak.limbs.FindTargetHealth(who)
    if who == "Me" then
       return gmcp.Char.Vitals.maxhp
@@ -31051,9 +30723,55 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>oeaten</name>
 					<packageName></packageName>
-					<script>function ak.cure.ate(what,prorun)
+					<script>
+
+local function recordOcured(what, aff)
+  ocured = ocured or {}
+  local key = ocured.conversion[what]
+  ocured[key] = ocured[key] or {}
+  ocured[key][aff] = affstrack.score[aff]
+end
+
+local function proportionalCure(what, affs, exclude)
+  local divisor = #affs - 1
+  for i = 1, #affs do
+    recordOcured(what, affs[i])
+    if affs[i] ~= exclude then
+      affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / divisor
+    end
+    if affstrack.score[affs[i]] &lt; ak.errorallowance then
+      affstrack.score[affs[i]] = 0
+      ak.AfflictionCured(affs[i])
+    end
+  end
+end
+
+local function pyreAdjustedCure(what, affs)
+  local divisor = #affs
+  for i = 1, #affs do
+    recordOcured(what, affs[i])
+    local pyreRest = 0
+    if affs[i] == "pyre" then
+      pyreRest = affstrack.score[affs[i]] - 100
+      affstrack.score[affs[i]] = 100
+    end
+    affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / divisor
+    if pyreRest &gt; 0 then
+      affstrack.score[affs[i]] = affstrack.score[affs[i]] + pyreRest
+    end
+    if affstrack.score[affs[i]] &lt; ak.errorallowance then
+      affstrack.score[affs[i]] = 0
+      ak.AfflictionCured(affs[i])
+    end
+  end
+  if #affs == 1 then
+    ak.ResetConfirmAff(affs[1])
+  end
+end
+
+function ak.cure.ate(what, prorun)
   ak.handlePyramides(what)
-	ak.occie.aura.parsereduct(what)
+  ak.occie.aura.parsereduct(what)
   local affs = {}
   ak.nexteatcheck(what)
   ak.mickey = false
@@ -31063,441 +30781,313 @@ end</script>
   ocured[ocured.conversion[what]] = {}
   ak.eatsbetweenaffs = ak.eatsbetweenaffs + 1
   local affconfirmedcount = 0
-  if affstrack.score.anorexia&gt;0 and not prorun then 
-    if ak.thoughtIhad then 
-      ak.thoughtIhad("anorexia") 
-    else 
-      affstrack.score.anorexia = 0 
+
+  if affstrack.score.anorexia &gt; 0 and not prorun then
+    if ak.thoughtIhad then
+      ak.thoughtIhad("anorexia")
+    else
+      affstrack.score.anorexia = 0
     end
     ocured = ocured or {}
     ocured[ocured.conversion[what]] = {}
   end
+
   if what == "hawthorn berry" or what == "calamine crystal" then
     affstrack.score.deaf = 100
-    tempTimer(3,[[affstrack.score.deaf = 0;ak.scoreup(target)]])
-  elseif not affstrack.eaten[what] then 
+    tempTimer(3, [[affstrack.score.deaf = 0;ak.scoreup(target)]])
+
+  elseif not affstrack.eaten[what] then
     return
+
   else
     for i = 1, #affstrack.eaten[what] do
-      if affstrack.score[affstrack.eaten[what][i]] &gt; 0 then
-        table.insert(affs, affstrack.eaten[what][i])
-        affconfirmedcount = affconfirmedcount + affstrack.score[affstrack.eaten[what][i]]
+      local aff = affstrack.eaten[what][i]
+      if affstrack.score[aff] &gt; 0 then
+        table.insert(affs, aff)
+        affconfirmedcount = affconfirmedcount + affstrack.score[aff]
       end
     end
+
     if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
       if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
       affstrack.score[affs[1]] = 0
       ak.AfflictionCured(affs[1])
       ak.ResetConfirmAff(affs[1])
+
     elseif #affs &gt; 1 and affconfirmedcount &lt;= 100 then
-      if ak.ProTrackingConfirmed then 
-        ak.ProTrackingConfirmed(affs[1])
-      end
+      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
       for i = 1, #affs do
         affstrack.score[affs[i]] = 0
         ak.AfflictionCured(affs[i])
       end
-    elseif #affs &gt; 1 and table.contains(affs,"impatience") and ak.goldensealCount() &gt; 100 then
-      for i = 1, #affs do            
-        ocured = ocured or {}
-        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-        if affs[i] ~= "impatience" then
-          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-        end
-        if affstrack.score[affs[i]] &lt; ak.errorallowance then
-          affstrack.score[affs[i]] = 0
-          ak.AfflictionCured(affs[i])
-        end
-      end
-    elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
-      for i = 1, #affs do            
-        ocured = ocured or {}
-        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-        if affs[i] ~= "asthma" then
-          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-        end
-        if affstrack.score[affs[i]] &lt; ak.errorallowance then
-          affstrack.score[affs[i]] = 0
-      		ak.AfflictionCured(affs[i])
-        end
-      end
-		elseif #affs &gt; 1 and table.contains(affs,"slickness") and affstrack.score.prone == 100 and ak.canstand() then
-      for i = 1, #affs do            
-        ocured = ocured or {}
-        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-        if affs[i] ~= "paralysis" then
-          affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-        end
-        if affstrack.score[affs[i]] &lt; ak.errorallowance then
-          affstrack.score[affs[i]] = 0
-          ak.AfflictionCured(affs[i])
-        end
-      end			 
-    elseif #affs == 1 and table.contains(affs,"slickness") and affstrack.score.asthma &gt; 0 and affstrack.score.asthma &lt; 100 then
-      for i = 1, #affs do            
-        ocured = ocured or {}
-        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-        if affstrack.score[affs[i]] &lt; ak.errorallowance then
-          affstrack.score[affs[i]] = 0
-			    ak.AfflictionCured(affs[i])
-        end
-			  ak.ProTrackingConfirmed("asthma")
-			  ak.ResetConfirmAff(affs[i])
-      end
-    elseif #affs == 1 then
-      ocured = ocured or {}
-      ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-      ocured[ocured.conversion[what]][affs[1]] = affstrack.score[affs[1]]
-      local pyreRest = 0
-      if affs[1] == "pyre" then
-        pyreRest = affstrack.score[affs[1]] - 100
-        affstrack.score[affs[1]] = 100
-      end
-      affstrack.score[affs[1]] = affstrack.score[affs[1]] - affstrack.score[affs[1]]
-      if pyreRest &gt; 0 then
-        affstrack.score[affs[1]] = affstrack.score[affs[1]] + pyreRest
-      end
-      if affstrack.score[affs[1]] &lt; ak.errorallowance then
-        affstrack.score[affs[1]] = 0
-				ak.AfflictionCured(affs[1])
-      end
-      ak.ResetConfirmAff(affs[1])
-    elseif #affs &gt; 0 then
+
+    elseif #affs &gt; 1 and table.contains(affs, "impatience") and ak.goldensealCount() &gt; 100 then
+      proportionalCure(what, affs, "impatience")
+
+    elseif #affs &gt; 1 and table.contains(affs, "asthma") and SmokeCount() &gt;= 100 then
+      proportionalCure(what, affs, "asthma")
+
+    elseif #affs &gt; 1 and table.contains(affs, "slickness") and affstrack.score.prone == 100 and ak.canstand() then
+      proportionalCure(what, affs, "paralysis")
+
+    elseif #affs == 1 and table.contains(affs, "slickness") and affstrack.score.asthma &gt; 0 and affstrack.score.asthma &lt; 100 then
       for i = 1, #affs do
-        ocured = ocured or {}
-        ocured[ocured.conversion[what]] = ocured[ocured.conversion[what]] or {}
-        ocured[ocured.conversion[what]][affs[i]] = affstrack.score[affs[i]]
-        local pyreRest = 0
-        if affs[i] == "pyre" then
-          pyreRest = affstrack.score[affs[i]] - 100
-          affstrack.score[affs[i]] = 100
-        end
-        affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-        if pyreRest &gt; 0 then
-          affstrack.score[affs[1]] = affstrack.score[affs[1]] + pyreRest
-        end
+        recordOcured(what, affs[i])
         if affstrack.score[affs[i]] &lt; ak.errorallowance then
           affstrack.score[affs[i]] = 0
           ak.AfflictionCured(affs[i])
         end
+        ak.ProTrackingConfirmed("asthma")
+        ak.ResetConfirmAff(affs[i])
       end
+
+    elseif #affs &gt; 0 then
+      pyreAdjustedCure(what, affs)
+
     elseif ak.randomaffs &gt; 0 then
-       ak.randomaffs = ak.randomaffs - 1
+      ak.randomaffs = ak.randomaffs - 1
+
     else
-      if ak.WhyYouDoThat then 
-        ak.WhyYouDoThat(what) 
-      end
+      if ak.WhyYouDoThat then ak.WhyYouDoThat(what) end
     end
   end
+
   ak.scoreup(target)
   if #affs &gt; 0 then
-    ak.echoForPossibleCures(table.concat(affs, " "))  
+    ak.echoForPossibleCures(table.concat(affs, " "))
   end
+end
+
+local function sumAffScores(list)
+  local count = 0
+  for i = 1, #list do
+    if affstrack.score[list[i]] &gt; 0 then
+      count = count + affstrack.score[list[i]]
+    end
+  end
+  return count
 end
 
 function ak.goldensealCount()
-	local count = 0
-	for i = 1, #affstrack.eaten["goldenseal root"] do
-     if affstrack.score[affstrack.eaten["goldenseal root"][i]] &gt; 0 then
-        count = count + affstrack.score[affstrack.eaten["goldenseal root"][i]]
-     end
-  end
+  local count = sumAffScores(affstrack.eaten["goldenseal root"])
   if affstrack.score.sandfever &gt; 0 then
     count = count - affstrack.score.sandfever
   end
-	return count
+  return count
 end
 
 function FocusCount()
-  local count = 0
-  for i = 1, #affstrack.focused do
-      if affstrack.score[affstrack.focused[i]] &gt; 0 then
-         count = count + affstrack.score[affstrack.focused[i]]
-      end
-   end
-   return count
+  return sumAffScores(affstrack.focused)
 end
 
 function SmokeCount()
-   local count = 0
-   if affstrack.score.aeon &gt; 0 then return 0 end
-   for i = 1, #affstrack.smoked do
-      if affstrack.score[affstrack.smoked[i]] &gt; 0 then
-         count = count + affstrack.score[affstrack.smoked[i]]
-      end
-   end
-   return count
+  if affstrack.score.aeon &gt; 0 then return 0 end
+  return sumAffScores(affstrack.smoked)
 end
 
 if not ak.nexteatcheck then
-   function ak.nexteatcheck(what)
-		ak.lasteat = what
-   end
+  function ak.nexteatcheck(what)
+    ak.lasteat = what
+  end
 end
 
 function ak.canstand()
-	if affstrack.score.rightleg == 0 and affstrack.score.leftleg == 0 then
-		return true
-	else
-		return false
-	end
+  return affstrack.score.rightleg == 0 and affstrack.score.leftleg == 0
 end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
 					<name>ofocus</name>
 					<packageName></packageName>
-					<script>function ak.cure.focus(whom)
-	ak.occie.aura.parsereduct("focus")
-   local affs = {}
-   ocured = ocured or {}
-   ocured.focused = {}
-   ak.randomaffs = ak.randomaffs or 0
-   affstrack.score.rixil = 0
-   if affstrack.score.impatience&gt;0 then 
-      if ak.thoughtIhad then ak.thoughtIhad("impatience") else affstrack.score.impatience = 0 end
-      ocured = ocured or {}
-      ocured.focused = {}  
-   end
-   for i = 1, #affstrack.focused  do
-      if affstrack.score[affstrack.focused[i]] &gt; 0 then
-         table.insert(affs, affstrack.focused[i])
-      end
-   end
-   if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
-      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-      affstrack.score[affs[1]] = 0
-			ak.AfflictionCured(affs[1])
-			ak.ResetConfirmAff(affs[1])
-	 elseif #affs == 1 then
-      ocured.focused[affs[1]] = affstrack.score[affs[1]]
-      affstrack.score[affs[1]] = 0
-			ak.AfflictionCured(affs[1])
-			ak.ResetConfirmAff(affs[1])
-   elseif #affs &gt; 0 then
-      for i = 1, #affs do
-         ocured.focused[affs[i]] = affstrack.score[affs[i]]
-         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-         if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-						ak.AfflictionCured(affs[i])
-         end
-      end
-   elseif ak.randomaffs &gt; 0 then
-      ak.randomaffs = ak.randomaffs - 1
-   elseif ak.WhyYouDoThat then 
-      ak.WhyYouDoThat("focused")
-   end
-   ak.scoreup(target)
-  if #affs &gt; 0 then
-    ak.echoForPossibleCures(table.concat(affs, " "))
+					<script>local function resetOcuredFocused()
+  ocured = ocured or {}
+  ocured.focused = {}
+end
+
+local function focusCure(affs)
+  for i = 1, #affs do
+    ocured.focused[affs[i]] = affstrack.score[affs[i]]
+    affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
+    if affstrack.score[affs[i]] &lt; ak.errorallowance then
+      affstrack.score[affs[i]] = 0
+      ak.AfflictionCured(affs[i])
+    end
+  end
+  if #affs == 1 then
+    ak.ResetConfirmAff(affs[1])
   end
 end
 
+function ak.cure.focus(whom)
+  ak.occie.aura.parsereduct("focus")
+  local affs = {}
+  resetOcuredFocused()
+  ak.randomaffs = ak.randomaffs or 0
+  affstrack.score.rixil = 0
 
+  if affstrack.score.impatience &gt; 0 then
+    if ak.thoughtIhad then ak.thoughtIhad("impatience") else affstrack.score.impatience = 0 end
+    resetOcuredFocused()
+  end
 
-</script>
+  for i = 1, #affstrack.focused do
+    if affstrack.score[affstrack.focused[i]] &gt; 0 then
+      table.insert(affs, affstrack.focused[i])
+    end
+  end
+
+  if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
+    if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    affstrack.score[affs[1]] = 0
+    ak.AfflictionCured(affs[1])
+    ak.ResetConfirmAff(affs[1])
+
+  elseif #affs &gt; 0 then
+    focusCure(affs)
+
+  elseif ak.randomaffs &gt; 0 then
+    ak.randomaffs = ak.randomaffs - 1
+
+  elseif ak.WhyYouDoThat then
+    ak.WhyYouDoThat("focused")
+  end
+
+  ak.scoreup(target)
+  if #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+  end
+end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
 					<name>otree</name>
 					<packageName></packageName>
-					<script>function ak.cure.tree()
-	 ak.occie.aura.parsereduct("treed")
-   affs = {}
-   ocured = ocured or {}
-   ocured.treed = {}
-   ak.randomaffs = ak.randomaffs or 0
-   affoverone = {}
-   affovertwo = {}
-   affoverthree = {}
-   affoverfour = {}
-   affoverfive = {}
-   affoversix = {}
-   applycure = applycure or {}
-   if ak.treeableSalve() and applycure.lastapplied and applycure.lastapplied ~= "head" and applycure.lastapplied ~= "torso" and applycure.aknextsalve ~= "mending" then
-      --AKcalculateSalve()
-   end
-   affs = {}
-   ocured = ocured or {}
-   ocured.treed = {}
-   ak.randomaffs = ak.randomaffs or 0
-   affoverone = {}
-   affovertwo = {}
-   affoverthree = {}
-   affoverfour = {}
-   affoverfive = {}
-   affoversix = {}
-   if affstrack.score.paralysis &gt; 0 then
-      if ak.thoughtIhad then ak.thoughtIhad("paralysis") else affstrack.score.paralysis = 0 end
-      ocured.bloodroot = {}
-      ocured = ocured or {}
-      ocured.treed = {}
-   elseif affstrack.score.slickness &gt; 0 then
-     ocured.bloodroot = {}
-   end
-   for i = 1, #affstrack.treed do
-      if affstrack.score[affstrack.treed[i]] &gt; 0 and affstrack.score[affstrack.treed[i]] &lt; 200 and affstrack.treed[i] ~= "aflame" and affstrack.treed[i] ~= "frozen" then
-         table.insert(affs, affstrack.treed[i]) 
-         ocured.treed[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]]     
-         if affstrack.score[affstrack.treed[i]] &gt; 100 then-- and affstrack.score[affstrack.treed[i]] ~= 200 then
-            table.insert(affoverone, affstrack.treed[i]) 
-            affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-         end
-      elseif affstrack.score.hypothermia == 100 and affstrack.treed[i] == "frozen" then
+					<script>local function resetOcuredTreed()
+  ocured = ocured or {}
+  ocured.treed = {}
+end
 
-      elseif affstrack.score[affstrack.treed[i]] &gt; 0 and (affstrack.treed[i] == "aflame" or affstrack.treed[i] == "frozen") then
-         table.insert(affs, affstrack.treed[i]) 
-         ocured.treed[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]]
-         if affstrack.score[affstrack.treed[i]] &gt; 100 then
-            table.insert(affoverone, affstrack.treed[i]) 
-            affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-            if affstrack.score[affstrack.treed[i]] &gt; 100 then
-               table.insert(affovertwo, affstrack.treed[i]) 
-               affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-               if affstrack.score[affstrack.treed[i]] &gt; 100 then
-                  table.insert(affoverthree, affstrack.treed[i]) 
-                  affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-                  if affstrack.score[affstrack.treed[i]] &gt; 100 then
-                     table.insert(affoverfour, affstrack.treed[i]) 
-                     affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-                     if affstrack.score[affstrack.treed[i]] &gt; 100 then
-                        table.insert(affoverfive, affstrack.treed[i]) 
-                        affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-                        if affstrack.score[affstrack.treed[i]] &gt; 100 then
-                           table.insert(affoversix, affstrack.treed[i]) 
-                           affstrack.score[affstrack.treed[i]] = affstrack.score[affstrack.treed[i]] - 100
-                        end
-                     end
-                  end
-               end
-            end
-         end
-      end   
-   end
-   if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
-      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-      affstrack.score[affs[1]] = 0
-			ak.AfflictionCured(affs[1])
-			ak.ResetConfirmAff(affs[1])
-   elseif #affs &gt; 1 and table.contains(affs,"impatience") and FocusCount() &gt;= 100 then
-      for i = 1, #affs do
-         if affs[i] ~= "impatience" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs -1)
-            if affstrack.score[affs[i]] &lt; ak.errorallowance then
-               affstrack.score[affs[i]] = 0
-							 ak.AfflictionCured(affs[i])
-            end     
-            if table.contains(affoverone, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affovertwo, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverthree, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfour, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoverfive, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           if table.contains(affoversix, affs[i]) then
-                              affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           end
-                        end
-                     end
-                  end
-               end 
-            end           
-         end
-      end  
-      if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
-   elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
-      for i = 1, #affs do
-         if affs[i] ~= "asthma" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs -1)
-            if affstrack.score[affs[i]] &lt; ak.errorallowance then
-               affstrack.score[affs[i]] = 0
-							 ak.AfflictionCured(affs[i])
-            end     
-            if table.contains(affoverone, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affovertwo, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverthree, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfour, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoverfive, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           if table.contains(affoversix, affs[i]) then
-                              affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           end
-                        end
-                     end
-                  end
-               end 
-            end           
-         end
-      end  
-      if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
-   elseif #affs &gt; 0 then
-      for i = 1, #affs do
-         --ocured.treed[affs[i]] = affstrack.score[affs[i]]                                       --move me
-         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs 
-         if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-						ak.AfflictionCured(affs[i])
-         end     
-         if table.contains(affoverone, affs[i]) then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-            if table.contains(affovertwo, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affoverthree, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverfour, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfive, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoversix, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        end
-                     end
-                  end
-               end
-            end 
-         end           
-      end  
-      if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
-   elseif ak.randomaffs &gt; 0 then
-      AKcalculateSalve()
-      ak.randomaffs = ak.randomaffs - 1
-   else
-      if ak.WhyYouDoThat then ak.WhyYouDoThat("treed") end
-   end
-   ak.scoreup(target)
+local function peelOverflow(aff, maxPeels)
+  local count = 0
+  while affstrack.score[aff] &gt; 100 and count &lt; maxPeels do
+    affstrack.score[aff] = affstrack.score[aff] - 100
+    count = count + 1
+  end
+  return count
+end
+
+local function restoreOverflow(aff, affOverflow)
+  local count = affOverflow[aff]
+  if count and count &gt; 0 then
+    affstrack.score[aff] = affstrack.score[aff] + count * 100
+  end
+end
+
+local function checkConflagrate()
+  if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then
+    affstrack.score.conflagrate = 0
+    akadsty = 1
+  end
+end
+
+local function overflowAdjustedCure(affs, affOverflow, divisor, exclude)
+  for i = 1, #affs do
+    local aff = affs[i]
+    if aff ~= exclude then
+      affstrack.score[aff] = affstrack.score[aff] - affstrack.score[aff] / divisor
+      if affstrack.score[aff] &lt; ak.errorallowance then
+        affstrack.score[aff] = 0
+        ak.AfflictionCured(aff)
+      end
+      restoreOverflow(aff, affOverflow)
+    end
+  end
+  checkConflagrate()
+end
+
+function ak.cure.tree()
+  ak.occie.aura.parsereduct("treed")
+  local affs = {}
+  local affOverflow = {}
+  resetOcuredTreed()
+  ak.randomaffs = ak.randomaffs or 0
+
+  if affstrack.score.paralysis &gt; 0 then
+    if ak.thoughtIhad then ak.thoughtIhad("paralysis") else affstrack.score.paralysis = 0 end
+    ocured.bloodroot = {}
+    resetOcuredTreed()
+  elseif affstrack.score.slickness &gt; 0 then
+    ocured.bloodroot = {}
+  end
+
+  for i = 1, #affstrack.treed do
+    local aff = affstrack.treed[i]
+    local score = affstrack.score[aff]
+    local isFireOrFrost = (aff == "aflame" or aff == "frozen")
+
+    if score &gt; 0 and score &lt; 200 and not isFireOrFrost then
+      table.insert(affs, aff)
+      ocured.treed[aff] = score
+      affOverflow[aff] = peelOverflow(aff, 1)
+
+    elseif affstrack.score.hypothermia == 100 and aff == "frozen" then
+      -- frozen doesn't count while hypothermia is active
+
+    elseif score &gt; 0 and isFireOrFrost then
+      table.insert(affs, aff)
+      ocured.treed[aff] = score
+      affOverflow[aff] = peelOverflow(aff, 6)
+    end
+  end
+
+  if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
+    if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    affstrack.score[affs[1]] = 0
+    ak.AfflictionCured(affs[1])
+    ak.ResetConfirmAff(affs[1])
+
+  elseif #affs &gt; 1 and table.contains(affs, "impatience") and FocusCount() &gt;= 100 then
+    overflowAdjustedCure(affs, affOverflow, #affs - 1, "impatience")
+
+  elseif #affs &gt; 1 and table.contains(affs, "asthma") and SmokeCount() &gt;= 100 then
+    overflowAdjustedCure(affs, affOverflow, #affs - 1, "asthma")
+
+  elseif #affs &gt; 0 then
+    overflowAdjustedCure(affs, affOverflow, #affs, nil)
+
+  elseif ak.randomaffs &gt; 0 then
+    AKcalculateSalve()
+    ak.randomaffs = ak.randomaffs - 1
+
+  else
+    if ak.WhyYouDoThat then ak.WhyYouDoThat("treed") end
+  end
+
+  ak.scoreup(target)
   if #affs &gt; 0 then
     ak.echoForPossibleCures(table.concat(affs, " "))
   end
 end
 
-local LimbsToCheck = {"rightleg","leftleg","rightarm","leftarm"}
+local LimbsToCheck = {"rightleg", "leftleg", "rightarm", "leftarm"}
 
 function ak.treeableSalve()
-	if affstrack.score.aflame &gt; 0 then
-		return true
-	end
-	for i = 1, #LimbsToCheck do
-		if affstrack.score[LimbsToCheck[i]] &gt; 0 and affstrack.score[LimbsToCheck[i]] &lt;= 100 then
-			return true
-		elseif affstrack.score[LimbsToCheck[i]] &gt; 100 and affstrack.score[LimbsToCheck[i]] &lt;= 200 and applycure.lastapplied ~= "torso" and applycure.lastapplied ~= "head" and applycure.aknextsalve ~= "mending" then
-			return true
-		end
-	end
-
-	return false
-
+  if affstrack.score.aflame &gt; 0 then
+    return true
+  end
+  for i = 1, #LimbsToCheck do
+    local limb = LimbsToCheck[i]
+    local score = affstrack.score[limb]
+    if score &gt; 0 and score &lt;= 100 then
+      return true
+    elseif score &gt; 100 and score &lt;= 200
+        and applycure.lastapplied ~= "torso"
+        and applycure.lastapplied ~= "head"
+        and applycure.aknextsalve ~= "mending" then
+      return true
+    end
+  end
+  return false
 end</script>
 					<eventHandlerList />
 				</Script>
@@ -31506,614 +31096,504 @@ end</script>
 					<packageName></packageName>
 					<script>ak.smoke = ak.smoke or {}
 
-function affssmoke()
-	ak.smoke.mass = {}
-	ak.occie.aura.parsereduct("smoke")
-  local affs = {}
+local function resetOcuredSmoked()
   ocured = ocured or {}
-  ak.randomaffs = ak.randomaffs or 0
   ocured.smoked = {}
-  if affstrack.score.asthma&gt;0 then 
-    if ak.thoughtIhad then 
-      ak.thoughtIhad("asthma") 
-    else 
+end
+
+local function smokeCure(aff, divisor, isSingle)
+  ak.smoke.RetainMass(aff, affstrack.score[aff])
+
+  if isSingle and aff == "unweavingspirit" then
+    affstrack.score[aff] = affstrack.score[aff] - 100
+    if affstrack.score[aff] &lt; 0 then affstrack.score[aff] = 0 end
+  else
+    affstrack.score[aff] = affstrack.score[aff] - affstrack.score[aff] / divisor
+    if affstrack.score[aff] &lt; ak.errorallowance then
+      affstrack.score[aff] = 0
+    end
+  end
+
+  ak.smoke.RestoreMass(aff)
+
+  if affstrack.score[aff] == 0 then
+    ak.AfflictionCured(aff)
+    if isSingle then ak.ResetConfirmAff(aff) end
+  end
+end
+
+function affssmoke()
+  ak.smoke.mass = {}
+  ak.occie.aura.parsereduct("smoke")
+  local affs = {}
+  ak.randomaffs = ak.randomaffs or 0
+  resetOcuredSmoked()
+
+  if affstrack.score.asthma &gt; 0 then
+    if ak.thoughtIhad then
+      ak.thoughtIhad("asthma")
+    else
       affstrack.score.asthma = 0
     end
-    ocured = ocured or {}
-    ocured.smoked = {}
+    resetOcuredSmoked()
   end
+
   for i = 1, #affstrack.smoked do
     if affstrack.score[affstrack.smoked[i]] &gt; 0 then
       table.insert(affs, affstrack.smoked[i])
     end
   end
+
   --local spiritcount = affstrack.score.unweavingspirit/100
   --for i = 1, spiritcount do
   --  table.insert(affs, "unweavingspirit")
-  --end  
-   if #affs == 1 then
-	 		if affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
-      	if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-      end
-			ak.smoke.RetainMass(affs[1], affstrack.score[affs[1]])
-      if affs[1] == "unweavingspirit" then
-       affstrack.score[affs[1]] = affstrack.score[affs[1]] - 100
-       if affstrack.score[affs[1]] &lt; 0 then   
-          affstrack.score[affs[1]] = 0
-       end
-      else
-			 affstrack.score[affs[1]] = 0	
-			end
-      ak.smoke.RestoreMass(affs[1])
-			if affstrack.score[affs[1]] == 0 then
-				 ak.AfflictionCured(affs[1])
-				 ak.ResetConfirmAff(affs[1])
-			end
-   elseif #affs &gt; 0 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
-      for i = 1, #affs do
-         ocured.smoked[affs[i]] = affstrack.score[affs[i]]
-				 ak.smoke.RetainMass(affs[1], affstrack.score[affs[1]])
-         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-         if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-         end
-				 ak.smoke.RestoreMass(affs[i])
-				 if affstrack.score[affs[i]] == 0 then
-				 	  ak.AfflictionCured(affs[i])
-				 end
-      end
-   elseif ak.randomaffs &gt; 0 then
-      ak.randomaffs = ak.randomaffs - 1
-   else
-       reboundingaccountak = true
-       if reboundingaktime then killTimer(reboundingaktime) end
-       reboundingaktime = tempTimer(11,[[reboundingaccountak = false]])
-   end
-   ak.scoreup(target)
+  --end
+
+  if #affs == 1 then
+    ak.echoForPossibleCures(affs[1])
+    if affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
+      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    end
+    smokeCure(affs[1], 1, true)
+
+  elseif #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+    for i = 1, #affs do
+      ocured.smoked[affs[i]] = affstrack.score[affs[i]]
+      smokeCure(affs[i], #affs, false)
+    end
+
+  elseif ak.randomaffs &gt; 0 then
+    ak.randomaffs = ak.randomaffs - 1
+
+  else
+    reboundingaccountak = true
+    if reboundingaktime then killTimer(reboundingaktime) end
+    reboundingaktime = tempTimer(11, [[reboundingaccountak = false]])
+  end
+
+  ak.scoreup(target)
 end
 
 function ak.smoke.RetainMass(aff, count)
   if ak.smoke.mass[aff] then return end
-	ak.smoke.mass[aff] = roundDown(count-1,-2)
+  ak.smoke.mass[aff] = roundDown(count - 1, -2)
 end
 
 function ak.smoke.RestoreMass(aff)
-	local returner = ak.smoke.mass[aff] or 0
-	affstrack.score[aff] = affstrack.score[aff] + returner
+  local returner = ak.smoke.mass[aff] or 0
+  affstrack.score[aff] = affstrack.score[aff] + returner
   ak.smoke.mass[aff] = 0
-end
-</script>
+end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
 					<name>opassive</name>
 					<packageName></packageName>
-					<script>function ak.cure.passive(curing,addon)
-	ak.occie.aura.parsereduct("passive")
-   if affstrack.score.voyria == 100 then
-      affstrack.score.voyria = 0 
-      return
-   end
-   local curelist
-   if addon then
+					<script>
+local function peelOverflow(aff, maxPeels)
+  local count = 0
+  while affstrack.score[aff] &gt; 100 and count &lt; maxPeels do
+    affstrack.score[aff] = affstrack.score[aff] - 100
+    count = count + 1
+  end
+  return count
+end
+
+local function restoreOverflow(aff, affOverflow)
+  local count = affOverflow[aff]
+  if count and count &gt; 0 then
+    affstrack.score[aff] = affstrack.score[aff] + count * 100
+  end
+end
+
+local function checkConflagrate()
+  if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then
+    affstrack.score.conflagrate = 0
+    akadsty = 1
+  end
+end
+
+local function overflowAdjustedCure(affs, affOverflow, divisor, exclude, doConflagrateCheck)
+  for i = 1, #affs do
+    local aff = affs[i]
+    ocured.cureall[aff] = affstrack.score[aff]
+    if aff ~= exclude then
+      affstrack.score[aff] = affstrack.score[aff] - affstrack.score[aff] / divisor
+      if affstrack.score[aff] &lt; ak.errorallowance then
+        affstrack.score[aff] = 0
+        ak.AfflictionCured(aff)
+      end
+      restoreOverflow(aff, affOverflow)
+    end
+  end
+  if doConflagrateCheck then checkConflagrate() end
+end
+
+function ak.cure.passive(curing, addon)
+  ak.occie.aura.parsereduct("passive")
+  if affstrack.score.voyria == 100 then
+    affstrack.score.voyria = 0
+    return
+  end
+
+  local curelist
+  if addon then
     local dumper = string.split(curing, ", ")
-    curelist = table.n_union(dumper,affstrack.cureall)    
-   elseif curing then
+    curelist = table.n_union(dumper, affstrack.cureall)
+  elseif curing then
     curelist = string.split(curing, ", ")
-   else
+  else
     curelist = affstrack.cureall
-   end
-   affs = {}
-   ak.randomaffs = ak.randomaffs or 0
-   affoverone = {}
-   affovertwo = {}
-   affoverthree = {}
-   affoverfour = {}
-   affoverfive = {}
-   affoversix = {}
-   ocured = ocured or {}
-   ocured.cureall = {}
- --  display(curelist) -- Micah debug stuffs
-   for i = 1, #curelist do
-      if affstrack.score[curelist[i]] &gt; 0  then
-         table.insert(affs, curelist[i])
-         ocured.cureall[curelist[i]] = affstrack.score[curelist[i]]
-         if affstrack.score[curelist[i]] &gt; 100 and curelist[i] == "aflame" then
-            table.insert(affoverone, curelist[i]) 
-            affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-            if affstrack.score[curelist[i]] &gt; 100 then
-               table.insert(affovertwo, curelist[i]) 
-               affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-               if affstrack.score[curelist[i]] &gt; 100 then
-                  table.insert(affoverthree, curelist[i]) 
-                  affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-                  if affstrack.score[curelist[i]] &gt; 100 then
-                     table.insert(affoverfour, curelist[i]) 
-                     affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-                     if affstrack.score[curelist[i]] &gt; 100 then
-                        table.insert(affoverfive, curelist[i]) 
-                        affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-                        if affstrack.score[curelist[i]] &gt; 100 then
-                           table.insert(affoversix, curelist[i]) 
-                           affstrack.score[curelist[i]] = affstrack.score[curelist[i]] - 100
-                        end
-                     end
-                  end
-               end
-            end
-         end
+  end
+
+  local affs = {}
+  local affOverflow = {}
+  ak.randomaffs = ak.randomaffs or 0
+  ocured = ocured or {}
+  ocured.cureall = {}
+
+  for i = 1, #curelist do
+    local aff = curelist[i]
+    if affstrack.score[aff] &gt; 0 then
+      table.insert(affs, aff)
+      ocured.cureall[aff] = affstrack.score[aff]
+      if aff == "aflame" then
+        affOverflow[aff] = peelOverflow(aff, 6)
       end
-   end
-   if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
-      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-      affstrack.score[affs[1]] = 0
-			ak.AfflictionCured(affs[1])
-			ak.ResetConfirmAff(affs[1])
-   elseif #affs &gt; 1 and table.contains(affs,"impatience") and FocusCount() &gt;= 100 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
-      for i = 1, #affs do
-         ocured.cureall[affs[i]] = affstrack.score[affs[i]]
-         if affs[i] ~= "impatience" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-            if affstrack.score[affs[i]] &lt; ak.errorallowance then
-               affstrack.score[affs[i]] = 0
-							 ak.AfflictionCured(affs[i])
-            end
-            if table.contains(affoverone, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affovertwo, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverthree, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfour, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoverfive, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           if table.contains(affoversix, affs[i]) then
-                              affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           end
-                        end
-                     end
-                  end
-               end
-            end 
-         end        
-      end
-   elseif #affs &gt; 1 and table.contains(affs,"asthma") and SmokeCount() &gt;= 100 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
-      for i = 1, #affs do
-         ocured.cureall[affs[i]] = affstrack.score[affs[i]]
-         if affs[i] ~= "asthma" then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / (#affs-1)
-            if affstrack.score[affs[i]] &lt; ak.errorallowance then
-               affstrack.score[affs[i]] = 0
-							 ak.AfflictionCured(affs[i])
-            end
-            if table.contains(affoverone, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affovertwo, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverthree, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfour, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoverfive, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           if table.contains(affoversix, affs[i]) then
-                              affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                           end
-                        end
-                     end
-                  end
-               end
-            end 
-         end        
-      end
-   elseif #affs &gt; 0 then
-      ak.echoForPossibleCures(table.concat(affs, " "))
-      for i = 1, #affs do
-         ocured.cureall[affs[i]] = affstrack.score[affs[i]]
-         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-         if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-						ak.AfflictionCured(affs[i])
-         end
-         if table.contains(affoverone, affs[i]) then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-            if table.contains(affovertwo, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(affoverthree, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(affoverfour, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(affoverfive, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(affoversix, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        end
-                     end
-                  end
-               end
-            end 
-         end        
-      end
-      if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
-   elseif ak.randomaffs &gt; 0 then
-      ak.randomaffs = ak.randomaffs - 1
-   else
-      if ak.WhyYouDoThat then ak.WhyYouDoThat("cureall") end
-   end
-   ak.scoreup(target)
+    end
+  end
+
+  if #affs == 1 and affstrack.score[affs[1]] &lt; 100 and ak.randomaffs == 0 then
+    if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    affstrack.score[affs[1]] = 0
+    ak.AfflictionCured(affs[1])
+    ak.ResetConfirmAff(affs[1])
+
+  elseif #affs &gt; 1 and table.contains(affs, "impatience") and FocusCount() &gt;= 100 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+    overflowAdjustedCure(affs, affOverflow, #affs - 1, "impatience", false)
+
+  elseif #affs &gt; 1 and table.contains(affs, "asthma") and SmokeCount() &gt;= 100 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+    overflowAdjustedCure(affs, affOverflow, #affs - 1, "asthma", false)
+
+  elseif #affs &gt; 0 then
+    ak.echoForPossibleCures(table.concat(affs, " "))
+    overflowAdjustedCure(affs, affOverflow, #affs, nil, true)
+
+  elseif ak.randomaffs &gt; 0 then
+    ak.randomaffs = ak.randomaffs - 1
+
+  else
+    if ak.WhyYouDoThat then ak.WhyYouDoThat("cureall") end
+  end
+
+  ak.scoreup(target)
 end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
 					<name>oapply</name>
 					<packageName></packageName>
-					<script>function ak.cure.apply(what) 
-	 if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
-   if aksalvechange then killTimer(aksalvechange) end
-   if akrestoration then killTimer(akrestoration) end
-   applycure = applycure or {} 
-   if applycure.lastapplied then
-      AKcalculateSalve()
-   end
-	 if what ~= "none" then
-	 		ak.enemyprio.applied(what)
-      ak.cure.lastapplied = what
-      ak.randomaffs = ak.randomaffs or 0
-      applycure = {}
-      applycure.aknextsalve = false
-      applycure.lastapplied = what
-      applycure.affoverone = {}
-      applycure.affovertwo = {}
-      applycure.affoverthree = {}
-      applycure.affoverfour = {}
-      applycure.affoverfive = {}
-      applycure.affoversix = {}
-      applycure.donotrecount = {}
-      applycure.possiblemendings = {}
-      applycure.mendingscore = 0
-      applycure.possiblerestorations = {}
-      applycure.restorationscore = 0
-      applycure.totalscore = 0
-      applycure.both = {}
-      applycure.otableadd = "applied"..what
-      for i = 1, #affstrack.applied[what] do
-         --display( affstrack.applied[what][i])--probable cures  
-         --display(affstrack.score[affstrack.applied[what][i]])     
-         if affstrack.score[affstrack.applied[what][i]] &gt; 0 and affstrack.applied[what][i] ~= "frozen" and affstrack.applied[what][i] ~= "aflame" and (affstrack.score[affstrack.applied[what][i]] &gt; 100 or affstrack.applied[what][i] == "calcifiedhead" or affstrack.applied[what][i] == "calcifiedtorso" or affstrack.applied[what][i] == "head" or affstrack.applied[what][i] == "torso" or affstrack.applied[what][i] == "hypothermia") then
-            table.insert(applycure.possiblerestorations, affstrack.applied[what][i])
-            table.insert(applycure.both, affstrack.applied[what][i])
-            table.insert(applycure.donotrecount, affstrack.applied[what][i]) 
-						if affstrack.score[affstrack.applied[what][i]] &lt; 200 and affstrack.applied[what][i] ~= "torso" and affstrack.applied[what][i] ~= "head" and affstrack.applied[what][i] ~= "calcifiedtorso" and affstrack.applied[what][i] ~= "calcifiedhead" then
-							table.insert(applycure.possiblemendings, affstrack.applied[what][i]) 
-							applycure.mendingscore = affstrack.score[affstrack.applied[what][i]] + applycure.mendingscore 
-						end
-            applycure.restorationscore = affstrack.score[affstrack.applied[what][i]] + applycure.restorationscore
-            applycure.totalscore  =  affstrack.score[affstrack.applied[what][i]] + applycure.totalscore
-            AKBackupSalveNumber(affstrack.applied[what][i])
-         elseif affstrack.score[affstrack.applied[what][i]] &gt; 100 and (affstrack.applied[what][i] == "frozen" or affstrack.applied[what][i] == "aflame") then
-            table.insert(applycure.possiblemendings, affstrack.applied[what][i]) 
-            table.insert(applycure.both, affstrack.applied[what][i])
-            table.insert(applycure.donotrecount, affstrack.applied[what][i]) 
-            applycure.mendingscore = affstrack.score[affstrack.applied[what][i]] + applycure.mendingscore  
-            applycure.totalscore  =  affstrack.score[affstrack.applied[what][i]] + applycure.totalscore 
-            AKBackupSalveNumber(affstrack.applied[what][i])
-         elseif affstrack.score[affstrack.applied[what][i]] &gt; 0 then
-            table.insert(applycure.possiblemendings, affstrack.applied[what][i]) 
-            table.insert(applycure.both, affstrack.applied[what][i])
-            table.insert(applycure.donotrecount, affstrack.applied[what][i]) 
-            applycure.mendingscore = affstrack.score[affstrack.applied[what][i]] + applycure.mendingscore  
-            applycure.totalscore  =  affstrack.score[affstrack.applied[what][i]] + applycure.totalscore     
-         end
-      end
-      for k,v in pairs(affstrack.applied) do
-         for i=1, #affstrack.applied[k] do
-            if not table.contains(applycure.donotrecount, affstrack.applied[k][i]) and affstrack.score[affstrack.applied[k][i]] &gt; 0 then
-							 applycure.totalscore  =  affstrack.score[affstrack.applied[k][i]] + applycure.totalscore 
-            end
-         end
-      end
-      applycure.totalscore = applycure.totalscore / 100
-      applycure.mendingscore = applycure.mendingscore / 100
-      applycure.restorationscore = applycure.restorationscore / 100
-      if applycure.totalscore &lt;= 1 and applycure.totalscore &gt; 0 then --only one confirmed apply coming
-         if #applycure.possiblemendings == 0 then
-            applycure.aknextsalve = "restoration"
-            if akrestoration then killTimer(akrestoration) end
-            akrestoration = tempTimer(3.5,[[ak.cure.apply("none");affstrack.score.tempslickness = 0;ak.scoreup(target)]])
-            affstrack.score.tempslickness = 100      
-         elseif #applycure.possiblerestorations == 0 then
-            applycure.aknextsalve = "mending"
-            ak.cure.apply("none")
-         else
-            applycure.aknextsalve = "both"
-            ak.cure.apply("none")
-         end
-      elseif applycure.totalscore &gt; 0 then                          --MORE CURES COMING!
-				 if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
-         ak.timers.salvebackup = tempTimer(5,[[ak.cure.salveBackup()]])
-         if applycure.restorationscore &gt; 0 and applycure.mendingscore &gt; 0 then
-            applycure.aknextsalve = "mending"
-						if affstrack.score.crushedthroat == 100 and what == "head" then
-							ak.cure.apply("none")
-							return
-						end
-            if aksalvechange then killTimer(aksalvechange) end
-            aksalvechange = tempTimer(2.5,[[
-               if affstrack.score.slickness == 0 then
-                  applycure.aknextsalve = "restoration"
-               end
-            ]])
-         elseif applycure.restorationscore &gt; 0 and applycure.mendingscore == 0 then	 
-            applycure.aknextsalve = "restoration"
-            affstrack.score.tempslickness = 100  
-            if aksalvechange then killTimer(aksalvechange) end
-         elseif applycure.restorationscore == 0 and applycure.mendingscore &gt; 0 then
-            applycure.aknextsalve = "mending"
-            ak.cure.apply("none")
-         end
-		  elseif applycure.lastapplied == "body" and applycure.totalscore == 0 and affstrack.score.impatience == 100 then
-				 if ak.thoughtIhad then ak.thoughtIhad("impatience") else affstrack.score.impatience = 0 end
-				 affstrack.score.anorexia = 0 
-      elseif applycure.lastapplied ~= "skin" then
-         if ak.NoPreApply then
+					<script>
+local function countOverflow(score, maxPeels)
+  local remaining = score
+  local count = 0
+  while remaining &gt; 100 and count &lt; maxPeels do
+    remaining = remaining - 100
+    count = count + 1
+  end
+  return count
+end
 
-         elseif (gmcp.Char.Status.class ~= "Magi" or gmcp.Char.Status.race:match("Dragon")) then         
-            applycure.aknextsalve = "restoration"
-            if akrestoration then killTimer(akrestoration) end
-            akrestoration = tempTimer(3.5,[[ak.cure.apply("none");affstrack.score.tempslickness = 0;ak.scoreup(target)]])
-            affstrack.score.tempslickness = 100  
-         end
-			elseif applycure.lastapplied == "skin" then
-				applycure.lastapplied = nil	 
+local function restoreOverflow(aff, affOverflow)
+  local count = affOverflow[aff]
+  if count and count &gt; 0 then
+    affstrack.score[aff] = affstrack.score[aff] + count * 100
+  end
+end
+
+local function classifyApplied(list, applycure, opts)
+  opts = opts or {}
+  local toBeCleared = {}
+  for i = 1, #list do
+    local aff = list[i]
+    local score = affstrack.score[aff]
+    local isFireOrFrost = (aff == "frozen" or aff == "aflame")
+    local isRestorationKind = (aff == "calcifiedhead" or aff == "calcifiedtorso"
+      or aff == "head" or aff == "torso" or aff == "hypothermia")
+
+    if score &gt; 0 and not isFireOrFrost and (score &gt; 100 or isRestorationKind) then
+      table.insert(applycure.possiblerestorations, aff)
+      table.insert(applycure.both, aff)
+      table.insert(applycure.donotrecount, aff)
+      if opts.trackCleared then table.insert(toBeCleared, aff) end
+      if opts.dualMending and score &lt; 200 and aff ~= "torso" and aff ~= "head"
+         and aff ~= "calcifiedtorso" and aff ~= "calcifiedhead" then
+        table.insert(applycure.possiblemendings, aff)
+        applycure.mendingscore = applycure.mendingscore + score
       end
-   else
-      applycure = {}
-      applycure.aknextsalve = nil
+      applycure.restorationscore = applycure.restorationscore + score
+      applycure.totalscore = applycure.totalscore + score
+      AKBackupSalveNumber(aff)
+
+    elseif score &gt; 100 and isFireOrFrost then
+      table.insert(applycure.possiblemendings, aff)
+      table.insert(applycure.both, aff)
+      table.insert(applycure.donotrecount, aff)
+      applycure.mendingscore = applycure.mendingscore + score
+      applycure.totalscore = applycure.totalscore + score
+      AKBackupSalveNumber(aff)
+
+    elseif score &gt; 0 then
+      table.insert(applycure.possiblemendings, aff)
+      table.insert(applycure.both, aff)
+      table.insert(applycure.donotrecount, aff)
+      applycure.mendingscore = applycure.mendingscore + score
+      applycure.totalscore = applycure.totalscore + score
+    end
+  end
+  return toBeCleared
+end
+
+local function addAffs(list, affs, otableadd)
+  for i = 1, #list do
+    ocured[otableadd][list[i]] = affstrack.score[list[i]]
+    table.insert(affs, list[i])
+  end
+end
+
+local function resetApplyCureBuckets()
+  applycure.affOverflow = {}
+  applycure.donotrecount = {}
+  applycure.possiblemendings = {}
+  applycure.mendingscore = 0
+  applycure.possiblerestorations = {}
+  applycure.restorationscore = 0
+  applycure.totalscore = 0
+  applycure.both = {}
+end
+
+function ak.cure.apply(what)
+  if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
+  if aksalvechange then killTimer(aksalvechange) end
+  if akrestoration then killTimer(akrestoration) end
+  applycure = applycure or {}
+  if applycure.lastapplied then
+    AKcalculateSalve()
+  end
+
+  if what ~= "none" then
+    ak.enemyprio.applied(what)
+    ak.cure.lastapplied = what
+    ak.randomaffs = ak.randomaffs or 0
+    applycure = {}
+    applycure.aknextsalve = false
+    applycure.lastapplied = what
+    resetApplyCureBuckets()
+    applycure.otableadd = "applied" .. what
+
+    classifyApplied(affstrack.applied[what], applycure, {dualMending = true})
+
+    for k, v in pairs(affstrack.applied) do
+      for i = 1, #affstrack.applied[k] do
+        local aff = affstrack.applied[k][i]
+        if not table.contains(applycure.donotrecount, aff) and affstrack.score[aff] &gt; 0 then
+          applycure.totalscore = affstrack.score[aff] + applycure.totalscore
+        end
+      end
+    end
+
+    applycure.totalscore = applycure.totalscore / 100
+    applycure.mendingscore = applycure.mendingscore / 100
+    applycure.restorationscore = applycure.restorationscore / 100
+
+    if applycure.totalscore &lt;= 1 and applycure.totalscore &gt; 0 then --only one confirmed apply coming
+      if #applycure.possiblemendings == 0 then
+        applycure.aknextsalve = "restoration"
+        if akrestoration then killTimer(akrestoration) end
+        akrestoration = tempTimer(3.5, [[ak.cure.apply("none");affstrack.score.tempslickness = 0;ak.scoreup(target)]])
+        affstrack.score.tempslickness = 100
+      elseif #applycure.possiblerestorations == 0 then
+        applycure.aknextsalve = "mending"
+        ak.cure.apply("none")
+      else
+        applycure.aknextsalve = "both"
+        ak.cure.apply("none")
+      end
+
+    elseif applycure.totalscore &gt; 0 then --MORE CURES COMING!
+      if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
+      ak.timers.salvebackup = tempTimer(5, [[ak.cure.salveBackup()]])
+      if applycure.restorationscore &gt; 0 and applycure.mendingscore &gt; 0 then
+        applycure.aknextsalve = "mending"
+        if affstrack.score.crushedthroat == 100 and what == "head" then
+          ak.cure.apply("none")
+          return
+        end
+        if aksalvechange then killTimer(aksalvechange) end
+        aksalvechange = tempTimer(2.5, [[
+          if affstrack.score.slickness == 0 then
+            applycure.aknextsalve = "restoration"
+          end
+        ]])
+      elseif applycure.restorationscore &gt; 0 and applycure.mendingscore == 0 then
+        applycure.aknextsalve = "restoration"
+        affstrack.score.tempslickness = 100
+        if aksalvechange then killTimer(aksalvechange) end
+      elseif applycure.restorationscore == 0 and applycure.mendingscore &gt; 0 then
+        applycure.aknextsalve = "mending"
+        ak.cure.apply("none")
+      end
+
+    elseif applycure.lastapplied == "body" and applycure.totalscore == 0 and affstrack.score.impatience == 100 then
+      if ak.thoughtIhad then ak.thoughtIhad("impatience") else affstrack.score.impatience = 0 end
+      affstrack.score.anorexia = 0
+
+    elseif applycure.lastapplied ~= "skin" then
+      if ak.NoPreApply then
+        -- intentionally does nothing
+      elseif (gmcp.Char.Status.class ~= "Magi" or gmcp.Char.Status.race:match("Dragon")) then
+        applycure.aknextsalve = "restoration"
+        if akrestoration then killTimer(akrestoration) end
+        akrestoration = tempTimer(3.5, [[ak.cure.apply("none");affstrack.score.tempslickness = 0;ak.scoreup(target)]])
+        affstrack.score.tempslickness = 100
+      end
+
+    elseif applycure.lastapplied == "skin" then
       applycure.lastapplied = nil
-      applycure.affoverone = {}
-      applycure.affovertwo = {}
-      applycure.affoverthree = {}
-      applycure.affoverfour = {}
-      applycure.affoverfive = {}
-      applycure.affoversix = {}
-      applycure.donotrecount = {}
-      applycure.possiblemendings = {}
-      applycure.mendingscore = 0
-      applycure.possiblerestorations = {}
-      applycure.restorationscore = 0
-      applycure.totalscore = 0
-      applycure.both = {}
-   end
-   ak.scoreup(target)
+    end
+
+  else
+    applycure = {}
+    applycure.aknextsalve = nil
+    applycure.lastapplied = nil
+    resetApplyCureBuckets()
+  end
+
+  ak.scoreup(target)
 end
 
 function ak.cure.salveBackup()
-	if affstrack.score.slickness == 0 then
-		ak.cure.apply("none")
-		cecho("\n&lt;cyan&gt;They are not applying salves. Forcing previous restoration cure through.\n")
-	else
-		if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
-    ak.timers.salvebackup = tempTimer(1,[[ak.cure.salveBackup()]])
-	end
+  if affstrack.score.slickness == 0 then
+    ak.cure.apply("none")
+    cecho("\n&lt;cyan&gt;They are not applying salves. Forcing previous restoration cure through.\n")
+  else
+    if ak.timers.salvebackup then killTimer(ak.timers.salvebackup) end
+    ak.timers.salvebackup = tempTimer(1, [[ak.cure.salveBackup()]])
+  end
 end
-
 
 function AKcalculateSalve()
-	 if ak.debug then 
-	 	display("applycure")
-		display(applycure)
-	 end
-   local affs = {}
-   ak.cure.lastapplied = what
-   ak.randomaffs = ak.randomaffs or 0
-   applycure = applycure or {}
-   applycure.aknextsalve = applycure.aknextsalve or "restoration"
-   applycure.lastapplied = applycure.lastapplied or "torso"
-   applycure.affoverone = {}
-   applycure.affovertwo = {}
-   applycure.affoverthree = {}
-   applycure.affoverfour = {}
-   applycure.affoverfive = {}
-   applycure.affoversix = {}
-   applycure.donotrecount = {}
-   applycure.possiblemendings = {}
-   applycure.mendingscore = 0
-   applycure.possiblerestorations = {}
-   applycure.restorationscore = 0
-   applycure.totalscore = 0
-   applycure.both = {}
-   applycure.otableadd = "applied"..applycure.lastapplied
-   ocured = ocured or {}
-   ocured[applycure.otableadd] = {} 
-   local ToBeCleared = {}
-      for i = 1, #affstrack.applied[applycure.lastapplied] do
-         --display( affstrack.applied[applycure.lastapplied][i])--probable cures         
-         if affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 0 and affstrack.applied[applycure.lastapplied][i] ~= "frozen" and affstrack.applied[applycure.lastapplied][i] ~= "aflame" and (affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 100 or affstrack.applied[applycure.lastapplied][i] == "calcifiedhead" or affstrack.applied[applycure.lastapplied][i] == "calcifiedtorso" or affstrack.applied[applycure.lastapplied][i] == "head" or affstrack.applied[applycure.lastapplied][i] == "torso" or affstrack.applied[applycure.lastapplied][i] == "hypothermia") then
-            table.insert(ToBeCleared, affstrack.applied[applycure.lastapplied][i])
-            table.insert(applycure.possiblerestorations, affstrack.applied[applycure.lastapplied][i])
-            table.insert(applycure.both, affstrack.applied[applycure.lastapplied][i])
-            table.insert(applycure.donotrecount, affstrack.applied[applycure.lastapplied][i]) 
-            applycure.restorationscore = affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.restorationscore
-            applycure.totalscore  =  affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.totalscore
-            AKBackupSalveNumber(affstrack.applied[applycure.lastapplied][i])
-         elseif affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 100 and (affstrack.applied[applycure.lastapplied][i] == "frozen" or affstrack.applied[applycure.lastapplied][i] == "aflame") then                   
-            table.insert(applycure.possiblemendings, affstrack.applied[applycure.lastapplied][i]) 
-            table.insert(applycure.both, affstrack.applied[applycure.lastapplied][i])
-            table.insert(applycure.donotrecount, affstrack.applied[applycure.lastapplied][i]) 
-            applycure.mendingscore = affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.mendingscore  
-            applycure.totalscore  =  affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.totalscore 
-            AKBackupSalveNumber(affstrack.applied[applycure.lastapplied][i])
-         elseif affstrack.score[affstrack.applied[applycure.lastapplied][i]] &gt; 0 then
-            table.insert(applycure.possiblemendings, affstrack.applied[applycure.lastapplied][i]) 
-            table.insert(applycure.both, affstrack.applied[applycure.lastapplied][i])
-            table.insert(applycure.donotrecount, affstrack.applied[applycure.lastapplied][i]) 
-            applycure.mendingscore = affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.mendingscore  
-            applycure.totalscore  =  affstrack.score[affstrack.applied[applycure.lastapplied][i]] + applycure.totalscore     
-         end
-      end
-      applycure.totalscore = applycure.totalscore / 100
-      applycure.mendingscore = applycure.mendingscore / 100
-      applycure.restorationscore = applycure.restorationscore / 100
-   if applycure.aknextsalve ~= "both" then
-      if applycure.aknextsalve == "mending" and applycure.mendingscore &gt; 0 then
-         for i = 1, #applycure.possiblemendings do
-            ocured[applycure.otableadd][applycure.possiblemendings[i]] = affstrack.score[applycure.possiblemendings[i]] 
-            table.insert(affs, applycure.possiblemendings[i])
-         end
-      elseif applycure.aknextsalve == "restoration" and applycure.restorationscore &gt; 0 then
-         for i = 1, #applycure.possiblerestorations do
-            ocured[applycure.otableadd][applycure.possiblerestorations[i]] = affstrack.score[applycure.possiblerestorations[i]] 
-            table.insert(affs, applycure.possiblerestorations[i])
-         end
-      else
-         applycure.aknextsalve = "both"
-         for i = 1, #applycure.possiblerestorations do
-            ocured[applycure.otableadd][applycure.possiblerestorations[i]] = affstrack.score[applycure.possiblerestorations[i]] 
-            table.insert(affs, applycure.possiblerestorations[i])
-          end
-         for i = 1, #applycure.possiblemendings do
-            ocured[applycure.otableadd][applycure.possiblemendings[i]] = affstrack.score[applycure.possiblemendings[i]] 
-            table.insert(affs, applycure.possiblemendings[i])
-         end
-      end
-   elseif applycure.aknextsalve == "both" then
-      for i = 1, #applycure.possiblerestorations do
-         ocured[applycure.otableadd][applycure.possiblerestorations[i]] = affstrack.score[applycure.possiblerestorations[i]] 
-         table.insert(affs, applycure.possiblerestorations[i])
-      end
-      for i = 1, #applycure.possiblemendings do
-         ocured[applycure.otableadd][applycure.possiblemendings[i]] = affstrack.score[applycure.possiblemendings[i]] 
-         table.insert(affs, applycure.possiblemendings[i])
-      end
-   end
-   --display(affs)
-   --display(affstrack.score[affs[1]])
-   if #affs == 1 and affstrack.score[affs[1]] &lt; 100 then
-      if #ToBeCleared &gt; 0 then
-         for i = 1, #ToBeCleared do
-            ak.limbs.CountAgain(ToBeCleared[i])
-         end
-      end
-      ocured[applycure.otableadd] = {}
-      if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
-      ocured[applycure.otableadd] = {}
-      ocured[applycure.otableadd][affs[1]] = 100
-   end
-   if #affs &gt; 0 then
-      AKleftcuresfirst(affs)
-      if #ToBeCleared &gt; 0 then
-         for i = 1, #ToBeCleared do
-            ak.limbs.CountAgain(ToBeCleared[i])
-         end
-      end
-      ak.echoForPossibleCures(table.concat(affs, " "))
-      for i = 1, #affs do
-         reduceSalveAff(affs[i])
-         affstrack.score[affs[i]] = affstrack.score[affs[i]] - affstrack.score[affs[i]] / #affs
-         if affstrack.score[affs[i]] &lt; ak.errorallowance then
-            affstrack.score[affs[i]] = 0
-						ak.AfflictionCured(affs[i])
-         end
-         if table.contains(applycure.affoverone, affs[i]) then
-            affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-            if table.contains(applycure.affovertwo, affs[i]) then
-               affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-               if table.contains(applycure.affoverthree, affs[i]) then
-                  affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                  if table.contains(applycure.affoverfour, affs[i]) then
-                     affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                     if table.contains(applycure.affoverfive, affs[i]) then
-                        affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        if table.contains(applycure.affoversix, affs[i]) then
-                           affstrack.score[affs[i]] = affstrack.score[affs[i]] + 100
-                        end
-                     end
-                  end
-               end
-            end 
-         end
-      end
-      if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then affstrack.score.conflagrate = 0;akadsty = 1 end
-      if affstrack.score.hypothermia == 100 and affstrack.score.frozen == 0 then affstrack.score.hypothermia = 0 end
-   elseif ak.randomaffs &gt; 0 then
-      ak.randomaffs = ak.randomaffs - 1
-   else
+  if ak.debug then
+    display("applycure")
+    display(applycure)
+  end
+  local affs = {}
+  ak.cure.lastapplied = what 
+  ak.randomaffs = ak.randomaffs or 0
+  applycure = applycure or {}
+  applycure.aknextsalve = applycure.aknextsalve or "restoration"
+  applycure.lastapplied = applycure.lastapplied or "torso"
+  resetApplyCureBuckets()
+  applycure.otableadd = "applied" .. applycure.lastapplied
+  ocured = ocured or {}
+  ocured[applycure.otableadd] = {}
 
-   end
-   applycure.lastapplied = nil
-   affstrack.score.tempslickness = 0 
-   ak.scoreup(target)
+  local ToBeCleared = classifyApplied(affstrack.applied[applycure.lastapplied], applycure, {trackCleared = true})
+
+  applycure.totalscore = applycure.totalscore / 100
+  applycure.mendingscore = applycure.mendingscore / 100
+  applycure.restorationscore = applycure.restorationscore / 100
+
+  if applycure.aknextsalve ~= "both" then
+    if applycure.aknextsalve == "mending" and applycure.mendingscore &gt; 0 then
+      addAffs(applycure.possiblemendings, affs, applycure.otableadd)
+    elseif applycure.aknextsalve == "restoration" and applycure.restorationscore &gt; 0 then
+      addAffs(applycure.possiblerestorations, affs, applycure.otableadd)
+    else
+      applycure.aknextsalve = "both"
+      addAffs(applycure.possiblerestorations, affs, applycure.otableadd)
+      addAffs(applycure.possiblemendings, affs, applycure.otableadd)
+    end
+  elseif applycure.aknextsalve == "both" then
+    addAffs(applycure.possiblerestorations, affs, applycure.otableadd)
+    addAffs(applycure.possiblemendings, affs, applycure.otableadd)
+  end
+
+  if #affs == 1 and affstrack.score[affs[1]] &lt; 100 then
+    if #ToBeCleared &gt; 0 then
+      for i = 1, #ToBeCleared do
+        ak.limbs.CountAgain(ToBeCleared[i])
+      end
+    end
+    ocured[applycure.otableadd] = {}
+    if ak.ProTrackingConfirmed then ak.ProTrackingConfirmed(affs[1]) end
+    ocured[applycure.otableadd] = {}
+    ocured[applycure.otableadd][affs[1]] = 100
+  end
+
+  if #affs &gt; 0 then
+    AKleftcuresfirst(affs)
+    if #ToBeCleared &gt; 0 then
+      for i = 1, #ToBeCleared do
+        ak.limbs.CountAgain(ToBeCleared[i])
+      end
+    end
+    ak.echoForPossibleCures(table.concat(affs, " "))
+    for i = 1, #affs do
+      local aff = affs[i]
+      reduceSalveAff(aff)
+      affstrack.score[aff] = affstrack.score[aff] - affstrack.score[aff] / #affs
+      if affstrack.score[aff] &lt; ak.errorallowance then
+        affstrack.score[aff] = 0
+        ak.AfflictionCured(aff)
+      end
+      restoreOverflow(aff, applycure.affOverflow)
+    end
+    if affstrack.score.aflame == 0 and affstrack.score.conflagrate == 100 then
+      affstrack.score.conflagrate = 0
+      akadsty = 1
+    end
+    if affstrack.score.hypothermia == 100 and affstrack.score.frozen == 0 then
+      affstrack.score.hypothermia = 0
+    end
+
+  elseif ak.randomaffs &gt; 0 then
+    ak.randomaffs = ak.randomaffs - 1
+  end
+
+  applycure.lastapplied = nil
+  affstrack.score.tempslickness = 0
+  ak.scoreup(target)
 end
-
-
 
 function AKBackupSalveNumber(aff)
-   local resetcure = tonumber(affstrack.score[aff])
-   if affstrack.score[aff] &gt; 100 then
-      table.insert(applycure.affoverone, aff) 
-      affstrack.score[aff] = affstrack.score[aff] - 100
-      if affstrack.score[aff] &gt; 100 then
-        table.insert(applycure.affovertwo, aff) 
-        affstrack.score[aff] = affstrack.score[aff] - 100
-        if affstrack.score[aff] &gt; 100 then
-           table.insert(applycure.affoverthree, aff) 
-           affstrack.score[aff] = affstrack.score[aff] - 100
-           if affstrack.score[aff] &gt; 100 then
-              table.insert(applycure.affoverfour, aff) 
-              affstrack.score[aff] = affstrack.score[aff] - 100
-              if affstrack.score[aff] &gt; 100 then
-                 table.insert(applycure.affoverfive, aff) 
-                 affstrack.score[aff] = affstrack.score[aff] - 100
-                 if affstrack.score[aff] &gt; 100 then
-                    table.insert(applycure.affoversix, aff) 
-                    affstrack.score[aff] = affstrack.score[aff] - 100
-                 end
-              end
-           end
-        end
-      end
-   end
-   affstrack.score[aff] = tonumber(resetcure)
+  applycure.affOverflow[aff] = countOverflow(affstrack.score[aff], 6)
 end
+
 function reduceSalveAff(aff)
-   if affstrack.score[aff] &gt; 100 then
-      affstrack.score[aff] = affstrack.score[aff] - 100
-      if affstrack.score[aff] &gt; 100 then
-        affstrack.score[aff] = affstrack.score[aff] - 100
-        if affstrack.score[aff] &gt; 100 then
-           affstrack.score[aff] = affstrack.score[aff] - 100
-           if affstrack.score[aff] &gt; 100 then
-              affstrack.score[aff] = affstrack.score[aff] - 100
-              if affstrack.score[aff] &gt; 100 then
-                 affstrack.score[aff] = affstrack.score[aff] - 100
-                 if affstrack.score[aff] &gt; 100 then
-                    affstrack.score[aff] = affstrack.score[aff] - 100
-                 end
-              end
-           end
-        end
-      end
-   end 
+  local count = applycure.affOverflow[aff]
+  if count and count &gt; 0 then
+    affstrack.score[aff] = affstrack.score[aff] - count * 100
+  end
 end
 
 function AKleftcuresfirst(affs)
-   if table.contains(affs,"rightleg") and table.contains(affs,"leftleg") then 
-      for i=1, #affs do
-         if affs[i] == "rightleg" then
-            table.remove(affs,i)
-         end
-      end   
-   elseif table.contains(affs,"rightarm") and table.contains(affs,"leftarm") then
-      for i=1, #affs do
-         if affs[i] == "rightarm" then
-            table.remove(affs,i)
-         end
-      end 
-   end
+  local remove
+  if table.contains(affs, "rightleg") and table.contains(affs, "leftleg") then
+    remove = "rightleg"
+  elseif table.contains(affs, "rightarm") and table.contains(affs, "leftarm") then
+    remove = "rightarm"
+  end
+  if remove then
+    for i = #affs, 1, -1 do
+      if affs[i] == remove then
+        table.remove(affs, i)
+      end
+    end
+  end
 end</script>
 					<eventHandlerList />
 				</Script>
