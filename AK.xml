@@ -30586,6 +30586,7 @@ end
 function ak.limbs.countAgain(who,limb) --Return From Timeout on Secondary Targets
    local remove = limb:gsub("%s+", "")
    remove = remove:lower()
+   ak.limbs.limbcount[target][limb] = 0
 end
 
 function ak.limbs.CountAgain(limb) --Return from Apply Script
