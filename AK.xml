@@ -5861,7 +5861,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11901,7 +11901,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13640,7 +13640,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -15845,7 +15845,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -20581,10 +20581,10 @@ if IsTargetted(matches[2]) then
     local counts = ak.limbs.limbcount[target]
     cecho("&lt;orange&gt;\nDEBUG: maxbreaks R="..counts.maxbreaks.rightleg.." L="..counts.maxbreaks.leftleg)
     if counts.maxbreaks.rightleg &lt; counts.maxbreaks.leftleg and affstrack.score.leftleg &gt;= 100 and affstrack.score.rightleg &gt;= 100 then
-      ak.limbs.CorrectLegCount(target, "rightleg")   -- CHANGED: was "leftleg"
+      ak.limbs.CorrectLegCount(target, "rightleg")
 
     elseif counts.maxbreaks.rightleg &gt; counts.maxbreaks.leftleg and affstrack.score.rightleg &gt;= 100 and affstrack.score.leftleg &gt;= 100 then
-      ak.limbs.CorrectLegCount(target, "leftleg")    -- CHANGED: was "rightleg"
+      ak.limbs.CorrectLegCount(target, "leftleg")    
 
     else
       -- unchanged fallback
@@ -27416,7 +27416,9 @@ cecho("\n&lt;LimeGreen&gt;[&lt;DodgerBlue&gt;AK&lt;LimeGreen&gt;]: &lt;snow&gt;L
 			<Script isActive="yes" isFolder="no">
 				<name>Hard Reset</name>
 				<packageName></packageName>
-				<script>function ak.oresetparse()
+				<script>--Push Test
+
+function ak.oresetparse()
   target = target or "Dude"
   ak.magi.resonance = {
   ["Fire"] = 0,
