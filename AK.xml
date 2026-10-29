@@ -5861,7 +5861,7 @@ ak.scoreup(matches[2])
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Magi Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11901,7 +11901,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13640,7 +13640,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -15845,7 +15845,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -30721,7 +30721,12 @@ end</script>
 --                                             --
 -- Note that you can also use external Scripts --
 -------------------------------------------------
-</script>
+
+--degenerate,, inquisition, kkractlebrand, latched, 
+--lovers, mindravaged, mycalium, petrified, rebbies, reeling, retribution, shadowmadness, snared,
+--tension, unweavings(all), and whisperingmadness.
+
+--UnweavingSpirit Finished</script>
 				<eventHandlerList />
 				<Script isActive="yes" isFolder="no">
 					<name>oeaten</name>
@@ -30803,6 +30808,13 @@ function ak.cure.ate(what, prorun)
     return
 
   else
+    if what == "lobelia" and affstrack.score.guilt &gt; 0 then
+      if not gmcp.Char.Status.class == "Priest" and not table.contains(affstrack.eaten[what],"guilt") then
+        table.insert(affstrack.eaten[what],"guilt") 
+      elseif gmcp.Char.Status.class == "Priest" and table.contains(affstrack.eaten[what],"guilt") then
+        table.remove(affstrack.eaten[what],table.index_of(affstrack.eaten[what],"guilt"))
+      end
+    end
     for i = 1, #affstrack.eaten[what] do
       local aff = affstrack.eaten[what][i]
       if affstrack.score[aff] &gt; 0 then
@@ -31022,6 +31034,27 @@ function ak.cure.tree()
   elseif affstrack.score.slickness &gt; 0 then
     ocured.bloodroot = {}
   end
+  if affstrack.score.earworm &gt; 0 then
+    if not gmcp.Char.Status.class == "Bard" and not table.contains(affstrack.treed,"earworm") then
+      table.insert(affstrack.treed,"earworm") 
+    elseif gmcp.Char.Status.class == "Bard" and table.contains(affstrack.treed,"earworm") then
+      table.remove(affstrack.treed,table.index_of(affstrack.treed,"earworm"))
+    end
+  end
+  if affstrack.score.unweavingspirit &gt; 0 then
+    if not gmcp.Char.Status.class == "Psion" and not table.contains(affstrack.treed,"unweavingspirit") then
+      table.insert(affstrack.treed,"unweavingspirit") 
+    elseif gmcp.Char.Status.class == "Psion" and table.contains(affstrack.treed,"unweavingspirit") then
+      table.remove(affstrack.treed,table.index_of(affstrack.treed,"unweavingspirit"))
+    end
+  end  
+  if affstrack.score.guilt &gt; 0 then
+    if not gmcp.Char.Status.class == "Priest" and not table.contains(affstrack.treed,"guilt") then
+      table.insert(affstrack.treed,"unweavingspirit") 
+    elseif gmcp.Char.Status.class == "Priest" and table.contains(affstrack.treed,"guilt") then
+      table.remove(affstrack.treed,table.index_of(affstrack.treed,"guilt"))
+    end
+  end  
 
   for i = 1, #affstrack.treed do
     local aff = affstrack.treed[i]
@@ -31140,7 +31173,20 @@ function affssmoke()
     end
     resetOcuredSmoked()
   end
-
+  if affstrack.score.earworm &gt; 0 then
+    if not gmcp.Char.Status.class == "Bard" and not table.contains(affstrack.smoked,"earworm") then
+      table.insert(affstrack.smoked,"earworm") 
+    elseif gmcp.Char.Status.class == "Bard" and table.contains(affstrack.smoked,"earworm") then
+      table.remove(affstrack.smoked,table.index_of(affstrack.smoked,"earworm"))
+    end
+  end
+  if affstrack.score.unweavingspirit &gt; 0 then
+    if not gmcp.Char.Status.class == "Psion" and not table.contains(affstrack.smoked,"unweavingspirit") then
+      table.insert(affstrack.smoked,"unweavingspirit") 
+    elseif gmcp.Char.Status.class == "Psion" and table.contains(affstrack.smoked,"unweavingspirit") then
+      table.remove(affstrack.smoked,table.index_of(affstrack.smoked,"unweavingspirit"))
+    end
+  end
   for i = 1, #affstrack.smoked do
     if affstrack.score[affstrack.smoked[i]] &gt; 0 then
       table.insert(affs, affstrack.smoked[i])
