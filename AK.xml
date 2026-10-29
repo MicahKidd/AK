@@ -30722,8 +30722,9 @@ end</script>
 -- Note that you can also use external Scripts --
 -------------------------------------------------
 
---degenerate,, inquisition, kkractlebrand, latched, 
---lovers, mindravaged, mycalium, petrified, rebbies, reeling, retribution, shadowmadness, snared,
+--Still Using Third Party Curing tells that no longer display
+
+--retribution, shadowmadness
 --tension, unweavings(all), and whisperingmadness.
 
 --UnweavingSpirit Finished</script>
@@ -30808,11 +30809,25 @@ function ak.cure.ate(what, prorun)
     return
 
   else
-    if what == "lobelia" and affstrack.score.guilt &gt; 0 then
+    if (what == "lobelia seed" or what == "argentum flake") and affstrack.score.guilt &gt; 0 then
       if not gmcp.Char.Status.class == "Priest" and not table.contains(affstrack.eaten[what],"guilt") then
         table.insert(affstrack.eaten[what],"guilt") 
       elseif gmcp.Char.Status.class == "Priest" and table.contains(affstrack.eaten[what],"guilt") then
         table.remove(affstrack.eaten[what],table.index_of(affstrack.eaten[what],"guilt"))
+      end
+    end
+    if (what == "piece of kelp" or what == "aurum flake") and affstrack.score.rebbies &gt; 0 then
+      if not gmcp.Char.Status.class == "Pariah" and not table.contains(affstrack.eaten[what],"rebbies") then
+        table.insert(affstrack.eaten[what],"rebbies") 
+      elseif gmcp.Char.Status.class == "Pariah" and table.contains(affstrack.eaten[what],"rebbies") then
+        table.remove(affstrack.eaten[what],table.index_of(affstrack.eaten[what],"rebbies"))
+      end
+    end
+    if (what == "goldenseal root" or what == "plumbum flake") and affstrack.score.mycalium &gt; 0 then
+      if not gmcp.Char.Status.class == "Pariah" and not table.contains(affstrack.eaten[what],"mycalium") then
+        table.insert(affstrack.eaten[what],"mycalium") 
+      elseif gmcp.Char.Status.class == "Pariah" and table.contains(affstrack.eaten[what],"mycalium") then
+        table.remove(affstrack.eaten[what],table.index_of(affstrack.eaten[what],"mycalium"))
       end
     end
     for i = 1, #affstrack.eaten[what] do
@@ -31054,8 +31069,21 @@ function ak.cure.tree()
     elseif gmcp.Char.Status.class == "Priest" and table.contains(affstrack.treed,"guilt") then
       table.remove(affstrack.treed,table.index_of(affstrack.treed,"guilt"))
     end
-  end  
-
+  end
+  if affstrack.score.rebbies &gt; 0 then
+    if not gmcp.Char.Status.class == "Pariah" and not table.contains(affstrack.treed,"rebbies") then
+      table.insert(affstrack.treed,"rebbies") 
+    elseif gmcp.Char.Status.class == "Pariah" and table.contains(affstrack.treed,"rebbies") then
+      table.remove(affstrack.treed,table.index_of(affstrack.treed,"rebbies"))
+    end
+  end   
+  if affstrack.score.mycalium &gt; 0 then
+    if not gmcp.Char.Status.class == "Pariah" and not table.contains(affstrack.treed,"mycalium") then
+      table.insert(affstrack.treed,"mycalium") 
+    elseif gmcp.Char.Status.class == "Pariah" and table.contains(affstrack.treed,"mycalium") then
+      table.remove(affstrack.treed,table.index_of(affstrack.treed,"mycalium"))
+    end
+  end 
   for i = 1, #affstrack.treed do
     local aff = affstrack.treed[i]
     local score = affstrack.score[aff]
