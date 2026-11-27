@@ -5773,7 +5773,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Jester Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -11901,7 +11901,7 @@ end
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Runewarden Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -13640,7 +13640,7 @@ end
 					</Trigger>
 				</TriggerGroup>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Sword &amp; Board Group</name>
 				<script>--
 --Everything that follows was originally written by Klendathu
@@ -14740,7 +14740,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Tarot Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -15845,7 +15845,7 @@ end</script>
 					</regexCodePropertyList>
 				</Trigger>
 			</TriggerGroup>
-			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<TriggerGroup isActive="no" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>2h Group</name>
 				<script></script>
 				<triggerType>0</triggerType>
@@ -20579,7 +20579,7 @@ if IsTargetted(matches[2]) then
     end
   else
     local counts = ak.limbs.limbcount[target]
-    cecho("&lt;orange&gt;\nDEBUG: maxbreaks R="..counts.maxbreaks.rightleg.." L="..counts.maxbreaks.leftleg)
+    --cecho("&lt;orange&gt;\nDEBUG: maxbreaks R="..counts.maxbreaks.rightleg.." L="..counts.maxbreaks.leftleg)
     if counts.maxbreaks.rightleg &lt; counts.maxbreaks.leftleg and affstrack.score.leftleg &gt;= 100 and affstrack.score.rightleg &gt;= 100 then
       ak.limbs.CorrectLegCount(target, "rightleg")
 
@@ -32387,14 +32387,14 @@ registerAnonymousEventHandler("Git Pushing","ak.git.push")</script>
 			<packageName></packageName>
 			<script></script>
 			<command></command>
-			<keyCode>-1</keyCode>
+			<keyCode>33554431</keyCode>
 			<keyModifier>0</keyModifier>
 			<KeyGroup isActive="no" isFolder="yes">
 				<name>Shaman Keys</name>
 				<packageName></packageName>
 				<script></script>
 				<command></command>
-				<keyCode>-1</keyCode>
+				<keyCode>33554431</keyCode>
 				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>Iva 8</name>
@@ -32530,7 +32530,7 @@ end</script>
 				<packageName></packageName>
 				<script></script>
 				<command></command>
-				<keyCode>-1</keyCode>
+				<keyCode>33554431</keyCode>
 				<keyModifier>0</keyModifier>
 			</KeyGroup>
 			<KeyGroup isActive="no" isFolder="yes">
@@ -32538,7 +32538,7 @@ end</script>
 				<packageName></packageName>
 				<script></script>
 				<command></command>
-				<keyCode>-1</keyCode>
+				<keyCode>33554431</keyCode>
 				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>Salve Lock 3</name>
@@ -32610,7 +32610,7 @@ end</script>
 				<packageName></packageName>
 				<script></script>
 				<command></command>
-				<keyCode>-1</keyCode>
+				<keyCode>33554431</keyCode>
 				<keyModifier>0</keyModifier>
 				<Key isActive="yes" isFolder="no">
 					<name>1</name>
